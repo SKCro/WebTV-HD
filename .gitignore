@@ -3,8 +3,8 @@ config.xml
 Icon.png
 .project
 .tproject
-.settings\
-.sign\
+.settings/
+.sign/
 .settings/.jsdtscope
 .settings/org.eclipse.wst.css.core.prefs
 .settings/org.eclipse.wst.jsdt.ui.superType.container
