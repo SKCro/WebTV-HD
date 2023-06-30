@@ -1,6 +1,6 @@
 WebTV.wgt
 config.xml
-icon.png
+Icon.png
 .project
 .tproject
 .settings\
@@ -13,5 +13,3 @@ icon.png
 .sign/.manifest.tmp
 .sign/author-signature.xml
 .sign/signature1.xml
-Icon.png
-WebTV.wgt
