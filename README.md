@@ -2,6 +2,11 @@
  A project that aims to recreate WebTV Networks' page stylization and stuff in modern CSS and HTML.
  Very (very) barebones and incomplete as of now.
 
+## How do I use this?
+ Click the "Code" button at the top and click "Download ZIP". Unzip wherever you want and open the PowerOn.html page.
+ 
+![Screenshot of the "Code" button being pressed.](https://i.imgur.com/ObYTKH3.png)
+
 ## TODO:
 - Flesh out everything
 - Make the status bar look better on non-widescreen display sizes
