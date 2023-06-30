@@ -1,0 +1,219 @@
+/* WebTV CSS style by SKCro */
+
+/* Global Styles */
+body {
+  background-color: #191919;
+  color: #42CC55;
+  font-family: 'Helvetica', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1.5vw; /* Adjust the value as needed */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #E7CE4A;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica.woff2') format('woff2'); /* Normal */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-Bold.woff2') format('woff2'); /* Bold */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-Oblique.woff2') format('woff2'); /* Italics */
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-BoldOblique.woff2') format('woff2'); /* Bold+Italics */
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-Light.woff2') format('woff2'); /* Light */
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica-LightOblique.woff2') format('woff2'); /* Light+Italics */
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar {
+  background-color: rgb(69, 42, 54);
+  width: 10%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1vw 0;
+}
+
+.sidebar img {
+  max-width: 85%;
+  max-height: 85%;
+}
+
+.sidebar-border {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 15%;
+  width: 100%;
+}
+
+.sidebar-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.8vh;
+  background: linear-gradient(#33202A, #774E5E);
+}
+
+.top-left-image {
+  text-align: center;
+}
+
+.bottom-right-image {
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 10%;
+  padding: 20px;
+}
+
+/* Text Input Styles */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-container label {
+  text-align: left;
+  width: 50%;
+  margin-right: 10px;
+}
+
+.input-container input[type="text"],
+.input-container input[type="checkbox"] {
+  font-family: Monaco, monospace;
+  background-color: #444444;
+  color: #ffdd33;
+  padding: 0.65%;
+  width: 20%;
+}
+
+.input-container input[type="checkbox"] {
+  width: auto;
+  transform: scale(1.5);
+}
+
+/* Button Styles */
+input[type="submit"] {
+  background-image: linear-gradient(to bottom, #343434, #040404);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #E7CE4A;
+  text-shadow: 2px 2px #000;
+  background-color: #222;
+  padding: 0.4vw 0.5vw;
+  cursor: pointer;
+  float: right;
+  font-size: 1vw;
+}
+
+.border {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 2%;
+  width: 100%;
+}
+
+.border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.8vh;
+  background: linear-gradient(#2B2B2B, #0D0D0D);
+}
+
+/* Statusbar */
+
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+  background-image: linear-gradient(to right, #666666, #333333);
+  z-index: 9999;
+}
+
+.status-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 1vw;
+}
+
+.page-name {
+  color: #E7CE4A;
+  width: 80%;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #2A2A2A, #000); /* Gradient colors */
+  text-shadow: 1px 1px 0px rgba(0, 0, 0); /* Added text shadow */
+  padding: 0.3% 0.8%; /* Adjust the padding values to create more vertical space */
+  font-size: 1.2vw;
+}
+
+.green-line {
+  width: 3%;
+  height: 68%;
+  background-color: #000;
+  border-radius: 5px; /* Add rounded corners */
+  /* Position the green line horizontally */
+  position: relative;
+}
+
+.green-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background-color: #42CC55;
+}

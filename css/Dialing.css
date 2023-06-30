@@ -1,0 +1,65 @@
+/* Dialing Screen CSS, currently not finished (it looks awful) */
+
+body {
+  opacity: 0;
+  animation: fade 1s ease-in-out 1s forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Helvetica', Arial, sans-serif;
+  margin: 0;
+  background-color: #020202;
+  color: #8F8F8F;
+  font-size: 1.5vw; /* Adjust the value as needed */
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.progress-bar-container {
+  position: fixed;
+  bottom: 15vh;
+  left: 10vw;
+  width: 300px;
+  height: 25px;
+  background: linear-gradient(to right, #777F7F, #666666);
+  overflow: hidden;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 95%;
+  height: 80%;
+  background: linear-gradient(to right, #202A2A, #0C0C0C);
+  position: relative;
+  text-align: center;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(-45deg, #42CC55 25%, #2DBD3A 25%, #2DBD3A 50%, #42CC55 50%, #42CC55 75%, #2DBD3A 75%, #2DBD3A);
+  animation: progress-animation 2s linear;
+  text-align: center;
+}
+
+
+.status-bar-message {
+  position: absolute;
+  top: -200%;
+  color: #fff;
+  font-size: 1.5vw;
+}

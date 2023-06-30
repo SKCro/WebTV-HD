@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PowerOn</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+    }
+
+    img {
+      opacity: 0;
+      animation: fade 2s ease-in-out 1s forwards;
+      width: 35vw; /* Set the width to 35% of the viewport width */
+      height: auto; /* Maintain the aspect ratio */
+    }
+
+    @keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+  </style>
+  <script>
+    setTimeout(function() {
+      window.location.href = "PageStyleTest.html";
+    }, 3200);
+  </script>
+</head>
+<body>
+  <img src="images\SmasnugLogo.png" alt="Samsung Logo"> <!-- funny smasnug -->
+  <audio src="audio\modem.mp3" autoplay></audio>
+</body>
+</html>
