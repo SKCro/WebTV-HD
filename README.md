@@ -7,7 +7,7 @@
  
 ![Screenshot of the "Code" button being pressed.](https://i.imgur.com/ObYTKH3.png)
 
- Or, if you're stuck with a command line interface(specifically Linux), you can run ``git clone https://github.com/SKCro/WebTV-CSS-Remake.git``, and copy all the resources over by entering the WebTV-CSS-Remake directory, and running ``cp -r ./* <your location>``.
+ Or, if you're stuck with a command line interface (specifically Linux), you can run ``git clone https://github.com/SKCro/WebTV-CSS-Remake.git``, and copy all the resources over by entering the WebTV-CSS-Remake directory, and running ``cp -r ./* <your location>``.
 ## TODO:
 - Flesh out everything
 - Make the status bar look better on non-widescreen display sizes
