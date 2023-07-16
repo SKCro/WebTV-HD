@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TV Home</title>
+  <style>
+    body {
+      background-image: url('images/TVHomeBG.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- TV Window thing, Smasnug only -->
+  <script>
+    tizen.tvwindow.show(
+      function(success){
+        console.log('success');
+      },
+      function(fail){
+        console.log('fail');
+      },
+      ['0px', '0px', '50%', '540px'],
+      'MAIN'
+    );
+  </script>
+
+  <!-- Set input to HDMI -->
+  <script>
+    tizen.systeminfo.getPropertyValue(
+      'VIDEOSOURCE',
+      function(videoSource) {
+        console.log('success');
+
+        var connectedVideoSources = videoSource.connected;
+        for (var i = 0; i < connectedVideoSources.length; i++) {
+          if (connectedVideoSources[i].type === 'HDMI') {
+            tizen.tvwindow.setSource(
+              connectedVideoSources[i],
+              function(success){
+                console.log('success');
+              },
+              function(fail){
+                console.log('fail');
+              }
+            );
+            break;
+          }
+        }
+      },
+      function(fail){
+        console.log('fail');
+      }
+    );
+  </script>
+</body>
+</html>
