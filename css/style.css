@@ -104,7 +104,8 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
 }
 
-/* Main Content Styles */
+/* Main Content Style */
+
 .main-content {
   margin-left: 15%;
   padding: 1%;
@@ -196,20 +197,20 @@ input[type="submit"] {
   width: 80%;
   border-radius: 0.5vw;
   background-image: linear-gradient(to right, #2A2A2A, #000); /* Gradient colors */
-  text-shadow: 1px 1px 0px rgba(0, 0, 0); /* Added text shadow */
-  padding: 0.35% 0.8%; /* Adjust the padding values to create more vertical space */
+  text-shadow: 2px 2px 0px rgba(0, 0, 0);
+  padding: 0.35% 0.8%;
   font-size: 1.3vw;
 }
 
-.status-indicator {
+.status-indicator { /* Black box w/ green line */
   width: 3.3%;
   height: 68%;
   background-color: #000;
-  border-radius: 0.3vw; /* Add rounded corners */
+  border-radius: 0.3vw; /* Rounded corners */
   position: relative;
 }
 
-.status-indicator::after {
+.status-indicator::after { /* Green line */
   content: '';
   position: absolute;
   top: 50%;
