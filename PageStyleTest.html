@@ -1,8 +1,6 @@
-<html>
-
-<head>
+<html><head>
   <title>Settings page</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -14,7 +12,7 @@
     </div>
 
     <div class="bottom-right-image">
-      <img src="images/Setup.png" alt="Setup Text">
+      <img alt="Setup Text" src="images/Setup.png" style="margin-left: auto;margin-right: auto;margin-bottom: auto;">
     </div>
   </div>
 
@@ -35,10 +33,23 @@
       <label for="Checkbox">Checkbox flavor text.</label>
       <input type="checkbox" name="Checkbox" id="Checkbox">
     </div>
+    
+<div class="input-container" style="display: flex;
+  flex-direction: column;">
+  <label for="RadioButtons" style="">Radio buttons.</label>
+  <div style="align-self: end;display: grid;">
+    <label for="Option1">
+      <input type="radio" name="RadioButtons" id="Option1" style=""> Option 1
+    </label>
+    <label for="Option2">
+      <input type="radio" name="RadioButtons" id="Option2"> Option 2
+    </label>
+  </div>
+</div>
+
 
     <div style="margin-top: 2%;">
     <div class="border"></div>
-
       <input type="submit" value="Button">
     </div>
   </div>
