@@ -197,7 +197,7 @@ input[type="submit"] {
   width: 80%;
   border-radius: 0.5vw;
   background-image: linear-gradient(to right, #2A2A2A, #000); /* Gradient colors */
-  text-shadow: 2px 2px 0px rgba(0, 0, 0);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0);
   padding: 0.35% 0.8%;
   font-size: 1.3vw;
 }
@@ -217,7 +217,7 @@ input[type="submit"] {
   /*! left: 0; */
   width: 90%;
   height: 10%;
-  background-color: #42CC55;
+  background-color: #00A500;
   margin: auto;
 }
 
@@ -228,5 +228,5 @@ input[type="submit"] {
   border-radius: 0.3vw; /* Rounded corners */
   position: relative;
   display: flex;
-  background-image: linear-gradient(to bottom right, #202020, #5E5E5E);
+  background-image: linear-gradient(to bottom right, #202020 52%, #5E5E5E 50%);
 }
