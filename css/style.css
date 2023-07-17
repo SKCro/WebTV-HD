@@ -203,19 +203,30 @@ input[type="submit"] {
 }
 
 .status-indicator { /* Black box w/ green line */
-  width: 3.3%;
-  height: 68%;
+  width: 90%;
+  height: 85%;
   background-color: #000;
   border-radius: 0.3vw; /* Rounded corners */
-  position: relative;
+  margin: auto;
 }
 
 .status-indicator::after { /* Green line */
   content: '';
   position: absolute;
   top: 50%;
-  left: 0;
-  width: 100%;
+  /*! left: 0; */
+  width: 90%;
   height: 10%;
   background-color: #42CC55;
+  margin: auto;
+}
+
+.status-container { /* CSS sucks */
+  width: 3.6%;
+  height: 75%;
+  background-color: #FFF;
+  border-radius: 0.3vw; /* Rounded corners */
+  position: relative;
+  display: flex;
+  background-image: linear-gradient(to bottom right, #202020, #5E5E5E);
 }
