@@ -12,6 +12,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color: #E7CE4A;
+  font-weight: 700
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Fonts */
@@ -78,8 +83,8 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar-border {
   position: relative;
   top: 0;
-  left: 0;
-  height: 15%;
+  margin-top: 3%;
+  height: 3%;
   width: 100%;
 }
 
@@ -90,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 0.8vh;
-  background: linear-gradient(#33202A, #774E5E);
+  background: linear-gradient(#33202A 50%, #774E5E 90%);
 }
 
 .top-left-image {
@@ -235,7 +240,7 @@ input[type="submit"] {
 }
 
 .status-container { /* CSS sucks */
-  width: 4%;
+  width: 4.3%;
   height: 75%;
   background-color: #FFF;
   border-radius: 0.3vw; /* Rounded corners */
