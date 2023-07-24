@@ -143,12 +143,54 @@ a {
 .input-container input[type="checkbox"] {
   scale: 1.8;
   /*! margin-top: 0.2%; */
-  margin-right: 0.5%;
+  /*! margin-right: 0.5%; */
+}
+
+.webtv-checkbox input[type="checkbox"] {
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Use custom dimensions for the checkbox */
+  width: 1.5vw;
+  height: 1.5vw;
+  /* Add custom background and foreground colors */
+  background-color: #2B2B2B; /* Custom background color for the checkbox */
+  border: 2px solid #7F7F7F; /* Border color for the checkbox */
+  border-radius: 1px; /* Rounded corners */
+  outline: none; /* Remove the default focus outline */
+  cursor: pointer; /* Show the pointer cursor on hover */
+  position: relative; /* Add positioning context for pseudo-element */
+}
+
+.webtv-checkbox input[type="checkbox"]:checked {
+  /* When the checkbox is checked, change the background color */
+  background-color: #2B2B2B; /* Custom background color for the checked checkbox */
+  border-color: #7F7F7F; /* Border color for the checked checkbox */
+  border-radius: 1px;
+}
+
+.webtv-checkbox input[type="checkbox"]::before {
+  /* Create the custom checkmark using the ::before pseudo-element */
+  content: "✔";
+  font-weight: 700;
+  color: #EB3733; /* Custom color for the checkmark */
+  opacity: 0; /* Hide the checkmark by default */
+  position: absolute; /* Position the checkmark relative to its container */
+  top: 35%; /* Move the checkmark vertically to the middle */
+  left: 55%; /* Move the checkmark horizontally to the middle */
+  transform: translate(-50%, -50%); /* Center the checkmark using translation */
+  /*! transition: opacity 0.2s ease-in-out; */ /* Add a smooth transition effect */
+  font-size: 1.8vw;
+}
+
+.webtv-checkbox input[type="checkbox"]:checked::before {
+  /* When the checkbox is checked, show the checkmark */
+  opacity: 1;
 }
 
 .radio-buttons {
   scale: 1.8;
-  
   font-size: 1.3vw;
   display: grid;
   align-self: end;
@@ -275,8 +317,8 @@ input[type="submit"] {
 }
 
 ::selection {
-  background-color: #8F8F8F; /* Set the desired inverted background color */
-  color: #4E4E4E; /* Set the desired inverted text color */
+  background-color: #2B2B2B; /* Set the desired inverted background color */
+  color: #DFDFDF; /* Set the desired inverted text color */
 }
 
 input,
