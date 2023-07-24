@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
+  color: #E7CE4A;
 }
 
 /* Fonts */
@@ -98,6 +99,11 @@ a {
   background: linear-gradient(#33202A 50%, #774E5E 90%);
 }
 
+.sidebar-link {
+	text-align: left;
+	margin-left: 1vw;
+}
+
 .top-left-image {
   text-align: center;
 }
@@ -155,36 +161,29 @@ a {
   width: 1.5vw;
   height: 1.5vw;
   /* Add custom background and foreground colors */
-  background-color: #2B2B2B; /* Custom background color for the checkbox */
-  border: 2px solid #7F7F7F; /* Border color for the checkbox */
-  border-radius: 1px; /* Rounded corners */
+  background-color: #2B2B2B;
+  border: 2px solid #7F7F7F;
+  border-radius: 1px;
   outline: none; /* Remove the default focus outline */
-  cursor: pointer; /* Show the pointer cursor on hover */
+  cursor: pointer;
   position: relative; /* Add positioning context for pseudo-element */
 }
 
-.webtv-checkbox input[type="checkbox"]:checked {
-  /* When the checkbox is checked, change the background color */
-  background-color: #2B2B2B; /* Custom background color for the checked checkbox */
-  border-color: #7F7F7F; /* Border color for the checked checkbox */
-  border-radius: 1px;
-}
-
-.webtv-checkbox input[type="checkbox"]::before {
-  /* Create the custom checkmark using the ::before pseudo-element */
-  content: "✔";
+.webtv-checkbox .checkmark {
   font-weight: 700;
-  color: #EB3733; /* Custom color for the checkmark */
+  color: #EB3733;
+  position: relative;
+  top: -5%;
+  left: -55%;
+  transform: rotate(45deg);
+  font-size: 3vw;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
   opacity: 0; /* Hide the checkmark by default */
-  position: absolute; /* Position the checkmark relative to its container */
-  top: 35%; /* Move the checkmark vertically to the middle */
-  left: 55%; /* Move the checkmark horizontally to the middle */
-  transform: translate(-50%, -50%); /* Center the checkmark using translation */
-  /*! transition: opacity 0.2s ease-in-out; */ /* Add a smooth transition effect */
-  font-size: 1.8vw;
+  pointer-events: none; /* Ignore mouse interactions */
+  z-index: 10000;
 }
 
-.webtv-checkbox input[type="checkbox"]:checked::before {
+.webtv-checkbox input[type="checkbox"]:checked + .checkmark {
   /* When the checkbox is checked, show the checkmark */
   opacity: 1;
 }
