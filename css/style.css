@@ -179,6 +179,7 @@ input[type="submit"] {
   height: 2%;
   width: 100%;
   z-index: -1;
+  margin-bottom: 1%;
 }
 
 .border::before {
@@ -248,4 +249,25 @@ input[type="submit"] {
   position: relative;
   display: flex;
   background-image: linear-gradient(148deg, #202020 52%, #5E5E5E 50%);
+}
+
+.selection-box { /* Yellow selectionbox */
+  position: absolute;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
+  border: 5px solid rgba(255, 228, 71, 0.95);
+  border-radius: 4px;
+  box-sizing: border-box;
+  pointer-events: none; /* Ensure the selection box doesn't interfere with mouse interactions */
+  z-index: 9999; /* Ensures that the selectionbox stays on top of elements */
+  display: none; /* Hide the box by default */
+}
+
+.selection-box.green {
+  position: absolute;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
+  border: 5px solid rgba(45, 253, 0, 0.95);
+  border-radius: 4px;
+  box-sizing: border-box;
+  pointer-events: none; /* Ensure the selection box doesn't interfere with mouse interactions */
+  z-index: 9999; /* Ensures that the selectionbox stays on top of elements */
 }
