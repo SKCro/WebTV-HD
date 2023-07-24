@@ -69,7 +69,7 @@ a {
 .sidebar {
   background-color: rgb(69, 42, 54);
   width: 15%;
-  height: 92%;
+  height: 95%;
   position: fixed;
   padding: 1vw 0;
   display: grid;
@@ -104,7 +104,7 @@ a {
 
 .bottom-right-image {
   align-self: end;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
   margin-top: auto;
   margin-left: auto;
   display: flex;
@@ -121,7 +121,7 @@ a {
 .input-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1%;
+  margin-bottom: 0.5%;
 }
 
 .input-container label {
@@ -241,24 +241,26 @@ input[type="submit"] {
   margin: auto;
 }
 
-.status-container { /* CSS sucks */
+.status-container { /* Status indicator container */
   width: 4.3%;
   height: 75%;
   background-color: #FFF;
   border-radius: 0.3vw; /* Rounded corners */
   position: relative;
   display: flex;
-  background-image: linear-gradient(148deg, #202020 52%, #5E5E5E 50%);
+  background-image: linear-gradient(148deg, #202020 52%, #5E5E5E 50%); /* Gradient to simulate depth */
 }
 
-.selection-box { /* Yellow selectionbox */
+.selection-box {
   position: absolute;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
-  border: 5px solid rgba(255, 228, 71, 0.95);
+  border: 0.35vw solid rgba(255, 228, 71, 1);
+/*  border-image: linear-gradient(145deg, #FFF, #FFE447, #FFCB00, #CEA500); */
+/*  border-image-slice: 1; */
   border-radius: 4px;
   box-sizing: border-box;
   pointer-events: none; /* Ensure the selection box doesn't interfere with mouse interactions */
-  z-index: 9999; /* Ensures that the selectionbox stays on top of elements */
+  z-index: 9999;
   display: none; /* Hide the box by default */
 }
 
@@ -270,4 +272,16 @@ input[type="submit"] {
   box-sizing: border-box;
   pointer-events: none; /* Ensure the selection box doesn't interfere with mouse interactions */
   z-index: 9999; /* Ensures that the selectionbox stays on top of elements */
+}
+
+::selection {
+  background-color: #8F8F8F; /* Set the desired inverted background color */
+  color: #4E4E4E; /* Set the desired inverted text color */
+}
+
+input,
+button,
+select,
+textarea { /* Removes the default browser focus box */
+  outline: none;
 }

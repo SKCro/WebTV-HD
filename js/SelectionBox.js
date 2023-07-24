@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateSelectionBox() {
 	  if (selectedElement) {
 	    const elementRect = selectedElement.getBoundingClientRect();
-	    const boxMargin = 8; // Adjust this value to set the margin between the selected element and the selection box
+	    const boxMargin = 5; // Adjust this value to set the margin between the selected element and the selection box
 
 	    // Calculate the new dimensions and position for the selection box
 	    const top = elementRect.top - boxMargin;
@@ -85,27 +85,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event listener for arrow keys to move the selection box
   document.addEventListener('keydown', (event) => {
-    if (selectedElement) {
-      event.preventDefault();
-
-      const moveAmount = 10; // Adjust this value to set the amount of movement
-
-      switch (event.key) {
-        case 'ArrowUp':
-          selectedElement.style.top = parseFloat(selectedElement.style.top) - moveAmount + 'px';
-          break;
-        case 'ArrowDown':
-          selectedElement.style.top = parseFloat(selectedElement.style.top) + moveAmount + 'px';
-          break;
-        case 'ArrowLeft':
-          selectedElement.style.left = parseFloat(selectedElement.style.left) - moveAmount + 'px';
-          break;
-        case 'ArrowRight':
-          selectedElement.style.left = parseFloat(selectedElement.style.left) + moveAmount + 'px';
-          break;
-      }
-
-      updateSelectionBox();
-    }
   });
 });
