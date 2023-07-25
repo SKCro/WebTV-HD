@@ -104,7 +104,7 @@ a {
 	margin-left: 1vw;
 }
 
-.top-left-image {
+.sidebar-contents {
   text-align: center;
 }
 
@@ -325,4 +325,8 @@ button,
 select,
 textarea { /* Removes the default browser focus box */
   outline: none;
+}
+
+.clickable {
+	
 }

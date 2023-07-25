@@ -1,17 +1,59 @@
+<!DOCTYPE HTML>
 <html><head>
   <title>Settings page</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!-- Stylesheet. Don't remove or change unless you want to use a different style. -->
     <script src="js/SelectionBox.js"></script>
-</head>
+	<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const inputSound = document.getElementById('inputSound');
+      const inputs = document.querySelectorAll('.input');
+      const clickSound = document.getElementById('clickSound');
+      const clickableButtons = document.querySelectorAll('.clickable');
+      const submitInputs = document.querySelectorAll('.submit');
+      const submitSound = document.getElementById('submitSound');
 
+      function playClickSound() {
+        clickSound.currentTime = 0;
+        clickSound.play();
+      }
+
+      function playInputSound() {
+        inputSound.currentTime = 0;
+        inputSound.play();
+      }
+
+      function playSubmitSound() {
+        submitSound.currentTime = 0;
+        submitSound.play();
+      }
+
+      clickableButtons.forEach(button => {
+        button.addEventListener('click', playClickSound);
+      });
+
+      inputs.forEach(button => {
+        button.addEventListener('click', playInputSound);
+      });
+
+      submitInputs.forEach(button => {
+        button.addEventListener('click', playSubmitSound);
+      });
+
+    });</script>
+</head>
 <body>
+
+<audio id="clickSound" src="audio/click.mp3" preload="auto"></audio>
+<audio id="inputSound" src="audio/inputClick.mp3" preload="auto"></audio>
+<audio id="submitSound" src="audio/submitClick.mp3" preload="auto"></audio>
+
   <div class="sidebar">
-    <div class="top-left-image"> <!-- WebTV logo div -->
-      <img src="images/WebTVLogoHD.png" alt="Logo"> <!-- Sidebar WebTV logo -->
+    <div class="sidebar-contents"> <!-- WebTV logo div -->
+      <a href=#><img src="images/WebTVLogoHD.png" alt="Logo"></a> <!-- Sidebar WebTV logo -->
       <div class="sidebar-border"></div> <!-- Sidebar border, separates links and WebTV logo -->
-      <div class="sidebar-link"><a href=#>Link 1</a></div>
+      <div class="sidebar-link"><a href="#" class="clickable">Link 1</a></div>
       <div class="sidebar-border"></div>
-      <div class="sidebar-link"><a href=#>Link 2</a></div>
+      <div class="sidebar-link"><a href="#" class="clickable">Link 2</a></div>
       <div class="sidebar-border"></div>
     </div>
 
@@ -38,7 +80,7 @@
 	<div class="input-container">
 	  <label for="myCheckbox">Checkbox flavor text.</label>
 	  <div class="webtv-checkbox" style="margin-top: 0.35%;">
-	    <input type="checkbox" id="myCheckbox">
+	    <input type="checkbox" id="myCheckbox" class="input">
 	    <span class="checkmark">✔</span>
 	  </div>
 	</div>
@@ -48,15 +90,15 @@
   <label for="RadioButtons">Radio buttons.</label>
   <div class="radio-buttons">
     <label for="Option1">
-      <input type="radio" name="RadioButtons" id="Option1"> Option 1</label>
+      <input type="radio" name="RadioButtons" id="Option1" class="input"> Option 1</label>
     <label for="Option2">
-      <input type="radio" name="RadioButtons" id="Option2"> Option 2</label>
+      <input type="radio" name="RadioButtons" id="Option2" class="input"> Option 2</label>
   </div>
 </div>
 
   <div style="margin-top: 2%;"> <!-- Submit button div -->
     <div class="border"></div>
-      <input type="submit" value="Button"> <!-- Submit button -->
+      <input class="submit" type="submit" value="Button"> <!-- Submit button -->
     </div>
   </div>
 
