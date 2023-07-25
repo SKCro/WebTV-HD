@@ -294,7 +294,7 @@ input[type="submit"] {
 
 .selection-box {
   position: absolute;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
+  box-shadow: 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.5)
   border: 0.35vw solid rgba(255, 228, 71, 1);
 /*  border-image: linear-gradient(145deg, #FFF, #FFE447, #FFCB00, #CEA500); */
 /*  border-image-slice: 1; */
@@ -307,12 +307,12 @@ input[type="submit"] {
 
 .selection-box.green {
   position: absolute;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
-  border: 5px solid rgba(45, 253, 0, 0.95);
+  box-shadow: 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.5)
+  border: 0.35vw solid rgba(45, 253, 0, 0.95);
   border-radius: 4px;
   box-sizing: border-box;
-  pointer-events: none; /* Ensure the selection box doesn't interfere with mouse interactions */
-  z-index: 9999; /* Ensures that the selectionbox stays on top of elements */
+  pointer-events: none;
+  z-index: 9999;
 }
 
 ::selection {

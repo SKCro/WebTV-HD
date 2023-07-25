@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       element.tagName === 'INPUT' ||
       element.tagName === 'SELECT' ||
       element.tagName === 'TEXTAREA' ||
+      element.tagName === 'IMG' ||
       element.isContentEditable ||
       element.getAttribute('role') === 'button'
     );
