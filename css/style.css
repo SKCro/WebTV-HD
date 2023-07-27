@@ -306,7 +306,7 @@ input[type="submit"] {
 
 .selection-box.green {
   position: absolute;
-  box-shadow: 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.5)
+  box-shadow: 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.5);
   border: 0.35vw solid rgba(45, 253, 0, 0.95);
   border-radius: 4px;
   box-sizing: border-box;
@@ -324,8 +324,4 @@ button,
 select,
 textarea { /* Removes the default browser focus box */
   outline: none;
-}
-
-.clickable {
-	
 }
