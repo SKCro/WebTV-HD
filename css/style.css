@@ -218,7 +218,8 @@ input[type="submit"] {
   height: 2%;
   width: 100%;
   z-index: -1;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
+  margin-top: 2%;
 }
 
 .border::before {
