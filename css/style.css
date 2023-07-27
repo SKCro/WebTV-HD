@@ -314,8 +314,8 @@ input[type="submit"] {
 }
 
 ::selection {
-  background-color: #2B2B2B; /* Set the desired inverted background color */
-  color: #DFDFDF; /* Set the desired inverted text color */
+  background-color: #8F8F8F; /* Set the desired inverted background color */
+  color: #4E4E4E; /* Set the desired inverted text color */
 }
 
 input,
