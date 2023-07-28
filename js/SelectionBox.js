@@ -4,29 +4,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to update the selection box position and size
   function updateSelectionBox() {
-	  if (selectedElement) {
-	    const elementRect = selectedElement.getBoundingClientRect();
-	    const boxMargin = 5; // Adjust this value to set the margin between the selected element and the selection box
+    if (selectedElement) {
+      const elementRect = selectedElement.getBoundingClientRect();
+      const boxMargin = 5; // Adjust this value to set the margin between the selected element and the selection box
 
-	    // Calculate the new dimensions and position for the selection box
-	    const top = elementRect.top - boxMargin;
-	    const left = elementRect.left - boxMargin;
-	    const width = elementRect.width + 2 * boxMargin;
-	    const height = elementRect.height + 2 * boxMargin;
+      // Calculate the new dimensions and position for the selection box
+      const top = elementRect.top - boxMargin;
+      const left = elementRect.left - boxMargin;
+      const width = elementRect.width + 2 * boxMargin;
+      const height = elementRect.height + 2 * boxMargin;
 
-	    // Apply the new dimensions and position to the selection box
-	    selectionBox.style.top = top + 'px';
-	    selectionBox.style.left = left + 'px';
-	    selectionBox.style.width = width + 'px';
-	    selectionBox.style.height = height + 'px';
+      // Apply the new dimensions and position to the selection box
+      selectionBox.style.top = top + 'px';
+      selectionBox.style.left = left + 'px';
+      selectionBox.style.width = width + 'px';
+      selectionBox.style.height = height + 'px';
+      selectionBox.style.display = 'block';
 
-	    // Remove the "display: none;" style to make the selection box visible
-	    selectionBox.style.display = 'block';
-	  } else {
-	    // If no selected element, hide the selection box
-	    selectionBox.style.display = 'none';
-	  }
-	}
+      // Switch to the green substyle for 100ms upon click
+      if (!selectedElement.classList.contains('input')) {
+        selectionBox.classList.add('green');
+        setTimeout(() => {
+          selectionBox.classList.remove('green');
+        }, 100);
+      }
+    } else {
+      // If no selected element, hide the selection box
+      selectionBox.style.display = 'none';
+    }
+  }
 
   // Function to check if an element is interactive (clickable)
   function checkIfInteractive(element) {
@@ -78,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listener for mouse click to select an element
   document.addEventListener('click', (event) => {
     const clickedElement = event.target;
-    if (checkIfInteractive(clickedElement)) {
+    if (checkIfInteractive(clickedElement) && clickedElement !== selectedElement) {
       selectedElement = clickedElement;
       updateSelectionBox();
     }
@@ -86,5 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event listener for arrow keys to move the selection box
   document.addEventListener('keydown', (event) => {
+    // code for arrow keys goes here later
   });
 });
