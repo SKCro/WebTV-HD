@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to check if an element is interactive (clickable)
   function checkIfInteractive(element) {
     return (
+      element.classList.contains('clickable') ||
       element.tagName === 'A' ||
       element.tagName === 'BUTTON' ||
       element.tagName === 'INPUT' ||
       element.tagName === 'SELECT' ||
       element.tagName === 'TEXTAREA' ||
-      element.tagName === 'IMG' ||
       element.isContentEditable ||
       element.getAttribute('role') === 'button'
     );

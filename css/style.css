@@ -68,7 +68,7 @@ a {
 /* Sidebar Styles */
 
 .sidebar {
-  background-color: rgb(69, 42, 54);
+  background-color: #452A36;
   width: 15%;
   height: 95%;
   position: fixed;
@@ -97,6 +97,24 @@ a {
   width: 100%;
   height: 0.8vh;
   background: linear-gradient(#33202A 50%, #774E5E 90%);
+}
+
+.sidebar-border-home {
+  position: relative;
+  top: 0;
+  margin-top: 3%;
+  height: 3%;
+  width: 100%;
+}
+
+.sidebar-border-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.8vh;
+  background: linear-gradient(#2A2A3D 50%, #565E7F 90%);
 }
 
 .sidebar-link {
@@ -164,7 +182,7 @@ a {
   border-radius: 1px;
   outline: none; /* Remove the default focus outline */
   cursor: pointer;
-  position: relative; /* Add positioning context for pseudo-element */
+  position: relative;
 }
 
 .webtv-checkbox .checkmark {
@@ -324,4 +342,45 @@ button,
 select,
 textarea { /* Removes the default browser focus box */
   outline: none;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.top-bar {
+  background: linear-gradient(to bottom, #333C66, #A5B4D2);
+  width: 100%;
+  height: 11.6vw;
+  display: grid;
+}
+
+.top-bar-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  background-color: transparent;
+}
+
+.top-bar-item a {
+  text-decoration: none;
+  color: #000;
+}
+
+.top-bar-item img {
+  max-height: 50%;
+  max-width: 50%;
+  vertical-align: middle;
+  margin: 1vh 1vw;
+  padding-top: 2vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vh;
+}
+
+.top-bar-item-text {
+	color: #000
+	align: end;
 }
