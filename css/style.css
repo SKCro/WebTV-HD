@@ -381,6 +381,6 @@ textarea { /* Removes the default browser focus box */
 }
 
 .top-bar-item-text {
-	color: #000
+	color: #000;
 	align: end;
 }
