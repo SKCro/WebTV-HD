@@ -278,7 +278,8 @@ input[type="submit"] {
   background-image: linear-gradient(to right, #2A2A2A, #000); /* Gradient colors */
   text-shadow: 1.5px 1.5px 0px rgba(0, 0, 0);
   padding: 0.35% 0.8%;
-  /*! font-size: 1.3vw; */
+  overflow: hidden;
+  min-height: 3.2vh;
 }
 
 .status-indicator { /* Black box w/ green line */
