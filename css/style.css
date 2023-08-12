@@ -107,7 +107,7 @@ p {
 .sidebar {
   background-color: #452A36;
   width: 15%;
-  height: 95%;
+  height: 100%;
   position: fixed;
   padding: 1vw 0;
   display: grid;
@@ -193,6 +193,7 @@ p {
 }
 
 /* Text Input Styles */
+
 .input-container {
   display: flex;
   justify-content: space-between;
@@ -203,7 +204,7 @@ p {
   text-align: left;
 }
 
-/* Button Styles */
+/* Input Styles */
 
 .input-container input[type="text"],
 .input-container input[type="checkbox"] {
@@ -237,16 +238,14 @@ p {
   position: relative;
   top: -5%;
   left: -50%;
-  /*! transform: rotate(45deg); */
   font-size: 3vw;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
   opacity: 0; /* Hide the checkmark by default */
-  pointer-events: none; /* Ignore mouse interactions */
+  pointer-events: none;
   z-index: 10000;
 }
 
 .webtv-checkbox input[type="checkbox"]:checked + .checkmark {
-  /* When the checkbox is checked, show the checkmark */
   opacity: 1;
 }
 
@@ -296,6 +295,14 @@ input[type="submit"] {
   background: linear-gradient(#2B2B2B, #0D0D0D);
 }
 
+.bottom-padding {
+	display: block;
+	position: absolute;
+	width: 83%;
+	height: 5vw;
+	z-index: -1;
+}
+
 /* Statusbar */
 
 .status-bar {
@@ -331,7 +338,7 @@ input[type="submit"] {
   width: 88%;
   height: 85%;
   background-color: #000;
-  border-radius: 0.3vw; /* Rounded corners */
+  border-radius: 0.3vw;
   margin: auto;
   margin-right: auto;
 }
@@ -380,8 +387,8 @@ input[type="submit"] {
 }
 
 ::selection {
-  background-color: #8F8F8F; /* Set the desired inverted background color */
-  color: #4E4E4E; /* Set the desired inverted text color */
+  background-color: #8F8F8F;
+  color: #4E4E4E;
 }
 
 input,
