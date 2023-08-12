@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   submitInputs.forEach(button => {
-      
     button.addEventListener('click', playSubmitSound);
   });
 

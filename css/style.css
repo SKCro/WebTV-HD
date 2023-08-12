@@ -1,6 +1,7 @@
 /* WebTV CSS style by SKCro */
 
 /* Global Styles */
+
 body {
   background-color: #191919;
   color: #42CC55;
@@ -10,14 +11,29 @@ body {
   font-size: 2vw; /* Adjust the value as needed */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   color: #E7CE4A;
-  font-weight: 700
+  font-weight: 700;
+  margin-top: 1.5vh;
+  margin-bottom: 1vh;
+}
+
+h2, h3, h4, h5, h6 {
+  color: #E7CE4A;
+  font-weight: 700;
+  margin-top: 0.8vh;
+  margin-bottom: 0.8vh;
 }
 
 a {
   text-decoration: none;
-  color: #E7CE4A;
+  color: #20A5DA;
+}
+
+p {
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  word-wrap: break-word;
 }
 
 /* Fonts */
@@ -118,9 +134,13 @@ a {
 }
 
 .sidebar-link {
-	text-align: left;
-	margin-left: 1vw;
-	text-shadow: 2px 2px #000;
+  text-align: left;
+  margin-left: 1vw;
+  text-shadow: 2px 2px #000;
+}
+
+.sidebar-link a {
+  color: #E7CE4A;
 }
 
 .sidebar-contents {
@@ -165,12 +185,6 @@ a {
   font-size: 1.5vw;
 }
 
-.input-container input[type="checkbox"] {
-  scale: 1.8;
-  /*! margin-top: 0.2%; */
-  /*! margin-right: 0.5%; */
-}
-
 .webtv-checkbox input[type="checkbox"] {
   /* Hide the default checkbox */
   appearance: none;
@@ -184,6 +198,7 @@ a {
   outline: none; /* Remove the default focus outline */
   cursor: pointer;
   position: relative;
+  scale: 1.8;
 }
 
 .webtv-checkbox .checkmark {
@@ -191,7 +206,7 @@ a {
   color: #EB3733;
   position: relative;
   top: -5%;
-  left: -55%;
+  left: -50%;
   transform: rotate(45deg);
   font-size: 3vw;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
