@@ -13,3 +13,7 @@ Icon.png
 .sign/.manifest.tmp
 .sign/author-signature.xml
 .sign/signature1.xml
+RebexTinyWebServer.exe
+RebexTinyWebServer.exe.config
+server-certificate.cer
+server-certificate.pfx
