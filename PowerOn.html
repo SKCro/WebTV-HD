@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>PowerOn</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <style>
     body {
       display: flex;
@@ -11,37 +12,76 @@
       margin: 0;
       background-color: #000;
     }
+    
+    .hiddenUntilClick {
+      display: none;
+    }
+    
+    .hideOnClick {
+      position: absolute;
+    }
 
-    img {
+    .animating {
       opacity: 0;
       animation: fade 2s ease-in-out 1s forwards;
-      width: 35vw; /* Set the width to 35% of the viewport width */
+      width: 35vw;
       height: auto; /* Maintain the aspect ratio */
     }
 
     @keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .hideOnClick {
+      display: grid;
+    }
   </style>
+  <script src="js/ButtonSounds.js"></script>
   <script>
-    setTimeout(function() {
+    function wait(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function powerOn() {
+      const button = document.querySelector(".hideOnClick");
+      button.style.display = "none";
+      
+      const p = document.querySelector("p");
+      p.style.display = "none";
+
+      const audio = document.querySelector("audio");
+      audio.play();
+
+      const img = document.querySelector(".hiddenUntilClick");
+      img.classList.remove("hiddenUntilClick");
+      img.classList.add("animating");
+
+      p.style.display = "none";
+
+      const imgAnimating = document.querySelector(".animating");
+      imgAnimating.style.animationPlayState = "running";
+
+      await wait(3200);
       window.location.href = "PageStyleTest.html";
-    }, 3200);
+    }
   </script>
 </head>
 <body>
-  <img src="images\SmasnugLogo.png" alt="Samsung Logo"> <!-- funny smasnug -->
-  <audio src="audio\modem.mp3" autoplay></audio>
+  <img class="hiddenUntilClick" src="images\SmasnugLogo.png" alt="Samsung Logo"> <!-- funny smasnug -->
+  <audio src="audio\modem.mp3"></audio>
+  <audio id="submitSound" src="audio/submitClick.mp3" preload="auto"></audio>
+  <input class="hideOnClick submit" type="submit" value="Power On" onclick="powerOn()"></input>
+  <p class="hideOnClick" style="margin-top: 15vh;">This is needed because browsers require interaction before audio is played.</p>
 </body>
 </html>
