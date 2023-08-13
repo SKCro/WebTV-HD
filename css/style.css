@@ -2,9 +2,7 @@
 
 /* Global Styles */
 
-/* The fade-in seems to break the checkbox, so it's disabled by default for right now. Feel free to re-enable it if you want.
-
-* {
+body {
     animation: fadeInAnimation ease 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -18,8 +16,6 @@
         opacity: 1;
      }
 }
-
-*/
 
 body {
   background-color: #191919;
@@ -371,20 +367,20 @@ input[type="submit"] {
   position: absolute;
   box-shadow: 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.5);
   border: 0.35vw solid rgba(255, 228, 71, 1);
-/*  border-image: linear-gradient(145deg, #FFF, #FFE447, #FFCB00, #CEA500); */
-/*  border-image-slice: 1; */
-  border-radius: 4px;
+/*! border-image: linear-gradient(145deg, #FFF, #FFE447, #FFCB00, #CEA500); */
+  border-image-slice: 1;
+  border-radius: 0.2vw;
   box-sizing: border-box;
   pointer-events: none;
   z-index: 9999;
-  display: none;
+  /*! display: none; */
 }
 
 .selection-box.green {
   position: absolute;
   box-shadow: 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.5);
-  border: 0.35vw solid rgba(45, 253, 0, 0.95);
-  border-radius: 4px;
+  border: 0.35vw solid rgba(45, 253, 0, 1);
+  border-radius: 0.2vw;
   box-sizing: border-box;
   pointer-events: none;
   z-index: 9999;
@@ -418,7 +414,7 @@ textarea { /* Removes the default browser focus box */
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 80%;
+  height: 73%;
   background-color: transparent;
 }
 
@@ -429,7 +425,7 @@ textarea { /* Removes the default browser focus box */
 
 .top-bar-item img {
   max-height: 50%;
-  max-width: 50%;
+  max-width: 45%;
   vertical-align: middle;
   margin: 1vh 1vw;
   padding-top: 2vh;
@@ -440,5 +436,7 @@ textarea { /* Removes the default browser focus box */
 
 .top-bar-item-text {
 	color: #000;
-	align: end;
+	position: relative;
+	vertical-align: bottom;
+	display: table-cell;
 }
