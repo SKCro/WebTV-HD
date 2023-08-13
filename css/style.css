@@ -3,7 +3,7 @@
 /* Global Styles */
 
 body {
-    animation: fadeInAnimation ease 0.5s;
+    animation: fadeInAnimation ease-in-out 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -220,22 +220,21 @@ p {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 1.5vw;
-  height: 1.5vw;
+  width: 2.7vw;
+  height: 2.7vw;
   background-color: #2B2B2B;
   border: 0.2vw solid #7F7F7F;
   border-radius: 1px;
   outline: none; /* Remove the default focus outline */
   cursor: pointer;
   position: relative;
-  transform: scale(1.8);
 }
 
 .webtv-checkbox .checkmark {
   font-weight: 700;
   color: #EB3733;
   position: relative;
-  top: -5%;
+  top: -16%;
   left: -50%;
   font-size: 3vw;
   text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
@@ -281,7 +280,7 @@ input[type="submit"] {
   height: 2%;
   width: 100%;
   z-index: -1;
-  margin-bottom: 2%;
+  margin-bottom: 3.5%;
   margin-top: 2%;
 }
 
