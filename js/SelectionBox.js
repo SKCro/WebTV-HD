@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listener to update the selection box on page load and resize
   window.addEventListener('load', updateSelectionBox);
   window.addEventListener('resize', updateSelectionBox);
+  window.addEventListener('scroll', updateSelectionBox);
 
   // Event listener for mouse click to select an element
   document.addEventListener('click', (event) => {

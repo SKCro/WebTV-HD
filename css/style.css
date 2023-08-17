@@ -175,7 +175,7 @@ p {
 
 .bottom-right-image {
   align-self: end;
-  margin-bottom: 7vh;
+  margin-bottom: 12vh;
   margin-top: auto;
   margin-left: auto;
   display: flex;
@@ -314,6 +314,15 @@ input[type="submit"] {
   z-index: 9999;
 }
 
+.status-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0.3vh;
+  background-image: linear-gradient(to right, #8F8F8F, #444);
+}
+
 .status-bar-content {
   display: flex;
   align-items: center;
@@ -327,10 +336,10 @@ input[type="submit"] {
   width: 80%;
   border-radius: 0.5vw;
   background-image: linear-gradient(to right, #2A2A2A, #000); /* Gradient colors */
-  text-shadow: 1.5px 1.5px 0px rgb(0, 0, 0);
+  text-shadow: 0.15vw 0.15vw 0px rgb(0, 0, 0);
   padding: 0.35% 0.8%;
   overflow: hidden;
-  min-height: 3.2vh;
+  min-height: 50%;
 }
 
 .status-indicator { /* Black box w/ green line */
@@ -409,12 +418,12 @@ textarea { /* Removes the default browser focus box */
 }
 
 .top-bar-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 73%;
+  height: 95%;
   background-color: transparent;
+  border-collapse: collapse;
+  text-align: center;
+  width: 99.4%;
+  margin-top: 0.5vh;
 }
 
 .top-bar-item a {
@@ -424,18 +433,22 @@ textarea { /* Removes the default browser focus box */
 
 .top-bar-item img {
   max-height: 50%;
-  max-width: 45%;
+  max-width: 40%;
   vertical-align: middle;
-  margin: 1vh 1vw;
-  padding-top: 2vh;
   padding-left: 2vw;
   padding-right: 2vw;
-  padding-bottom: 2vh;
+  pointer-events: none;
 }
 
 .top-bar-item-text {
 	color: #000;
 	position: relative;
 	vertical-align: bottom;
-	display: table-cell;
+	text-align: center;
+	font-size: 2vw;
+	pointer-events: none;
+}
+
+.homepage-content-container {
+  margin: 1%;
 }
