@@ -1,6 +1,8 @@
-# WebTV-CSS-Remake
- A project that aims to recreate WebTV Networks' page stylization and stuff in modern CSS and HTML.
- Very (very) barebones and incomplete as of now.
+# WebTV HD
+ Previously known as "WebTV-CSS-Remake".
+ 
+ A project that aims to recreate WebTV Networks' UI and page design using modern web technologies, mainly CSS and HTML.
+ Rather barebones and incomplete as of now, with only the main style done as of now.
 
 ## How do I use this?
  **Important:** If you're planning to use this in a project, please credit me when possible.
@@ -13,9 +15,10 @@
 
 ## TODO:
 - Flesh out everything
-- Make the status bar look better on non-widescreen display sizes
+- ~~Make the status bar look better on non-widescreen display sizes~~ Done
 - Recreate more service pages like dialing, login, home page, mail, etc.
-- Add functionality with JavaScript
+- ~~Add functionality with JavaScript~~ Done
+- Make an actual backend. This might never be done, but you'll never know :P
 
 ## Why are Tizen-related files in the repo?
  I originally built this project with the Samsung Smart TV in mind, using the Tizen IDE (I wanted to see how a WebTV-like application would look), but I decided to expand it to modern browsers in general. That's why you might see some Tizen IDE leftovers (like stuff in the .gitignore and that one JS file).
