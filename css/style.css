@@ -3,7 +3,7 @@
 /* Global Styles */
 
 body {
-    animation: fadeInAnimation ease-in-out 0.5s;
+    animation: fadeInAnimation ease-in 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -32,6 +32,7 @@ h1 {
   margin-top: 1.5vh;
   margin-bottom: 1vh;
   text-shadow: 0.4vh 0.4vh #000;
+  font-family: 'Helvetica Now Display Black';
 }
 
 h2, h3, h4, h5, h6 {
@@ -40,6 +41,7 @@ h2, h3, h4, h5, h6 {
   margin-top: 0.8vh;
   margin-bottom: 0.8vh;
   text-shadow: 0.3vh 0.3vh #000;
+  font-family: 'Helvetica Now Display Black';
 }
 
 a {
@@ -97,6 +99,12 @@ p {
   font-style: italic;
 }
 
+@font-face {
+  font-family: 'Helvetica Now Display Black';
+  src: url('HelveticaNowDisplay-ExtraBold.woff2') format('woff2'); /* Black/UltraBold, for headers */
+  font-weight: normal;
+  font-style: italic;
+}
 
 /* Sidebar Styles */
 
@@ -175,9 +183,9 @@ p {
 
 .bottom-right-image {
   align-self: end;
-  margin-bottom: 12vh;
+  margin-bottom: 7vw;
   margin-top: auto;
-  margin-left: auto;
+  margin-left: 7vw;
   display: flex;
 }
 
