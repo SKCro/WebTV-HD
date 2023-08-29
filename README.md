@@ -13,6 +13,10 @@
 
  Or, if you're stuck with a command line interface (specifically Linux), you can run ``git clone https://github.com/SKCro/WebTV-HD.git``, and copy all the resources over by entering the WebTV-CSS-Remake directory, and running ``cp -r ./* <your location>``.
 
+## What does it look like? 
+
+  ![How the theme looks on the included style guide.](https://github.com/SKCro/WebTV-HD/assets/55817746/8513612c-aaf8-4913-817b-ee64d7c7dc6a)
+
 ## TODO:
 - Flesh out everything
 - ~~Make the status bar look better on non-widescreen display sizes~~ Done
