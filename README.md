@@ -15,7 +15,7 @@
 
 ## What does it look like? 
 
-  ![How the theme looks on the included style guide.](https://github.com/SKCro/WebTV-HD/assets/55817746/8513612c-aaf8-4913-817b-ee64d7c7dc6a)
+  ![How the theme looks on the included style guide.](https://i.imgur.com/hGVmsdd.png)
 
 ## TODO:
 - Flesh out everything
