@@ -15,7 +15,7 @@
 
   <div class="sidebar">
     <div class="sidebar-contents"> <!-- WebTV logo div -->
-      <a href="#"><img class="clickable" src="images/WebTVLogoHD.png" alt="Logo"></a> <!-- Sidebar WebTV logo -->
+      <a href="#"><img class="clickable" src="images/WebTVLogoHD.png" alt="Logo" onClick="setTimeout(function(){location.href='Home.html';}, 150);"></a> <!-- Sidebar WebTV logo -->
       <div class="sidebar-border"></div> <!-- Sidebar border, separates links and WebTV logo -->
       <div class="sidebar-link"><a href="#" class="clickable">Link 1</a></div>
       <div class="sidebar-border"></div>
@@ -35,7 +35,7 @@
   <h2>This is a sub-header.</h2>
   <p>This is another paragraph. <a class=clickable>This is a link.</a></p>
   <!-- Note: if you want to add a link, please don't use href - that causes the browser to navigate away before the click sound can be played. -->
-  <!-- Instead, use this code snippet: <a class=clickable onClick="setTimeout(function(){location.href='example.com/page';}, 150);" href=""> -->
+  <!-- Instead, use this code snippet: <a class=clickable onClick="setTimeout(function(){location.href='https://example.com/page';}, 150);" href=""> -->
 
   <div class="input-container">
     <label for="Textbox1">This is the textbox's flavor text.</label>

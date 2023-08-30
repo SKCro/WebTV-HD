@@ -389,7 +389,7 @@ input[type="submit"] {
   box-sizing: border-box;
   pointer-events: none;
   z-index: 9999;
-  /*! display: none; */
+  display: none;
 }
 
 .selection-box.green {
