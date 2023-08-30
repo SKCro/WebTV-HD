@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
-<html>
-<head>
+<html><head>
   <title>Style Reference Page</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!-- Stylesheet. Don't remove or change unless you want to use a different style. -->
     <script src="js/SelectionBox.js"></script>
@@ -16,7 +15,7 @@
 
   <div class="sidebar">
     <div class="sidebar-contents"> <!-- WebTV logo div -->
-      <a href="#" class="clickable"><img class="clickable" src="images/WebTVLogoHD.png" alt="Logo"></a> <!-- Sidebar WebTV logo -->
+      <a href="#"><img class="clickable" src="images/WebTVLogoHD.png" alt="Logo"></a> <!-- Sidebar WebTV logo -->
       <div class="sidebar-border"></div> <!-- Sidebar border, separates links and WebTV logo -->
       <div class="sidebar-link"><a href="#" class="clickable">Link 1</a></div>
       <div class="sidebar-border"></div>
@@ -35,6 +34,8 @@
   <p>This is a paragraph. Text content will be in the Helvetica font.<br>This is another sentence in the same paragraph. Any words that are not broken up via &lt;br&gt; tags will be wrapped to fit.</p>
   <h2>This is a sub-header.</h2>
   <p>This is another paragraph. <a class=clickable>This is a link.</a></p>
+  <!-- Note: if you want to add a link, please don't use href - that causes the browser to navigate away before the click sound can be played. -->
+  <!-- Instead, use this code snippet: <a class=clickable onClick="setTimeout(function(){location.href='example.com/page';}, 150);" href=""> -->
 
   <div class="input-container">
     <label for="Textbox1">This is the textbox's flavor text.</label>

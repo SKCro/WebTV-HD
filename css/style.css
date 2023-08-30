@@ -1,4 +1,4 @@
-/* WebTV CSS style by SKCro */
+/* WebTV CSS style by SKCro - https://github.com/SKCro/WebTV-HD */
 
 /* Global Styles */
 
@@ -376,7 +376,7 @@ input[type="submit"] {
   border-radius: 0.3vw;
   position: relative;
   display: flex;
-  background-image: linear-gradient(147deg, #202020 48%, #5E5E5E 53%); /* Gradient to simulate depth */
+  background-image: linear-gradient(146deg, #202020 48%, #5E5E5E 53%); /* Gradient to simulate depth */
 }
 
 .selection-box {
