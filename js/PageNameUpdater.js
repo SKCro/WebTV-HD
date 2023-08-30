@@ -1,14 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const pageTitleElement = document.querySelector('.page-name');
+document.addEventListener('DOMContentLoaded', function () {
+  var pageTitleElement = document.querySelector('.page-name');
 
   function updatePageName() {
-    const pageTitle = document.title;
+    var pageTitle = document.title;
     pageTitleElement.textContent = pageTitle;
   }
 
   updatePageName();
 
-  const observer = new MutationObserver(() => {
+  var observer = new MutationObserver(function () {
     updatePageName();
   });
 
