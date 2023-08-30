@@ -183,10 +183,11 @@ p {
 
 .bottom-right-image {
   align-self: end;
-  margin-bottom: 7vw;
+  margin-bottom: 3vw;
   margin-top: auto;
   margin-left: 7vw;
   display: flex;
+  height: 20vw;
 }
 
 /* Main Content Style */
