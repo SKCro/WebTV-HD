@@ -17,6 +17,8 @@
 
   ![How the theme looks on the included style guide.](https://i.imgur.com/hGVmsdd.png)
 
+If you'd like to check it out for yourself, head on over to the ![GitHub Pages instance.](https://SKCro.github.io/WebTV-HD/PowerOn.html).
+
 ## TODO:
 - Flesh out everything
 - ~~Make the status bar look better on non-widescreen display sizes~~ Done
