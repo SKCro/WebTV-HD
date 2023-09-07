@@ -441,7 +441,6 @@ textarea { /* Removes the default browser focus box */
 }
 
 .top-bar-item img {
-  max-height: 50%;
   max-width: 40%;
   vertical-align: middle;
   padding-left: 2vw;
