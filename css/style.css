@@ -170,7 +170,7 @@ p {
 .sidebar-link {
   text-align: left;
   margin-left: 1vw;
-  text-shadow: 2px 2px #000;
+  text-shadow: 0.15vw 0.15vw 0px rgb(0, 0, 0);
 }
 
 .sidebar-link a {
