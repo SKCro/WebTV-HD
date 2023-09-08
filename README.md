@@ -19,6 +19,8 @@
 
 If you'd like to check it out for yourself, head on over to the [GitHub Pages instance](https://SKCro.github.io/WebTV-HD/PowerOn.html).
 
+If anything is broken for you, please file a bug report and tell me the issue, which browser you used, and your screen resolution. Also provide a screenshot if possible.
+
 ## TODO:
 - Flesh out everything
 - ~~Make the status bar look better on non-widescreen display sizes~~ Done
