@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateSelectionBox() {
     if (selectedElement) {
       var elementRect = selectedElement.getBoundingClientRect();
-      var boxMargin = 5; // Adjust this value to set the margin between the selected element and the selection box
+      var boxMargin = 4; // Adjust this value to set the margin between the selected element and the selection box
 
       // Calculate the new dimensions and position for the selection box
       var top = elementRect.top - boxMargin;
