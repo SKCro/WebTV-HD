@@ -170,7 +170,7 @@ p {
 .sidebar-link {
   text-align: left;
   margin-left: 1vw;
-  text-shadow: 0.15vw 0.15vw 0px rgb(0, 0, 0);
+  text-shadow: 0.15vw 0.15vw 0vw rgb(0, 0, 0);
 }
 
 .sidebar-link a {
@@ -225,15 +225,14 @@ p {
 }
 
 .webtv-checkbox input[type="checkbox"] {
-  /* Hide the default checkbox */
-  appearance: none;
+  appearance: none; /* Hides the default checkbox */
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 2.7vw;
   height: 2.7vw;
   background-color: #2B2B2B;
   border: 0.2vw solid #7F7F7F;
-  border-radius: 1px;
+  border-radius: 0.1vw;
   outline: none; /* Remove the default focus outline */
   cursor: pointer;
   position: relative;
@@ -246,7 +245,7 @@ p {
   top: -16%;
   left: -50%;
   font-size: 3vw;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  text-shadow: 0.15vw 0.15vw 0vw rgba(0, 0, 0, 0.8);
   opacity: 0; /* Hide the checkmark by default */
   pointer-events: none;
   z-index: 10000;
@@ -261,8 +260,9 @@ p {
   font-size: 1.3vw;
   display: grid;
   align-self: end;
-  margin-right: 4%;
+  margin-top: 1%;
   margin-bottom: 1%;
+  margin-right: 4%;
 }
 
 input[type="submit"] {
@@ -270,7 +270,7 @@ input[type="submit"] {
   background-repeat: no-repeat;
   background-position: center;
   color: #E7CE4A;
-  text-shadow: 2px 2px #000;
+  text-shadow: 0.15vw 0.15vw 0vw #000;
   background-color: #222;
   padding: 0.5vw 1vw;
   cursor: pointer;
@@ -344,7 +344,7 @@ input[type="submit"] {
   width: 80%;
   border-radius: 0.5vw;
   background-image: linear-gradient(to right, #2A2A2A, #000); /* Gradient colors */
-  text-shadow: 0.15vw 0.15vw 0px rgb(0, 0, 0);
+  text-shadow: 0.15vw 0.15vw 0vw rgb(0, 0, 0);
   padding: 0.35% 0.8%;
   overflow: hidden;
   min-height: 50%;
@@ -381,7 +381,7 @@ input[type="submit"] {
 
 .selection-box {
   position: absolute;
-  box-shadow: 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0.2vw 0.2vw 0vw rgba(0, 0, 0, 0.5);
   border: 0.35vw solid rgba(255, 228, 71, 1);
 /*! border-image: linear-gradient(145deg, #FFF, #FFE447, #FFCB00, #CEA500); */
   border-image-slice: 1;
@@ -394,7 +394,7 @@ input[type="submit"] {
 
 .selection-box.green {
   position: absolute;
-  box-shadow: 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0.2vw 0.2vw 0vw rgba(0, 0, 0, 0.5);
   border: 0.35vw solid rgba(45, 253, 0, 1);
   border-radius: 0.2vw;
   box-sizing: border-box;
