@@ -11,7 +11,7 @@
  
 ![Screenshot of the "Code" button being pressed.](https://i.imgur.com/ObYTKH3.png)
 
- Or, if you're stuck with a command line interface (specifically Linux), you can run ``git clone https://github.com/SKCro/WebTV-HD.git``, and copy all the resources over by entering the WebTV-CSS-Remake directory, and running ``cp -r ./* <your location>``.
+ Or, if you're stuck with a command line interface (specifically Linux), you can run ``git clone https://github.com/SKCro/WebTV-HD.git``, and copy all the resources over by entering the WebTV-HD directory, and running ``cp -r ./* <your location>``.
 
 ## What does it look like? 
 
