@@ -23,7 +23,7 @@ body {
   font-family: 'Helvetica', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 2vw; /* Adjust the value as needed */
+  font-size: 1.4rem; /* Adjust the value as needed */
 }
 
 h1 {
@@ -135,7 +135,7 @@ p {
   position: relative;
   top: 0;
   margin-top: 3%;
-  height: 3%;
+  height: 1vh;
   width: 100%;
 }
 
@@ -171,6 +171,7 @@ p {
   text-align: left;
   margin-left: 1vw;
   text-shadow: 0.15vw 0.15vw 0vw rgb(0, 0, 0);
+  font-size: 2vw;
 }
 
 .sidebar-link a {
@@ -343,7 +344,8 @@ input[type="submit"] {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 1vw;
+  padding: 0.08vw 1vw;
+  /*! padding-top: 0.1vw; */
 }
 
 .page-name {
@@ -354,7 +356,8 @@ input[type="submit"] {
   text-shadow: 0.15vw 0.15vw 0vw rgb(0, 0, 0);
   padding: 0.35% 0.8%;
   overflow: hidden;
-  min-height: 50%;
+  min-height: 60%;
+  font-size: 2vw;
 }
 
 .status-indicator { /* Black box w/ green line */
