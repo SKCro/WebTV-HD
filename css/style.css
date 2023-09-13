@@ -103,7 +103,7 @@ p {
   font-family: 'Helvetica Now Display Black';
   src: url('HelveticaNowDisplay-ExtraBold.woff2') format('woff2'); /* Black/UltraBold, for headers */
   font-weight: normal;
-  font-style: italic;
+  font-style: normal;
 }
 
 /* Sidebar Styles */
@@ -119,10 +119,10 @@ p {
 
 .sidebar-shadow {
   background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0));
-  width: 20%;
-  height: 95%;
+  width: 5%;
+  height: 100%;
   position: fixed;
-  padding: 1vw 0;
+  padding: 5vw 0;
   display: grid;
 }
 
@@ -357,7 +357,7 @@ input[type="submit"] {
   text-shadow: 0.15vw 0.15vw 0vw rgb(0, 0, 0);
   padding: 0.35% 0.8%;
   overflow: hidden;
-  min-height: 60%;
+  min-height: 2.35vw;
   font-size: 2vw;
 }
 
@@ -443,10 +443,9 @@ textarea { /* Removes the default browser focus box */
 .top-bar-items {
   height: 95%;
   background-color: transparent;
-  border-collapse: collapse;
+  table-layout: fixed;
   text-align: center;
   width: 99.4%;
-  margin-top: 0.5vh;
 }
 
 .top-bar-item a {
