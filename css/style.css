@@ -148,7 +148,7 @@ p {
   background: linear-gradient(#33202A 40%, #774E5E 85%);
 }
 
-.sidebar-border {
+.sidebar-border-home {
   position: relative;
   top: 0;
   height: 1vh;
@@ -362,8 +362,8 @@ input[type="submit"] {
 }
 
 .status-indicator { /* Black box w/ green line */
-  width: 88%;
-  height: 85%;
+  width: 90%;
+  /*! height: 85%; */
   background-color: #000;
   border-radius: 0.3vw;
   margin: auto;
@@ -374,20 +374,25 @@ input[type="submit"] {
   content: '';
   position: absolute;
   top: 50%;
-  width: 88%;
+  width: 90%;
   height: 10%;
   background-color: #00A500;
   margin: auto;
 }
 
 .status-container { /* Status indicator container */
-  width: 4.3%;
-  height: 75%;
+  width: 4%;
+  height: 65%;
   background-color: #000;
-  border-radius: 0.3vw;
+  border-radius: 0.5vw;
   position: relative;
   display: flex;
-  background-image: linear-gradient(146deg, #202020 48%, #5E5E5E 53%); /* Gradient to simulate depth */
+  /*! background-image: linear-gradient(146deg, #202020 48%, #5E5E5E 53%); */ /* Gradient to simulate depth */
+  border: 0.3vw solid #2A2A2A;
+  border-top-color: #2A2A2A;
+  border-bottom-color: #5E5E5E;
+  border-left-color: #2A2A2A;
+  border-right-color: #5E5E5E;
 }
 
 .selection-box {
