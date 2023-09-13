@@ -32,7 +32,7 @@ h1 {
   margin-top: 1.5vh;
   margin-bottom: 1vh;
   text-shadow: 0.4vh 0.4vh #000;
-  font-family: 'Helvetica Now Display Black';
+  font-family: 'Helvetica Now Display Black', Helvetica, Arial Black, sans-serif;
 }
 
 h2, h3, h4, h5, h6 {
@@ -41,7 +41,7 @@ h2, h3, h4, h5, h6 {
   margin-top: 0.8vh;
   margin-bottom: 0.8vh;
   text-shadow: 0.3vh 0.3vh #000;
-  font-family: 'Helvetica Now Display Black';
+  font-family: 'Helvetica Now Display Black', Helvetica, Arial Black, sans-serif;
 }
 
 a {
@@ -134,7 +134,6 @@ p {
 .sidebar-border {
   position: relative;
   top: 0;
-  margin-top: 3%;
   height: 1vh;
   width: 100%;
 }
@@ -145,8 +144,8 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 0.8vh;
-  background: linear-gradient(#33202A 50%, #774E5E 90%);
+  height: 0.7vw;
+  background: linear-gradient(#33202A 40%, #774E5E 85%);
 }
 
 .sidebar-border-home {
@@ -172,6 +171,8 @@ p {
   margin-left: 1vw;
   text-shadow: 0.15vw 0.15vw 0vw rgb(0, 0, 0);
   font-size: 2vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
 }
 
 .sidebar-link a {
