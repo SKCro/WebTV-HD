@@ -21,12 +21,23 @@ If you'd like to check it out for yourself, head on over to the [GitHub Pages in
 
 If anything is broken for you, please file a bug report and tell me the issue, which browser you used, and your screen resolution. Also provide a screenshot if possible.
 
+## Is there a roadmap for this project?
+
+ I don't have an exact roadmap for the project, but in no particular order, here are my goals for the project:
+- Get the style to look as accurate as possible.
+- Make the style work better on mobile devices (or create a new one specifically designed for them).
+- Get the selection box to move via the arrow keys (and maybe gamepad), just like real WebTV. This would make big-screen browsing easier.
+- Possibly make an MSN TV 2 style.
+- \[Unlikely\] Make this into a browser extension of some sort that adds a WebTV overlay and allows navigation with your keyboard or a gamepad.
+- \[Very Unlikely\] Try to make this into a WTVP-to-HTML interface. Essentially, make it into a WebTV client. This would be very complicated (and I have no backend skills and would definitely need help from others), but it is something I'm looking forward to getting working eventually (even at a very basic level).
+If you'd like to suggest something, [create a new issue](https://github.com/SKCro/WebTV-HD/issues/new) with the "enhancement" label and let me know what you'd like added.
+
 ## TODO:
 - Flesh out everything
 - ~~Make the status bar look better on non-widescreen display sizes~~ Done
 - Recreate more service pages like dialing, login, home page, mail, etc.
 - ~~Add functionality with JavaScript~~ Done
-- Make an actual backend. This might never be done, but you'll never know :P
+- Fix the dang selection box scrolling.
 
 ## Why are Tizen-related files in the repo?
  I originally built this project with the Samsung Smart TV in mind, using the Tizen IDE (I wanted to see how a WebTV-like application would look), but I decided to expand it to modern browsers in general. That's why you might see some Tizen IDE leftovers (like stuff in the .gitignore and that one JS file).
