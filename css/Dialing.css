@@ -1,65 +1,88 @@
 /* Dialing Screen CSS, currently not finished (it looks awful) */
 
+@keyframes fadeTransition {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
 body {
-  opacity: 0;
-  animation: fade 1s ease-in-out 1s forwards;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #000;
+  color: #42bd52;
   font-family: 'Helvetica', Arial, sans-serif;
   margin: 0;
-  background-color: #020202;
-  color: #8F8F8F;
-  font-size: 1.5vw; /* Adjust the value as needed */
+  padding: 0;
+  font-size: 1.4rem;
+  animation: fadeTransition linear 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-@keyframes fade {
-  0% {
-    opacity: 0;
+.city {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 50vw;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+.city img {
+  width: 100%;
+}
+
+#dialing-music {
+  display: flex;
+  /*! justify-content: center; */
+  /*! align-self: center; */
+  margin: auto auto 1vh auto;
+}
+
+.progressbar-container {
+  color: #888;
+  margin-left: 15vh;
+  margin-right: 15vh;
+}
+
+/* Progress bar style by pjfrix, animation by me */
+/* progress bar */
+progress {
+    box-sizing: border-box;
+    border:0;
+    box-shadow:inset 1px 1px 0 #202020,
+               inset -1px -1px 0 #666666,
+               inset 2px 2px 0 #202020,
+               inset -2px -2px 0 #666666;
+    background: -webkit-linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
+    background: linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
+    padding:3px 4px;
+    height:17px;
+}
+
+progress[value]::-moz-progress-bar {
+    background: repeating-linear-gradient(145deg, #00a500, 2px, #006f00, #006f00, 6px, #00a500 8px);
+    border-top:1px solid #003c00;
+    border-bottom:1px solid #003c00;
+    animation: baranim 0.25s linear infinite;
+}
+
+@keyframes baranim {
+  25% {
+    background: repeating-linear-gradient(145deg, #00a500, 2px, #00a500, #006f00, 6px, #006f00 8px); /* 1 */
   }
-  20% {
-    opacity: 1;
+  50% {
+    background: repeating-linear-gradient(145deg, #006f00, 2px, #00a500, #00a500, 6px, #006f00 8px); /* 2 */
   }
-  80% {
-    opacity: 1;
+  75% {
+    background: repeating-linear-gradient(145deg, #006f00, 2px, #006f00, #00a500, 6px, #00a500 8px); /* 3 */
   }
   100% {
-    opacity: 1;
+    background: repeating-linear-gradient(145deg, #00a500, 2px, #006f00, #006f00, 6px, #00a500 8px); /* 4 */
   }
-}
-
-.progress-bar-container {
-  position: fixed;
-  bottom: 15vh;
-  left: 10vw;
-  width: 300px;
-  height: 25px;
-  background: linear-gradient(to right, #777F7F, #666666);
-  overflow: hidden;
-  text-align: center;
-}
-
-.progress-bar {
-  width: 95%;
-  height: 80%;
-  background: linear-gradient(to right, #202A2A, #0C0C0C);
-  position: relative;
-  text-align: center;
-}
-
-.progress {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(-45deg, #42CC55 25%, #2DBD3A 25%, #2DBD3A 50%, #42CC55 50%, #42CC55 75%, #2DBD3A 75%, #2DBD3A);
-  animation: progress-animation 2s linear;
-  text-align: center;
-}
-
-
-.status-bar-message {
-  position: absolute;
-  top: -200%;
-  color: #fff;
-  font-size: 1.5vw;
 }

@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/Dialing.css"/>
+  <title>Connecting</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/Dialing.css"/>
+  <link rel="shortcut icon" href="Icon.png">
+  <script src="js/ButtonSounds.js"></script>
+  <script>
+    var errorSound;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      errorSound = document.getElementById('errorSound');
+
+      function playErrorSound() {
+        errorSound.currentTime = 0;
+        errorSound.play();
+      }
+
+      window.playErrorSound = playErrorSound;
+    });
+
+    function skipDialing() {
+      playErrorSound();
+      alert('This doesn\'t work yet.');
+    }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <audio src="audio/dialing.mp3" autoplay loop></audio>
-<img src="images/Dialing.gif" style="width: auto; height: 50vh;"></img>
-<div class="progress-bar-container">
-  <div class="progress-bar"></div>
-  <div class="progress"></div>
-</div>
-
-  <script>
-window.onload = function() {
-  const progressBar = document.querySelector('.progress');
-  const statusBarMessage = document.querySelector('.status-bar-message');
-  let percent = 0;
+  <div class="city"><img src="images/Dialing.gif" alt="City with an animated road."></img>
+  </div>
+  <div class="progressbar-container">
+	<span class="progressbar-message">Dialing toll free</span><br>
+    <progress max="100" value="10"></progress>
+	<input type="submit" class="submit" value="Skip Dialing" onClick="skipDialing()"></input>
+  </div>
+  
+  <audio id="dialing-music" controls autoplay loop>
+    <source src="audio/dialing.mp3" type="audio/mpeg">
+    Your browser does not support audio, so the dialing music will not play.
+  </audio>
+<audio id="errorSound" src="audio/error.mp3" preload="auto"></audio>
+<audio id="submitSound" src="audio/submitClick.mp3" preload="auto"></audio>
+<script>
+  window.onload = function() {
+  const progressBar = document.querySelector('progress');
+  const statusBarMessage = document.querySelector('.progressbar-message');
+  let value = 0;
 
   const interval = setInterval(() => {
-    percent += 10;
-    progressBar.style.width = `${percent}%`;
+    value += 10;
+    progressBar.value = `${value}`;
 
-    if (percent === 100) {
+    if (value === 90) {
       statusBarMessage.textContent = 'Connecting to WebTV';
       clearInterval(interval);
-    } else if (percent === 30) {
-      statusBarMessage.textContent = 'Dialing toll free';
-    } else if (percent === 60) {
+    } else if (value === 30) {
       statusBarMessage.textContent = 'Waiting to connect';
-    }
-  }, 2000);
+    } else if (value === 20) {
+      statusBarMessage.textContent = 'Dialing toll free';
+  }}, 2000);
 };
-  </script>
+</script>
 </body>
 </html>
