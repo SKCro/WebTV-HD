@@ -15,7 +15,7 @@
 
 ## What does it look like? 
 
-  ![How the theme looks on the included style guide.](https://i.imgur.com/hGVmsdd.png)
+![A screenshot of the style displayed in Firefox.](https://i.imgur.com/thxJdYF.png)
 
 If you'd like to check it out for yourself, head on over to the [GitHub Pages instance](https://SKCro.github.io/WebTV-HD/PowerOn.html).
 
