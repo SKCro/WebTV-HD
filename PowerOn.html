@@ -5,9 +5,7 @@
   <title>Power On</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="shortcut icon" href="Icon.png">
-  <script src="js/SelectionBox.js"></script>
   <script src="js/ButtonSounds.js"></script>
-  <script src="js/PageNameUpdater.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -28,16 +26,17 @@
     
     .hideOnClick {
       position: absolute;
+      display: grid;
     }
 
     .animating {
       opacity: 0;
-      animation: fade 2s ease-in-out 1s forwards;
+      animation: fadeInOut 2s ease-in-out 1s forwards;
       width: 35vw;
-      height: auto; /* Maintain the aspect ratio */
+      height: auto;
     }
 
-    @keyframes fade {
+    @keyframes fadeInOut {
       0% {
         opacity: 0;
       }
@@ -51,12 +50,7 @@
         opacity: 0;
       }
     }
-
-    .hideOnClick {
-      display: grid;
-    }
   </style>
-  <script src="js/ButtonSounds.js"></script>
   <script>
     function wait(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
@@ -75,8 +69,6 @@
       const img = document.querySelector(".hiddenUntilClick");
       img.classList.remove("hiddenUntilClick");
       img.classList.add("animating");
-
-      p.style.display = "none";
 
       const imgAnimating = document.querySelector(".animating");
       imgAnimating.style.animationPlayState = "running";
