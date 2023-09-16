@@ -98,8 +98,8 @@ p {
 }
 
 .sidebar img {
-  max-width: 85%;
-  max-height: 85%;
+  max-width: 12vw;
+  max-height: 12vw;
 }
 
 .sidebar-border {
@@ -155,11 +155,11 @@ p {
 
 .bottom-right-image {
   align-self: end;
-  margin-bottom: 3vw;
-  margin-top: auto;
-  margin-left: 7vw;
+  /*! margin-bottom: 3vw; */
+  /*! margin-top: auto; */
+  margin-left: 9vw;
   display: flex;
-  height: 20vw;
+  height: 18vw;
 }
 
 /* Main Content Style */
