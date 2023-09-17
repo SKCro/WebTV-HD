@@ -22,6 +22,13 @@ function initDialing() {
   }, 2000);
 }
 
+function doSplash() { /* Not finished yet - this code will remove elements and display a splash screen, then redirect to the Home page
+  const city = document.getElementById('city');
+  const progressBar = document.getElementById('progressbar');
+  const progressMessage = document.getElementById('progressbar-message');
+  setTimeout("location.href='Home.html'",5000)  */
+}
+
 function skipDialing() {
   const dialingMusic = document.getElementById("dialing-music");
   const progressBar = document.getElementById('progressbar');
@@ -33,6 +40,7 @@ function skipDialing() {
   dialingMusic.pause();
   dialingMusic.removeAttribute('controls');
   button.remove();
+  doSplash();
 }
 
 function getDialingTheme() {
@@ -44,11 +52,6 @@ function getDialingTheme() {
   dialingMusic.load();
   }
 }
-/*
-function doSplash() {
-  const city = document.getElementById('city');
-  const 
-}
-*/
+
 window.addEventListener("load", initDialing);
 window.addEventListener("load", getDialingTheme);

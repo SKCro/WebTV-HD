@@ -84,6 +84,7 @@ p {
   position: fixed;
   /*! padding: 1vw 0; */
   display: grid;
+  overflow: hidden;
 }
 
 .sidebar-shadow {
@@ -114,7 +115,7 @@ p {
   position: relative;
   top: 0;
   height: 1vh;
-  width: 100%;
+  width: auto;
 }
 
 .sidebar-border::before {
@@ -273,6 +274,7 @@ input[type="button"] {
   border-color: #4E4E4E #020202 #010101 #444444;
   border-radius: 0;
   font-family: Helvetica;
+  font-weight: normal;
 }
 
 .border {
