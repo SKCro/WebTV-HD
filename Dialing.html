@@ -6,62 +6,22 @@
   <link rel="stylesheet" type="text/css" href="css/Dialing.css"/>
   <link rel="shortcut icon" href="Icon.png">
   <script src="js/ButtonSounds.js"></script>
-  <script>
-    var errorSound;
-
-    document.addEventListener('DOMContentLoaded', function () {
-      errorSound = document.getElementById('errorSound');
-
-      function playErrorSound() {
-        errorSound.currentTime = 0;
-        errorSound.play();
-      }
-
-      window.playErrorSound = playErrorSound;
-    });
-
-    function skipDialing() {
-      playErrorSound();
-      alert('This doesn\'t work yet.');
-    }
-  </script>
+  <script src="js/Dialing.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="city"><img src="images/Dialing.gif" alt="City with an animated road."></img>
-  </div>
+  <div class="city"></div>
   <div class="progressbar-container">
 	<span class="progressbar-message">Dialing toll free</span><br>
-    <progress max="100" value="10"></progress>
-	<input type="submit" class="submit" value="Skip Dialing" onClick="skipDialing()"></input>
+    <progress id="progressbar" max="100" value="0"></progress>
+	<input type="submit" class="submit" id="skipDialing" value="Skip Dialing" onClick="skipDialing()"></input>
   </div>
   
-  <audio id="dialing-music" controls autoplay loop>
+  <audio id="dialing-music" controls autoplay loop preload="auto">
     <source src="audio/dialing.mp3" type="audio/mpeg">
     Your browser does not support audio, so the dialing music will not play.
   </audio>
-<audio id="errorSound" src="audio/error.mp3" preload="auto"></audio>
 <audio id="submitSound" src="audio/submitClick.mp3" preload="auto"></audio>
-<script>
-  window.onload = function() {
-  const progressBar = document.querySelector('progress');
-  const statusBarMessage = document.querySelector('.progressbar-message');
-  let value = 0;
-
-  const interval = setInterval(() => {
-    value += 10;
-    progressBar.value = `${value}`;
-
-    if (value === 90) {
-      statusBarMessage.textContent = 'Connecting to WebTV';
-      clearInterval(interval);
-    } else if (value === 30) {
-      statusBarMessage.textContent = 'Waiting to connect';
-    } else if (value === 20) {
-      statusBarMessage.textContent = 'Dialing toll free';
-  }}, 2000);
-};
-</script>
 </body>
 </html>
