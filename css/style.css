@@ -165,7 +165,7 @@ p {
   align-self: end;
   margin-left: 9vw;
   display: flex;
-  height: 18vw;
+  height: 17vw;
 }
 
 .bottom-right-image-home {
@@ -202,9 +202,10 @@ p {
   color: #ffdd33;
   padding: 0.65%;
   width: auto;
-  font-size: 1.5vw;
+  font-size: 1rem;
   border-color: #010101 #8f8f8f #8f8f8f #010101;
-  border-width: 0.4vw;
+  border-width: 0.3rem;
+  border-radius: 0;
 }
 
 .webtv-checkbox {
@@ -215,15 +216,16 @@ p {
   appearance: none; /* Hides the default checkbox */
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 2.7vw;
-  height: 2.7vw;
+  width: 2.2rem;
+  height: 2.2rem;
   background-color: #2B2B2B;
   outline: none; /* Remove the default focus outline */
   cursor: pointer;
   position: relative;
   border-style: solid;
   border-color: #7F7F7FC8 #DFDFDFC8 #D8D8D8C8 #858585C8;
-  border-width: 0.3vw;
+  border-width: 0.2rem;
+  border-radius: 0;
 }
 
 .webtv-checkbox .checkmark {
@@ -232,7 +234,7 @@ p {
   position: relative;
   top: -57%;
   left: 8%;
-  font-size: 3.5vw;
+  font-size: 2.8rem;
   text-shadow: 0.15vw 0.15vw 0vw rgba(0, 0, 0, 0.8);
   opacity: 0; /* Hide the checkmark by default */
   pointer-events: none;
@@ -262,14 +264,14 @@ input[type="button"] {
   color: #E7CE4A;
   text-shadow: 0.15vw 0.15vw 0vw #000;
   background-color: #222;
-  padding: 0.5vw 1vw;
+  padding: 0.4rem 0.8rem;
   cursor: pointer;
   float: right;
-  font-size: 1.5vw;
-  border: 0.4vh solid #000;
+  font-size: 1.2rem;
+  border: 0.2rem solid #000;
   border-image-slice: 1;
-  border-style: outset;
   border-color: #4E4E4E #020202 #010101 #444444;
+  border-radius: 0;
   font-family: Helvetica;
 }
 

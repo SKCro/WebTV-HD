@@ -2,7 +2,7 @@ let stopProgressUpdates = false;
 
 function initDialing() {
   const progressBar = document.getElementById('progressbar');
-  const progressMessage = document.querySelector('.progressbar-message');
+  const progressMessage = document.getElementById('progressbar-message');
   let value = 10;
 
   const interval = setInterval(() => {
@@ -25,7 +25,7 @@ function initDialing() {
 function skipDialing() {
   const dialingMusic = document.getElementById("dialing-music");
   const progressBar = document.getElementById('progressbar');
-  const progressMessage = document.querySelector('.progressbar-message');
+  const progressMessage = document.getElementById('progressbar-message');
   const button = document.getElementById('skipDialing');
   progressMessage.textContent = 'ultimatetv reference';
   progressBar.value = 100;
@@ -44,6 +44,11 @@ function getDialingTheme() {
   dialingMusic.load();
   }
 }
-
+/*
+function doSplash() {
+  const city = document.getElementById('city');
+  const 
+}
+*/
 window.addEventListener("load", initDialing);
 window.addEventListener("load", getDialingTheme);
