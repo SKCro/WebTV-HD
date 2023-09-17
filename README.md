@@ -2,7 +2,7 @@
  Previously known as "WebTV-CSS-Remake".
  
  A project that aims to recreate WebTV Networks' UI and page design using modern web technologies, mainly CSS and HTML.
- Rather barebones and incomplete as of now, with only the main style done as of now.
+ Rather barebones and incomplete, with only the main style being worked on as of now.
 
 ## How do I use this?
  **Important:** If you're planning to use this in a project, please credit me when possible.
@@ -15,7 +15,7 @@
 
 ## What does it look like? 
 
-![A screenshot of the style displayed in Firefox.](https://i.imgur.com/thxJdYF.png)
+![Screenshot of the style in action.](https://i.imgur.com/UHqtWFU.png)
 
 If you'd like to check it out for yourself, head on over to the [GitHub Pages instance](https://SKCro.github.io/WebTV-HD/PowerOn.html).
 
