@@ -192,8 +192,6 @@ p {
 }
 
 .input-container label {
-  text-align: left;
-  margin-bottom: 0.1rem;
 }
 
 /* Input Styles */
@@ -202,7 +200,7 @@ p {
   font-family: Monaco, monospace;
   background-color: #444444;
   color: #ffdd33;
-  padding: 0.65%;
+  padding: 0.4rem;
   width: auto;
   font-size: 1rem;
   border-color: #010101 #8f8f8f #8f8f8f #010101;
@@ -276,6 +274,7 @@ p {
   position: relative;
   border-radius: 100%;
   background-image: radial-gradient(circle at 6px 6px, #3C3C3C 25%, #0C0C0C 75%);
+  margin-top: 0.3rem;
 }
 
 .webtv-radio-buttons input[type="radio"]::before {
@@ -286,8 +285,8 @@ p {
   height: 1.6rem;
   display: block;
   background-image: linear-gradient(to bottom right, #F7FFF7 35%, #3C3C3C 80%);
-  left: -0.15rem;
-  top: -0.16rem;
+  left: -0.2rem;
+  top: -0.2rem;
   z-index: -1;
 }
 
@@ -354,7 +353,7 @@ input[type="button"] {
 	display: block;
 	position: absolute;
 	width: 83%;
-	height: 7vw;
+	height: 12vw;
 	z-index: -1;
 }
 
