@@ -209,38 +209,50 @@ p {
   border-radius: 0;
 }
 
-.webtv-checkbox {
-	margin-bottom: -7vh;
-}
-
 .webtv-checkbox input[type="checkbox"] {
   appearance: none; /* Hides the default checkbox */
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 2.2rem;
-  height: 2.2rem;
-  background-color: #2B2B2B;
+  width: 2rem;
+  height: 2rem;
+  background-color: #32323280;
   outline: none; /* Remove the default focus outline */
   cursor: pointer;
   position: relative;
   border-style: solid;
-  border-color: #7F7F7FC8 #DFDFDFC8 #D8D8D8C8 #858585C8;
+  border-color: #7F7F7F80 #7F7F7F80 #7F7F7F80 #85858580;
   border-width: 0.2rem;
   border-radius: 0;
+}
+
+.webtv-checkbox input[type="checkbox"]::after {
+  content: '';
+  position: relative;
+  z-index: -1;
+  display: block;
+  height: 90%;
+  width: 90%;
+  filter: blur(1px);
+  border: 0.2rem solid;
+  border-top-color: black;
+  border-bottom-color: transparent;
+  border-left-color: black;
+  border-right-color: transparent;
 }
 
 .webtv-checkbox .checkmark {
   font-weight: 700;
   color: #EB3733;
   position: relative;
-  top: -57%;
-  left: 8%;
-  font-size: 2.8rem;
-  text-shadow: 0.15vw 0.15vw 0vw rgba(0, 0, 0, 0.8);
+  top: -3.5rem;
+  left: 0.2rem;
+  font-size: 2.6rem;
+  text-shadow: 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.8);
   opacity: 0; /* Hide the checkmark by default */
   pointer-events: none;
   z-index: 10000;
   rotate: 8deg;
+	margin-bottom: -9vh;
 }
 
 .webtv-checkbox input[type="checkbox"]:checked + .checkmark {
@@ -249,7 +261,7 @@ p {
 
 .radio-buttons {
   transform: scale(1.8);
-  font-size: 1.3vw;
+  font-size: 0.8rem;
   display: grid;
   align-self: end;
   margin-top: 1%;
@@ -293,8 +305,8 @@ input[type="button"] {
   top: 0;
   left: 0;
   width: 100%;
-  height: 0.8vh;
-  background: linear-gradient(#2B2B2B, #0D0D0D);
+  height: 0.6vw;
+  background: linear-gradient(#2B2B2B 30%, #0D0D0D 70%);
 }
 
 .bottom-padding {
