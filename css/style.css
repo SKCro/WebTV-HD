@@ -193,6 +193,7 @@ p {
 
 .input-container label {
   text-align: left;
+  margin-bottom: 0.1rem;
 }
 
 /* Input Styles */
@@ -259,14 +260,54 @@ p {
   opacity: 1;
 }
 
-.radio-buttons {
-  transform: scale(1.8);
-  font-size: 0.8rem;
+.webtv-radio-buttons {
   display: grid;
   align-self: end;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  margin-right: 4%;
+}
+
+.webtv-radio-buttons input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: #0C0C0C;
+  cursor: pointer;
+  position: relative;
+  border-radius: 100%;
+  background-image: radial-gradient(circle at 6px 6px, #3C3C3C 25%, #0C0C0C 75%);
+}
+
+.webtv-radio-buttons input[type="radio"]::before {
+  content: '';
+  border-radius: 100%;
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: block;
+  background-image: linear-gradient(to bottom right, #F7FFF7 35%, #3C3C3C 80%);
+  left: -0.15rem;
+  top: -0.16rem;
+  z-index: -1;
+}
+
+.webtv-radio-buttons input[type="radio"]::after {
+  content: '';
+  border-radius: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: radial-gradient(circle at -6px -6px, #00000080 25%, #0000 75%);
+}
+
+.webtv-radio-buttons input[type="radio"]:checked {
+  background-color: #F73C44;
+  background-image: radial-gradient(circle at 6px 6px, #F7FFE1, #F73C44 15%, #7F0C00 60%);
+}
+
+.webtv-radio-buttons input[type="radio"]:checked::after {
+  display: none;
 }
 
 input[type="submit"],
