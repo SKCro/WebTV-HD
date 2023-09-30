@@ -82,7 +82,6 @@ p {
   width: 15%;
   height: 100%;
   position: fixed;
-  /*! padding: 1vw 0; */
   display: grid;
   overflow: hidden;
 }
@@ -94,7 +93,7 @@ p {
   position: fixed;
   display: grid;
   margin-left: 15vw;
-  z-index: -1;
+  z-index: 1;
   padding-top: 0;
 }
 
@@ -183,7 +182,7 @@ p {
   padding: 1%;
 }
 
-/* Text Input Styles */
+/* Input Styles */
 
 .input-container {
   display: flex;
@@ -194,13 +193,11 @@ p {
 .input-container label {
 }
 
-/* Input Styles */
-
-.input-container input[type="text"] {
+input[type="text"], input[type="password"] {
   font-family: Monaco, monospace;
   background-color: #444444;
   color: #ffdd33;
-  padding: 0.4rem;
+  padding: 0.3rem;
   width: auto;
   font-size: 1rem;
   border-color: #010101 #8f8f8f #8f8f8f #010101;
@@ -224,7 +221,7 @@ p {
   border-radius: 0;
 }
 
-.webtv-checkbox input[type="checkbox"]::after {
+.webtv-checkbox input[type="checkbox"]::after { /* Shadow */
   content: '';
   position: relative;
   z-index: -1;
@@ -251,7 +248,7 @@ p {
   pointer-events: none;
   z-index: 10000;
   rotate: 8deg;
-	margin-bottom: -9vh;
+	margin-bottom: -4rem;
 }
 
 .webtv-checkbox input[type="checkbox"]:checked + .checkmark {
@@ -263,7 +260,7 @@ p {
   align-self: end;
 }
 
-.webtv-radio-buttons input[type="radio"] {
+input[type="radio"] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -277,7 +274,7 @@ p {
   margin-top: 0.3rem;
 }
 
-.webtv-radio-buttons input[type="radio"]::before {
+input[type="radio"]::before {
   content: '';
   border-radius: 100%;
   position: absolute;
@@ -290,7 +287,7 @@ p {
   z-index: -1;
 }
 
-.webtv-radio-buttons input[type="radio"]::after {
+input[type="radio"]::after {
   content: '';
   border-radius: 100%;
   position: relative;
@@ -300,12 +297,12 @@ p {
   background-image: radial-gradient(circle at -6px -6px, #00000080 25%, #0000 75%);
 }
 
-.webtv-radio-buttons input[type="radio"]:checked {
+input[type="radio"]:checked {
   background-color: #F73C44;
   background-image: radial-gradient(circle at 6px 6px, #F7FFE1, #F73C44 15%, #7F0C00 60%);
 }
 
-.webtv-radio-buttons input[type="radio"]:checked::after {
+input[type="radio"]:checked::after {
   display: none;
 }
 
@@ -315,7 +312,7 @@ input[type="button"] {
   background-repeat: no-repeat;
   background-position: center;
   color: #E7CE4A;
-  text-shadow: 0.15vw 0.15vw 0vw #000;
+  text-shadow: 0.15rem 0.15rem 0 #000;
   background-color: #222;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
@@ -335,8 +332,8 @@ input[type="button"] {
   left: 0;
   width: 100%;
   z-index: -1;
-  margin-bottom: 3.5%;
-  margin-top: 2%;
+  margin-bottom: 1.8rem;
+  margin-top: 1rem;
 }
 
 .border::before {
@@ -345,16 +342,16 @@ input[type="button"] {
   top: 0;
   left: 0;
   width: 100%;
-  height: 0.6vw;
+  height: 0.3rem;
   background: linear-gradient(#2B2B2B 30%, #0D0D0D 70%);
 }
 
 .bottom-padding {
-	display: block;
-	position: absolute;
-	width: 83%;
-	height: 12vw;
-	z-index: -1;
+  display: block;
+  position: absolute;
+  height: 4.5rem;
+  z-index: -1;
+  width: 83%;
 }
 
 /* Statusbar */
@@ -374,7 +371,7 @@ input[type="button"] {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 0.3vh;
+  height: 0.2vw;
   background-image: linear-gradient(to right, #8F8F8F, #444);
 }
 
@@ -383,7 +380,7 @@ input[type="button"] {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0.08vw 1vw;
+  padding: 0.06vw 1vw;
 }
 
 .page-name {
@@ -506,6 +503,9 @@ textarea { /* Removes the default browser focus box */
 
 .top-bar-item {
   padding-bottom: 1.7vw;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .top-bar-item a {

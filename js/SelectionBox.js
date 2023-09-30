@@ -29,7 +29,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 100);
       }
     } else {
-      // If no selected element, hide the selection box
+      selectionBox.style.display = 'none';
+    }
+  }
+
+  function updateSelectionBoxNoGreen() {
+    if (selectedElement) {
+      var elementRect = selectedElement.getBoundingClientRect();
+      var boxMargin = 4;
+
+      var top = elementRect.top - boxMargin;
+      var left = elementRect.left - boxMargin;
+      var width = elementRect.width + 2 * boxMargin;
+      var height = elementRect.height + 2 * boxMargin;
+
+      selectionBox.style.top = top + 'px';
+      selectionBox.style.left = left + 'px';
+      selectionBox.style.width = width + 'px';
+      selectionBox.style.height = height + 'px';
+      selectionBox.style.display = 'block';
+
+    } else {
       selectionBox.style.display = 'none';
     }
   }
@@ -85,9 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
   } */
 
   // Event listener to update the selection box on page load and resize
-  window.addEventListener('load', updateSelectionBox);
-  window.addEventListener('resize', updateSelectionBox);
-  window.addEventListener('scroll', updateSelectionBox);
+  window.addEventListener('load', updateSelectionBoxNoGreen);
+  window.addEventListener('resize', updateSelectionBoxNoGreen);
+  window.addEventListener('scroll', updateSelectionBoxNoGreen);
 
   // Event listener for mouse click to select an element
   document.addEventListener('click', function (event) {
