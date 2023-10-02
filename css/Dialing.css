@@ -16,11 +16,13 @@ body {
   position: fixed;
   width: 100%;
   height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100%) */
-  background-image: url('../images/CityRoadUpscaled.gif');
-  background-size: cover;
+  padding-bottom: 100vh;
+  background-image: url('../images/Dialing.svg');
+  background-size: contain;
   background-position: center center;
   z-index: -1;
+  background-repeat: no-repeat;
+  animation: city-road-anim 1s 1s;
 }
 
 .city img {
@@ -35,25 +37,25 @@ body {
 #progressbar-container {
   margin-left: 15vh;
   margin-right: 15vh;
-  margin-top: 80vh;
+  margin-top: 85vh;
 }
 
 /* Progress bar style by pjfrix, animation by me */
-/* progress bar */
+
 progress {
     box-sizing: border-box;
-    border: solid 2px #202020;
+    border: solid 0.2rem #202020;
     border-color: #202020 #666666 #666666 #202020;
     background: -webkit-linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
     background: linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
-    padding: 0.15vw 0.2vw;
-    height: 1.5vw;
+    padding: 0.1rem 0.2rem;
+    height: 1.3rem;
 }
 
 progress[value]::-moz-progress-bar {
     background: repeating-linear-gradient(145deg, #00a500, 2px, #006f00, #006f00, 6px, #00a500 8px);
-    border-top: 0.1vw solid #003c00;
-    border-bottom: 0.1vw solid #003c00;
+    border-top: 0.1rem solid #003c00;
+    border-bottom: 0.1rem solid #003c00;
     animation: baranim 0.25s linear infinite;
 }
 
