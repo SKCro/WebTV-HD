@@ -5,19 +5,21 @@
  Rather barebones and incomplete, with only the main style being worked on as of now.
 
 ## How do I use this?
- **Important:** If you're planning to use this in a project, please credit me when possible.
+ **Important:** If you're planning to use this in a project or website, please credit me when possible.
  
  Click the "Code" button at the top and click "Download ZIP". Unzip wherever you want and open the PowerOn.html page.
  
 ![Screenshot of the "Code" button being pressed.](https://i.imgur.com/ObYTKH3.png)
 
- Or, if you're stuck with a command line interface (specifically Linux), you can run ``git clone https://github.com/SKCro/WebTV-HD.git``, and copy all the resources over by entering the WebTV-HD directory, and running ``cp -r ./* <your location>``.
+ If you prefer (or are stuck with) with a command line interface, you can run ``git clone https://github.com/SKCro/WebTV-HD.git``, and copy all the resources over by entering the WebTV-HD directory, and running ``cp -r ./* <your location>``.
 
 ## What does it look like? 
 
-![Screenshot of the style in action.](https://i.imgur.com/UHqtWFU.png)
+![Screenshot of the style in action.](https://i.imgur.com/KbHvXFx.png)
 
 If you'd like to check it out for yourself, head on over to the [GitHub Pages instance](https://SKCro.github.io/WebTV-HD/PowerOn.html).
+
+The home page's top bar icons were made by [BLUEamnesiac](https://www.deviantart.com/blueamnesiac/).
 
 If anything is broken for you, please file a bug report and tell me the issue, which browser you used, and your screen resolution. Also provide a screenshot if possible.
 
@@ -38,7 +40,7 @@ If you'd like to suggest something, [create a new issue](https://github.com/SKCr
 - ~~Make the status bar look better on non-widescreen display sizes.~~ Done
 - Recreate more service pages like dialing, login, home page, mail, etc.
 - ~~Add functionality with JavaScript.~~ Done
-- Fix the dang selection box scrolling.
+- Fix the dang selection box scrolling bug.
 - Make Dialing.html actually work better by making it show a splash at 100% progress, along with redirecting to Home.html.
 - Flesh out Home.html.
 
