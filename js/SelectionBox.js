@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var selectionBox = document.querySelector('.selection-box');
+  var selectionBox = document.getElementById('selectionbox');
   var selectedElement = null;
 
   // Function to update the selection box position and size

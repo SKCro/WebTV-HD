@@ -11,6 +11,82 @@
      }
 }
 
+@media print { /* Printer-specific styles - these only show up when printing the page. */
+  body {
+    background-color: #FFF !important;
+    color: #000 !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #000 !important;
+    text-shadow: 0 0 transparent !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #404040 !important;
+  }
+  
+  input[type="radio"] {
+    appearance: radio !important;
+  }
+  
+  input[type="checkbox"] {
+    appearance: checkbox !important;
+  }
+  
+  input[type="submit"], input[type="button"] {
+    color: #111 !important;
+    text-shadow: 0 0 transparent !important;	
+  }
+  
+  input[type="text"], input[type="password"] {
+    color: #000 !important;
+  }
+  
+  input[type="text"]::placeholder, input[type="password"]::placeholder {
+    color: #111 !important;
+  }
+  
+  .webtv-checkbox .checkmark {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  #selectionbox {
+    display: none !important;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .sidebar-contents {
+    display: none !important;
+  }
+
+  .bottom-right-image {
+    display: none !important;
+  }
+
+  .sidebar-shadow {
+    display: none !important;
+  }
+
+  .status-bar {
+    display: none !important;
+  }
+  
+  .printonly {
+    display: block !important;
+  }
+}
+
 body {
   background-color: #191919;
   color: #42bd52;
@@ -50,6 +126,79 @@ p {
   margin-top: 1rem;
   margin-bottom: 1rem;
   word-wrap: break-word;
+}
+
+hr {
+  border-radius: 6px;
+  border: 0;
+  margin: 5px;
+  box-shadow: 1px 1px 1px #4e4e4e, 
+              1px 1px 1px 1px #969696,
+              -1px -1px 1px #4e4e4e, 
+              -1px -1px 2px 2px #202020;
+}
+
+dialog {
+  position: absolute;
+  margin-top: 32vh;
+  z-index: 9998;
+  color: #E7CE4A;
+  border: transparent;
+  border-radius: 6px;
+  display: inline-block;
+  background: #4e4e4e;
+  box-shadow: 0.5rem 0.5rem 0 #00000080, /* Main Shadow */
+              inset 1px 1px 1px #4e4e4e,
+              inset 2px 2px 2px 2px #969696,
+			  inset -1px -1px 1px #4e4e4e,
+			  inset -2px -2px 2px 2px #202020;
+  min-width: 22rem;
+  text-shadow: 0.1rem 0.1rem 0 rgb(0, 0, 0);
+  max-width: 22rem;
+}
+
+.dialog-overlay {
+  display: none;
+}
+
+.dialog-overlay::before {
+  content: '';
+  z-index: 9997;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+}
+
+.dialog-logo {
+  background-image: url("../images/WebTVShadowInset.svg");
+  position: relative;
+  display: block;
+  float: left;
+  width: 6rem;
+  height: 4.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dialog-message {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+}
+
+.dialog-separator {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dialog-button {
+  float: right;
+  margin-right: 1rem;
 }
 
 /* Fonts */
@@ -205,6 +354,10 @@ input[type="text"], input[type="password"] {
   border-radius: 0;
 }
 
+input[type="text"]::placeholder, input[type="password"]::placeholder {
+  color: #cdcdcd;
+}
+
 .webtv-checkbox input[type="checkbox"] {
   appearance: none; /* Hides the default checkbox */
   -webkit-appearance: none;
@@ -248,7 +401,7 @@ input[type="text"], input[type="password"] {
   pointer-events: none;
   z-index: 10000;
   rotate: 8deg;
-	margin-bottom: -4rem;
+  margin-bottom: -4rem;
 }
 
 .webtv-checkbox input[type="checkbox"]:checked + .checkmark {
@@ -306,8 +459,7 @@ input[type="radio"]:checked::after {
   display: none;
 }
 
-input[type="submit"],
-input[type="button"] {
+input[type="submit"], input[type="button"] {
   background-image: linear-gradient(to bottom, #343434, #040404);
   background-repeat: no-repeat;
   background-position: center;
@@ -324,26 +476,38 @@ input[type="button"] {
   border-radius: 0;
   font-family: Helvetica;
   font-weight: normal;
+  margin-left: 0.8rem;
+}
+
+button {
+  font-size: 1rem;
+  border: 0;
+  background: #b5b5b5;
+  border-radius: 0.6rem;
+  box-shadow: inset 1px 1px 1px .25px #b5b5b5,
+              inset 2px 2px .25px white,
+              inset -1px -1px 2px #444444, 
+              0 0 1px black, 0 0 1px 2px #333333, 
+              1px 1px 0 2px #444444, 0 0 0 2px black;
+  padding: 0 12px;
+  min-width: 1rem;
+  min-height: 1.8rem;
+  cursor: pointer;
+  font-family: Helvetica;
+  font-weight: normal;
 }
 
 .border {
   position: relative;
+  content: '';
   top: 0;
   left: 0;
   width: 100%;
   z-index: -1;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1rem;
   margin-top: 1rem;
-}
-
-.border::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0.3rem;
-  background: linear-gradient(#2B2B2B 30%, #0D0D0D 70%);
+  height: 0.4rem;
+  background: linear-gradient(#2B2B2B 30%, #0D0D0D 60%);
 }
 
 .bottom-padding {
@@ -439,22 +603,23 @@ input[type="button"] {
   left: 0;
 }
 
-.selection-box {
+#selectionbox {
   position: absolute;
-  box-shadow: 0.3vw 0.3vw 0.11vw -0.05vh rgba(0, 0, 0, 0.5), -0.1vh -0.1vw 0.15vw rgba(255, 255, 255, 0.8);
-  border: 0.35vw solid rgba(255, 228, 71, 0.8);
-  border-radius: 0.2vw;
+  box-shadow: 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.5), /* Black */
+             -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 1); /* White */
+  border: 0.3rem solid rgba(255, 228, 71, 0.8);
+  border-radius: 0.2rem;
   box-sizing: border-box;
   pointer-events: none;
   z-index: 9999;
-  display: none;
 }
 
-.selection-box.green {
+#selectionbox.green {
   position: absolute;
-  box-shadow: 0.3vw 0.3vw 0.11vw -0.05vh rgba(0, 0, 0, 0.5), -0.1vh -0.1vw 0.15vw rgba(255, 255, 255, 0.8);
-  border: 0.35vw solid rgba(45, 253, 0, 0.8);
-  border-radius: 0.2vw;
+  box-shadow: 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.5), /* Black */
+             -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 1); /* White */
+  border: 0.3rem solid rgba(45, 253, 0, 0.8);
+  border-radius: 0.2rem;
   box-sizing: border-box;
   pointer-events: none;
   z-index: 9999;
@@ -540,4 +705,8 @@ textarea { /* Removes the default browser focus box */
 
 .homepage-content-container {
   margin: 1%;
+}
+
+.printonly {
+  display: none;
 }
