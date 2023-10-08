@@ -237,7 +237,7 @@ dialog {
 
 .sidebar-shadow {
   background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0));
-  width: 1vw;
+  width: 0.8vw;
   height: 100vh;
   position: fixed;
   display: grid;
@@ -251,9 +251,10 @@ dialog {
   padding-right: 8%;
   padding-bottom: 4%;
   padding-top: 4%;
-  margin-top: 0.5vw;
+  margin: auto;
   max-width: 12vw;
   max-height: 12vw;
+  margin-top: 0.5vw;
 }
 
 .sidebar-border {
