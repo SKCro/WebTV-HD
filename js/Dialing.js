@@ -26,7 +26,7 @@ function doSplash() { /* Not finished yet - this code will remove elements and d
   const city = document.getElementById('city');
   const progressBar = document.getElementById('progressbar');
   const progressMessage = document.getElementById('progressbar-message');
-  setTimeout("location.href='Home.html'",5000)  */
+  setTimeout("location.href='Home.html'",5000);  */
 }
 
 function skipDialing() {

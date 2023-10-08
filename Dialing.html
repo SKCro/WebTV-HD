@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
   <title>Connecting</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/Dialing.css"/>
-  <link rel="shortcut icon" href="Icon.png">
-  <script src="js/ButtonSounds.js"></script>
+  <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel=stylesheet type=text/css href=css/Dialing.css>
+  <link rel="shortcut icon" href=Icon.png>
+  <script src="js/main.js"></script>
   <script src="js/Dialing.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div id="city"></div>
-  <div id="progressbar-container">
-	<span id="progressbar-message">Dialing toll free</span><br>
-    <progress id="progressbar" max="100" value="20"></progress>
-	<input type="submit" class="submit" id="skipDialing" value="Skip Dialing" onClick="skipDialing()"></input>
-  </div>
-  
-  <audio id="dialing-music" autoplay loop preload="auto">
-    <source src="audio/dialing.mp3" type="audio/mpeg">
-    Your browser does not support audio, so the dialing music will not play.
-  </audio>
-<audio id="submitSound" src="audio/submitClick.mp3" preload="auto"></audio>
+<div id=selectionbox></div>
+<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
+<audio id=dialing-music src=audio/dialing.mp3 autoplay loop preload=auto></audio>
+
+<div id="city"></div>
+<div id="progressbar-container">
+  <span id="progressbar-message">Dialing toll free</span><br>
+  <progress id="progressbar" max="100" value="20"></progress>
+  <input type="submit" class="submit" id="skipDialing" value="Skip Dialing" onClick="skipDialing()"></input>
+</div>
+<div class=page-name style=display:none;></div> <!-- this only exists to prevent a js error -->
 </body>
 </html>

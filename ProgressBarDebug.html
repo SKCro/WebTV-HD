@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Progressbar Debugging Page</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="shortcut icon" href="Icon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    progress {
+      box-sizing: border-box;
+      border: solid 0.2rem #202020;
+      border-color: #202020 #666666 #666666 #202020;
+      background: -webkit-linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
+      background: linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
+      padding: 0.1rem 0.2rem;
+      height: 1.3rem;
+  }
+
+    .animated[value]::-moz-progress-bar {
+      animation: baranim 120s linear infinite;
+  }
+  
+    progress[value]::-moz-progress-bar {
+      background: repeating-linear-gradient(145deg, #00A500 0%, #006F00 2.5%, #00A500 5%);
+      border-top: 0.1rem solid #003c00;
+      border-bottom: 0.1rem solid #003c00;
+  }
+  
+    .frame1[value]::-moz-progress-bar {
+      background: repeating-linear-gradient(145deg, #006F00 -0.3%, #006F00 0.1%, #00A500 2.5%, #006F00 5%);
+  }
+  
+    .frame2[value]::-moz-progress-bar {
+      background: repeating-linear-gradient(145deg, #006F00 -0.3%, #006F00 0.1%, #00A500 2.5%, #006F00 5%);
+	  background-position: 20px 0;
+  }
+  
+    .frame3[value]::-moz-progress-bar {
+      background: repeating-linear-gradient(145deg, #006F00 -0.3%, #006F00 0.1%, #00A500 2.5%, #006F00 5%);
+	  background-position: 40px 0;
+  }
+  
+    .frame4[value]::-moz-progress-bar {
+      background: repeating-linear-gradient(145deg, #006F00 -0.3%, #006F00 0.1%, #00A500 2.5%, #006F00 5%);
+	  background-position: 80px 0;
+  }
+
+  @keyframes baranim {
+    100% {
+      background-position: 10000px 0;
+    }
+  }
+  </style>
+</head>
+<body>
+  <form>
+    <progress class="progress animated" max="100" value="100"></progress><br>
+	<progress class="progress frame1" max="100" value="100"></progress><br>
+	<progress class="progress frame2" max="100" value="100"></progress><br>
+	<progress class="progress frame3" max="100" value="100"></progress><br>
+	<progress class="progress frame4" max="100" value="100"></progress><br>
+  </form>
+</body>
+</html>

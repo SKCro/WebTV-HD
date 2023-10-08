@@ -1,77 +1,76 @@
 <!DOCTYPE HTML>
 <html><head>
   <title>Home for SKCro</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="shortcut icon" href="Icon.png">
-  <script src="js/SelectionBox.js"></script>
-  <script src="js/ButtonSounds.js"></script>
-  <script src="js/PageNameUpdater.js"></script>
+  <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel="shortcut icon" href=Icon.png>
+  <script src=js/main.js></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
 
-<audio id="clickSound" src="audio/click.mp3" preload="auto"></audio>
-<audio id="inputSound" src="audio/inputClick.mp3" preload="auto"></audio>
-<audio id="submitSound" src="audio/submitClick.mp3" preload="auto"></audio>
+<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
 
 <div id=selectionbox></div> <!-- Selection box -->
 
-  <div class="sidebar" style="background-color:#3C3C56;">
-    <div class="sidebar-contents">
-      <img class="sidebar-logo clickable" src="images/WebTVJewel.svg" alt="WebTV Logo.">
-      <div class="sidebar-border-home"></div>
-      <div class="sidebar-link"><a class="clickable" onclick="setTimeout(function(){location.href='PageStyleGuide.html';}, 235);">Setup</a></div>
-      <div class="sidebar-border-home"></div>
-      <div class="sidebar-link"><a class="clickable">Using WebTV</a></div>
-      <div class="sidebar-border-home"></div>
-      <div class="sidebar-link"><a class="clickable">Community</a></div>
-      <div class="sidebar-border-home"></div>
-      <div class="sidebar-link"><a class="clickable">What's on TV</a></div>
-      <div class="sidebar-border-home"></div>
-    </div>
-    <div class="bottom-right-image-home"> <!-- Setup image div -->
-      <img alt="Home Text" src="images/Home.png">
-    </div>
+<div class=sidebar style=background-color:#3C3C56;>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick=linkHandler('Credits.html');>
+    <div class=sidebar-border-home></div>
+    <div class=sidebar-link><a class=clickable>Setup</a></div>
+    <div class=sidebar-border-home></div>
+    <div class=sidebar-link><a class=clickable>Using WebTV</a></div>
+    <div class=sidebar-border-home></div>
+    <div class=sidebar-link><a class=clickable>Community</a></div>
+    <div class=sidebar-border-home></div>
+    <div class=sidebar-link><a class=clickable>What's on TV</a></div>
+    <div class=sidebar-border-home></div>
   </div>
-<div class="sidebar-shadow"></div>
+  <div class=bottom-right-image> <!-- Setup image div -->
+    <img alt="Home Text" src=images/Home.svg>
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
 
   <div class="main-content" style="padding: 0%">
     <div class="top-bar">
       <table class="top-bar-items">
         <tbody><tr>
-          <td class="top-bar-item clickable"><img src="images/mail.png" alt="Mail Icon"></td>
-          <td class="top-bar-item clickable"><img src="images/favorites.png" alt="Favorites Icon"></td>
-          <td class="top-bar-item clickable"><img src="images/explore.png" alt="Explore Icon"></td>
-          <td class="top-bar-item clickable"><img src="images/search.png" alt="Search Icon"></td>
+          <td class="top-bar-item clickable"><img src=images/mail.png alt="Mail Icon"></td>
+          <td class="top-bar-item clickable"><img src=images/favorites.png alt="Favorites Icon"></td>
+          <td class="top-bar-item clickable"><img src=images/explore.png alt="Explore Icon"></td>
+          <td class="top-bar-item clickable"><img src=images/search.png alt="Search Icon"></td>
         </tr>
       </tbody></table>
-    <table class="top-bar-text">
+    <table class=top-bar-text>
         <tbody><tr>
-          <td class="top-bar-item-text">Mail</td>
-          <td class="top-bar-item-text">Favorites</td>
-          <td class="top-bar-item-text">Explore</td>
-          <td class="top-bar-item-text">Search</td>
+          <td class=top-bar-item-text>Mail</td>
+          <td class=top-bar-item-text>Favorites</td>
+          <td class=top-bar-item-text>Explore</td>
+          <td class=top-bar-item-text>Search</td>
         </tr>
       </tbody></table></div>
-	<div class="top-bar-shadow"></div>
-	<div class="homepage-content-container">
+    <div class=top-bar-shadow></div>
+    <div class=homepage-content-container>
 		Welcome to WebTV HD! This project is very incomplete as of now, with only a couple of things working.<br>
-		To see more of what this theme has to offer, check out the <a class="clickable" onclick="setTimeout(function(){location.href='PageStyleGuide.html';}, 235);">style reference page</a>.<br>
-		<ul>Links
-		  <li><a class="clickable" onclick="setTimeout(function(){location.href='Dialing.html';}, 235);">Dialing page</a></li>
-		  <li><a class="clickable" onclick="setTimeout(function(){location.href='PowerOn.html';}, 235);">PowerOn page</a></li>
-		</ul>
+		To see more of what this theme has to offer, check out the <a class="clickable" onclick=linkHandler('PageStyleGuide.html');>style reference page</a>.<br>
+        <ul>Links
+          <li><a class=clickable onclick=linkHandler('PowerOn.html');>PowerOn page</a></li>
+          <li><a class=clickable onclick=linkHandler('Dialing.html');>Dialing page</a> (incomplete)</li>
+        </ul>
 	</div>
   </div>
 
-<div class="status-bar">
-  <div class="status-bar-top"></div>
-  <div class="status-bar-content">
-    <div class="page-name">Home for SKCro</div>
-    <div class="status-container">
-      <div class="status-indicator"></div>
+<div class=status-bar>
+  <div class=status-bar-top></div>
+  <div class=status-bar-content>
+    <div class=page-name>Home for SKCro</div>
+    <div class=status-container>
+      <div class=status-indicator></div>
     </div>
   </div>
 </div>

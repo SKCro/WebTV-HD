@@ -3,39 +3,7 @@
   <title>Style Reference Page</title>
   <link rel=stylesheet type=text/css href=css/style.css> <!-- Stylesheet. Don't remove or change unless you want to use a different style. -->
   <link rel="shortcut icon" href=Icon.png>
-  <script src=js/SelectionBox.js></script>
-  <script src=js/ButtonSounds.js></script>
-  <script src=js/PageNameUpdater.js></script>
-  <script>
-  	function openDialog() {
-      var dialog = document.getElementById('webtv-dialog');
-      var dialogContainer = document.querySelector('.dialog-overlay');
-      var selectionBox = document.getElementById('selectionbox');
-      var errorSound = document.getElementById('errorSound');
-	  setTimeout(function() {
-        errorSound.currentTime = 0;
-        errorSound.play();
-        dialog.setAttribute('open', 'true');
-        dialogContainer.style.display = 'unset';
-	    selectionBox.style.display = 'none';
-	  }, 2);
-	}
-    function closeDialog() {
-      setTimeout(function() {
-        var dialog = document.getElementById('webtv-dialog');
-        var dialogContainer = document.querySelector('.dialog-overlay');
-        var selectionBox = document.getElementById('selectionbox');
-        dialog.removeAttribute('open');
-        dialogContainer.style.display = 'none';
-        selectionBox.style.display = 'none';
-      }, 1);
-    }
-	function clickHandler(url) {
-      setTimeout(function() {
-        location.href = url;
-      }, 235);
-    }
-  </script>
+  <script src=js/main.js></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
@@ -57,32 +25,33 @@
   </dialog>
 </div>
 
-  <div class=sidebar>
-    <div class=sidebar-contents> <!-- WebTV logo div -->
-      <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick=clickHandler('Home.html');> <!-- Sidebar WebTV logo -->
-      <div class=sidebar-border></div> <!-- Sidebar border. Separates links and WebTV logo. -->
-      <div class=sidebar-link><a class=clickable>Link 1</a></div>
-      <div class=sidebar-border></div>
-      <div class=sidebar-link><a class=clickable>Link 2</a></div>
-      <div class=sidebar-border></div>
-      <div class=sidebar-link><a class=clickable>Link 3</a></div>
-      <div class=sidebar-border></div>
-      <div class=sidebar-link><a class=clickable>Link 4</a></div>
-      <div class=sidebar-border></div>
-    </div>
-    <div class=bottom-right-image> <!-- Setup image div -->
-      <img alt="Setup Text" src=images/Setup.png> <!-- Setup image -->
-    </div>
-	<div class=sidebar-shadow></div>
+<div class=sidebar>
+  <div class=sidebar-contents> <!-- WebTV logo div -->
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick=linkHandler('Home.html');> <!-- Sidebar WebTV logo -->
+    <div class=sidebar-border></div> <!-- Sidebar border. Separates links and WebTV logo. -->
+    <div class=sidebar-link><a class=clickable>Link 1</a></div>
+    <div class=sidebar-border></div>
+    <div class=sidebar-link><a class=clickable>Link 2</a></div>
+    <div class=sidebar-border></div>
+    <div class=sidebar-link><a class=clickable>Link 3</a></div>
+    <div class=sidebar-border></div>
+    <div class=sidebar-link><a class=clickable>Link 4</a></div>
+    <div class=sidebar-border></div>
   </div>
+  <div class=bottom-right-image> <!-- Setup image div -->
+    <img alt="Setup Text" src=images/Setup.svg> <!-- Setup image -->
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
 
 <div class=main-content>
   <h1>This is a header.</h1>
   <p>This is a paragraph. Text content will be in the Helvetica font.<br>This is another sentence in the same paragraph. Any words that are not broken up via &lt;br&gt; tags will be wrapped to fit.</p>
   <h2>This is a sub-header.</h2>
   <p>This is another paragraph. <b>This is bold text.</b> <i>This is italic text.</i><br><b><i>This is both bold and italic text.</i></b> <a class=clickable>This is a link.</a></p>
+
   <!-- Note: if you want to add a link, please don't use href - that causes the browser to navigate away before the click sound can be played. -->
-  <!-- Instead, use this code snippet: <a href="" class=clickable onClick=clickHandler('https://example.com/page');> -->
+  <!-- Instead, use this code snippet: <a href="" class=clickable onClick=linkHandler('https://example.com/page');> -->
 
   <div class=input-container>
     <label for=Textbox1>This is the textbox's flavor text.</label>
