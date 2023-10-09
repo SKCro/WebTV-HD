@@ -39,7 +39,7 @@ If you'd like to suggest something, [create a new issue](https://github.com/SKCr
 ## TODO:
 - Flesh out everything.
 - ~~Make the status bar look better on non-widescreen display sizes.~~ Done
-- Recreate more service pages like dialing, login, home page, mail, etc. Currently on hold because style updates are more important for right now.
+- Recreate more service pages like login, mail, settings, etc. Currently on hold because style updates are more important for right now.
 - ~~Add functionality with JavaScript.~~ Done
 - Fix the dang selection box scrolling bug.
 - Make Dialing.html actually work better by making it show a splash at 100% progress, along with redirecting to Home.html.
