@@ -27,6 +27,7 @@ If anything is broken for you, please file a bug report and tell me the issue, w
 
  I don't have an exact roadmap for the project, but in no particular order, here are my goals for the project:
 - Get the style to look as accurate as possible.
+- Remake some of the Page Builder styles and separate the service page style from the base WebTV stuff (like the statusbar and buttons and stuff).
 - Make the style work better on mobile devices (or create a new one specifically designed for them).
 - Get the selection box to move via the arrow keys (and maybe gamepad), just like real WebTV. This would make big-screen browsing easier.
 - Possibly make an MSN TV 2 style.
@@ -38,13 +39,13 @@ If you'd like to suggest something, [create a new issue](https://github.com/SKCr
 ## TODO:
 - Flesh out everything.
 - ~~Make the status bar look better on non-widescreen display sizes.~~ Done
-- Recreate more service pages like dialing, login, home page, mail, etc.
+- Recreate more service pages like dialing, login, home page, mail, etc. Currently on hold because style updates are more important for right now.
 - ~~Add functionality with JavaScript.~~ Done
 - Fix the dang selection box scrolling bug.
 - Make Dialing.html actually work better by making it show a splash at 100% progress, along with redirecting to Home.html.
 - Flesh out Home.html.
 
 ## Why are Tizen-related files in the repo?
- I originally built this project with the Samsung Smart TV in mind, using the Tizen IDE (I wanted to see how a WebTV-like application would look), but I decided to expand it to modern browsers in general. That's why you might see some Tizen IDE leftovers (like stuff in the .gitignore and that one JS file).
+ I originally built this project with the Samsung Smart TV in mind, using the Tizen IDE (I wanted to see how a WebTV-like application would look), but I decided to expand it to modern browsers in general. That's why you might see some Tizen IDE leftovers (like stuff in the .gitignore).
  
- You can safely ignore these files, as they don't really serve much purpose.
+ You can safely ignore these leftovers, as they don't really serve much purpose.
