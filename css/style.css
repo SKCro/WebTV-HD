@@ -327,9 +327,6 @@ dialog {
   margin-bottom: 0.5%;
 }
 
-.input-container label {
-}
-
 input[type="text"], input[type="password"] {
   font-family: Monaco, monospace;
   background-color: #444444;
@@ -346,7 +343,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder {
   color: #cdcdcd;
 }
 
-.webtv-checkbox input[type="checkbox"] {
+input[type="checkbox"] {
   appearance: none; /* Hides the default checkbox */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -362,7 +359,7 @@ input[type="text"]::placeholder, input[type="password"]::placeholder {
   border-radius: 0;
 }
 
-.webtv-checkbox input[type="checkbox"]::after { /* Shadow */
+input[type="checkbox"]::after { /* Shadow */
   content: '';
   position: relative;
   z-index: -1;
@@ -377,23 +374,23 @@ input[type="text"]::placeholder, input[type="password"]::placeholder {
   border-right-color: transparent;
 }
 
-.webtv-checkbox .checkmark {
-  font-weight: 700;
-  color: #EB3733;
-  position: relative;
-  top: -3.5rem;
-  left: 0.2rem;
-  font-size: 2.6rem;
-  text-shadow: 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.8);
-  opacity: 0; /* Hide the checkmark by default */
-  pointer-events: none;
+input[type="checkbox"]::before {
+  content: '';
+  background-image: url('../images/Checkmark.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
   z-index: 10000;
-  rotate: 8deg;
-  margin-bottom: -4rem;
+  position: absolute;
+  display: block;
+  width: 2.3rem;
+  height: 2.3rem;
+  left: -0.2rem;
+  top: -0.45rem;
+  visibility: hidden;
 }
 
-.webtv-checkbox input[type="checkbox"]:checked + .checkmark {
-  opacity: 1;
+input[type="checkbox"]:checked::before {
+  visibility: visible;
 }
 
 .webtv-radio-buttons {
@@ -509,13 +506,14 @@ button {
 /* Statusbar */
 
 .status-bar {
+  content: '';
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 4vw;
   background-image: linear-gradient(to right, #666, #333);
-  z-index: 9999;
+  z-index: 10000;
 }
 
 .status-bar::after {
@@ -548,6 +546,7 @@ button {
 }
 
 .status-indicator { /* Black box w/ green line */
+  content: '';
   width: 90%;
   background-color: #000;
   border-radius: 0.3vw;
@@ -566,6 +565,7 @@ button {
 }
 
 .status-container { /* Status indicator container */
+  content: '';
   width: 4.2%;
   height: 65%;
   background-color: #000;
