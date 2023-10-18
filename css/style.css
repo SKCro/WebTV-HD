@@ -201,6 +201,12 @@ dialog {
   margin-right: 1rem;
 }
 
+#mainFrame {
+  width: 100vw;
+  height: 92.5vh;
+  border: 0;
+}
+
 /* Fonts */
 
 @font-face {
@@ -299,6 +305,18 @@ dialog {
   margin-bottom: 5vw;
   max-height: 13vw;
   justify-content: right;
+  float: right;
+  margin-right: 1vw;
+}
+
+.bottom-right-image-iframe {
+  align-self: end;
+  display: flex;
+  height: 13vw;
+  margin-bottom: 1vw;
+  max-height: 13vw;
+  justify-content: right;
+  float: right;
   margin-right: 1vw;
 }
 
@@ -459,7 +477,7 @@ input[type="submit"], input[type="button"] {
   border-image-slice: 1;
   border-color: #494949 #020202 #010101 #494949;
   border-radius: 0;
-  font-family: Helvetica;
+  font-family: 'Helvetica';
   font-weight: normal;
   margin-left: 0.8rem;
 }
@@ -478,7 +496,7 @@ button {
   min-width: 1rem;
   min-height: 1.8rem;
   cursor: pointer;
-  font-family: Helvetica;
+  font-family: 'Helvetica';
   font-weight: normal;
 }
 
@@ -626,7 +644,7 @@ textarea { /* Removes the default browser focus box */
 }
 
 .clickable {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .top-bar {
@@ -648,6 +666,7 @@ textarea { /* Removes the default browser focus box */
 .top-bar-text {
   margin-top: -10vw;
   pointer-events: none;
+  user-select: none;
   background-color: transparent;
   table-layout: fixed;
   text-align: center;
@@ -670,6 +689,7 @@ textarea { /* Removes the default browser focus box */
   max-width: 9vw;
   vertical-align: middle;
   pointer-events: none;
+  user-select: none;
 }
 
 .top-bar-item-text {
@@ -679,6 +699,7 @@ textarea { /* Removes the default browser focus box */
 	text-align: center;
 	font-size: 2vw;
 	pointer-events: none;
+	user-select: none;
 }
 
 .top-bar-shadow {
@@ -688,7 +709,7 @@ textarea { /* Removes the default browser focus box */
   position: relative;
   display: grid;
   z-index: -1;
-  padding-top: 0;
+  margin-top: 0.5%;
 }
 
 .homepage-content-container {

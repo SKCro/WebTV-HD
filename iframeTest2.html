@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>iframe-embed testing</title>
+  <link rel=stylesheet type=text/css href=css/style.css> <!-- Stylesheet. Don't remove or change unless you want to use a different style. -->
+  <link rel="shortcut icon" href=Icon.png>
+  <script src=js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head>
+<body>
+
+<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
+<div id=selectionbox></div> <!-- Selectionbox -->
+
+<div class=dialog-overlay> <!-- Dialog overlay. Prevents clicking things behind dialogs. -->
+  <dialog id=webtv-dialog> <!-- Dialog box. Invisible until triggered. -->
+    <div class=dialog-logo></div> <!-- Dialog logo image. Image can be changed in the CSS. -->
+    <div class=dialog-message>WebTV ran into a technical problem. Please try again.</div> <!-- Dialog text. -->
+    <div class=dialog-separator><hr></div> <!-- Dialog separator. Separates logo/text from action buttons. -->
+    <div class="dialog-button submit"><button onClick=closeDialog()>Continue</button></div> <!-- Close button. -->
+  </dialog>
+</div>
+
+<div class=sidebar>
+  <div class=sidebar-contents> <!-- WebTV logo div -->
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick=linkHandler('Home.html');> <!-- Sidebar WebTV logo -->
+    <div class=sidebar-border></div> <!-- Sidebar border. Separates links and WebTV logo. -->
+    <div class=sidebar-link><a class=clickable>Link 1</a></div>
+    <div class=sidebar-border></div>
+    <div class=sidebar-link><a class=clickable>Link 2</a></div>
+    <div class=sidebar-border></div>
+    <div class=sidebar-link><a class=clickable>Link 3</a></div>
+    <div class=sidebar-border></div>
+    <div class=sidebar-link><a class=clickable>Link 4</a></div>
+    <div class=sidebar-border></div>
+  </div>
+  <div class=bottom-right-image-iframe> <!-- Setup image div -->
+    <img alt="Setup Text" src=images/Setup.svg> <!-- Setup image -->
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
+
+<div class=main-content>
+  <h1>This is a header.</h1>
+  <p>This is a paragraph. Text content will be in the Helvetica font.<br>This is another sentence in the same paragraph. Any words that are not broken up via &lt;br&gt; tags will be wrapped to fit.</p>
+  <h2>This is a sub-header.</h2>
+  <p>This is another paragraph. <b>This is bold text.</b> <i>This is italic text.</i><br><b><i>This is both bold and italic text.</i></b> <a class=clickable>This is a link.</a></p>
+
+  <!-- Note: if you want to add a link, please don't use href - that causes the browser to navigate away before the click sound can be played. -->
+  <!-- Instead, use this code snippet: <a href="" class=clickable onClick=linkHandler('https://example.com/page');> -->
+
+  <div class=input-container>
+    <label for=Textbox1>This is the textbox's flavor text.</label>
+    <input type=text name=Textbox id=Textbox1 placeholder="Textbox placeholder.">
+  </div>
+
+  <div class=input-container>
+	<label for=myCheckbox>This is the checkbox's flavor text.</label>
+      <input type=checkbox id=myCheckbox class=input></input>
+  </div>
+    
+  <div class=input-container>
+    <label for=webtv-radio-buttons>This is the flavor text for radio buttons.</label>
+    <div class=webtv-radio-buttons>
+      <label for=radio1>
+        <input type=radio name=radioButton id=radio1 class=input> Option 1</label>
+      <label for=radio2>
+        <input type=radio name=radioButton id=radio2 class=input> Option 2</label>
+    </div>
+  </div>
+  
+  <div class=border><hr class=printonly></div> <!-- Border div -->
+  <input class=submit type=submit value=Button></input> <!-- Submit button -->
+  <input class=submit type=submit value=Dialog onClick=openDialog()></input> <!-- Dialog-triggering button -->
+
+</div>
+<div class=page-name style=display:none;></div>
+</body></html>

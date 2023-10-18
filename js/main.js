@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function clearSelectionBox() {
-	  selectionbox.style.display = 'none';
+	  selectionBox.style.display = 'none';
   }
 
   // Function to check if an element is interactive (clickable)

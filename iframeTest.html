@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>iframe funny</title>
+  <link rel=stylesheet type=text/css href=css/style.css> <!-- Stylesheet. Don't remove or change unless you want to use a different style. -->
+  <link rel="shortcut icon" href=Icon.png>
+  <script src=js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head>
+<body>
+
+<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
+
+<iframe id="mainFrame" src="iframeTest2.html"></iframe>
+<div id=selectionbox></div>
+
+<div class=status-bar> <!-- Statusbar -->
+  <div class=status-bar-content> <!-- Statusbar content, like page name and indicator -->
+    <div class=page-name></div> <!-- Page name, changes dynamically based on <title> -->
+    <div class=status-container> <!-- Status indicator container -->
+      <div class=status-indicator></div> <!-- Status indicator -->
+    </div>
+  </div>
+</div>
+
+</body></html>
