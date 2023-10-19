@@ -10,7 +10,7 @@ A project that aims to recreate WebTV Networks' UI and page design using modern 
  
 Click the "Code" button at the top and click "Download ZIP". Unzip wherever you want and open the PowerOn.html page.
  
-![Screenshot of the "Code" button being pressed.](https://i.imgur.com/ObYTKH3.png)
+![Screenshot of the "Code" button being pressed.](https://i.imgur.com/bXnlbAJ.png)
 
  If you prefer (or are stuck with) with a command line interface, you can run ``git clone https://github.com/SKCro/WebTV-HD.git``, and copy all the resources over by entering the WebTV-HD directory, and running ``cp -r ./* <your location>``.
 
