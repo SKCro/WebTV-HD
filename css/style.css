@@ -262,6 +262,7 @@ dialog {
   max-width: 12vw;
   max-height: 12vw;
   margin-top: 0.5vw;
+  user-select: none;
 }
 
 .sidebar-border {
@@ -303,32 +304,35 @@ dialog {
   align-self: end;
   display: flex;
   height: 13vw;
-  margin-bottom: 5vw;
   max-height: 13vw;
   justify-content: right;
   float: right;
   margin-right: 1vw;
+  margin-bottom: 5vw;
+  user-select: none;
 }
 
 .bottom-right-image-iframe {
   align-self: end;
   display: flex;
   height: 13vw;
-  margin-bottom: 1vw;
   max-height: 13vw;
   justify-content: right;
   float: right;
   margin-right: 1vw;
+  margin-bottom: 1vw;
+  user-select: none;
 }
 
 .bottom-right-image-credits {
   align-self: end;
   display: flex;
   height: 18vw;
-  margin-bottom: 5vw;
   max-height: 18vw;
   justify-content: right;
   margin-right: 1vw;
+  margin-bottom: 5vw;
+  user-select: none;
 }
 
 /* Main Content Style */
@@ -373,12 +377,12 @@ input[type="checkbox"] {
   cursor: pointer;
   position: relative;
   border-style: solid;
-  border-color: #7F7F7F80 #7F7F7F80 #7F7F7F80 #85858580;
+  border-color: #7F7F7F80;
   border-width: 0.2rem;
   border-radius: 0;
 }
 
-input[type="checkbox"]::after { /* Shadow */
+input[type="checkbox"]::after { /* Inner shadow */
   content: '';
   position: relative;
   z-index: -1;
@@ -387,10 +391,7 @@ input[type="checkbox"]::after { /* Shadow */
   width: 90%;
   filter: blur(1px);
   border: 0.2rem solid;
-  border-top-color: black;
-  border-bottom-color: transparent;
-  border-left-color: black;
-  border-right-color: transparent;
+  border-color: black transparent transparent black;
 }
 
 input[type="checkbox"]::before {
@@ -536,6 +537,7 @@ button, .ButtonBorder {
   height: 4vw;
   background-image: linear-gradient(to right, #666, #333);
   z-index: 10000;
+  cursor: url(../images/cursor.png), default;
 }
 
 .status-bar::after {

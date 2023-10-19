@@ -17,17 +17,18 @@
       margin: 0;
       background-color: #000;
     }
-    
-	.powerOnButton {
-	  width: 8rem;
-	  margin-left: auto !important;
-	  margin-right: auto;
-	}
-	
+
+    .powerOnButton {
+      width: 6rem;
+      margin-left: auto !important;
+      margin-right: auto;
+      cursor: url(images/cursor.png), default;
+    }
+
     .hiddenUntilClick {
       display: none;
     }
-    
+
     .hideOnClick {
       position: absolute;
       display: grid;
@@ -61,7 +62,7 @@
     }
 
     async function powerOn() {
-	  document.body.style.cursor = 'none';
+      document.body.style.cursor = 'none';
       const hideOnClick = document.querySelector(".hideOnClick");
       hideOnClick.style.display = "none";
 
