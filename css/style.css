@@ -37,7 +37,7 @@
     appearance: checkbox !important;
   }
   
-  input[type="submit"], input[type="button"] {
+  button {
     color: #111 !important;
     text-shadow: 0 0 transparent !important;	
   }
@@ -392,6 +392,11 @@ input[type="checkbox"] {
   border-color: #7F7F7F80;
   border-width: 0.2rem;
   border-radius: 0;
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
+}
+
+input[type="checkbox"]:active {
+  cursor: url('../images/cursorActive.png') 24 23, pointer;
 }
 
 input[type="checkbox"]::after { /* Inner shadow */
@@ -404,6 +409,8 @@ input[type="checkbox"]::after { /* Inner shadow */
   filter: blur(1px);
   border: 0.2rem solid;
   border-color: black transparent transparent black;
+  pointer-events: none;
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
 }
 
 input[type="checkbox"]::before {
@@ -419,6 +426,12 @@ input[type="checkbox"]::before {
   left: -0.2rem;
   top: -0.45rem;
   visibility: hidden;
+  pointer-events: none;
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
+}
+
+input[type="checkbox"]:active {
+  cursor: url('../images/cursorActive.png') 24 23, pointer;
 }
 
 input[type="checkbox"]:checked::before {
@@ -437,7 +450,7 @@ input[type="radio"] {
   width: 1.2rem;
   height: 1.2rem;
   background-color: #0C0C0C;
-  cursor: pointer;
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
   position: relative;
   border-radius: 100%;
   background-image: radial-gradient(circle at 6px 6px, #3C3C3C 25%, #0C0C0C 75%);
@@ -476,22 +489,31 @@ input[type="radio"]:checked::after {
   display: none;
 }
 
-button, .ButtonBorder {
+input[type="radio"]:active {
+  cursor: url('../images/cursorActive.png') 24 23, pointer;
+}
+
+button, .ButtonBorder { /* Light/Default button - style by pjfrix, modified by me */
   font-size: 1rem;
   border: 0;
   background: #b5b5b5;
   border-radius: 0.6rem;
   box-shadow: inset 1px 1px 1px .25px #b5b5b5,
               inset 2px 2px .25px white,
-              inset -1px -1px 2px #444444, 
-              0 0 1px black, 0 0 1px 2px #333333, 
-              1px 1px 0 2px #444444, 0 0 0 2px black;
+              inset -1px -1px 2px #444, 
+              0 0 1px black, 0 0 1px 2px #333, 
+              1px 1px 0 2px #444, 0 0 0 2px black;
   padding: 0 12px;
   min-width: 1rem;
   min-height: 1.8rem;
   cursor: pointer;
   font-family: 'Helvetica';
   font-weight: normal;
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
+}
+
+button:active, .ButtonBorder:active {
+  cursor: url('../images/cursorActive.png') 24 23, pointer;
 }
 
 .ButtonBorder2 {
@@ -507,7 +529,6 @@ button, .ButtonBorder {
   text-shadow: 0.15rem 0.15rem 0 #000;
   background-color: #222;
   padding: 0.4rem 0.8rem;
-  cursor: pointer;
   float: right;
   font-size: 1.2rem;
   border-radius: 0;
@@ -515,6 +536,18 @@ button, .ButtonBorder {
   font-weight: normal;
   margin-left: 0.8rem;
   box-shadow: 0 0;
+}
+
+.ButtonBorder3 {
+  
+}
+
+label {
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
+}
+
+label:active {
+  cursor: url('../images/cursorActive.png') 24 23, pointer;
 }
 
 .border {
@@ -664,7 +697,11 @@ textarea { /* Removes the default browser focus box */
 }
 
 .clickable {
-  cursor: pointer;
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
+}
+
+.clickable:active {
+  cursor: url('../images/cursorActive.png') 24 23, pointer;
 }
 
 .top-bar {
