@@ -15,7 +15,7 @@ Click the "Code" button at the top and click "Download ZIP". Unzip wherever you 
  If you prefer (or are stuck with) with a command line interface, you can run ``git clone https://github.com/SKCro/WebTV-HD.git``, and copy all the resources over by entering the WebTV-HD directory, and running ``cp -r ./* <your location>``.
 
 ## What does it look like? 
-![Screenshot of the style in action.](https://i.imgur.com/aiHge5H.png)
+![Screenshot of the style in action.](https://i.imgur.com/sU3F1Yd.png)
 
 If you'd like to check it out for yourself, head on over to the [GitHub Pages instance](https://SKCro.github.io/WebTV-HD/PowerOn.html).
 
