@@ -97,6 +97,7 @@ body {
   animation: fadeTransition linear 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  cursor: url(../images/cursor.png), default;
 }
 
 h1 {
@@ -462,27 +463,7 @@ input[type="radio"]:checked::after {
   display: none;
 }
 
-input[type="submit"], input[type="button"] {
-  background-image: linear-gradient(to bottom, #343434, #040404);
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #E7CE4A;
-  text-shadow: 0.15rem 0.15rem 0 #000;
-  background-color: #222;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-  float: right;
-  font-size: 1.2rem;
-  border: 0.2rem solid #000;
-  border-image-slice: 1;
-  border-color: #494949 #020202 #010101 #494949;
-  border-radius: 0;
-  font-family: 'Helvetica';
-  font-weight: normal;
-  margin-left: 0.8rem;
-}
-
-button {
+button, .ButtonBorder {
   font-size: 1rem;
   border: 0;
   background: #b5b5b5;
@@ -498,6 +479,29 @@ button {
   cursor: pointer;
   font-family: 'Helvetica';
   font-weight: normal;
+}
+
+.ButtonBorder2 {
+  border-image-source: url("../images/ButtonBorder2.svg");
+  border-image-slice: 15 15 15 15;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  border-style: solid;
+  border-width: 0.3rem;
+  background-image: linear-gradient(#2f2f2f, #060606);
+  background-position-y: -0.1px;
+  color: #E7CE4A;
+  text-shadow: 0.15rem 0.15rem 0 #000;
+  background-color: #222;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  float: right;
+  font-size: 1.2rem;
+  border-radius: 0;
+  font-family: 'Helvetica';
+  font-weight: normal;
+  margin-left: 0.8rem;
+  box-shadow: 0 0;
 }
 
 .border {

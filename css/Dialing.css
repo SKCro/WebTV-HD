@@ -4,9 +4,6 @@ body {
   background-color: #000;
   color: #888;
   font-family: 'Helvetica', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  animation-fill-mode: forwards;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -25,10 +22,6 @@ body {
   animation: city-road-anim 1s 1s;
 }
 
-.city img {
-  width: 100%;
-}
-
 #dialing-music {
   display: flex;
   margin: 2vh 1vh 1vh 1vh;
@@ -38,6 +31,10 @@ body {
   margin-left: 15vh;
   margin-right: 15vh;
   margin-top: 85vh;
+}
+
+#skipDialing {
+  float: right;
 }
 
 /* Progress bar style based off of pjfrix's code, animation by me */
