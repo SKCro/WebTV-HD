@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 278.50495 263.9545"
+   version="1.1"
+   id="svg3"
+   width="278.50494"
+   height="263.95453"
+   sodipodi:docname="Logo.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="2"
+     inkscape:cx="118.25"
+     inkscape:cy="137.5"
+     inkscape:window-width="1287"
+     inkscape:window-height="747"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <title
+     id="title14">WebTV HD Logo</title>
+  <defs
+     id="defs3">
+    <linearGradient
+       id="linearGradient5">
+      <stop
+         style="stop-color:#dedee2;stop-opacity:1;"
+         offset="0"
+         id="stop5" />
+      <stop
+         style="stop-color:#848491;stop-opacity:1;"
+         offset="0.04"
+         id="stop14" />
+      <stop
+         style="stop-color:#40405b;stop-opacity:1;"
+         offset="0.08"
+         id="stop9" />
+      <stop
+         style="stop-color:#0f0e13;stop-opacity:1;"
+         offset="0.31999999"
+         id="stop10" />
+      <stop
+         style="stop-color:#0d0b0f;stop-opacity:1;"
+         offset="0.44999999"
+         id="stop7" />
+      <stop
+         style="stop-color:#0d0b0f;stop-opacity:1;"
+         offset="0.75"
+         id="stop8" />
+      <stop
+         style="stop-color:#121217;stop-opacity:1;"
+         offset="0.89999998"
+         id="stop11" />
+      <stop
+         style="stop-color:#2f2f3f;stop-opacity:1;"
+         offset="0.94"
+         id="stop13" />
+      <stop
+         style="stop-color:#848491;stop-opacity:1;"
+         offset="1"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3">
+      <stop
+         style="stop-color:#4a4b67;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#211d26;stop-opacity:1;"
+         offset="0.50160772"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient5"
+       id="linearGradient6"
+       x1="8.5921335"
+       y1="46.94643"
+       x2="135.90642"
+       y2="198.59917"
+       gradientUnits="userSpaceOnUse"
+       spreadMethod="pad"
+       gradientTransform="matrix(1.2801527,0,0,1.2801541,4.6320293,-46.232084)" />
+    <linearGradient
+       xlink:href="#linearGradient3"
+       id="linearGradient14"
+       x1="8.5921335"
+       y1="46.94643"
+       x2="169.41133"
+       y2="170.30881"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.2801527,0,0,1.2801541,4.6320293,-46.232084)" />
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter24"
+       x="-0.044950604"
+       y="-0.06020614"
+       width="1.0897964"
+       height="1.120444">
+      <feGaussianBlur
+         stdDeviation="1.0447485"
+         id="feGaussianBlur24" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1"
+       x="-0.008054419"
+       y="-0.023523261"
+       width="1.0161088"
+       height="1.0470465">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.32367987"
+         id="feGaussianBlur1" />
+    </filter>
+  </defs>
+  <path
+     d="M 64.399979,33.681405 235.11858,56.547493 c 14.86387,1.990673 35.5268,18.961675 32.31105,41.023847 l -11.76589,80.70223 c -2.72794,18.72222 -18.00919,27.1738 -34.66139,27.91117 l -121.618361,5.39332 c -25.04748,1.10985 -41.52562,-16.90702 -45.7552,-35.64463 L 29.106139,67.299512 c -2.46427,-10.912014 0.71305,-20.506783 6.06664,-25.791247 6.88338,-6.793785 17.38577,-9.411678 29.2272,-7.82686 z"
+     stroke="#000"
+     stroke-width=".216"
+     stroke-miterlimit="2.613"
+     id="path1-4"
+     style="opacity:0.75;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:16.4789;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter24)"
+     inkscape:label="Shadow" />
+  <path
+     d="M 44.399979,8.6814056 215.11858,31.547493 c 14.86387,1.990673 35.5268,18.961675 32.31105,41.023845 l -11.76589,80.702232 c -2.72794,18.72222 -18.00919,27.1738 -34.66139,27.91117 l -121.618361,5.39332 c -25.04748,1.10985 -41.52562,-16.90702 -45.7552,-35.64463 L 9.1061393,42.299512 c -2.46427,-10.912014 0.71305,-20.506783 6.0666397,-25.791247 6.88338,-6.7937847 17.38577,-9.4116774 29.2272,-7.8268594 z"
+     stroke="#000"
+     stroke-width=".216"
+     stroke-miterlimit="2.613"
+     id="path1"
+     style="fill:url(#linearGradient14);stroke:url(#linearGradient6);stroke-width:16.4789;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers stroke fill"
+     inkscape:label="Jewel" />
+  <path
+     d="m 197.79814,91.709655 h -3.8059 V 90.42691 h 16.85191 v 1.282745 h -5.17821 l 10.79682,25.417465 8.32099,-20.380076 c 0.27268,-0.587583 0.45316,-1.114996 0.57223,-1.568168 0.12296,-0.453206 0.18304,-0.860241 0.18304,-1.222575 0,-0.815451 -0.33288,-1.387692 -0.99724,-1.689762 -0.66569,-0.314945 -2.26589,-0.512109 -4.80059,-0.602983 v -1.237898 h 12.56085 v 1.28271 h -0.52739 c -1.20722,0 -2.23516,0.453188 -3.05063,1.342881 -0.82951,0.905052 -1.85749,2.820157 -3.09543,5.778613 l -11.59687,28.236378 -0.75533,0.48263 z M 182.1137,120.12776 c 0,2.00729 0.29957,3.42572 0.8897,4.27061 0.59015,0.82695 1.58482,1.25075 3.00577,1.25075 1.49526,0 2.80739,-0.43787 3.92497,-1.29811 1.13294,-0.87561 1.96247,-2.1097 2.52321,-3.69578 h 1.32748 c -0.67719,2.20314 -1.8127,3.90827 -3.38086,5.09754 -1.57329,1.19311 -3.50506,1.7948 -5.77094,1.7948 a 11.833732,11.833745 0 0 1 -4.09009,-0.70795 c -1.28527,-0.46722 -2.38748,-1.14573 -3.29258,-2.03799 a 5.8566994,5.8567054 0 0 1 -1.52463,-2.30812 c -0.31746,-0.87305 -0.46728,-2.12509 -0.46728,-3.74062 V 91.707078 h -6.283 v -1.282746 c 3.56271,0 6.31372,-0.949844 8.23139,-2.864931 1.91769,-1.91514 3.20042,-4.978543 3.85073,-9.155688 h 1.05741 v 12.021945 h 10.04151 v 1.28271 h -10.04151 v 28.419392 z"
+     fill="#e7be39"
+     id="path2"
+     style="stroke-width:1.28016"
+     inkscape:label="tv" />
+  <path
+     d="M 125.47333,125.16647 H 130.745 V 67.801468 h -5.27167 v -1.281421 h 12.8822 v 31.164079 c 1.20715,-2.685763 2.85344,-4.75066 4.95288,-6.183143 2.09814,-1.450405 4.45368,-2.172421 7.08053,-2.172421 4.42548,0 8.26083,1.870293 11.52394,5.595541 3.26051,3.725266 4.89017,8.190427 4.89017,13.412177 0,5.71587 -1.60017,10.34622 -4.80059,13.89221 -3.20291,3.54604 -7.33781,5.32293 -12.41362,5.32293 -2.32473,0 -4.43831,-0.60296 -6.32523,-1.7948 -1.89082,-1.19055 -3.54989,-2.9405 -5.00028,-5.2627 v 5.95783 h -12.79 z m 12.8822,-24.25637 v 16.30662 c 1.26732,2.96996 2.88287,5.20251 4.84534,6.71311 1.96248,1.49267 4.24246,2.24797 6.84116,2.24797 3.00578,0 5.18077,-0.98316 6.52622,-2.95846 1.34286,-1.97523 2.00728,-5.21787 2.00728,-9.71378 v -10.39358 c 0,-4.087553 -0.72457,-7.148375 -2.19036,-9.1864 -1.46576,-2.035446 -3.64075,-3.048004 -6.52364,-3.048004 -2.4784,0 -4.72761,0.875585 -6.73621,2.625571 -1.99191,1.751243 -3.59204,4.2245 -4.76979,7.406953 z m -37.35489,3.92366 v 10.48317 c 0,3.75601 0.72456,6.50065 2.17368,8.20584 1.43379,1.70255 3.74574,2.56283 6.90131,2.56283 3.1556,0 5.87335,-1.02537 8.18403,-3.09281 2.29535,-2.0649 3.92625,-4.91583 4.86202,-8.56554 h 1.37489 c -1.08813,4.14771 -2.93027,7.39033 -5.52769,9.7292 -2.59745,2.32218 -5.6775,3.48585 -9.2568,3.48585 -4.65079,0 -8.65258,-1.84217 -11.960451,-5.50596 -3.32204,-3.66506 -4.98366,-8.13154 -4.98366,-13.41216 0,-5.50598 1.4952,-10.120894 4.48568,-13.832105 3.004511,-3.709867 6.659351,-5.566054 11.009291,-5.566054 4.18354,0 7.74622,1.463204 10.70594,4.372983 2.94563,2.912357 4.59061,6.623506 4.90808,11.133466 h -22.87632 z m 0,-1.28269 h 13.98308 v -4.238569 c 0,-2.972528 -0.57348,-5.175724 -1.72177,-6.578738 -1.14702,-1.417142 -2.94435,-2.125087 -5.36128,-2.125087 -2.29404,0 -4.0312,0.829594 -5.17949,2.473311 -1.14703,1.644952 -1.72054,4.133588 -1.72054,7.465823 z M 32.234649,91.709655 V 90.42691 h 16.85322 v 1.282745 h -5.17948 l 10.79679,25.417465 6.23694,-15.11479 -4.49975,-10.303962 h -5.7991 v -1.28271 h 19.90252 v 1.28271 h -6.14602 l 10.70592,25.417472 8.32103,-20.335293 c 0.31749,-0.800088 0.54405,-1.387655 0.66439,-1.794726 0.12182,-0.390477 0.18176,-0.737377 0.18176,-1.03952 0,-0.815451 -0.34696,-1.387692 -1.02671,-1.689762 -0.67974,-0.314945 -2.29532,-0.498018 -4.86201,-0.558171 v -1.28271 h 12.56339 v 1.28271 h -0.52868 c -1.17776,0 -2.15964,0.407089 -2.94437,1.222574 -0.78469,0.800054 -1.82804,2.775349 -3.11077,5.89763 l -11.68778,28.236368 -0.75528,0.48263 -10.1324,-23.47037 -9.51411,22.98774 -0.73993,0.48263 -15.58458,-35.839202 h -3.71503 z"
+     fill="#ffffff"
+     id="path3"
+     style="stroke-width:1.28016"
+     inkscape:label="web" />
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>WebTV HD Logo</dc:title>
+        <dc:date>10/18/2023</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>SKCro</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:source>WebTV Networks</dc:source>
+        <dc:description>The WebTV HD logo, based off of the official WebTV logo vector.&#10;&quot;HD&quot; text based off of the &quot;PLUS&quot; text used in the WebTV Plus logo. Font used is Bank Gothic.</dc:description>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Microsoft</dc:title>
+          </cc:Agent>
+        </dc:rights>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g2"
+     inkscape:label="Text"
+     transform="translate(-0.9953638,4.75)">
+    <path
+       d="m 92.242403,258.4277 h 7.68 v -14.208 H 123.9224 v 14.208 h 7.744 v -33.024 h -7.744 v 12.8 H 99.922403 v -12.8 h -7.68 z m 56.319947,0 h 19.264 c 5.888,0 10.368,-0.576 13.568,-2.56 4.608,-2.816 7.296,-7.936 7.296,-14.144 0,-10.24 -6.528,-16.32 -18.88,-16.32 h -21.248 z m 7.68,-6.208 v -20.928 h 13.632 c 7.232,0 10.88,3.584 10.88,10.304 0,8.192 -4.864,10.624 -14.592,10.624 z"
+       id="text2"
+       style="font-size:64px;font-family:'Bank Gothic';-inkscape-font-specification:'Bank Gothic';opacity:0.75;stroke:#000000;stroke-width:0;stroke-linecap:square;filter:url(#filter1)"
+       inkscape:label="Shadow"
+       aria-label="HD" />
+    <path
+       style="font-weight:500;font-size:64px;font-family:'Bank Gothic';-inkscape-font-specification:'Bank Gothic Medium';fill:#e7be39;stroke:#000000;stroke-width:0;stroke-linecap:square"
+       d="m 91.028498,255.66014 h 7.68 v -14.208 H 122.7085 v 14.208 h 7.744 v -33.024 h -7.744 v 12.8 H 98.708498 v -12.8 h -7.68 z m 56.319942,0 h 19.264 c 5.888,0 10.368,-0.576 13.568,-2.56 4.608,-2.816 7.296,-7.936 7.296,-14.144 0,-10.24 -6.528,-16.32 -18.88,-16.32 h -21.248 z m 7.68,-6.208 v -20.928 h 13.632 c 7.232,0 10.88,3.584 10.88,10.304 0,8.192 -4.864,10.624 -14.592,10.624 z"
+       id="text1"
+       inkscape:label="HD"
+       aria-label="HD" />
+  </g>
+</svg>
