@@ -255,6 +255,9 @@ function linkHandler(url) {
 
 function showSidebar() {
   var sidebar = document.querySelector('.sidebar');
+  var panelUp = document.getElementById('panelUp');
+  panelUp.currentTime = 0;
+  panelUp.play();
   sidebar.classList.remove('hiding');
   sidebar.classList.remove('hide');
   sidebar.classList.add('show');
@@ -268,6 +271,9 @@ function showSidebar() {
 
 function hideSidebar() {
   var sidebar = document.querySelector('.sidebar');
+  var panelDown = document.getElementById('panelDown');
+  panelDown.currentTime = 0;
+  panelDown.play();
   sidebar.classList.remove('showing');
   sidebar.classList.remove('show');
   sidebar.classList.add('hide');
