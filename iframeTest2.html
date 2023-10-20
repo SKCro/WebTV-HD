@@ -27,7 +27,7 @@
 
 <div class=sidebar>
   <div class=sidebar-contents> <!-- WebTV logo div -->
-    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick=linkHandler('Home.html');> <!-- Sidebar WebTV logo -->
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick="linkHandler('Home.html');"> <!-- Sidebar WebTV logo -->
     <div class=sidebar-border></div> <!-- Sidebar border. Separates links and WebTV logo. -->
     <div class=sidebar-link><a class=clickable>Link 1</a></div>
     <div class=sidebar-border></div>
@@ -51,7 +51,7 @@
   <p>This is another paragraph. <b>This is bold text.</b> <i>This is italic text.</i><br><b><i>This is both bold and italic text.</i></b> <a class=clickable>This is a link.</a></p>
 
   <!-- Note: if you want to add a link, please don't use href - that causes the browser to navigate away before the click sound can be played. -->
-  <!-- Instead, use this code snippet: <a href="" class=clickable onClick=linkHandler('https://example.com/page');> -->
+  <!-- Instead, use this code snippet: <a href="" class=clickable onClick="linkHandler('https://example.com/page');"> -->
 
   <div class=input-container>
     <label for=Textbox1>This is the textbox's flavor text.</label>
