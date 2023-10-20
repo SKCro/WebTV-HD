@@ -26,7 +26,7 @@ If anything is broken for you, please file a bug report and tell me the issue, w
 ## What are your goals for this project?
 - Get the style to look as accurate as possible.
 - Remake some of the Page Builder styles and separate the service page style from the base WebTV stuff (like the statusbar and buttons).
-- Make the style work better on mobile devices (or create a new one specifically designed for them).
+- ~~Make the style work better on mobile devices (or create a new one specifically designed for them).~~ Finally done! The sidebar now slides in and out via a button.
 - Get the selection box to move via the arrow keys (and maybe gamepad), just like real WebTV. This would make big-screen browsing easier.
 - Possibly make an MSN TV 2 style (although I'd probably make a second repo for that).
 - \[Unlikely\] Make this into a browser extension of some sort that adds a WebTV overlay and allows navigation with your keyboard or a gamepad.
@@ -40,7 +40,7 @@ If you'd like to suggest something, [create a new issue](https://github.com/SKCr
 - Recreate more service pages like login, mail, settings, etc. Currently on hold because style updates are more important for right now.
 - ~~Add functionality with JavaScript.~~ Done.
 - Fix the dang selection box scrolling bug.
-- Make Dialing.html actually work better by making it show a splash at 100% progress, along with redirecting to Home.html.
+- ~~Make Dialing.html actually work better by making it show a splash at 100% progress, along with redirecting to Home.html.~~ Done by nitrate92.
 - ~~Flesh out Home.html.~~ Done.
 
 ## Why are Tizen-related files in the repo?
