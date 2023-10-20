@@ -670,7 +670,7 @@ textarea { /* Removes the default browser focus box */
 }
 
 .top-bar {
-  background: linear-gradient(to bottom, #333C66, #A5B4D2);
+  background: linear-gradient(to bottom, #31365D, #9EAACD);
   width: 100%;
   height: 11.65vw;
   display: grid;
