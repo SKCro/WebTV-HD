@@ -167,6 +167,13 @@ dialog {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Monaco';
+  src: url('Monaco.woff2') format('woff2'); /* Anything monospace */
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Sidebar Styles */
 
 .sidebar {
