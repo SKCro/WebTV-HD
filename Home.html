@@ -36,9 +36,9 @@
   <div class=sidebar-shadow></div>
 </div>
 
-  <div class="main-content" style="padding: 0%">
-    <div class="top-bar">
-      <table class="top-bar-items">
+  <div class="main-content home" style="padding: 0%">
+    <div class=top-bar>
+      <table class=top-bar-items>
         <tbody><tr>
           <td class="top-bar-item clickable"><img src=images/mail.png alt="Mail Icon"></td>
           <td class="top-bar-item clickable"><img src=images/favorites.png alt="Favorites Icon"></td>
@@ -58,7 +58,7 @@
     <div class=homepage-content-container>
         <h3>Welcome to WebTV HD!</h3>
         This project is rather incomplete as of now, with only a couple of things working. Feel free to click around and explore!<br>
-        To see more of what this theme has to offer, check out the <a class="clickable" onclick=linkHandler('PageStyleGuide.html');>style reference page</a>.
+        To see more of what this theme has to offer, check out the <a class=clickable onclick=linkHandler('PageStyleGuide.html');>style reference page</a>.
         <br>It has examples of other WebTV stuff I've implemented, like checkboxes, radio buttons, text styles, and alert dialogs.
         <ul><h4 style=margin:0;>Links</h4>
           <li><a class=clickable onclick=linkHandler('PowerOn.html');>PowerOn page</a> - This is where you started. It simulates the power-on sequence of a box.</li>
@@ -72,6 +72,7 @@
 <div class=status-bar>
   <div class=status-bar-top></div>
   <div class=status-bar-content>
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
     <div class=page-name>Home for SKCro</div>
     <div class=status-container>
       <div class=status-indicator></div>

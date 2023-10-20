@@ -3,88 +3,12 @@
 /* Global Styles */
  
 @keyframes fadeTransition {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
-}
-
-@media print { /* Printer-specific styles - these only show up when printing the page. */
-  body {
-    background-color: #FFF !important;
-    color: #000 !important;
+  0% {
+    opacity: 0;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: #000 !important;
-    text-shadow: 0 0 transparent !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-
-  a {
-    text-decoration: underline !important;
-    color: #404040 !important;
-  }
-  
-  input[type="radio"] {
-    appearance: radio !important;
-  }
-  
-  input[type="checkbox"] {
-    appearance: checkbox !important;
-  }
-  
-  button {
-    color: #111 !important;
-    text-shadow: 0 0 transparent !important;	
-  }
-  
-  input[type="text"], input[type="password"] {
-    color: #000 !important;
-  }
-  
-  input[type="text"]::placeholder, input[type="password"]::placeholder {
-    color: #111 !important;
-  }
-  
-  .webtv-checkbox .checkmark {
-    display: none !important;
-  }
-  
-  .main-content {
-    margin-left: 0 !important;
-  }
-
-  #selectionbox {
-    display: none !important;
-  }
-
-  .sidebar {
-    display: none !important;
-  }
-
-  .sidebar-contents {
-    display: none !important;
-  }
-
-  .bottom-right-image {
-    display: none !important;
-  }
-
-  .sidebar-shadow {
-    display: none !important;
-  }
-
-  .status-bar {
-    display: none !important;
-  }
-  
-  .printonly {
-    display: block !important;
-  }
+  100% {
+    opacity: 1;
+   }
 }
 
 body {
@@ -154,7 +78,7 @@ dialog {
 			  inset -1px -1px 1px #4e4e4e,
 			  inset -2px -2px 2px 2px #202020;
   min-width: 22rem;
-  text-shadow: 0.1rem 0.1rem 0 rgb(0, 0, 0);
+  text-shadow: 0.1rem 0.1rem #000;
   max-width: 22rem;
   min-height: 10rem;
   max-height: 24rem;
@@ -252,6 +176,7 @@ dialog {
   position: fixed;
   display: grid;
   overflow: hidden;
+  z-index: 1;
 }
 
 .sidebar-shadow {
@@ -298,7 +223,7 @@ dialog {
 .sidebar-link {
   text-align: left;
   margin-left: 1vw;
-  text-shadow: 0.15vw 0.15vw 0vw rgb(0, 0, 0);
+  text-shadow: 0.15vw 0.15vw #000;
   font-size: 2vw;
   margin-top: 0.5vw;
   margin-bottom: 0.5vw;
@@ -310,6 +235,40 @@ dialog {
 
 .sidebar-contents {
   text-align: center;
+  z-index: 2;
+}
+
+@keyframes sidebarShow {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 0
+  }
+}
+  
+@keyframes sidebarHide {
+  from {
+    left: 0;
+  }
+  to {
+    left: -50%;
+  }
+}
+
+.show-sidebar-button {
+  display: none;
+  background-image: url('../images/Hamburger.svg') !important;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 0.7vw !important;
+  background-color: #060606 !important;
+  position: absolute;
+  padding: 2vw 2vw 2vw 2vw !important;
+  margin-left:  1.8vw !important;
+  cursor: pointer;
+  border-width: 0.8vw !important;
 }
 
 .bottom-right-image {
@@ -421,10 +380,10 @@ input[type="checkbox"]::before {
   z-index: 10000;
   position: absolute;
   display: block;
-  width: 2.3rem;
-  height: 2.3rem;
-  left: -0.2rem;
-  top: -0.45rem;
+  width: 2rem;
+  height: 2rem;
+  left: -0.12rem;
+  top: -0.2rem;
   visibility: hidden;
   pointer-events: none;
   cursor: url('../images/cursorClick.png') 24 23, pointer;
@@ -543,7 +502,7 @@ button:active, .ButtonBorder:active {
 }
 
 label {
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  cursor: url('../images/cursor.png'), default;
 }
 
 label:active {
@@ -606,8 +565,8 @@ label:active {
   color: #E7CE4A;
   width: 80%;
   border-radius: 0.5vw;
-  background-image: linear-gradient(to right, #2A2A2A, #000); /* Gradient colors */
-  text-shadow: 0.15vw 0.15vw 0vw rgb(0, 0, 0);
+  background-image: linear-gradient(to right, #2A2A2A, #000);
+  text-shadow: 0.15vw 0.15vw #000;
   padding: 0.35% 0.8%;
   overflow: hidden;
   min-height: 2.35vw;
@@ -773,6 +732,216 @@ textarea { /* Removes the default browser focus box */
   margin: 1%;
 }
 
-.printonly {
+.printonly { /* WebTV Paper: Now $299.99 per sheet! That's 0% off! */
   display: none;
+}
+
+/* Other Device Styles */
+
+@media (max-width: 760px) { /* WEBTV HD MOBILE STYLE CONFIRMED!?!? (REAL) (LEAKED CODE) (SKCro CONFIRMED) (NOT FAKE) (GONE WRONG) */ 
+  body {
+    font-size: 1rem;
+  }
+
+  input[type="text"], input[type="password"] {
+    padding: 0.2rem 0.1rem 0.2rem 0.1rem;
+    width: auto;
+    font-size: 0.7rem;
+    border-width: 0.15rem;
+  }
+
+  input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  input[type="checkbox"]::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    left: -0.2rem;
+    top: -0.3rem;
+  }
+
+  button {
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.5rem !important;
+  }
+
+  .border {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .main-content {
+    margin: 1%;
+    padding: 0;
+  }
+  
+  .main-content.home {
+    margin: 0;
+  }
+
+  .sidebar {
+    top: 0%;
+    width: 45%;
+    z-index: 1;
+    left: -50%;
+    animation-duration: 0.4s;
+  }
+
+  .sidebar.show {
+    animation-name: sidebarShow;
+    animation-direction: normal;
+  }
+
+  .sidebar.showing {
+    left: 0;
+  }
+
+  .sidebar.hide {
+    animation-name: sidebarHide;
+    animation-direction: normal;
+  }
+
+  .sidebar.hiding {
+    left: -50%;
+  }
+
+  .sidebar-shadow {
+    margin-left: 45%;
+    width: 5vw;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  }
+
+  .sidebar-logo {
+    max-width: 35vw;
+    max-height: 35vw;
+  }
+
+  .sidebar-link {
+    font-size: 6vw;
+    text-shadow: 0.4vw 0.4vw #000;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 2vw;
+  }
+
+  .bottom-right-image {
+    height: 36vw;
+    max-height: 36vw;
+    margin-bottom: 12.5vw;
+    margin-right: 2vw;
+  }
+
+  .status-bar {
+    height: 10vw;
+  }
+
+  .show-sidebar-button {
+    display: unset;
+  }
+
+  .page-name {
+    font-size: 5vw;
+    border-radius: 1vw;
+    padding: 0.5% 0 0.5% 8%;
+    min-height: 6vw;
+    text-shadow: 0.5vw 0.5vw #000;
+  }
+
+  .status-container {
+    width: 10%;
+    border-radius: 1vw;
+    border-width: 0.7vw;
+  }
+  
+  .top-bar {
+    margin: 0;
+    height: 32vw;
+  }
+
+  .top-bar-item img {
+    max-width: 25vw;
+  }
+
+  .top-bar-item-text {
+    font-size: 5vw;
+  }
+
+  .top-bar-shadow {
+    margin-top: 4vw;
+    height: 4vw;
+  }
+}
+
+@media print { /* Printer-specific styles - these only show up when printing the page. */
+  body {
+    background-color: #FFF !important;
+    color: #000 !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #000 !important;
+    text-shadow: 0 0 transparent !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #404040 !important;
+  }
+
+  input[type="radio"] {
+    appearance: radio !important;
+  }
+
+  input[type="checkbox"] {
+    appearance: checkbox !important;
+  }
+
+  button {
+    color: #111 !important;
+    text-shadow: 0 0 transparent !important;	
+  }
+
+  input[type="text"], input[type="password"] {
+    color: #000 !important;
+  }
+
+  input[type="text"]::placeholder, input[type="password"]::placeholder {
+    color: #111 !important;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  #selectionbox {
+    display: none !important;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .sidebar-contents {
+    display: none !important;
+  }
+
+  .bottom-right-image {
+    display: none !important;
+  }
+
+  .sidebar-shadow {
+    display: none !important;
+  }
+
+  .status-bar {
+    display: none !important;
+  }
+  
+  .printonly {
+    display: block !important;
+  }
 }

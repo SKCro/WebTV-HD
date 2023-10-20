@@ -246,3 +246,44 @@ function linkHandler(url) {
     location.href = url;
   }, 235);
 }
+
+// mobile stuff
+
+// sidebar stuff
+
+// show sidebar
+
+function showSidebar() {
+  var sidebar = document.querySelector('.sidebar');
+  sidebar.classList.remove('hiding');
+  sidebar.classList.remove('hide');
+  sidebar.classList.add('show');
+  // make sure sidebar sticks after animating
+  setTimeout(function() {
+    sidebar.classList.add('showing');
+  }, 400);
+}
+
+// hide sidebar
+
+function hideSidebar() {
+  var sidebar = document.querySelector('.sidebar');
+  sidebar.classList.remove('showing');
+  sidebar.classList.remove('show');
+  sidebar.classList.add('hide');
+  // ditto
+  setTimeout(function() {
+    sidebar.classList.add('hiding');
+  }, 400);
+}
+
+// toggle sidebar
+
+function toggleSidebar() {
+  var sidebar = document.querySelector('.sidebar');
+  if (sidebar.classList.contains('show')) {
+    hideSidebar();
+  } else {
+    showSidebar();
+  }
+}
