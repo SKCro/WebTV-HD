@@ -686,7 +686,7 @@ textarea { /* Removes the default browser focus box */
 }
 
 .top-bar-text {
-  margin-top: -10vw;
+  margin-top: -4vw;
   pointer-events: none;
   user-select: none;
   background-color: transparent;
