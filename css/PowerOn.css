@@ -14,7 +14,7 @@ body {
 progress {
   box-sizing: border-box;
   border: solid 0.2rem #202020;
-  border-color: #202020 #666666 #666666 #202020;
+  border-color: #202020 #666 #666 #202020;
   background: -webkit-linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
   background: linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
   padding: 0.1rem 0.2rem;
@@ -105,7 +105,7 @@ progress::-webkit-progress-bar {
   width: 6rem;
   margin-left: auto !important;
   margin-right: auto;
-  cursor: url(images/cursor.png), default;
+  cursor: url(../images/cursor.png), default;
 }
 
 @keyframes baranim {
