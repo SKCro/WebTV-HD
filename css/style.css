@@ -274,7 +274,7 @@ dialog {
   position: absolute;
   padding: 2vw 2vw 2vw 2vw !important;
   margin-left:  1.8vw !important;
-  cursor: pointer;
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
   border-width: 0.8vw !important;
 }
 
@@ -352,7 +352,6 @@ input[type="checkbox"] {
   height: 2rem;
   background-color: #32323280;
   outline: none; /* Remove the default focus outline */
-  cursor: pointer;
   position: relative;
   border-style: solid;
   border-color: #7F7F7F80;
@@ -461,6 +460,7 @@ input[type="radio"]:active {
 
 button, .ButtonBorder { /* Light/Default button - style by pjfrix, modified by me */
   font-size: 1rem;
+  color: #000;
   border: 0;
   background: #b5b5b5;
   border-radius: 0.6rem;
@@ -472,7 +472,6 @@ button, .ButtonBorder { /* Light/Default button - style by pjfrix, modified by m
   padding: 0 12px;
   min-width: 1rem;
   min-height: 1.8rem;
-  cursor: pointer;
   font-family: 'Helvetica';
   font-weight: normal;
   cursor: url('../images/cursorClick.png') 24 23, pointer;
@@ -840,6 +839,13 @@ textarea { /* Removes the default browser focus box */
     margin-right: 2vw;
   }
 
+  .bottom-right-image-credits {
+    height: 36vw;
+    max-height: 36vw;
+    margin-bottom: 12.5vw;
+    margin-right: 2vw;
+  }
+
   .status-bar {
     height: 10vw;
   }
@@ -867,6 +873,10 @@ textarea { /* Removes the default browser focus box */
     height: 32vw;
   }
 
+  .top-bar-item {
+    padding-bottom: 4.5vw;
+  }
+
   .top-bar-item img {
     max-width: 25vw;
   }
@@ -876,7 +886,7 @@ textarea { /* Removes the default browser focus box */
   }
 
   .top-bar-shadow {
-    margin-top: 4vw;
+    margin-top: 1vw;
     height: 4vw;
   }
 }
