@@ -11,14 +11,16 @@ function doSplash(withInterval) {
     const dialingMusic = document.getElementById("dialing-music");
     const splashJingle = document.getElementById("splash-jingle");
 
-    dialingMusic.pause();
-    splashJingle.play();
+    setTimeout(() => {
+        dialingMusic.pause();
+        splashJingle.play();
 
-    hiddenUntilLogo.remove();
-    hiddenUntilConnected.style.display = "flex";
-    hiddenUntilConnected.classList.add("fadeIn");
+        hiddenUntilLogo.remove();
+        hiddenUntilConnected.style.display = "flex";
+        hiddenUntilConnected.classList.add("fadeIn");
 
-    setTimeout(() => { location.href = "Home.html" }, (withInterval ? withInterval : splashJingle.duration * 1000));
+        setTimeout(() => { location.href = "Home.html" }, (splashJingle.duration * 1000));
+    }, withInterval);
 }
 
 async function powerOn() {
@@ -81,7 +83,7 @@ function initDialing() {
             if (value == details.interval) {
                 progressBar.value = details.value;
                 progressMessage.textContent = details.message;
-                if (details.value >= 100) doSplash();
+                if (details.value >= 100) doSplash(5000);
             }
         });
     }, 2000);
