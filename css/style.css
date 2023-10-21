@@ -11,6 +11,10 @@
    }
 }
 
+html {
+  cursor: url(../images/cursor.png), default;
+}
+
 body {
   background-color: #191919;
   color: #42bd52;
@@ -21,7 +25,6 @@ body {
   animation: fadeTransition linear 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  cursor: url(../images/cursor.png), default;
 }
 
 h1 {
@@ -61,6 +64,15 @@ hr {
               1px 1px 1px 1px #969696,
               -1px -1px 1px #4e4e4e, 
               -1px -1px 2px 2px #202020;
+}
+
+code {
+  font-family: 'Monaco', fixed-width;
+  font-size: 1.2rem;
+  background-color: #101010;
+  border-radius: 0.5vw;
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
 }
 
 dialog {
@@ -218,7 +230,7 @@ dialog {
   background: linear-gradient(#33202A 40%, #774E5E 85%);
 }
 
-.sidebar-border-home {
+.sidebar-border.home {
   content: '';
   position: relative;
   top: 0;
@@ -238,6 +250,10 @@ dialog {
 
 .sidebar-link a {
   color: #E7CE4A;
+}
+
+.sidebar-link.unavailable {
+  cursor: url('../images/cursorNo.png') 24 23, not-allowed;
 }
 
 .sidebar-contents {
@@ -290,27 +306,20 @@ dialog {
   user-select: none;
 }
 
-.bottom-right-image-iframe {
-  align-self: end;
-  display: flex;
+.bottom-right-image.iframe {
   height: 13vw;
   max-height: 13vw;
-  justify-content: right;
-  float: right;
-  margin-right: 1vw;
   margin-bottom: 1vw;
-  user-select: none;
 }
 
-.bottom-right-image-credits {
-  align-self: end;
-  display: flex;
+.bottom-right-image.credits {
   height: 18vw;
   max-height: 18vw;
-  justify-content: right;
-  margin-right: 1vw;
-  margin-bottom: 5vw;
-  user-select: none;
+}
+
+.bottom-right-image.mail {
+  height: 10vw;
+  max-height: 10vw;
 }
 
 /* Main Content Style */
@@ -329,7 +338,7 @@ dialog {
 }
 
 input[type="text"], input[type="password"] {
-  font-family: Monaco, monospace;
+  font-family: 'Monaco', monospace;
   background-color: #444444;
   color: #ffdd33;
   padding: 0.3rem;
@@ -635,6 +644,7 @@ label:active {
   box-sizing: border-box;
   pointer-events: none;
   z-index: 9999;
+  display: none;
 }
 
 #selectionbox.green {
@@ -715,13 +725,13 @@ textarea { /* Removes the default browser focus box */
 }
 
 .top-bar-item-text {
-	color: #000;
-	position: relative;
-	vertical-align: bottom;
-	text-align: center;
-	font-size: 2vw;
-	pointer-events: none;
-	user-select: none;
+  color: #000;
+  position: relative;
+  vertical-align: bottom;
+  text-align: center;
+  font-size: 2vw;
+  pointer-events: none;
+  user-select: none;
 }
 
 .top-bar-shadow {
@@ -742,11 +752,83 @@ textarea { /* Removes the default browser focus box */
   display: none;
 }
 
+/* Mail Stuff */
+
+.top-items-mail {
+  background-color: transparent;
+  table-layout: fixed;
+  width: 100%;
+  font-weight: bold;
+}
+
+.top-items-mail .from,
+.mail-messages .from {
+  width: 35%;
+}
+
+.top-items-mail .subject,
+.mail-messages .subject {
+  width: 80%;
+}
+
+.top-items-mail .date,
+.mail-messages .date {
+  width: 20%;
+}
+
+.mail-header .border {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.mail-messages {
+  background-color: transparent;
+  table-layout: fixed;
+  width: 100%;
+  color: #36d5ff;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.mail-message.unread {
+  font-weight: bold;
+}
+
+.message-outline {
+  width: 83vw;
+  height: 2.4rem !important;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+}
+
+.mail-infobox table {
+  width: 100%;
+}
+
+.sidebar-border.mail {
+  background-image: linear-gradient(to bottom, #202434 40%, #515B84 85%);
+}
+
+.sidebar-link.unavailable.mail {
+  color: #515b84;
+}
+
+#emailContent {
+  width: 100%;
+  height: fit-content;
+  border: 0;
+}
+
 /* Other Device Styles */
 
 @media (max-width: 760px) { /* WEBTV HD MOBILE STYLE CONFIRMED!?!? (REAL) (LEAKED CODE) (SKCro CONFIRMED) (NOT FAKE) (GONE WRONG) */ 
   body {
     font-size: 1rem;
+  }
+  
+  code {
+    font-size: 0.9rem;
   }
 
   input[type="text"], input[type="password"] {
@@ -888,6 +970,10 @@ textarea { /* Removes the default browser focus box */
   .top-bar-shadow {
     margin-top: 1vw;
     height: 4vw;
+  }
+  
+  .message-outline {
+    width: 97vw;
   }
 }
 

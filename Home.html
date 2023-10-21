@@ -17,22 +17,22 @@
 <audio id=panelUp src=audio/up.mp3 preload=auto></audio>
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
 
-<div id=selectionbox></div> <!-- Selection box -->
+<div id=selectionbox></div>
 
 <div class=sidebar style=background-color:#3C3C56;>
   <div class=sidebar-contents>
     <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Credits.html');">
-    <div class=sidebar-border-home></div>
+    <div class="sidebar-border home"></div>
     <div class=sidebar-link><a class=clickable>Setup</a></div>
-    <div class=sidebar-border-home></div>
+    <div class="sidebar-border home"></div>
     <div class=sidebar-link><a class=clickable>Using WebTV</a></div>
-    <div class=sidebar-border-home></div>
+    <div class="sidebar-border home"></div>
     <div class=sidebar-link><a class=clickable>Community</a></div>
-    <div class=sidebar-border-home></div>
+    <div class="sidebar-border home"></div>
     <div class=sidebar-link><a class=clickable>What's on TV</a></div>
-    <div class=sidebar-border-home></div>
+    <div class="sidebar-border home"></div>
   </div>
-  <div class=bottom-right-image> <!-- Setup image div -->
+  <div class="bottom-right-image home">
     <img alt="Home Text" src=images/Home.svg>
   </div>
   <div class=sidebar-shadow></div>
@@ -42,7 +42,7 @@
     <div class=top-bar>
       <table class=top-bar-items>
         <tbody><tr>
-          <td class="top-bar-item clickable"><img src=images/mail.png alt="Mail Icon"></td>
+          <td class="top-bar-item clickable" onClick="linkHandler('/wtv-mail/Mail.html');"><img src=images/mail.png alt="Mail Icon"></td>
           <td class="top-bar-item clickable"><img src=images/favorites.png alt="Favorites Icon"></td>
           <td class="top-bar-item clickable"><img src=images/explore.png alt="Explore Icon"></td>
           <td class="top-bar-item clickable"><img src=images/search.png alt="Search Icon"></td>
@@ -74,7 +74,7 @@
   <div class=status-bar-top></div>
   <div class=status-bar-content>
     <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
-    <div class=page-name>Home for SKCro</div>
+    <div class=page-name></div>
     <div class=status-container>
       <div class=status-indicator></div>
     </div>

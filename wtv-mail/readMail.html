@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>Welcome to WebTV HD!</title>
+  <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel="shortcut icon" href=../Icon.png>
+  <script src=../js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head>
+<body>
+
+<audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
+
+<div id=selectionbox></div>
+
+<div class=sidebar style=background-color:#333B5A;>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=../../images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('../Home.html');">
+    <div class="sidebar-border home"></div>
+    <div class=sidebar-link><a class=clickable onclick="linkHandler('Mail.html');">Mail list</a></div>
+    <div class="sidebar-border home"></div>
+    <div class="sidebar-link unavailable mail">Previous</div>
+    <div class="sidebar-border home"></div>
+    <div class=sidebar-link><a class=clickable>Next</a></div>
+    <div class="sidebar-border home"></div>
+    <div class=sidebar-link><a class=clickable>Discard</a></div>
+    <div class="sidebar-border home"></div>
+    <div class=sidebar-link><a class=clickable>Reply</a></div>
+    <div class="sidebar-border home"></div>
+    <div class=sidebar-link><a class=clickable>Forward</a></div>
+    <div class="sidebar-border home"></div>
+  </div>
+  <div class="bottom-right-image mail">
+    <img alt="Mail Text" src=images/sidebarText.svg>
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
+
+<div class=main-content>
+  <h3>Message</h3>
+  <div class=mail-infobox>
+    <table>
+      <tbody>
+        <tr>
+          <td class=from>From:</td>
+          <td id=emailSender>SKCro (<a class=clickable id=emailSenderAddress>SKCro@WebTV-HD</a>)</td>
+        </tr>
+        <tr>
+          <td class=date>Date:</td>
+          <td id=emailDateRecieved>Just Now</td>
+        </tr>
+        <tr>
+          <td class=to>To:</td>
+          <td id=emailRecipient>SKCro (<a class=clickable id=emailRecipientAddress>SKCro@WebTV-HD</a>)</td>
+        </tr>
+        <tr>
+          <td class=subject>Subject:</td>
+          <td id=emailSubject>Welcome to WebTV HD!</td>
+        </tr>
+     </tbody>
+    </table>
+  </div>
+  <div class=border style=margin-bottom:0;><hr class=printonly></div>
+  <div id=emailBody>
+    <iframe id=emailContent srcdoc="
+      <!DOCTYPE HTML>
+      <html><head>
+      <title>Mail content</title>
+      <link rel=stylesheet type=text/css href=../css/style.css>
+      <style>
+      body { animation: none; }
+      </style>
+      <meta charset='UTF-8'>
+      </head>
+
+	  <body>
+        <p>Welcome to WebTV HD!</p>
+        <p>This is a project aiming to replicate the look and feel of the WebTV service. I've gotten a lot of the base WebTV stuff down, including (but not limited to):</p>
+		<ul><li>Colors and fonts</li><li>Some input styles</li><li>Dialog boxes</li><li>More stuff I can't name off the top of my head</li></ul>
+		<p>There's also a lot of stuff I plan to reimplement, like...</p>
+		<ul><li>The <code>˂display˃</code> tag</li><li>Page Builder styles</li><li>Other service pages like Favorites and Search</li><li>TV Home</li><li></li></ul>
+        <p>Thanks for checking out my project!</p>
+		<p>- SKCro</p>
+      </body></html>
+	"></iframe>
+  </div>
+  
+  <script>
+    var email = document.getElementById('emailContent');
+    function fitEmail() {
+      var email = document.getElementById('emailContent');
+      var contentHeight = email.contentWindow.document.body.scrollHeight;
+      email.style.height = contentHeight + 32 + 'px';
+    }
+    email.onload = fitEmail;
+  </script>
+
+  <div class=bottom-padding></div>
+</div>
+
+<div class=status-bar>
+  <div class=status-bar-top></div>
+  <div class=status-bar-content>
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
+    <div class=page-name></div>
+    <div class=status-container>
+      <div class=status-indicator></div>
+    </div>
+  </div>
+</div>
+
+</body></html>

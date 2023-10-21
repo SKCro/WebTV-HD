@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>Mail for SKCro</title>
+  <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel="shortcut icon" href=../Icon.png>
+  <script src=../js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head>
+<body>
+
+<audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
+
+<div id=selectionbox></div>
+
+<div class=sidebar style=background-color:#333B5A;>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=../../images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('../Home.html');">
+    <div class="sidebar-border mail"></div>
+    <div class=sidebar-link><a class=clickable>Write</a></div>
+    <div class="sidebar-border mail"></div>
+    <div class=sidebar-link><a class=clickable>Storage</a></div>
+    <div class="sidebar-border mail"></div>
+    <div class=sidebar-link><a class=clickable>Addresses</a></div>
+    <div class="sidebar-border mail"></div>
+    <div class=sidebar-link><a class=clickable>Clean up</a></div>
+    <div class="sidebar-border mail"></div>
+    <div class=sidebar-link><a class=clickable>Settings</a></div>
+    <div class="sidebar-border mail"></div>
+    <div class=sidebar-link><a class=clickable>Help</a></div>
+    <div class="sidebar-border mail"></div>
+  </div>
+  <div class="bottom-right-image mail">
+    <img alt="Mail Text" src=images/sidebarText.svg>
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
+
+<div class=main-content>
+  <h2>Mail list for SKCro</h2>
+  <p>You have 1 message</p>
+  <div class=mail-header>
+    <div class=border><hr class=printonly></div>
+    <table class=top-items-mail>
+      <thead>
+        <tr>
+       	<td class=from>From</td>
+       	<td class=subject>Subject</td>
+       	<td class=date>Date</td>
+       	</tr>
+      </thead>
+    </table>
+    <div class=border><hr class=printonly></div>
+  </div>
+
+  <table class=mail-messages>
+    <tbody>
+      <tr class="mail-message unread clickable" role=button onClick="linkHandler('readMail.html');">
+        <td><button class=message-outline></button></td> <!-- Hacky way to make the selectionbox outline the message -->
+    	<td class=from>SKCro</td>
+    	<td class=subject>Welcome to WebTV HD!</td>
+    	<td class=date>Just Now</td>
+      </tr>
+      <tr class="mail-message clickable" role=button onClick="linkHandler('readMail.html');">
+        <td><button class=message-outline></button></td>
+    	<td class=from>johnlandlord@aol.com</td>
+    	<td class=subject>Notice of Eviction</td>
+    	<td class=date>1 minute ago</td>
+      </tr>
+	</tbody>
+  </table>
+
+  <div class=bottom-padding></div>
+</div>
+
+<div class=status-bar>
+  <div class=status-bar-top></div>
+  <div class=status-bar-content>
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
+    <div class=page-name></div>
+    <div class=status-container>
+      <div class=status-indicator></div>
+    </div>
+  </div>
+</div>
+
+</body></html>

@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Event listener for arrow keys to move the selection box
   document.addEventListener('keydown', function (event) {
-    // code for arrow keys goes here later
+    // code for arrow keys goes here eventually
   });
 });
 
