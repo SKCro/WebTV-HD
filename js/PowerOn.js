@@ -18,6 +18,7 @@ function doSplash(withInterval) {
         hiddenUntilLogo.remove();
         hiddenUntilConnected.style.display = "flex";
         hiddenUntilConnected.classList.add("fadeIn");
+        document.title = "WebTV Service";
 
         setTimeout(() => { location.href = "Home.html" }, (splashJingle.duration * 1000));
     }, withInterval);
@@ -112,5 +113,5 @@ function skipDialing() {
     dialingMusic.pause();
     dialingMusic.removeAttribute('controls');
     button.remove();
-    doSplash();
+	setTimeout('doSplash();', 500);
 }

@@ -112,7 +112,7 @@ progress::-webkit-progress-bar {
   width: 6rem;
   margin-left: auto !important;
   margin-right: auto;
-  cursor: url(../images/cursor.png), default;
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
 }
 
 @keyframes baranim {
