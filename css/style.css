@@ -956,7 +956,7 @@ textarea { /* Removes the default browser focus box */
   }
 
   .top-bar-item {
-    padding-bottom: 4.5vw;
+    padding-bottom: 5.5vw;
   }
 
   .top-bar-item img {
@@ -968,8 +968,12 @@ textarea { /* Removes the default browser focus box */
   }
 
   .top-bar-shadow {
-    margin-top: 1vw;
+    margin-top: -1vw;
     height: 4vw;
+  }
+  
+  .top-bar-text {
+    margin-top: -7vw;
   }
   
   .message-outline {
