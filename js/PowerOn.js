@@ -1,17 +1,30 @@
 let stopProgressUpdates = false;
 
+
 function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function doSplash(withInterval) { // TODO: This code will remove elements and display a splash screen, then redirect to the Home page
-    setTimeout(() => { location.href = "Home.html" }, withInterval); // TODO: Splash page
+function doSplash(withInterval) {
+    const hiddenUntilConnected = document.querySelector(".hiddenUntilConnected");
+    const hiddenUntilLogo = document.querySelector(".hiddenUntilLogo");
+    const dialingMusic = document.getElementById("dialing-music");
+    const splashJingle = document.getElementById("splash-jingle");
+
+    dialingMusic.pause();
+    splashJingle.play();
+
+    hiddenUntilLogo.remove();
+    hiddenUntilConnected.style.display = "flex";
+    hiddenUntilConnected.classList.add("fadeIn");
+
+    setTimeout(() => { location.href = "Home.html" }, (withInterval ? withInterval : splashJingle.duration * 1000));
 }
 
 async function powerOn() {
     const hideOnClick = document.querySelector(".hideOnClick");
     const logoArea = document.querySelector(".logoArea");
-    hideOnClick.style.display = "none";
+    hideOnClick.remove();
     logoArea.classList.add("noCursor"); // Disable cursor only whilst logo appears
 
     const modem = document.getElementById("modem");
@@ -30,11 +43,13 @@ async function powerOn() {
 
 function initDialing() {
     const hiddenUntilLogo = document.querySelector(".hiddenUntilLogo");
+    const logoArea = document.querySelector(".logoArea");
     const dialingMusic = document.getElementById("dialing-music");
     const progressBar = document.getElementById('progressbar');
     const progressMessage = document.getElementById('progressbar-message');
 
     // Options relative to page appearance and functionality
+    logoArea.remove();
     hiddenUntilLogo.classList.add("fadeIn"); // Make sure we fade in the newly given page
     hiddenUntilLogo.style.display = "block";
     dialingMusic.play();
@@ -66,7 +81,7 @@ function initDialing() {
             if (value == details.interval) {
                 progressBar.value = details.value;
                 progressMessage.textContent = details.message;
-                if (details.value >= 100) doSplash(5000);
+                if (details.value >= 100) doSplash();
             }
         });
     }, 2000);
@@ -95,5 +110,5 @@ function skipDialing() {
     dialingMusic.pause();
     dialingMusic.removeAttribute('controls');
     button.remove();
-    doSplash(1000);
+    doSplash();
 }

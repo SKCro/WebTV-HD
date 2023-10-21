@@ -25,6 +25,8 @@
     <audio id=clickSound src=audio/click.mp3 preload=auto></audio>
     <audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
     <audio id=dialing-music src=audio/dialing.mp3 loop preload=auto></audio>
+    <!-- Etc -->
+    <audio id=splash-jingle src=audio/splash.mp3 preload=auto></audio>
 
     <!-- CityRoad dialing screen that follows -->
     <div class=hiddenUntilLogo>
@@ -43,6 +45,12 @@
         <button class="submit powerOnButton" onClick=powerOn()>Power On</button>
         <p>This is needed because browsers require interaction before audio is played.</p>
       </div>
+    </div>
+
+    <!-- Splash -->
+    <div class=hiddenUntilConnected>
+      <!-- <img src="images/logos/Microsoft.png" alt="Microsoft"> -->
+      <img src="images/logos/Splash.png" alt="Splash logo">
     </div>
   </body>
 

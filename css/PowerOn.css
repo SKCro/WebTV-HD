@@ -80,7 +80,7 @@ progress::-webkit-progress-bar {
 }
 
 .hiddenUntilClick,
-.hiddenUntilLogo {
+.hiddenUntilLogo, .hiddenUntilConnected {
   display: none;
 }
 
@@ -92,6 +92,13 @@ progress::-webkit-progress-bar {
 .logoArea {
   align-items: center;
   display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.hiddenUntilConnected {
+  align-items: center;
   height: 100vh;
   justify-content: center;
   margin: 0;
