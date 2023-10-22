@@ -117,5 +117,5 @@ function skipDialing() {
     dialingMusic.pause();
     dialingMusic.removeAttribute('controls');
     button.remove();
-	setTimeout('doSplash();', 500);
+	setTimeout('doSplash();', 100);
 }

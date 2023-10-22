@@ -820,6 +820,24 @@ textarea { /* Removes the default browser focus box */
   border: 0;
 }
 
+/* Search page stuff */
+
+.sidebar-border.search {
+  background-image: linear-gradient(to bottom, #341111 40%, #862F2F 85%);
+}
+
+.submit {
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
+}
+
+.submit:active {
+  cursor: url('../images/cursorActive.png') 24 23, pointer;
+}
+
+#q {
+  width: 80%;
+}
+
 /* Other Device Styles */
 
 @media (max-width: 760px) { /* WEBTV HD MOBILE STYLE CONFIRMED!?!? (REAL) (LEAKED CODE) (SKCro CONFIRMED) (NOT FAKE) (GONE WRONG) */ 

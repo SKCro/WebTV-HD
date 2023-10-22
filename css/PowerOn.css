@@ -86,9 +86,6 @@ progress::-webkit-progress-bar {
 }
 
 .hiddenUntilConnected {
-  position: absolute;
-  margin-left: 30vw !important;
-  margin-right: 30vw !important;
 }
 
 .hideOnClick {
@@ -108,7 +105,9 @@ progress::-webkit-progress-bar {
   align-items: center;
   height: 100vh;
   justify-content: center;
-  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .noCursor {

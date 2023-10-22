@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>Search</title>
+  <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel="shortcut icon" href=../Icon.png>
+  <script src=../js/main.js></script>
+  <script src=js/search.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head>
+<body>
+
+<audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
+
+<div id=selectionbox></div>
+
+<div class=sidebar style=background-color:#5C1E1E;>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('../Home.html');">
+    <div class="sidebar-border search"></div>
+    <div class=sidebar-link><a class=clickable>How to</a></div>
+    <div class="sidebar-border search"></div>
+  </div>
+  <div class=bottom-right-image>
+    <img alt="Search Text" src=images/sidebarSearch.svg>
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
+
+  <div class=main-content>
+    <br>
+    <h2>Search the Web</h2>
+    <br>
+	<p>What are you looking for?</p>
+	<form onsubmit="search(event);">
+      <input type="text" id="q">
+      <input type="submit" value="Search" class="ButtonBorder2 submit">
+    </form>
+	<div class=border><hr class=printonly></div>
+	<div class=bottom-padding></div>
+  </div>
+
+<div class=status-bar>
+  <div class=status-bar-top></div>
+  <div class=status-bar-content>
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
+    <div class=page-name></div>
+    <div class=status-container>
+      <div class=status-indicator></div>
+    </div>
+  </div>
+</div>
+
+</body></html>
