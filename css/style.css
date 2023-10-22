@@ -874,12 +874,10 @@ textarea { /* Removes the default browser focus box */
     width: 45%;
     z-index: 1;
     left: -50%;
-    animation-duration: 0.4s;
   }
 
   .sidebar.show {
-    animation-name: sidebarShow;
-    animation-direction: normal;
+    animation: 0.4s sidebarShow linear;
   }
 
   .sidebar.showing {
@@ -887,8 +885,7 @@ textarea { /* Removes the default browser focus box */
   }
 
   .sidebar.hide {
-    animation-name: sidebarHide;
-    animation-direction: normal;
+    animation: 0.4s sidebarHide linear;
   }
 
   .sidebar.hiding {

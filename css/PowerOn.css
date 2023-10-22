@@ -80,8 +80,15 @@ progress::-webkit-progress-bar {
 }
 
 .hiddenUntilClick,
-.hiddenUntilLogo, .hiddenUntilConnected {
+.hiddenUntilLogo,
+.hiddenUntilConnected {
   display: none;
+}
+
+.hiddenUntilConnected {
+  position: absolute;
+  margin-left: 30vw !important;
+  margin-right: 30vw !important;
 }
 
 .hideOnClick {
@@ -115,6 +122,10 @@ progress::-webkit-progress-bar {
   cursor: url('../images/cursorClick.png') 24 23, pointer;
 }
 
+.cityCrossfade {
+  animation: 0.5s cityCrossfade;
+}
+
 @keyframes baranim {
   100% {
     background-position: 10000px 0;
@@ -132,6 +143,10 @@ progress::-webkit-progress-bar {
   }
 }
 
+.splash-shine {
+  animation: 2s splashShine linear;
+}
+
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -143,6 +158,38 @@ progress::-webkit-progress-bar {
 
   80% {
     opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes cityCrossfade {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes splashShine {
+  0% {
+    opacity: 0.5;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 0;
   }
 
   100% {

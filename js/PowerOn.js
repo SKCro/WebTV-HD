@@ -15,7 +15,11 @@ function doSplash(withInterval) {
         dialingMusic.pause();
         splashJingle.play();
 
-        hiddenUntilLogo.remove();
+        hiddenUntilLogo.classList.add('animation', 'cityCrossfade');
+        setTimeout(() => {
+			const hiddenUntilLogo = document.querySelector(".hiddenUntilLogo");
+			hiddenUntilLogo.remove();
+		}, 500);
         hiddenUntilConnected.style.display = "flex";
         hiddenUntilConnected.classList.add("fadeIn");
         document.title = "WebTV Service";
