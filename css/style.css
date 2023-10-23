@@ -69,10 +69,6 @@ hr {
 code {
   font-family: 'Monaco', fixed-width;
   font-size: 1.2rem;
-  background-color: #101010;
-  border-radius: 0.5vw;
-  padding-left: 0.1rem;
-  padding-right: 0.1rem;
 }
 
 dialog {
