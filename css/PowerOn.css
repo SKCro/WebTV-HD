@@ -104,6 +104,7 @@ progress::-webkit-progress-bar {
 .hiddenUntilConnected {
   align-items: center;
   height: 100vh;
+  width: 35vw;
   justify-content: center;
   position: absolute;
   left: 50%;
@@ -193,5 +194,19 @@ progress::-webkit-progress-bar {
 
   100% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 760px) { /* Mobile Styles */ 
+  body {
+    font-size: 1rem;
+  }
+
+  .animating {
+    width: 80vw;
+  }
+
+  .hiddenUntilConnected {
+    width: 75vw;
   }
 }
