@@ -1,55 +1,55 @@
 <!DOCTYPE HTML>
 <html><head>
-  <title>Main Template Page</title>
-  <link rel=stylesheet type=text/css href=css/style.css>
-  <link rel="shortcut icon" href=Icon.png>
-  <script src=js/main.js></script>
-  <meta charset="UTF-8">
+  <title>Main Template Page</title> <!-- Page title. This appears in the browser tab and status bar. -->
+  <link rel=stylesheet type=text/css href=css/style.css> <!-- Stylesheet. Don't change this. -->
+  <link rel="shortcut icon" href=Icon.png> <!-- Page icon. Used as the tab bar icon. -->
+  <script src=js/main.js></script> <!-- Main functionality script. Don't change this. -->
+  <meta charset="UTF-8"> <!-- Meta tags. These tell the browser exactly how to handle the page. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
+<!-- Sound effects. These are responsible for the sounds you hear when clicking on stuff. -->
+<audio id=clickSound src=audio/click.mp3 preload=auto></audio> <!-- Generic click sound. Plays when you click most links or icons. -->
+<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio> <!-- Input click sound. Plays when you click on some sort of input (like a checkbox or radio button). -->
+<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio> <!-- Submit click sound. Plays when you click on a button. -->
+<audio id=errorSound src=audio/error.mp3 preload=auto></audio> <!-- Error sound. Doesn't really have a use, but could be used for when the page runs into an error. -->
+<audio id=panelUp src=audio/up.mp3 preload=auto></audio> <!-- Panel-up sound. Plays when the sidebar is opened on mobile devices. -->
+<audio id=panelDown src=audio/down.mp3 preload=auto></audio> <!-- Panel-down sound. Plays when the sidebar is closed on mobile devices. -->
 
-<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
-<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
-<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
-<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
-<audio id=panelUp src=audio/up.mp3 preload=auto></audio>
-<audio id=panelDown src=audio/down.mp3 preload=auto></audio>
+<div id=selectionbox></div> <!-- Selection box. Doesn't matter where you put this. -->
 
-<div id=selectionbox></div>
-
-<div class=sidebar style=background-color:#3C3C56;>
-  <div class=sidebar-contents>
-    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Home.html');">
-    <div class=sidebar-border-home></div>
-    <div class=sidebar-link><a class=clickable>Link</a></div>
-    <div class=sidebar-border-home></div>
+<div class=sidebar> <!-- Sidebar. -->
+  <div class=sidebar-contents> <!-- Sidebar content container. -->
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Home.html');"> <!-- Sidebar logo. -->
+    <div class=sidebar-border></div> <!-- Sidebar border. Separates links and WebTV logo. -->
+    <div class=sidebar-link><a class=clickable>Link</a></div> <!-- Sidebar link. -->
+    <div class=sidebar-border></div>
   </div>
-  <div class=bottom-right-image> <!-- Setup image div -->
+  <div class=bottom-right-image> <!-- Bottom-right image. -->
     <img alt="Home Text" src=images/Home.svg>
   </div>
   <div class=sidebar-shadow></div>
 </div>
 
-  <div class=main-content>
-    <p>Main template page. For pages outside of a <code>wtv-service</code> folder.</p>
+  <div class=main-content> <!-- Main content. Put stuff here! -->
+    <h1>Template</h1>
+    <p>Template page for stuff outside of a <code>wtv-service</code> folder.</p>
     
     
-    <!-- Your content goes here. -->
     
     
     
-	<div class=bottom-padding></div>
-  </div>
+    <div class=bottom-padding></div> <!-- Bottom padding. Makes sure that the status bar doesn't cover the bottom of the text when scrolled down. -->
+  </div> <!-- End main content. Don't put stuff outside of here. -->
 
-<div class=status-bar>
-  <div class=status-bar-top></div>
-  <div class=status-bar-content>
-    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
-    <div class=page-name></div>
-    <div class=status-container>
-      <div class=status-indicator></div>
+<div class=status-bar> <!-- Status bar. Your page name and the little status indicator appear here. -->
+  <div class=status-bar-top></div> <!-- Status bar border. -->
+  <div class=status-bar-content> <!-- Status bar content container. -->
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div> <!-- Sidebar toggle for mobile devices. -->
+    <div class=page-name></div> <!-- Page name. Don't fill this in - the browser will do it for you. -->
+    <div class=status-container> <!-- Status indicator container. -->
+      <div class=status-indicator></div> <!-- Status indicator, aka that little green line. -->
     </div>
   </div>
 </div>

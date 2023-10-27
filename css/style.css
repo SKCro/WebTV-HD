@@ -17,7 +17,7 @@ html {
 
 body {
   background-color: #191919;
-  color: #42bd52;
+  color: #42CC55;
   font-family: 'Helvetica', Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -343,6 +343,7 @@ input[type="text"], input[type="password"] {
   border-color: #010101 #8f8f8f #8f8f8f #010101;
   border-width: 0.3rem;
   border-radius: 0;
+  caret-color: #E7CE4A;
 }
 
 input[type="text"]::placeholder, input[type="password"]::placeholder {
