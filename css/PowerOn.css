@@ -116,7 +116,6 @@ progress::-webkit-progress-bar {
 }
 
 .powerOnButton {
-  width: 6rem;
   margin-left: auto !important;
   margin-right: auto;
   cursor: url('../images/cursorClick.png') 24 23, pointer;

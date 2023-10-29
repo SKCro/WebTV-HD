@@ -465,7 +465,7 @@ input[type="radio"]:active {
 }
 
 button, .ButtonBorder { /* Light/Default button - style by pjfrix, modified by me */
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #000;
   border: 0;
   background: #b5b5b5;
