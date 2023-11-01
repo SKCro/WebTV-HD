@@ -634,7 +634,8 @@ label:active {
   position: absolute;
   box-shadow: 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.5), /* Main shadow */
               inset 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5), /* Inset shadow */
-              -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9); /* White shine */
+              -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9), /* White shine */
+              inset -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9); /* Inset white shine */
   border: 0.3rem solid rgba(255, 228, 71, 0.8);
   border-radius: 0.2rem;
   box-sizing: border-box;
@@ -647,7 +648,8 @@ label:active {
   position: absolute;
   box-shadow: 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.5), /* Main shadow */
               inset 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5), /* Inset shadow */
-              -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9); /* White shine */
+              -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9), /* White shine */
+              inset -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9); /* Inset white shine */
   border: 0.3rem solid rgba(45, 253, 0, 0.8);
   border-radius: 0.2rem;
   box-sizing: border-box;
