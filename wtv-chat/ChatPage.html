@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>Chat Page</title>
+  <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel=stylesheet type=text/css href=css/chat.css>
+  <link rel="shortcut icon" href=../Icon.png>
+  <script src=../js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head>
+<body>
+
+<audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
+
+<div id=selectionbox></div>
+
+<div class=sidebar style="background-image:linear-gradient(to bottom, #3c384e, #1b1b1b);">
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('../Home.html');">
+    <div class="sidebar-border chat"></div>
+    <div class=sidebar-link><a class=clickable>Chat home</a></div>
+    <div class="sidebar-border chat"></div>
+    <div class=sidebar-link><a class=clickable>Create</a></div>
+    <div class="sidebar-border chat"></div>
+    <div class=sidebar-link><a class=clickable>People</a></div>
+    <div class="sidebar-border chat"></div>
+    <div class=sidebar-link><a class=clickable>Trouble</a></div>
+    <div class="sidebar-border chat"></div>
+    <div class=sidebar-link><a class=clickable>Whisper</a></div>
+    <div class="sidebar-border chat"></div>
+    <div class=sidebar-link><a class=clickable>Help</a></div>
+    <div class="sidebar-border chat"></div>
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
+
+  <div class="main-content home">
+    <div class=chat-header>
+      <div class="chat-header text">Chat Room Name</div>
+      <div class=chat-icon></div>  
+      <div class=top-bar-shadow style=margin-top:0;></div>
+    </div>
+    
+    <div id=chat-content>
+      <iframe id=chat-content-source src=ChatContent.html></iframe>
+    </div>
+    
+    <div id=chat-bar>
+      <div class="border chat"><hr class=printonly></div>
+      <form id=chat-message>
+        <input type=text id=message></input>
+        <button class="ButtonBorder2 submit" id=send-button>Send</button>
+    </form>
+    </div>
+    <div class=bottom-padding></div>
+  </div>
+
+<div class=status-bar>
+  <div class=status-bar-top></div>
+  <div class=status-bar-content>
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
+    <div class=page-name></div>
+    <div class=status-container>
+      <div class=status-indicator></div>
+    </div>
+  </div>
+</div>
+
+</body></html>
