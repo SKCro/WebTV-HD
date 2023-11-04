@@ -1,0 +1,128 @@
+/* this code sucks */
+
+.chat-header {
+  content: '';
+  background-image: linear-gradient(to bottom, #5D7F36, #435B29);
+  background-color: #5D7F36;
+  height: 10vw;
+  overflow: hidden;
+  display: flex;
+}
+
+.chat-container {
+  display: flex;
+  height: 38vw;
+  flex-direction: column;
+  margin-bottom: 4vw;
+  flex-grow: 1;
+  margin-left: 1.5vw;
+}
+
+.chat-header.text {
+  margin-left: 2vw;
+  margin-top: 1vw;
+  background: transparent;
+  color: #000;
+  font-size: 3.5vw;
+  font-weight: 600;
+  height: 9vw;
+  z-index: 1;
+  position: absolute;
+  word-wrap: anywhere;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.chat-icon {
+  content: '';
+  background-image: url('../wtv-chat/images/ChatBubble.svg');
+  background-size: contain;
+  overflow: hidden;
+  width: 14.4vw;
+  background-repeat: no-repeat;
+  z-index: 0;
+  margin-left: 70.65vw;
+}
+
+#chat-content {
+  height: 100%;
+  flex-grow: 1;
+}
+
+#chat-content-source {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#chat-bar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1vw;
+  flex-grow: 0;
+}
+
+.border.chat {
+ margin-top: 0;
+ margin-bottom: 0.5rem;
+}
+
+#chat-message {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#message {
+  flex-grow: 1;
+  background-color: #262626;
+  height: 1rem;
+  color: #ffc342;
+  caret-color: #cc9933;
+}
+
+#send-button {
+  width: 7rem;
+  font-size: 1.4rem;
+  margin-right: 1vw;
+}
+
+/* iframe stuff */
+
+.chat-message {
+  display: table;
+}
+
+.username {
+  display: table-cell;
+  font-family: 'Helvetica Now Display Black', Arial Black, Helvetica, sans-serif;
+}
+
+.message {
+  display: table-cell;
+  padding-left: 0.5rem;
+}
+
+.top-bar-shadow.chat {
+  margin-top: 0;
+  position: absolute;
+  width: 85vw;
+  margin-top: 10vw;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .chat-icon {
+    margin-left: 84.5vw;
+  }
+  
+  .chat-container {
+    height: 75vh;
+  }
+  
+  #send-button {
+    width: 5rem;
+  }
+}

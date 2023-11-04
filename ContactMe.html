@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>Contact Me</title>
+  <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel="shortcut icon" href=Icon.png>
+  <script src=js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head>
+<body>
+
+<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=audio/down.mp3 preload=auto></audio>
+
+<div id=selectionbox></div>
+
+<div class=sidebar>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Home.html');">
+    <div class=sidebar-border></div>
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
+
+  <div class=main-content>
+    <h1>Contact Me</h1>
+    <p>If you need to contact me, these are my socials:</p>
+    <ul>
+      <li>Discord account - <code>SKCro</code> - Highest chance of response.</li>
+      <li>Twitter - <code><a class=clickable onclick="linkHandler('https://twitter.com/SKCro_');">@SKCro_</a></code> - Low chance of response.</li>
+    </ul>
+    <p>If you need to reach me quickly, Discord is your best bet.</p>
+    <div class=border><hr class=printonly></div>
+    <button class="ButtonBorder2 submit" onclick="linkHandler('Community.html');">Back to Community</button>
+    <p style=font-size:1px;>only added this because Pink_Sheep insisted on it lmfao</p>
+    <div class=bottom-padding></div>
+  </div>
+
+<div class=status-bar>
+  <div class=status-bar-top></div>
+  <div class=status-bar-content>
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
+    <div class=page-name></div>
+    <div class=status-container>
+      <div class=status-indicator></div>
+    </div>
+  </div>
+</div>
+
+</body></html>

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var clickableButtons = document.querySelectorAll('.clickable');
   var submitInputs = document.querySelectorAll('.submit');
   var submitSound = document.getElementById('submitSound');
+  var inputNoSound = document.querySelectorAll('.inputNoSound');
 
   function playClickSound() {
     clickSound.currentTime = 0;
@@ -22,20 +23,26 @@ document.addEventListener('DOMContentLoaded', function () {
     submitSound.currentTime = 0;
     submitSound.play();
   }
+  
+  function preventSound() {
+    inputSound.pause();
+  }
 
   // Loop through clickableButtons and attach event listeners
   for (var i = 0; i < clickableButtons.length; i++) {
     clickableButtons[i].addEventListener('click', playClickSound);
   }
 
-  // Loop through inputs and attach event listeners
   for (var j = 0; j < inputs.length; j++) {
     inputs[j].addEventListener('click', playInputSound);
   }
 
-  // Loop through submitInputs and attach event listeners
   for (var k = 0; k < submitInputs.length; k++) {
     submitInputs[k].addEventListener('click', playSubmitSound);
+  }
+
+  for (var l = 0; l < inputNoSound.length; l++) {
+    inputNoSound[l].addEventListener('click', preventSound);
   }
 
 });

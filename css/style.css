@@ -13,6 +13,7 @@
 
 html {
   cursor: url(../images/cursor.png), default;
+  color-scheme: dark;
 }
 
 body {
@@ -23,8 +24,7 @@ body {
   padding: 0;
   font-size: 1.4rem; /* Adjust the value as needed */
   animation: fadeTransition linear 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  scrollbar-color: #191919 #242424 !important;
 }
 
 h1 {
@@ -33,7 +33,7 @@ h1 {
   margin-top: 1.5vh;
   margin-bottom: 1vh;
   text-shadow: 0.18rem 0.18rem #000;
-  font-family: 'Helvetica Now Display Black', Arial Black, Helvetica, sans-serif;
+  font-family: 'Helvetica Now Display Black', Helvetica Black, Arial Black, 'Helvetica', sans-serif;
 }
 
 h2, h3, h4, h5, h6 {
@@ -42,7 +42,7 @@ h2, h3, h4, h5, h6 {
   margin-top: 0.8vh;
   margin-bottom: 0.8vh;
   text-shadow: 0.15rem 0.15rem #000;
-  font-family: 'Helvetica Now Display Black', Arial Black, Helvetica, sans-serif;
+  font-family: 'Helvetica Now Display Black', Helvetica Black, Arial Black, 'Helvetica', sans-serif;
 }
 
 a {
@@ -228,6 +228,10 @@ dialog {
 
 .sidebar-border.home {
   background: linear-gradient(#2A2A3D 40%, #565E7F 85%);
+}
+
+.sidebar-border.bwgrad {
+  background: linear-gradient(#00000050 40%, #FFFFFF25 85%);
 }
 
 .sidebar-link {

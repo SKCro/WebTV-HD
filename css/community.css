@@ -1,0 +1,61 @@
+.community-box-container {
+  display: inline;
+  /*! padding: 1%; */
+  flex-direction: column;
+  vertical-align: middle;
+}
+
+.community-box {
+  display: flex;
+  align-items: center;
+  padding: 1% 1% 2.5vh 1%;
+}
+ 
+/* Icons */
+
+.community-box .icon {
+  width: 8rem;
+  margin-right: 5rem;
+  height: 8rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.community-box .pagebuilder {
+  background-image: url(../images/Discord.svg);
+}
+
+.community-box .aroundtown {
+  background-image: url(../images/SKCro.svg);
+  filter: drop-shadow(0.2rem 0.2rem 2px black);
+}
+
+.community-box .chat {
+  background-image: url(../images/ChatBubble.svg);
+}
+
+.community-box .discuss {
+  background-image: url(../wtv-chat/images/BalloonTalkCity.gif);
+}
+
+.community-box .title {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Helvetica Now Display Black', Arial Black, Helvetica, sans-serif;
+}
+
+.community-box .description {
+  word-wrap: break-word;
+}
+
+.box-outline {
+  width: 81vw !important;
+  height: 16vh;
+  opacity: 0;
+}
+
+.bottom-right-image.community {
+  max-height: 25vw;
+  height: 25vw;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>Community</title>
+  <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel=stylesheet type=text/css href=css/community.css>
+  <link rel="shortcut icon" href=Icon.png>
+  <script src=js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head>
+<body>
+
+<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=audio/down.mp3 preload=auto></audio>
+
+<div id=selectionbox></div>
+
+<div class=sidebar style=background-color:#235E56;>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Home.html');"> <!-- Sidebar logo. -->
+    <div class="sidebar-border bwgrad"></div>
+  </div>
+  <div class="bottom-right-image community">
+    <img alt="Community Text" src=images/Community.svg>
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
+
+  <div class=main-content>
+    <div class=community-box-container>
+      <div class=community-box>
+        <div class="pagebuilder icon"><button class="box-outline clickable" onclick="linkHandler('https://discord.gg/qke279EUa8');">WebTV Discord</button></div> <!-- Hacky way to create an outline -->
+        <div class=text>
+          <div class=title>WebTV Discord</div>
+          <div class=description>Chat with the WebTV community on their Discord server.</div>
+        </div>
+      </div>
+      <div class=community-box>
+        <div class="aroundtown icon"><button class="box-outline clickable" onclick="linkHandler('ContactMe.html');">Contact Me</button></div>
+        <div class=text>
+          <div class=title>Contact Me</div>
+          <div class=description>Need to contact me? Click here.</div>
+        </div>
+      </div>
+      <div class=community-box>
+        <div class="chat icon"><button class="box-outline clickable" onclick="linkHandler('wtv-chat/ChatPage.html');">Chat</button></div>
+        <div class=text>
+          <div class=title>Chat</div>
+          <div class=description>Meet and interact with other people on your TV screen.</div>
+        </div>
+      </div>
+      <div class=community-box>
+        <div class="discuss icon"><button class="box-outline clickable">Discuss</button></div>
+        <div class=text">
+          <div class=title>Discuss</div>
+          <div class=description>(Doesn't exist yet) Share pictures and opinions in thousands of discussion groups.</div>
+        </div>
+      </div>
+    </div>
+    <div class=bottom-padding></div>
+  </div>
+
+<div class=status-bar>
+  <div class=status-bar-top></div>
+  <div class=status-bar-content>
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
+    <div class=page-name></div>
+    <div class=status-container>
+      <div class=status-indicator></div>
+    </div>
+  </div>
+</div>
+
+</body></html>
