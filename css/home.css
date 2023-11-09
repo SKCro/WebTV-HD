@@ -1,0 +1,389 @@
+.main-content.home {
+  padding: 0;
+}
+
+.top-bar {
+  background: linear-gradient(to bottom, #31365D, #9EAACD);
+  width: 100%;
+  height: 11.65vw;
+  display: grid;
+}
+
+.top-bar-items {
+  height: 95%;
+  background-color: transparent;
+  table-layout: fixed;
+  text-align: center;
+  width: 99.4%;
+  margin-top: 0.2vw;
+  border-collapse: collapse;
+}
+
+.top-bar-text {
+  margin-top: -4vw;
+  pointer-events: none;
+  user-select: none;
+  background-color: transparent;
+  table-layout: fixed;
+  text-align: center;
+  width: 99.4%;
+  border-collapse: collapse;
+}
+
+.top-bar-item {
+  padding-bottom: 1.7vw;
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.top-bar-item a {
+  text-decoration: none;
+  color: #000;
+}
+
+.top-bar-item img {
+  max-width: 9vw;
+  vertical-align: middle;
+  pointer-events: none;
+  user-select: none;
+}
+
+.top-bar-item-text {
+  color: #000;
+  position: relative;
+  vertical-align: bottom;
+  text-align: center;
+  font-size: 2vw;
+  pointer-events: none;
+  user-select: none;
+}
+
+.top-bar-shadow {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  width: 100%;
+  height: 1vw;
+  position: relative;
+  display: grid;
+  z-index: -1;
+  margin-top: 0.5%;
+}
+
+.homepage-content-container {
+  margin: 1%;
+}
+
+.sidebar-border.home {
+  background: linear-gradient(#2A2A3D 40%, #565E7F 85%);
+}
+
+/* 1999 Homepage Stuff */
+
+.home1999 {
+  background-color: #303a45;
+}
+
+.home1999-content {
+  margin: 0;
+}
+
+.top-bar-1999 {
+  padding: 0;
+}
+
+.top-bar.home1999 {
+  background: linear-gradient(to bottom, #424A6B, #73849C);
+}
+
+.top-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 0.5vw;
+  font-size: 2vw;
+  padding-top: 0.5vw;
+}
+
+.top-links a {
+  color: #C6E7F7;
+}
+
+.top-link::before {
+  content: '';
+  display: inline list-item;
+  position: relative;
+  clip-path: circle();
+  background-color: #060A19;
+  background-image: linear-gradient(to bottom right, #060A19 25%, #7C7F91 70%);
+  left: -0.5vh;
+  color: transparent;
+  font-size: 1.5vh;
+  vertical-align: middle;
+}
+
+.webtv-today-container {
+  content: '';
+  margin-left: 2vw;
+  display: block;
+  height: 64.5vh;
+  border: 0.6vw solid #212131;
+  background-color: #949484;
+  border-right: 0;
+  border-top-left-radius: 2vw;
+  width: 100%;
+  border-bottom: 0;
+  background-image: url('../images/home/TodayBG.svg');
+  background-size: cover;
+  background-position: center center;
+  color: black;
+  position: relative;
+  max-height: 100vh;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.webtv-today-container::before {
+  content: '';
+  display: table-cell;
+  background-image: url('../images/home/TodayArrow.svg');
+  background-size: contain;
+  background-position: center center;
+  width: 58vh;
+  height: 58vh;
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 0;
+  left: -8vh;
+  top: -5vh;
+}
+
+.today-header {
+  background-image: url('../images/home/TodayHead.svg');
+  content: '';
+  height: 13.5%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.today-header::before {
+  background-image: url('../images/home/WebTVTodayText.svg');
+  content: '';
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  left: 1vh;
+  top: 1.5vh;
+  z-index: 1;
+}
+
+.today-header::after {
+  background-image: url('../images/home/TodayFoot.svg');
+  content: '';
+  height: 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  position: relative;
+}
+
+.right-image-container {
+  content: '';
+  margin-left: 1%;
+  display: block;
+  height: 70vh;
+  border-top: 0.6vw solid #181818;
+  background-color: #949484;
+  width: 30%;
+  background-image: linear-gradient(to bottom, #2E393F 50%, #101B21, #2E393F);
+  background-size: 1vh 1vh;
+  z-index: -2;
+}
+
+.right-image-container::after {
+  content: '';
+  display: block;
+  background-image: linear-gradient(to right, #0000008f, #0000);
+  position: relative;
+  height: 100%;
+  z-index: -1;
+}
+
+.main-content-container {
+  display: flex;
+}
+
+.today-main {
+  font-family: 'Helvetica Now Display Black', Helvetica Black, Arial Black, 'Helvetica', sans-serif;
+  font-weight: 900;
+  font-size: 5.5vh;
+  margin-left: 38vh;
+  margin-top: 11.5vh;
+  position: relative;
+}
+
+.today-main::after {
+  content:'find out more in WebTV Today';
+  font-weight: 500;
+  font-size: 2vw;
+  top: 20vh;
+  position: absolute;
+  color: #764842;
+  margin-left: 45vh;
+  height: 0;
+}
+
+.today-sub {
+  font-size: 2vw;
+  z-index: 1;
+  position: relative;
+  font-weight: 100;
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.bottom-links {
+  background-image: linear-gradient(to right, #313942, #5A5A5A);
+  height: 25%;
+  position: absolute;
+  top: 47.1vh;
+}
+
+.bottom-links table {
+  width: 100%;
+  position: relative;
+  table-layout: fixed;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+.bottom-links a {
+  color: #e6daa0;
+  text-shadow: 0.15vw 0.15vw black;
+  font-size: 2.5vw;
+}
+
+.bottom-link {
+  padding-left: 3vw;
+}
+
+.bottom-link::before {
+  content: '';
+  position: relative;
+  color: #e6daa0;
+  background-image: linear-gradient(#e6daa0, #e6daa0);
+  background-size: cover;
+  display: inline list-item;
+  clip-path: polygon(50% 50%, 0% 0%, 0% 100%);
+  font-size: 3vh;
+  top: -0.5vh;
+}
+
+#logo-1999 {
+  padding-bottom: 0 !important;
+  width: 22%;
+}
+
+#logo-1999 img {
+  max-width: 12vw;
+}
+
+.clickable-today-overlay {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 73%;
+  top: 0;
+}
+
+@media (max-width: 760px) {
+  .top-bar {
+    margin: 0;
+    height: 25vw;
+  }
+
+  .top-bar-item {
+    padding-bottom: 5.5vw;
+  }
+
+  .top-bar-item img {
+    max-width: 18.5vw;
+  }
+
+  .top-bar-item-text {
+    font-size: 4vw;
+  }
+
+  .top-bar-shadow {
+    margin-top: -1vw;
+    height: 4vw;
+  }
+  
+  .top-bar-text {
+    margin-top: -7vw;
+  }
+  
+  .top-links {
+    font-size: 3vh;
+    padding-top: 1vh;
+    padding-bottom: 1.5vh;
+  }
+  
+  .right-image-container {
+    display: none;
+  }
+  
+  .main-content-container {
+    overflow: hidden;
+  }
+  
+  .webtv-today-container {
+    height: 75vh;
+    border-width: 1vw;
+    margin-left: 1vw;
+  }
+  
+  .webtv-today-container::before {
+    width: 25vh;
+    height: 25vh;
+    left: -1vh;
+    top: calc(35vh - 25vw);
+  }
+  
+  .bottom-links {
+    top: calc(84vh - 39vw);
+    height: calc(18vh - 3.4vw);
+  }
+  
+  .bottom-links table {
+    height: 80%;
+  }
+  
+  .bottom-link a {
+    font-size: 4vw;
+  }
+  
+  #logo-1999 img {
+    max-width: 20vw;
+    padding-left: 1vw;
+  }
+  
+  .today-header {
+    height: 10%;
+    border-top-left-radius: 1vw;
+  }
+   
+  .today-main {
+    margin-left: 25vh;
+    margin-top: calc(38vh - 26vw);
+  }
+  
+  .today-main::after {
+    top: 19vh;
+    font-size: 2.8vh;
+    position: absolute;
+    left: -10vh;
+  }
+}

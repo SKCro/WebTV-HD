@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   ffdec:objectType="shape"
+   height="194.0px"
+   width="374.0px"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="TodayBG.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ffdec="https://www.free-decompiler.com/flash">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="8"
+     inkscape:cx="370.0625"
+     inkscape:cy="194.875"
+     inkscape:window-width="1287"
+     inkscape:window-height="747"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <g
+     transform="scale(1.002681,1.0051813)"
+     id="g2">
+    <path
+       d="M 373,193 H 0 V 0 h 373 v 193"
+       fill="url(#gradient0)"
+       fill-rule="evenodd"
+       stroke="none"
+       id="path1"
+       style="fill:url(#gradient0)" />
+  </g>
+  <defs
+     id="defs3">
+    <radialGradient
+       cx="0"
+       cy="0"
+       gradientTransform="matrix(0.2951,0,0,0.268,130.8,93.8)"
+       gradientUnits="userSpaceOnUse"
+       id="gradient0"
+       r="819.2"
+       spreadMethod="pad">
+      <stop
+         offset="0.0"
+         stop-color="#b4b59f"
+         id="stop2" />
+      <stop
+         offset="1.0"
+         stop-color="#808171"
+         id="stop3" />
+    </radialGradient>
+  </defs>
+</svg>

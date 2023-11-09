@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var elementRect = selectedElement.getBoundingClientRect();
       var boxMargin = 4;
 
-      var top = elementRect.top - boxMargin;
       var left = elementRect.left - boxMargin;
       var width = elementRect.width + 2 * boxMargin;
       var height = elementRect.height + 2 * boxMargin;

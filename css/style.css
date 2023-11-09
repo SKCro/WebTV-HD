@@ -226,10 +226,6 @@ dialog {
   background: linear-gradient(#33202A 40%, #774E5E 85%);
 }
 
-.sidebar-border.home {
-  background: linear-gradient(#2A2A3D 40%, #565E7F 85%);
-}
-
 .sidebar-border.bwgrad {
   background: linear-gradient(#00000050 40%, #FFFFFF25 85%);
 }
@@ -322,10 +318,6 @@ dialog {
 .main-content {
   margin-left: 15%;
   padding: 1%;
-}
-
-.main-content.home {
-  padding: 0;
 }
 
 /* Input Styles */
@@ -681,75 +673,6 @@ textarea { /* Removes the default browser focus box */
   cursor: url('../images/cursorActive.png') 24 23, pointer;
 }
 
-.top-bar {
-  background: linear-gradient(to bottom, #31365D, #9EAACD);
-  width: 100%;
-  height: 11.65vw;
-  display: grid;
-}
-
-.top-bar-items {
-  height: 95%;
-  background-color: transparent;
-  table-layout: fixed;
-  text-align: center;
-  width: 99.4%;
-  margin-top: 0.2vw;
-}
-
-.top-bar-text {
-  margin-top: -4vw;
-  pointer-events: none;
-  user-select: none;
-  background-color: transparent;
-  table-layout: fixed;
-  text-align: center;
-  width: 99.4%;
-}
-
-.top-bar-item {
-  padding-bottom: 1.7vw;
-  padding-top: 0;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.top-bar-item a {
-  text-decoration: none;
-  color: #000;
-}
-
-.top-bar-item img {
-  max-width: 9vw;
-  vertical-align: middle;
-  pointer-events: none;
-  user-select: none;
-}
-
-.top-bar-item-text {
-  color: #000;
-  position: relative;
-  vertical-align: bottom;
-  text-align: center;
-  font-size: 2vw;
-  pointer-events: none;
-  user-select: none;
-}
-
-.top-bar-shadow {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
-  width: 100%;
-  height: 1vw;
-  position: relative;
-  display: grid;
-  z-index: -1;
-  margin-top: 0.5%;
-}
-
-.homepage-content-container {
-  margin: 1%;
-}
-
 .printonly { /* WebTV Paper: Now $299.99 per sheet! That's 0% off! */
   display: none;
 }
@@ -965,32 +888,6 @@ textarea { /* Removes the default browser focus box */
     width: 10%;
     border-radius: 1vw;
     border-width: 0.7vw;
-  }
-  
-  .top-bar {
-    margin: 0;
-    height: 32vw;
-  }
-
-  .top-bar-item {
-    padding-bottom: 5.5vw;
-  }
-
-  .top-bar-item img {
-    max-width: 25vw;
-  }
-
-  .top-bar-item-text {
-    font-size: 5vw;
-  }
-
-  .top-bar-shadow {
-    margin-top: -1vw;
-    height: 4vw;
-  }
-  
-  .top-bar-text {
-    margin-top: -7vw;
   }
   
   .message-outline {
