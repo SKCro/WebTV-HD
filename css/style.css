@@ -383,7 +383,7 @@ input[type="checkbox"]::after { /* Inner shadow */
 input[type="checkbox"]::before {
   content: '';
   background-image: url('../images/Checkmark.svg');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: 10000;
   position: absolute;
@@ -629,12 +629,12 @@ label:active {
 
 #selectionbox {
   position: absolute;
-  box-shadow: 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.5), /* Main shadow */
-              inset 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5), /* Inset shadow */
-              -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9), /* White shine */
-              inset -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9); /* Inset white shine */
-  border: 0.3rem solid rgba(255, 228, 71, 0.8);
-  border-radius: 0.2rem;
+  box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.3), /* Main Shadow */
+              -1px -1px 0.5px rgba(255,255,255,0.8), /* White Shine */
+              inset 2px 2px 0.5px rgba(0,0,0,0.3), /* Inset Shadow */
+              inset -1px -1px 0.5px rgba(255, 255, 255, 0.8); /* Inset White Shine */
+  border: 4px solid rgba(255, 228, 71, 0.8);
+  border-radius: 3px;
   box-sizing: border-box;
   pointer-events: none;
   z-index: 9999;
@@ -642,16 +642,7 @@ label:active {
 }
 
 #selectionbox.green {
-  position: absolute;
-  box-shadow: 0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.5), /* Main shadow */
-              inset 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5), /* Inset shadow */
-              -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9), /* White shine */
-              inset -0.08rem -0.08rem 0.1rem rgba(255, 255, 255, 0.9); /* Inset white shine */
-  border: 0.3rem solid rgba(45, 253, 0, 0.8);
-  border-radius: 0.2rem;
-  box-sizing: border-box;
-  pointer-events: none;
-  z-index: 9999;
+  border: 4px solid rgba(45, 253, 0, 0.8);
 }
 
 ::selection {
