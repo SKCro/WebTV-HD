@@ -10,12 +10,11 @@
 }
 
 .top-bar-items {
-  height: 95%;
   background-color: transparent;
   table-layout: fixed;
   text-align: center;
   width: 99.4%;
-  margin-top: 0.2vw;
+  margin-top: 0.4vw;
   border-collapse: collapse;
 }
 
@@ -284,10 +283,11 @@
 #logo-1999 {
   padding-bottom: 0 !important;
   width: 22%;
+  padding-top: 0.5vw;
 }
 
 #logo-1999 img {
-  max-width: 12vw;
+  max-width: 13vw;
 }
 
 .clickable-today-overlay {

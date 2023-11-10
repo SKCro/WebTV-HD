@@ -231,16 +231,17 @@ dialog {
 }
 
 .sidebar-link {
+  width: 90%;
+  color: #E7CE4A;
   text-align: left;
-  margin-left: 1vw;
   text-shadow: 0.15vw 0.15vw #000;
   font-size: 2vw;
-  margin-top: 0.5vw;
-  margin-bottom: 0.5vw;
-}
-
-.sidebar-link a {
-  color: #E7CE4A;
+  margin-top: 0.1vw;
+  margin-bottom: 0.1vw;
+  margin-left: 0.4vw;
+  padding-top: 0.3vw;
+  padding-bottom: 0.3vw;
+  padding-left: 0.6vw;
 }
 
 .sidebar-link.unavailable {

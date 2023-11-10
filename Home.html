@@ -11,27 +11,25 @@
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
-
 <audio id=clickSound src=audio/click.mp3 preload=auto></audio>
 <audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
 <audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
 <audio id=errorSound src=audio/error.mp3 preload=auto></audio>
 <audio id=panelUp src=audio/up.mp3 preload=auto></audio>
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
-
 <div id=selectionbox></div>
 
 <div class=sidebar style=background-color:#3C3C56;>
   <div class=sidebar-contents>
     <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Credits.html');">
     <div class="sidebar-border home"></div>
-    <div class=sidebar-link><a class=clickable>Setup</a></div>
+    <div class="sidebar-link clickable">Setup</div>
     <div class="sidebar-border home"></div>
-    <div class=sidebar-link><a class=clickable>Using WebTV</a></div>
+    <div class="sidebar-link clickable">Using WebTV</div>
     <div class="sidebar-border home"></div>
-    <div class=sidebar-link><a class=clickable onClick="linkHandler('Community.html');">Community</a></div>
+    <div class="sidebar-link clickable" onClick="linkHandler('Community.html');">Community</div>
     <div class="sidebar-border home"></div>
-    <div class=sidebar-link><a class=clickable>What's on TV</a></div>
+    <div class="sidebar-link clickable">What's on TV</div>
     <div class="sidebar-border home"></div>
   </div>
   <div class="bottom-right-image home">
@@ -65,7 +63,7 @@
         To see more of what this theme has to offer, check out the <a class="clickable" onclick="linkHandler('PageStyleGuide.html');">style reference page</a>.
         <br>It has examples of other WebTV stuff I've implemented, like checkboxes, radio buttons, text styles, and alert dialogs.
         <ul><h4 style=margin:0;>Links</h4>
-          <li><a class=clickable onclick="linkHandler('1999Home.html');">1999 Home page</a> - A later revision of the home page, remade for newer browsers.</li>
+          <li><a class=clickable onclick="linkHandler('1999Home.html');">1999 Home page</a> - A later revision of the home page.</li>
           <li><a class=clickable onclick="linkHandler('PowerOn.html');">PowerOn page</a> - This is where you started. It simulates the power-on, dialing, and splash screen sequences of a box.</li>
           <li><a class=clickable onclick="linkHandler('Credits.html');">Credits</a> - See who made this project possible!</li>
         </ul>
@@ -75,7 +73,6 @@
   </div>
 
 <div class=status-bar>
-  <div class=status-bar-top></div>
   <div class=status-bar-content>
     <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
     <div class=page-name></div>

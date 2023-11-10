@@ -1,5 +1,11 @@
 /* this code sucks */
 
+.main-content.chat {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .chat-header {
   content: '';
   background-image: linear-gradient(to bottom, #5D7F36, #435B29);

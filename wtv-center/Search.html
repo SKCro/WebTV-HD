@@ -3,6 +3,7 @@
   <title>Search</title>
   <link rel=stylesheet type=text/css href=../css/style.css>
   <link rel="shortcut icon" href=../Icon.png>
+  <link rel=apple-touch-icon href=../images/AppleTouchIcon.png>
   <script src=../js/main.js></script>
   <script src=js/search.js></script>
   <meta charset="UTF-8">
@@ -10,21 +11,19 @@
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
-
 <audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
 <audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
 <audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
 <audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
 <audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
 <audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
-
 <div id=selectionbox></div>
 
 <div class=sidebar style=background-color:#5C1E1E;>
   <div class=sidebar-contents>
     <img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('../Home.html');">
     <div class="sidebar-border search"></div>
-    <div class=sidebar-link><a class=clickable>How to</a></div>
+    <div class="sidebar-link clickable">How to</div>
     <div class="sidebar-border search"></div>
   </div>
   <div class=bottom-right-image>

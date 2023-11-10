@@ -9,31 +9,29 @@
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
-
 <audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
 <audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
 <audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
 <audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
 <audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
 <audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
-
 <div id=selectionbox></div>
 
 <div class=sidebar style=background-color:#333B5A;>
   <div class=sidebar-contents>
     <img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('../Home.html');">
     <div class="sidebar-border mail"></div>
-    <div class=sidebar-link><a class=clickable onclick="linkHandler('Mail.html');">Mail list</a></div>
+    <div class="sidebar-link clickable" onclick="linkHandler('Mail.html');">Mail list</div>
     <div class="sidebar-border mail"></div>
     <div class="sidebar-link unavailable mail">Previous</div>
     <div class="sidebar-border mail"></div>
-    <div class=sidebar-link><a class=clickable>Next</a></div>
+    <div class="sidebar-link clickable">Next</div>
     <div class="sidebar-border mail"></div>
-    <div class=sidebar-link><a class=clickable>Discard</a></div>
+    <div class="sidebar-link clickable">Discard</div>
     <div class="sidebar-border mail"></div>
-    <div class=sidebar-link><a class=clickable>Reply</a></div>
+    <div class="sidebar-link clickable">Reply</div>
     <div class="sidebar-border mail"></div>
-    <div class=sidebar-link><a class=clickable>Forward</a></div>
+    <div class="sidebar-link clickable">Forward</div>
     <div class="sidebar-border mail"></div>
   </div>
   <div class="bottom-right-image mail">
