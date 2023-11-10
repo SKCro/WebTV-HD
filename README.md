@@ -32,14 +32,14 @@ If anything is broken for you, **please [file a bug report](https://github.com/S
 - \[Unlikely\] Make this into a browser extension of some sort that adds a WebTV overlay and allows navigation with your keyboard or a gamepad.
 - \[Very Unlikely\] Try to make this into a WTVP-to-HTML interface. Essentially, make it into a WebTV client. This would be very complicated (as I have no backend skills and would definitely need help from others), but it is something I'm looking forward to getting working eventually (even at a very basic level).
 
-If you'd like to suggest something, [create a new issue](https://github.com/SKCro/WebTV-HD/issues/new) with the "enhancement" label and let me know what you'd like added.
+If you'd like to suggest something, fill out the [feature suggestion template](https://github.com/SKCro/WebTV-HD/issues/new?assignees=SKCro&labels=enhancement&projects=&template=feature-request.md&title=%5BRequest%5D+) to let me know what you'd like to see added to WebTV HD.
 
 ## TODO:
 - ~~Flesh out everything.~~ Pretty much done.
 - ~~Make the status bar look better on non-widescreen display sizes.~~ Done.
 - Recreate more service pages like ~~login,~~ ~~mail,~~ settings, favorites, etc.
 - ~~Add functionality with JavaScript.~~ Done.
-- Fix the dang selection box scrolling bug.
+- Fix the dang selection box scrolling bug. This is partially done by simply not updating the `top` attribute, but it doesn't fix the root problem - clicking something else while scrolled down still results in the bug.
 - ~~Make Dialing.html actually work better by making it show a splash at 100% progress, along with redirecting to Home.html.~~ Done by nitrate92.
 - ~~Flesh out Home.html.~~ Done.
 
