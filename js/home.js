@@ -52,13 +52,13 @@ function throttle(callback, limit) {
 
 // just for you, halen
 
-function goHome() {
+function snortAsbestos() {
   document.getElementById('submitSound').play();
   var smoke = document.querySelector('.smoke');
   var currentAnimation = window.getComputedStyle(smoke).getPropertyValue('animation');
   smoke.style.animation = currentAnimation ? currentAnimation + ', fadeOut 250ms linear' : 'fadeOut 250ms linear';
   setTimeout(function() { smoke.style.opacity = 0; }, 250);
-  linkHandler('Home.html');
+  linkHandler('https://www.youtube.com/watch?v=THc1X-kEX4E');
 }
 
 function asbestos() {
@@ -79,7 +79,7 @@ function asbestos() {
           <div class="dialog-logo"></div>
           <div class="dialog-message">WebTV ran into a mesotheleoma problem. You may be entitled to financial compensation.</div>
           <div class="dialog-separator"><hr></div>
-          <div class="dialog-button submit"><button onClick="closeDialog(); goHome();">Continue</button></div>
+          <div class="dialog-button submit"><button onClick="closeDialog(); snortAsbestos();">Continue</button></div>
         </dialog>
       </div>
     `;
