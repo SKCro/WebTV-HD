@@ -253,8 +253,6 @@ function linkHandler(url) {
   }, 235);
 }
 
-// mobile stuff
-
 // sidebar stuff
 
 // show sidebar

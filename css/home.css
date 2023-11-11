@@ -80,6 +80,7 @@
 
 .home1999 {
   background-color: #303a45;
+  overflow: hidden;
 }
 
 .home1999-content {
@@ -123,8 +124,8 @@
 .webtv-today-container {
   content: '';
   margin-left: 2vw;
-  display: block;
-  height: 64.5vh;
+  display: grid;
+  height: calc(75vh - 6vw);
   border: 0.6vw solid #212131;
   background-color: #949484;
   border-right: 0;
@@ -137,7 +138,6 @@
   color: black;
   position: relative;
   max-height: 100vh;
-  flex-grow: 1;
   overflow: hidden;
 }
 
@@ -156,13 +156,19 @@
   top: -5vh;
 }
 
+.today-content-container {
+  height: 75%;
+}
+
 .today-header {
   background-image: url('../images/home/TodayHead.svg');
   content: '';
   height: 13.5%;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .today-header::before {
@@ -193,7 +199,7 @@
   content: '';
   margin-left: 1%;
   display: block;
-  height: 70vh;
+  height: 80vh;
   border-top: 0.6vw solid #181818;
   background-color: #949484;
   width: 30%;
@@ -213,26 +219,26 @@
 
 .main-content-container {
   display: flex;
+  height: 71vh;
 }
 
 .today-main {
   font-family: 'Helvetica Now Display Black', Helvetica Black, Arial Black, 'Helvetica', sans-serif;
   font-weight: 900;
   font-size: 5.5vh;
-  margin-left: 38vh;
-  margin-top: 11.5vh;
-  position: relative;
+  left: 38vh;
+  top: 20.1vh;
+  position: absolute;
 }
 
-.today-main::after {
-  content:'find out more in WebTV Today';
+.today-findoutmore {
   font-weight: 500;
   font-size: 2vw;
-  top: 20vh;
-  position: absolute;
   color: #764842;
-  margin-left: 45vh;
-  height: 0;
+  width: 100%;
+  bottom: -18vh;
+  right: -24vw;
+  position: absolute;
 }
 
 .today-sub {
@@ -245,9 +251,8 @@
 
 .bottom-links {
   background-image: linear-gradient(to right, #313942, #5A5A5A);
-  height: 25%;
-  position: absolute;
-  top: 47.1vh;
+  z-index: 0;
+  grid-area: 14;
 }
 
 .bottom-links table {
@@ -294,11 +299,106 @@
   z-index: 2;
   position: absolute;
   width: 100%;
-  height: 73%;
   top: 0;
 }
 
+.asbestos {
+  position: absolute;
+  left: 50vw;
+  top: 50vh;
+  translate: -50% -50%;
+  opacity: 0;
+}
+
+.asbestos:hover {
+  animation: fadeTransition 0.5s;
+  opacity: 1;
+}
+
+.smoke {
+  background-image: url(../images/smoke.png);
+  background-size: 100vw 100vh;
+  animation: scroll 15s linear infinite;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+@keyframes scroll {
+  0% {
+    background-position: 100vw 100vh;
+  }
+  50% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -100vw -100vh;
+  }
+}
+
+.smoke::after {
+  content: '';
+  background-image: linear-gradient(#191919 90%, rgba(0,0,0,0));
+  animation: lift 5s linear;
+  top: -120vh;
+  width: 100%;
+  height: 120%;
+  position: absolute;
+}
+
+
+@keyframes lift {
+  0% {
+    top: 0;
+  }
+  10% {
+    top: 0;
+  }
+  20% {
+    top: 0;
+  }
+  30% {
+    top: 0;
+  }
+  40% {
+    top: 0;
+  }
+  50% {
+    top: -20vh;
+  }
+  60% {
+    top: -40vh;
+  }
+  70% {
+    top: -60vh;
+  }
+  80% {
+    top: -80vh;
+  }
+  90% {
+    top: -100vh;
+  }
+  100% {
+    top: -120vh;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 760px) {
+  .home1999 .page-name {
+    padding: 0.5% 0 0.5% 1.5%;
+    width: 85%;
+  }
+
   .top-bar {
     margin: 0;
     height: 25vw;
@@ -340,7 +440,6 @@
   }
   
   .webtv-today-container {
-    height: 75vh;
     border-width: 1vw;
     margin-left: 1vw;
   }
@@ -353,8 +452,6 @@
   }
   
   .bottom-links {
-    top: calc(84vh - 39vw);
-    height: calc(18vh - 3.4vw);
   }
   
   .bottom-links table {
@@ -376,14 +473,13 @@
   }
    
   .today-main {
-    margin-left: 25vh;
-    margin-top: calc(38vh - 26vw);
+  left: 25vh;
   }
   
   .today-main::after {
-    top: 19vh;
+    top: calc(35vh - 25vw);
     font-size: 2.8vh;
     position: absolute;
-    left: -10vh;
+    left: 20vw;
   }
 }
