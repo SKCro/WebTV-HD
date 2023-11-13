@@ -32,30 +32,32 @@
 
 <div class=main-content>
   <h2 id=top>WebTV Music</h2>
-  <p>Boogie on down!</p>
+  <p id=toptext>Boogie on down!</p>
   <webtv-audioscope width=100% height=15vh bgcolor=#242424 border=0.2rem leftoffset=-2.5% rightoffset=2.5% gain=2></webtv-audioscope>
   <webtv-audioscope width=100% height=5vh bgcolor=#242424 border=0.2rem leftoffset=-2.5% rightoffset=2.5% gain=0></webtv-audioscope>
   <h3 id=songs>Songs</h3>
   <div class=song-list>
-    <div class=song-container>
-      <div class=song-title>Dialing.MID Remaster</div>
-      <div class=song-artist>webcd</div>
-      <audio src=audio/dialing.mp3 controls></audio>
-    </div>
-    <div class=song-container>
-      <div class=song-title>Click Sound</div>
-      <div class=song-artist>Brian Salter</div>
-      <audio src=audio/click.mp3 controls></audio>
-    </div>
-    <div class=song-container>
-      <div class=song-title>Modem.MID</div>
-      <div class=song-artist>Brian Salter</div>
-      <audio src=audio/modem.mp3 controls></audio>
+    <div class=song-row>
+      <div class=song-container>
+        <div class=song-title>Dialing.MID Remaster</div>
+        <div class=song-artist>webcd</div>
+        <audio src=audio/dialing.mp3 controls></audio>
+      </div>
+      <div class=song-container>
+        <div class=song-title>Modem.MID</div>
+        <div class=song-artist>Brian Salter</div>
+        <audio src=audio/modem.mp3 controls></audio>
+      </div>
+      <div class=song-container>
+        <div class=song-title>Buddy Holly</div>
+        <div class=song-artist>Weezer</div>
+        <audio src=audio/weezer.mp3 id=weezer controls></audio>
+      </div>
     </div>
   </div>
-  <p>uh sorry we ran out of songs</p>
+  <p style=margin:0; id=bottom-message>uh sorry we ran out of songs</p>
   <div class=border><hr class=printonly></div>
-  <button class="ButtonBorder2 submit" onclick="linkhandler('Home.html');">Home</button>
+  <button class="ButtonBorder2 submit" onclick="linkhandler('Home.html');" id=button>Home</button>
   <div class=bottom-padding></div>
 </div>
 
@@ -68,5 +70,20 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById('weezer').addEventListener('play', function() {
+    console.log('get weezer\'d');
+    var jewel = document.querySelector('.sidebar-logo');
+    jewel.src = 'images/weezer.svg';
+    document.title = 'weezer';
+    document.getElementById('top').textContent = 'weezer';
+    document.getElementById('toptext').textContent = 'weezer';
+    document.getElementById('songs').textContent = 'weezer';
+	document.getElementById('bottom-message').textContent = 'weezer';
+    document.getElementById('button').textContent = 'weezer';
+    weezer.controls = false;
+  });
+</script>
 
 </body></html>

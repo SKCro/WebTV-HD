@@ -532,10 +532,8 @@ label:active {
 
 .bottom-padding {
   display: block;
-  position: absolute;
-  height: 4.5rem;
-  z-index: -1;
-  width: 83%;
+  height: 6rem;
+  width: 0;
 }
 
 /* Statusbar */

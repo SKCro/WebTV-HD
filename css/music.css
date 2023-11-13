@@ -1,10 +1,25 @@
+.status-indicator webtv-audioscope #shadow-root canvas {
+  border-radius: 0.5vw;
+}
+
+.song-list {
+  display: grid;
+  justify-content: space-between;
+}
+
+.song-row {
+  display: grid;
+  justify-content: space-between;
+  margin-bottom: 1vw;
+  width: 82vw;
+}
+
 .song-container {
   border-width: 0.2rem;
   border-color: #323232 #141414 #141414 #323232;
   border-style: solid;
   background-color: #242424;
   width: 25vw;
-  height: 8.5vw;
   grid-row: 1;
   display: flex;
   flex-direction: column;
@@ -17,25 +32,22 @@
   justify-content: center;
   margin-top: 0.5rem;
   margin-bottom: 0.25rem;
+  text-align: center;
 }
 
 .song-container .song-artist {
   display: grid;
   justify-content: center;
+  text-align: center;
 }
   
 .song-container audio {
   margin: 0.4rem;
-  width: 95%;
+  width: auto;
   border-width: 0.2rem;
   border-style: solid;
   border-color: #141414 #323232 #323232 #141414;
   border-radius: 0;
-}
-
-.song-list {
-  display: grid;
-  justify-content: space-between;
 }
 
 .status-container::before {
