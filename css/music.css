@@ -1,0 +1,47 @@
+.song-container {
+  border: 0.2rem inset #272727;
+  background-color: #242424;
+  width: fit-content;
+  height: fit-content;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.song-container .song-title {
+  font-weight: bold;
+  display: grid;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.song-container .song-artist {
+  display: grid;
+  justify-content: center;
+}
+  
+.song-container audio {
+  margin: 0.4rem;
+  width: 97%;
+}
+
+.song-list {
+  display: grid;
+  justify-content: space-between;
+}
+
+.status-container::before {
+  display: none;
+}
+
+.status-indicator::after {
+  display: none;
+}
+
+.status-indicator {
+  width: 100% !important;
+  background-color: transparent !important;
+  margin: auto !important;
+}
