@@ -9,51 +9,47 @@
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
-
 <audio id=clickSound src=audio/click.mp3 preload=auto></audio>
 <audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
 <audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
 <audio id=errorSound src=audio/error.mp3 preload=auto></audio>
 <audio id=panelUp src=audio/up.mp3 preload=auto></audio>
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
+<div id=selectionbox></div>
 
-<div id=selectionbox></div> <!-- Selectionbox -->
-
-  <div class=sidebar style=background-color:#8C6A2E;>
-    <div class=sidebar-contents> <!-- WebTV logo div -->
-      <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo" onClick="linkHandler('Home.html');">
-      <div class=sidebar-border style="background-image: linear-gradient(#5a4521 40%, #C0954A 85%);"></div>
-    </div>
-    <div class="bottom-right-image credits">
-      <img alt="Setup Text" src=images/Credits.svg>
-    </div>
-	<div class=sidebar-shadow></div>
+<div class=sidebar style=background-color:#8C6A2E;>
+  <div class=sidebar-contents> <!-- WebTV logo div -->
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo" onClick="linkHandler('Home.html');">
+    <div class=sidebar-border style="background-image: linear-gradient(#5a4521 40%, #C0954A 85%);"></div>
   </div>
+  <div class="bottom-right-image credits">
+    <img alt="Setup Text" src=images/Credits.svg>
+  </div>
+  <div class=sidebar-shadow></div>
+</div>
 
 <div class=main-content>
   <h1>Credits</h1>
   <p>This project would not possible without these awesome people:</p>
   <ul>
-  <li>Steve Perlman, Bruce Leak, and Phil Goldman, for creating WebTV</li>
-  <li>WebTV employees, for making the service last long</li>
-  <li><a class=clickable onClick="linkHandler('https://github.com/JarHead4');">JarHead</a>, for his <a class=clickable onClick="linkHandler('https://webtv.zone/');">WebTV Redialed</a> project (which was inspiration)</li>
-  <li><a class=clickable onClick="linkHandler('https://github.com/Nitrate92');">nitrate92</a>, for helping and providing useful advice</li>
-  <li><a class=clickable onClick="linkHandler('https://github.com/PajamaFrix');">pjfrix</a>, for letting me use his code for the progress bar and light button</li>
-  <li><a class=clickable onClick="linkHandler('https://www.deviantart.com/blueamnesiac');">BLUEamnesiac</a>, for the sweet HD icons used on the home screen</li>
-  <li>The <a class=clickable onClick="linkHandler('https://discord.gg/qke279EUa8');">WebTV Discord server</a>, for being a great community</li>
-  <li>Pink_Sheep, for his ideas</li>
+    <li>Steve Perlman, Bruce Leak, and Phil Goldman, for creating WebTV</li>
+    <li>WebTV employees, for making the service last long</li>
+    <li><a class=clickable onClick="linkHandler('https://github.com/JarHead4');">JarHead</a>, for his <a class=clickable onClick="linkHandler('https://webtv.zone/');">WebTV Redialed</a> project (which was inspiration)</li>
+    <li><a class=clickable onClick="linkHandler('https://github.com/Nitrate92');">nitrate92</a>, for helping and providing useful advice</li>
+    <li><a class=clickable onClick="linkHandler('https://github.com/PajamaFrix');">pjfrix</a>, for letting me use his code for the progress bar and light button</li>
+    <li><a class=clickable onClick="linkHandler('https://www.deviantart.com/blueamnesiac');">BLUEamnesiac</a>, for the sweet HD icons used on the home screen</li>
+    <li>The <a class=clickable onClick="linkHandler('https://discord.gg/qke279EUa8');">WebTV Discord server</a>, for being a great community</li>
+    <li>Pink_Sheep, for his ideas</li>
   </ul>
   <p style=margin-bottom:0;>And, of course,</p><h2 style=margin-top:0;>you!</h2><p style=margin-top:0.5rem;><b>Thank you</b> for checking out my code.</p>
-  
   <div class=border><hr class=printonly></div>
   <button class="submit ButtonBorder2" onClick="linkHandler('Home.html');">Home</button>
   <div class=bottom-padding></div>
-
 </div>
 
 <div class=status-bar>
   <div class=status-bar-content>
-    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div> <!-- Show sidebar button - mobile-only -->
+    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
     <div class=page-name></div>
     <div class=status-container>
       <div class=status-indicator></div>

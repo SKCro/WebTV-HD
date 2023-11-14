@@ -1,5 +1,23 @@
-.status-indicator webtv-audioscope #shadow-root canvas {
-  border-radius: 0.5vw;
+.sidebar {
+  background-image: linear-gradient(to bottom, #E7CE4A, #8C6A2E);
+  background-color: #8C6A2E;
+}
+
+.audioscope1 {
+  display: block;
+  height: 15vh;
+  border-width: 0.2rem;
+  border-color: #141414 #323232 #323232 #141414;
+  border-style: solid;
+  margin-bottom: 0.5vw;
+}
+
+.audioscope2 {
+  display: block;
+  height: 5vh;
+  border-width: 0.2rem;
+  border-color: #141414 #323232 #323232 #141414;
+  border-style: solid;
 }
 
 .song-list {
@@ -10,19 +28,19 @@
 .song-row {
   display: grid;
   justify-content: space-between;
-  margin-bottom: 1vw;
   width: 82vw;
 }
 
 .song-container {
+  display: flex;
+  flex-direction: column;
   border-width: 0.2rem;
   border-color: #323232 #141414 #141414 #323232;
   border-style: solid;
   background-color: #242424;
+  min-height: 10vw;
   width: 25vw;
   grid-row: 1;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
@@ -30,8 +48,6 @@
   font-weight: bold;
   display: grid;
   justify-content: center;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
   text-align: center;
 }
 
@@ -44,6 +60,8 @@
 .song-container audio {
   margin: 0.4rem;
   width: auto;
+  height: 2.5vw;
+  background-color: #191919;
   border-width: 0.2rem;
   border-style: solid;
   border-color: #141414 #323232 #323232 #141414;
@@ -62,4 +80,18 @@
   width: 100% !important;
   background-color: transparent !important;
   margin: auto !important;
+}
+
+@media (max-width: 760px) {
+  .song-row {
+    width: 97vw;
+  }
+  
+  .song-container {
+    width: 30vw;
+  }
+  
+  .song-container audio {
+    height: unset;
+  }
 }
