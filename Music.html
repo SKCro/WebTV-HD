@@ -31,8 +31,8 @@
   <div class=header>
     <h2 id=top>WebTV Music</h2>
     <p id=toptext>Boogie on down!</p>
-    <webtv-audioscope class=audioscope1 width=100% height=15vh bgcolor=#242424 leftoffset=-2.5% rightoffset=2.5% gain=2></webtv-audioscope>
-    <webtv-audioscope class=audioscope2 width=100% height=5vh bgcolor=#242424 leftoffset=-2.5% rightoffset=2.5% gain=0></webtv-audioscope>
+    <webtv-audioscope class=audioscope1 width=100% height=15vh bgcolor=#242424 leftoffset=-4% rightoffset=4% gain=1></webtv-audioscope>
+    <webtv-audioscope class=audioscope2 width=100% height=5vh bgcolor=#242424 gain=0></webtv-audioscope>
   </div>
   <div class=song-list>
     <h3 id=songs>Songs</h3><h4>Built In</h4>
@@ -43,7 +43,7 @@
         <audio src=audio/dialing.mp3 controls></audio>
       </div>
       <div class=song-container>
-        <div class=song-title>The Modem Song (Uncompressed)</div>
+        <div class=song-title>The Modem Song<br>(Prealpha Dialing)</div>
         <div class=song-artist>Peter Drescher</div>
         <audio src=audio/music/prealphaDialing.mp3 controls></audio>
       </div>
@@ -91,6 +91,14 @@
 </div>
 
 <script>
+  document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+          audios[i].pause();
+        }
+    }
+  }, true);
   document.getElementById('weezer').addEventListener('play', function() {
     console.log('get weezer\'d');
     var jewel = document.querySelector('.sidebar-logo');
@@ -118,10 +126,10 @@
   if (audioscopeElements.length >= 3) {
     var thirdAudioscopeElement = audioscopeElements[2];
     if (thirdAudioscopeElement.shadowRoot) {
-        var canvas = thirdAudioscopeElement.shadowRoot.querySelector('canvas');
-        if (canvas) {
-            canvas.style.borderRadius = '0.4vw';
-        }
+      var canvas = thirdAudioscopeElement.shadowRoot.querySelector('canvas');
+      if (canvas) {
+        canvas.style.borderRadius = '0.4vw';
+      }
     }
   }
 </script>
