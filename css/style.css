@@ -11,24 +11,35 @@
    }
 }
 
+:root {
+  --webtv-bgcolor: #191919;
+  --webtv-yellow: #e7ce4a;
+  --webtv-green: #42bd52;
+  --webtv-link: #36d5ff;
+  --webtv-vlink: #189cd6;
+  --webtv-formbg: #262626;
+  --webtv-formtext: #ffc342;
+  --webtv-formcursor: #cc9933;
+  --webtv-buttoncolor: #e7c34a;
+}
+
 html {
   cursor: url(../images/cursor.png), default;
   color-scheme: dark;
 }
 
 body {
-  background-color: #191919;
-  color: #42CC55;
+  background-color: var(--webtv-bgcolor);
+  color: var(--webtv-green);
   font-family: 'Helvetica', Arial, sans-serif;
   margin: 0;
   padding: 0;
   font-size: 1.4rem; /* Adjust the value as needed */
   animation: fadeTransition linear 0.5s;
-  scrollbar-color: #191919 #242424 !important;
 }
 
 h1 {
-  color: #E7CE4A;
+  color: var(--webtv-yellow);
   font-weight: 900;
   margin-top: 1.5vh;
   margin-bottom: 1vh;
@@ -37,7 +48,7 @@ h1 {
 }
 
 h2, h3, h4, h5, h6 {
-  color: #E7CE4A;
+  color: var(--webtv-yellow);
   font-weight: 900;
   margin-top: 0.8vh;
   margin-bottom: 0.8vh;
@@ -75,8 +86,7 @@ dialog {
   position: fixed;
   margin-top: 32vh;
   z-index: 9998;
-  color: #E7CE4A;
-  border: transparent;
+  color: var(--webtv-buttoncolor);
   border-radius: 6px;
   display: inline-block;
   background: #4e4e4e;
@@ -144,12 +154,6 @@ dialog {
   position: absolute;
   top: 9.5rem;
   margin-left: 16rem;
-}
-
-#mainFrame {
-  width: 100vw;
-  height: 92.5vh;
-  border: 0;
 }
 
 /* Fonts */
@@ -232,7 +236,7 @@ dialog {
 
 .sidebar-link {
   width: 90%;
-  color: #E7CE4A;
+  color: var(--webtv-yellow);
   text-align: left;
   text-shadow: 0.15vw 0.15vw #000;
   font-size: 2vw;
@@ -298,12 +302,6 @@ dialog {
   user-select: none;
 }
 
-.bottom-right-image.iframe {
-  height: 13vw;
-  max-height: 13vw;
-  margin-bottom: 1vw;
-}
-
 .bottom-right-image.credits {
   height: 18vw;
   max-height: 18vw;
@@ -339,7 +337,7 @@ input[type="text"], input[type="password"] {
   border-color: #010101 #8f8f8f #8f8f8f #010101;
   border-width: 0.3rem;
   border-radius: 0;
-  caret-color: #E7CE4A;
+  caret-color: var(--webtv-yellow);
 }
 
 input[type="text"]::placeholder, input[type="password"]::placeholder {
@@ -492,7 +490,7 @@ button:active, .ButtonBorder:active {
   border-width: 0.3rem;
   background-image: linear-gradient(#2f2f2f, #060606);
   background-position-y: -0.1px;
-  color: #E7CE4A;
+  color: var(--webtv-yellow);
   text-shadow: 0.15rem 0.15rem 0 #000;
   background-color: #222;
   padding: 0.4rem 0.8rem;
@@ -545,7 +543,7 @@ label:active {
   left: 0;
   width: 100%;
   height: 4vw;
-  background-image: linear-gradient(to right, #666, #333);
+  background-image: linear-gradient(to right, #5D5D5D, #2E2E2E);
   z-index: 10000;
   cursor: url(../images/cursor.png), default;
 }
@@ -568,7 +566,7 @@ label:active {
 }
 
 .page-name {
-  color: #E7CE4A;
+  color: var(--webtv-yellow);
   width: 80%;
   border-radius: 0.5vw;
   background-image: linear-gradient(to right, #2A2A2A, #000);
@@ -648,10 +646,7 @@ label:active {
   color: #4E4E4E;
 }
 
-input,
-button,
-select,
-textarea { /* Removes the default browser focus box */
+input, button, select, textarea { /* Removes the default browser focus box */
   outline: none;
 }
 
@@ -663,7 +658,7 @@ textarea { /* Removes the default browser focus box */
   cursor: url('../images/cursorActive.png') 24 23, pointer;
 }
 
-.printonly { /* WebTV Paper: Now $299.99 per sheet! That's 0% off! */
+.print-only { /* WebTV Paper: Now $299.99 per sheet! That's 0% off! */
   display: none;
 }
 
@@ -952,7 +947,7 @@ textarea { /* Removes the default browser focus box */
     display: none !important;
   }
   
-  .printonly {
+  .print-only {
     display: block !important;
   }
 }

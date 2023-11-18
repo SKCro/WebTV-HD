@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
 <html><head>
-  <title>iframe funny</title>
-  <link rel=stylesheet type=text/css href=css/style.css> <!-- Stylesheet. Don't remove or change unless you want to use a different style. -->
+  <title>Home for SKCro</title>
+  <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel=stylesheet type=text/css href=css/iframe.css>
   <link rel="shortcut icon" href=Icon.png>
+  <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
   <script src=js/main.js></script>
+  <script src=js/iframe.js></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
-
 <audio id=clickSound src=audio/click.mp3 preload=auto></audio>
 <audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
 <audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
@@ -20,12 +22,29 @@
 <iframe id="mainFrame" src="iframeTest2.html"></iframe>
 <div id=selectionbox></div>
 
-<div class=status-bar> <!-- Statusbar -->
-  <div class=status-bar-content> <!-- Statusbar content, like page name and indicator -->
-    <div class=page-name></div> <!-- Page name, changes dynamically based on <title> -->
-    <div class=status-container> <!-- Status indicator container -->
-      <div class=status-indicator></div> <!-- Status indicator -->
+<div class="status-bar iframe" onClick=toggleOptionsBar();>
+  <div class=status-bar-content>
+    <div class=page-name></div>
+    <div class=status-container>
+      <div class=status-indicator></div>
     </div>
+  </div>
+</div>
+<div id=options-bar>
+  <div class="options-row">
+	<div class="options-logo clickable" onClick=home();></div>
+	<button class="options-button find clickable" onClick=find();>find</button>
+	<button class="options-button info clickable" onClick=info();>info</button>
+	<button class="options-button goto clickable" onClick=goTo();>go to</button>
+	<button class="options-button save clickable" onClick=save();>save</button>
+	<button class="options-button send clickable" onClick=save();>send</button>
+  </div>
+  <div class="options-row bottom">
+	<button class="options-button messenger bottom clickable" onClick=messenger();>messenger</button>
+	<button class="options-button print bottom clickable" onClick=print();>print</button>
+	<button class="options-button hangup bottom clickable" onClick=hangUp();>hang up</button>
+	<button class="options-button reload bottom clickable" onClick=reload();>reload</button>
+	<button class="options-button pip bottom clickable" onClick=pip();>pip</button>
   </div>
 </div>
 

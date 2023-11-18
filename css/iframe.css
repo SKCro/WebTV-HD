@@ -1,0 +1,190 @@
+#mainFrame {
+  width: 100vw;
+  height: 92.5vh;
+  border: 0;
+}
+
+#options-bar {
+  display: grid;
+  position: fixed;
+  background-image: linear-gradient(to right, #5D5D5D, #2E2E2E);
+  bottom: -10vw;
+  width: 100vw;
+  z-index: 9998;
+}
+
+@keyframes optionsBarUp {
+  from {
+    bottom: -10vw;
+  }
+  to {
+    bottom: 4vw;
+  }
+}
+
+#options-bar.show {
+  animation: 0.4s optionsBarUp linear;
+}
+
+#options-bar.showing {
+  bottom: 4vw;
+}
+
+@keyframes optionsBarDown {
+  from {
+    bottom: 4vw;
+  }
+  to {
+    bottom: -10vw;
+  }
+}
+
+#options-bar.hide {
+  animation: 0.4s optionsBarDown linear;
+}
+
+#options-bar.hiding {
+  bottom: -10vw;
+}
+
+.options-row::before {
+  content: '';
+  position: absolute;
+  background-image: linear-gradient(to right, #424242, #242424);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0.2vw;
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  height: 5vw;
+  margin-top: 1vw;
+  margin-bottom: 0.5vw;
+  margin-left: 1.5%;
+  margin-right: 2%;
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+}
+
+.options-row::after {
+  content: '';
+  position: absolute;
+  background-image: linear-gradient(to right, #828282, #414141);
+  top: 0.25vw;
+  left: 0;
+  width: 100vw;
+  height: 0.2vw;
+}
+
+.options-row.bottom::before {
+  content: '';
+  position: absolute;
+  background-image: linear-gradient(to right, #424242, #242424);
+  width: 100vw;
+  height: 0.2vw;
+  top: 7.4vw;
+  left: 0;
+}
+
+.options-row.bottom {
+  height: 3.5vw;
+  padding: 0;
+}
+
+.options-row.bottom::after {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 0.2vw;
+  background-image: linear-gradient(to right, #828282, #414141);
+  top: 7.6vw;
+  left: 0;
+}
+
+.options-logo {
+  content: '';
+  background-image: url("../images/WebTVShadowInset.svg");
+  height: 100%;
+  width: 7vw;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.options-button {
+  color: var(--webtv-yellow);
+  width: 9vw;
+  font-size: 2.5vw;
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #6D6D6D 25%, #393939 75%);
+  border-radius: 1.4vw;
+  text-shadow: 0.15vw 0.15vw 0.1vw black;
+  border: 0.2vw solid black;
+  box-shadow: inset 3px 3px 1px #b5b5b5, 
+              inset 1px 1px .25px white,
+              inset -1px 1px 1px #444, 
+              0 0 1px black, 0 0 1px 1px #333, 
+              1px 1px 0 1px #C5C5C580, 
+              0 0 0 2px black;
+}
+
+.options-button.bottom {
+  font-size: 2vw;
+  width: 12vw;
+}
+
+/* Button-specific backgrounds */
+
+.options-button.find {
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #6D6D6D 25%, #393939 75%);
+}
+
+.options-button.info {
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #656565 25%, #343434 75%);
+}
+
+.options-button.goto {
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #5A5A5A 25%, #2E2E2E 75%);
+}
+
+.options-button.save {
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #505050 25%, #292929 75%);
+}
+
+.options-button.send {
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #464646 25%, #232323 75%);
+}
+
+/* Bottom bar buttons */
+
+.options-button.messenger {
+  background-image: radial-gradient(ellipse at 2vw 1.2vw, #777 25%, #3D3D3D 75%);
+}
+
+.options-button.print {
+  background-image: radial-gradient(ellipse at 2vw 1.2vw, #6A6A6A 25%, #363636 75%);
+}
+
+.options-button.hangup {
+  background-image: radial-gradient(ellipse at 2vw 1.4vw, #5D5D5D 25%, #303030 75%);
+}
+
+.options-button.reload {
+  background-image: radial-gradient(ellipse at 2vw 1.4vw, #535353 25%, #2A2A2A 75%);
+}
+
+.options-button.pip {
+  background-image: radial-gradient(ellipse at 2vw 1.4vw, #474747 25%, #232323 75%);
+}
+
+/* Status bar stuff */
+
+.status-bar.iframe {
+  cursor: url('../images/cursorClick.png') 24 23, pointer;
+}
+
+.statusbar.iframe:active {
+  cursor: url('../images/cursorActive.png') 24 23, pointer;
+}

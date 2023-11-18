@@ -1,84 +1,82 @@
 <!DOCTYPE HTML>
 <html><head>
-  <title>iframe-embed testing</title>
-  <link rel=stylesheet type=text/css href=css/style.css> <!-- Stylesheet. Don't remove or change unless you want to use a different style. -->
+  <title>iframe test page</title>
+  <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel=stylesheet type=text/css href=css/home.css>
   <link rel="shortcut icon" href=Icon.png>
+  <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
   <script src=js/main.js></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
-
 <audio id=clickSound src=audio/click.mp3 preload=auto></audio>
 <audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
 <audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
 <audio id=errorSound src=audio/error.mp3 preload=auto></audio>
 <audio id=panelUp src=audio/up.mp3 preload=auto></audio>
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
-<div id=selectionbox></div> <!-- Selectionbox -->
+<div id=selectionbox></div>
 
-<div class=dialog-overlay> <!-- Dialog overlay. Prevents clicking things behind dialogs. -->
-  <dialog id=webtv-dialog> <!-- Dialog box. Invisible until triggered. -->
-    <div class=dialog-logo></div> <!-- Dialog logo image. Image can be changed in the CSS. -->
-    <div class=dialog-message>WebTV ran into a technical problem. Please try again.</div> <!-- Dialog text. -->
-    <div class=dialog-separator><hr></div> <!-- Dialog separator. Separates logo/text from action buttons. -->
-    <div class="dialog-button submit"><button onClick=closeDialog()>Continue</button></div> <!-- Close button. -->
-  </dialog>
-</div>
-
-<div class=sidebar>
-  <div class=sidebar-contents> <!-- WebTV logo div -->
-    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick="linkHandler('Home.html');"> <!-- Sidebar WebTV logo -->
-    <div class=sidebar-border></div> <!-- Sidebar border. Separates links and WebTV logo. -->
-    <div class=sidebar-link><a class=clickable>Link 1</a></div>
-    <div class=sidebar-border></div>
-    <div class=sidebar-link><a class=clickable>Link 2</a></div>
-    <div class=sidebar-border></div>
-    <div class=sidebar-link><a class=clickable>Link 3</a></div>
-    <div class=sidebar-border></div>
-    <div class=sidebar-link><a class=clickable>Link 4</a></div>
-    <div class=sidebar-border></div>
+<div class=sidebar style=background-color:#3C3C56;>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Credits.html');">
+    <div class="sidebar-border home"></div>
+    <div class="sidebar-link clickable">Setup</div>
+    <div class="sidebar-border home"></div>
+    <div class="sidebar-link clickable">Using WebTV</div>
+    <div class="sidebar-border home"></div>
+    <div class="sidebar-link clickable" onClick="linkHandler('Community.html');">Community</div>
+    <div class="sidebar-border home"></div>
+    <div class="sidebar-link clickable">What's on TV</div>
+    <div class="sidebar-border home"></div>
   </div>
-  <div class="bottom-right-image iframe"> <!-- Setup image div -->
-    <img alt="Setup Text" src=images/Setup.svg> <!-- Setup image -->
+  <div class="bottom-right-image home" style=margin-bottom:1vw;>
+    <img alt="Home Text" src=images/home/Home.svg>
   </div>
   <div class=sidebar-shadow></div>
 </div>
 
-<div class=main-content>
-  <h1>This is a header.</h1>
-  <p>This is a paragraph. Text content will be in the Helvetica font.<br>This is another sentence in the same paragraph. Any words that are not broken up via &lt;br&gt; tags will be wrapped to fit.</p>
-  <h2>This is a sub-header.</h2>
-  <p>This is another paragraph. <b>This is bold text.</b> <i>This is italic text.</i><br><b><i>This is both bold and italic text.</i></b> <a class=clickable>This is a link.</a></p>
-
-  <!-- Note: if you want to add a link, please don't use href - that causes the browser to navigate away before the click sound can be played. -->
-  <!-- Instead, use this code snippet: <a href="" class=clickable onClick="linkHandler('https://example.com/page');"> -->
-
-  <div class=input-container>
-    <label for=Textbox1>This is the textbox's flavor text.</label>
-    <input type=text name=Textbox id=Textbox1 placeholder="Textbox placeholder.">
+<div class="main-content home">
+  <div class=top-bar>
+    <table class=top-bar-items>
+      <tbody><tr>
+        <td class="top-bar-item clickable" onClick="linkHandler('/WebTV-HD/wtv-mail/Mail.html');"><img src=images/home/mail.png alt="Mail Icon"></td>
+        <td class="top-bar-item clickable"><img src=images/home/favorites.png alt="Favorites Icon"></td>
+        <td class="top-bar-item clickable"><img src=images/home/explore.png alt="Explore Icon"></td>
+        <td class="top-bar-item clickable" onClick="linkHandler('/WebTV-HD/wtv-center/Search.html');"><img src=images/home/search.png alt="Search Icon"></td>
+      </tr>
+    </tbody></table>
+  <table class=top-bar-text>
+      <tbody><tr>
+        <td class=top-bar-item-text>Mail</td>
+        <td class=top-bar-item-text>Favorites</td>
+        <td class=top-bar-item-text>Explore</td>
+        <td class=top-bar-item-text>Search</td>
+      </tr>
+    </tbody></table>
+  <div class=top-bar-shadow></div></div>
+  <div class=homepage-content-container>
+      <h3>Welcome to WebTV HD!</h3>
+      This version of the home page is intended to test iframe stuff.<br>
+      Later on, this "master-page-with-iframe" technical style will power WebTV HD - it has several advantages, including:
+      <ul>
+        <li>Background music support</li>
+        <li>Proper options bar support</li>
+        <li>More backend flexibility</li>
+        <li>No more bottom padding</li>
+      </ul>
+	  Although it will have its own set of issues, such as status bar hiding and sidebar toggling.
+      <ul><h4 style=margin:0;>Links</h4>
+        <li><a class=clickable onclick="linkHandler('1999Home.html');">1999 Home page</a> - A later revision of the home page.</li>
+        <li><a class=clickable onclick="linkHandler('Music.html');">Music</a> - Listen to some WebTV music and check out the audioscope!</li>
+        <li><a class=clickable onclick="linkHandler('PowerOn.html');">PowerOn page</a> - This is where you started. It simulates the power-on, dialing, and splash screen sequences of a box.</li>
+        <li><a class=clickable onclick="linkHandler('Credits.html');">Credits</a> - See who made this project possible!</li>
+      </ul>
   </div>
-
-  <div class=input-container>
-	<label for=myCheckbox>This is the checkbox's flavor text.</label>
-      <input type=checkbox id=myCheckbox class=input></input>
-  </div>
-    
-  <div class=input-container>
-    <label for=webtv-radio-buttons>This is the flavor text for radio buttons.</label>
-    <div class=webtv-radio-buttons>
-      <label for=radio1>
-        <input type=radio name=radioButton id=radio1 class=input> Option 1</label>
-      <label for=radio2>
-        <input type=radio name=radioButton id=radio2 class=input> Option 2</label>
-    </div>
-  </div>
-  
-  <div class=border><hr class=printonly></div> <!-- Border div -->
-  <input class=submit type=submit value=Button></input> <!-- Submit button -->
-  <input class=submit type=submit value=Dialog onClick=openDialog()></input> <!-- Dialog-triggering button -->
-
 </div>
+
 <div class=page-name style=display:none;></div>
+
 </body></html>
