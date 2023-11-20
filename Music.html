@@ -9,6 +9,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
+  <display noMusic></display>
 </head>
 <body>
 <audio id=clickSound src=audio/click.mp3 preload=auto></audio>
@@ -85,7 +86,7 @@
     <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
     <div class=page-name></div>
     <div class=status-container>
-      <div class=status-indicator><webtv-audioscope leftoffset=-2.5% rightoffset=2.5% width=100% height=2.6vw bgcolor=#16162A gain=2></div>
+      <div class=status-indicator><webtv-audioscope leftoffset=-2.5% rightoffset=2.5% width=100% height=2.6vw bgcolor=#16162A gain=2></webtv-audioscope></div>
     </div>
   </div>
 </div>
@@ -122,14 +123,11 @@
 	document.getElementById('bottom-message').textContent = 'uh sorry we ran out of songs';
     document.getElementById('button').textContent = 'Home';
   });
-  var audioscopeElements = document.querySelectorAll('webtv-audioscope');
-  if (audioscopeElements.length >= 3) {
-    var thirdAudioscopeElement = audioscopeElements[2];
-    if (thirdAudioscopeElement.shadowRoot) {
-      var canvas = thirdAudioscopeElement.shadowRoot.querySelector('canvas');
-      if (canvas) {
-        canvas.style.borderRadius = '0.4vw';
-      }
+  var statusContainerAudioscope = document.querySelector('.status-indicator webtv-audioscope');
+  if (statusContainerAudioscope && statusContainerAudioscope.shadowRoot) {
+    var canvas = statusContainerAudioscope.shadowRoot.querySelector('canvas');
+    if (canvas) {
+      canvas.style.borderRadius = '0.4vw';
     }
   }
 </script>

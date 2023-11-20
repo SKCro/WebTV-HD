@@ -19,7 +19,7 @@ function doSplash(withInterval) {
         setTimeout(() => {
 			const hiddenUntilLogo = document.querySelector(".hiddenUntilLogo");
 			hiddenUntilLogo.remove();
-		}, 500);
+		}, 480);
         hiddenUntilConnected.style.display = "flex";
         hiddenUntilConnected.classList.add("fadeIn");
         document.title = "WebTV Service";

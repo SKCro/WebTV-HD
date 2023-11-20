@@ -152,13 +152,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function checkIfInteractive(element) {
     return (
       element.classList.contains('clickable') ||
+      element.classList.contains('submit') ||
       element.tagName === 'A' ||
-      element.tagName === 'BUTTON' ||
       element.tagName === 'INPUT' ||
       element.tagName === 'SELECT' ||
       element.tagName === 'TEXTAREA' ||
-      element.isContentEditable ||
-      element.getAttribute('role') === 'button'
+      element.isContentEditable
     );
   }
 
@@ -297,3 +296,9 @@ function toggleSidebar() {
     showSidebar();
   }
 }
+
+// Navigation stuff for iframe setup
+
+window.navigateWithinIframe = function() {
+  history.pushState({ fromHistoryAPI: true }, '');
+};

@@ -87,14 +87,11 @@ dialog {
   margin-top: 32vh;
   z-index: 9998;
   color: var(--webtv-buttoncolor);
+  border: 0;
   border-radius: 6px;
   display: inline-block;
   background: #4e4e4e;
-  box-shadow: 0.5rem 0.5rem 0 #00000080, /* Main Shadow */
-              inset 1px 1px 1px #4e4e4e,
-              inset 2px 2px 2px 2px #969696,
-			  inset -1px -1px 1px #4e4e4e,
-			  inset -2px -2px 2px 2px #202020;
+  box-shadow: 0.5rem 0.5rem 0 #00000080, inset 1px 1px 1px #4e4e4e, inset 2px 2px 2px 2px #969696, inset -1px -1px 1px #4e4e4e, inset -2px -2px 2px 2px #202020;
   min-width: 22rem;
   text-shadow: 0.1rem 0.1rem #000;
   max-width: 22rem;
@@ -329,15 +326,15 @@ dialog {
 
 input[type="text"], input[type="password"] {
   font-family: 'Monaco', monospace;
-  background-color: #444444;
-  color: #ffdd33;
+  background-color: var(--webtv-formbg);
+  color: var(--webtv-formtext);
   padding: 0.3rem;
   width: auto;
   font-size: 1rem;
   border-color: #010101 #8f8f8f #8f8f8f #010101;
   border-width: 0.3rem;
   border-radius: 0;
-  caret-color: var(--webtv-yellow);
+  caret-color: var(--webtv-formcursor);
 }
 
 input[type="text"]::placeholder, input[type="password"]::placeholder {
@@ -633,7 +630,7 @@ label:active {
   border-radius: 3px;
   box-sizing: border-box;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10000;
   display: none;
 }
 

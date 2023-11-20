@@ -1,25 +1,27 @@
+body {
+  overflow: hidden;
+}
+
 #mainFrame {
   width: 100vw;
-  height: 92.5vh;
+  height: calc(100vh - 4vw);
   border: 0;
 }
+
+/* Options bar styles and animations */
 
 #options-bar {
   display: grid;
   position: fixed;
   background-image: linear-gradient(to right, #5D5D5D, #2E2E2E);
-  bottom: -10vw;
+  bottom: -12vw;
   width: 100vw;
-  z-index: 9998;
+  z-index: 9999;
 }
 
 @keyframes optionsBarUp {
-  from {
-    bottom: -10vw;
-  }
-  to {
-    bottom: 4vw;
-  }
+  from { bottom: -12vw; }
+  to { bottom: 0; }
 }
 
 #options-bar.show {
@@ -27,25 +29,51 @@
 }
 
 #options-bar.showing {
-  bottom: 4vw;
+  bottom: 0;
 }
 
 @keyframes optionsBarDown {
-  from {
-    bottom: 4vw;
-  }
-  to {
-    bottom: -10vw;
-  }
+  from { bottom: 0; }
+  to { bottom: -12vw; }
 }
 
 #options-bar.hide {
   animation: 0.4s optionsBarDown linear;
 }
 
-#options-bar.hiding {
-  bottom: -10vw;
+#options-bar.hiding { 
+  bottom: -12vw;
 }
+
+@keyframes statusUp {
+  from { bottom: 0; }
+  to { bottom: 12.5vw; }
+}
+
+/* Status bar animations */
+
+.status-bar.show {
+  animation: 0.4s statusUp linear;
+}
+
+.status-bar.showing {
+  bottom: 12.5vw;
+}
+
+@keyframes statusDown {
+  from { bottom: 12.5vw; }
+  to { bottom: 0; }
+}
+
+.status-bar.hide {
+  animation: 0.4s statusDown linear;
+}
+
+.status-bar.hiding {
+  bottom: 0;
+}
+
+/* Options bar rows */
 
 .options-row::before {
   content: '';
@@ -60,13 +88,11 @@
 .options-row {
   display: flex;
   justify-content: space-between;
-  height: 5vw;
-  margin-top: 1vw;
+  height: 7vw;
+  margin-top: 0.5vw;
   margin-bottom: 0.5vw;
   margin-left: 1.5%;
   margin-right: 2%;
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
 }
 
 .options-row::after {
@@ -108,7 +134,7 @@
   content: '';
   background-image: url("../images/WebTVShadowInset.svg");
   height: 100%;
-  width: 7vw;
+  width: 7.8vw;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -116,7 +142,7 @@
 
 .options-button {
   color: var(--webtv-yellow);
-  width: 9vw;
+  width: 15%;
   font-size: 2.5vw;
   background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #6D6D6D 25%, #393939 75%);
   border-radius: 1.4vw;
@@ -128,11 +154,13 @@
               0 0 1px black, 0 0 1px 1px #333, 
               1px 1px 0 1px #C5C5C580, 
               0 0 0 2px black;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
 }
 
 .options-button.bottom {
   font-size: 2vw;
-  width: 12vw;
+  margin: 0;
 }
 
 /* Button-specific backgrounds */
@@ -143,18 +171,42 @@
 
 .options-button.info {
   background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #656565 25%, #343434 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b5bf,
+              inset 1px 1px .25px #ffffffbf,
+              inset -1px 1px 1px #444444bf,
+              0 0 1px black, 0 0 1px 1px #333333bf, 
+              1px 1px 0 1px #C5C5C580,
+              0 0 0 2px black;
 }
 
 .options-button.goto {
   background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #5A5A5A 25%, #2E2E2E 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b5a3,
+              inset 1px 1px .25px #ffffffa3,
+              inset -1px 1px 1px #444444a3,
+              0 0 1px black, 0 0 1px 1px #333333a3,
+              1px 1px 0 1px #C5C5C580,
+              0 0 0 2px black;
 }
 
 .options-button.save {
   background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #505050 25%, #292929 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b580,
+              inset 1px 1px .25px #ffffff80,
+              inset -1px 1px 1px #44444480,
+              0 0 1px black, 0 0 1px 1px #33333380,
+              1px 1px 0 1px #C5C5C580,
+              0 0 0 2px black;
 }
 
 .options-button.send {
   background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #464646 25%, #232323 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b564,
+              inset 1px 1px .25px #ffffff64,
+              inset -1px 1px 1px #44444464,
+              0 0 1px black, 0 0 1px 1px #33333364,
+              1px 1px 0 1px #C5C5C580,
+              0 0 0 2px black;
 }
 
 /* Bottom bar buttons */
@@ -165,18 +217,42 @@
 
 .options-button.print {
   background-image: radial-gradient(ellipse at 2vw 1.2vw, #6A6A6A 25%, #363636 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b5bf,
+              inset 1px 1px .25px #ffffffbf,
+              inset -1px 1px 1px #444444bf,
+              0 0 1px black, 0 0 1px 1px #333333bf,
+              1px 1px 0 1px #C5C5C580,
+              0 0 0 2px black;
 }
 
 .options-button.hangup {
   background-image: radial-gradient(ellipse at 2vw 1.4vw, #5D5D5D 25%, #303030 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b5a3,
+              inset 1px 1px .25px #ffffffa3,
+              inset -1px 1px 1px #444444a3,
+              0 0 1px black, 0 0 1px 1px #333333a3,
+              1px 1px 0 1px #C5C5C580,
+              0 0 0 2px black;
 }
 
 .options-button.reload {
   background-image: radial-gradient(ellipse at 2vw 1.4vw, #535353 25%, #2A2A2A 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b580,
+              inset 1px 1px .25px #ffffff80,
+              inset -1px 1px 1px #44444480,
+              0 0 1px black, 0 0 1px 1px #33333380,
+              1px 1px 0 1px #C5C5C580,
+              0 0 0 2px black;
 }
 
 .options-button.pip {
   background-image: radial-gradient(ellipse at 2vw 1.4vw, #474747 25%, #232323 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b564,
+              inset 1px 1px .25px #ffffff64,
+              inset -1px 1px 1px #44444464,
+              0 0 1px black, 0 0 1px 1px #33333364,
+              1px 1px 0 1px #C5C5C580,
+              0 0 0 2px black;
 }
 
 /* Status bar stuff */
@@ -187,4 +263,173 @@
 
 .statusbar.iframe:active {
   cursor: url('../images/cursorActive.png') 24 23, pointer;
+}
+
+#music-indicator {
+  content: '';
+  position: absolute;
+  width: 1.8vw;
+  height: 1.8vw;
+  background-image: linear-gradient(to bottom right, #000 25%, #AEAEAE);
+  top: 9.5vw;
+  left: 13vw;
+  clip-path: circle();
+}
+
+#music-indicator::after {
+  content: '';
+  position: relative;
+  top: 0.2vw;
+  width: 1.4vw;
+  height: 1.4vw;
+  background-image: radial-gradient(circle at 0.5vw 0.5vw, #8F8F8F 0%, #3C563C 15%, #001600);
+  display: block;
+  clip-path: circle();
+  left: 0.2vw;
+}
+
+#music-indicator.active::after {
+  background-image: radial-gradient(circle at 0.5vw 0.5vw, #BCFFC4 0%, #2AFF44 15%, #008616);
+}
+
+#pip-indicator {
+  content: '';
+  position: absolute;
+  width: 1.8vw;
+  height: 1.8vw;
+  background-image: linear-gradient(to bottom right, #000 25%, #AEAEAE);
+  top: 9.5vw;
+  right: 3vw;
+  clip-path: circle();
+}
+
+#pip-indicator::after {
+  content: '';
+  position: relative;
+  top: 0.2vw;
+  width: 1.4vw;
+  height: 1.4vw;
+  background-image: radial-gradient(circle at 0.5vw 0.5vw, #8F8F8F 0%, #3C563C 15%, #001600);
+  display: block;
+  clip-path: circle();
+  right: -0.2vw;
+}
+
+#pip-indicator.active::after {
+  background-image: radial-gradient(circle at 0.5vw 0.5vw, #BCFFC4 0%, #2AFF44 15%, #008616);
+}
+
+/* Panel styles */
+
+@keyframes panelUp {
+  from { bottom: -23vw; display: grid; }
+  to { bottom: 3vw; display: grid; }
+}
+
+#panel.showing {
+  animation: 0.4s panelUp linear;
+}
+
+#panel.show {
+  bottom: 3vw;
+  display: grid;
+}
+
+@keyframes panelDown {
+  from { bottom: 3vw; display: grid; }
+  to { bottom: -23vw; display: grid; }
+}
+
+#panel.hiding {
+  animation: 0.4s panelDown linear;
+  display: grid;
+}
+
+#panel.hide {
+  bottom: -23vw;
+  display: none;
+}
+
+#panel {
+  position: absolute;
+  width: 100vw;
+  height: 25vw;
+  bottom: -23vw;
+  display: grid;
+  overflow: hidden;
+  display: none;
+}
+
+#panel dialog {
+  position: relative;
+  margin-top: 0;
+  max-width: unset;
+  max-height: 20vw;
+  width: 80%;
+  padding: 2.5vw;
+  box-shadow: 0 0.6vw 0 #00000080, inset 0.1vw 0.1vw 0.1vw #4e4e4e, inset 0.2vw 0.2vw 0.2vw 0.2vw #969696, inset -0.1vw -0.1vw 0.1vw #4e4e4e, inset -0.2vw -0.2vw 0.2vw 0.2vw #202020;
+  border-radius: 0.5vw;
+  height: 18vw;
+}
+
+#top-input-pretext {
+  width: 10%;
+}
+
+#top-input {
+  width: 88%;
+}
+
+#textQuery {
+  width: 100%;
+  height: 0.9vw;
+  font-size: 1.4vw;
+  border-width: 0.35vw;
+  padding: 0.5vw;
+  color: var(--webtv-green);
+  background-color: #161616;
+}
+
+.top-row {
+  display: flex;
+  height: 14vw;
+  font-size: 1.7vw;
+  text-shadow: 0.15vw 0.15vw black;
+  max-height: 14vw;
+}
+
+.bottom-row {
+  height: 20%;
+}
+
+.bottom-row hr {
+  margin-bottom: 1.5vw;
+  box-shadow: 0.1vw 0.1vw 0.1vw #4e4e4e, -0.1vw 0.08vw 0.1vw 0.1vw #969696, -1px -1px 1px #4e4e4e, -0.1vw -0.1vw 0.2vw 0.2vw #202020;
+}
+
+.submitDialog {
+  position: absolute;
+  top: 6.5vw;
+  right: 3vw;
+  font-size: 1.3vw;
+  height: 2.3vw;
+}
+
+#bottom-message {
+  position: absolute;
+  bottom: 7vw;
+}
+
+.panel-bottom {
+  width: 75% !important;
+  height: 0 !important;
+  min-height: unset !important;
+  z-index: 0;
+  bottom: 2vw;
+}
+
+@media (max-width: 760px) {
+  .options-button {
+    font-size: 12vw;
+  }
 }
