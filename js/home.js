@@ -69,23 +69,25 @@ function asbestos() {
     document.body.style.opacity = 1;
     var newContent = document.createElement('div')
     newContent.innerHTML = String.raw `
-      <audio id="1" src="audio/asbestos.mp3"></audio>
-      <audio id="errorSound" src="audio/error.mp3" preload="auto"></audio>
-      <audio id="submitSound" src="audio/submitClick.mp3" preload="auto"></audio>
-      <div id="selectionbox"></div>
-      <div class="smoke"></div>
-      <div class="dialog-overlay">
-        <dialog id="webtv-dialog">
-          <div class="dialog-logo"></div>
-          <div class="dialog-message">WebTV ran into a mesotheleoma problem. You may be entitled to financial compensation.</div>
-          <div class="dialog-separator"><hr></div>
-          <div class="dialog-button submit"><button onClick="closeDialog(); snortAsbestos();">Continue</button></div>
+      <audio id=1 src=../../audio/asbestos.mp3 preload=auto></audio>
+      <audio id=errorSound src=../../audio/error.mp3 preload=auto></audio>
+      <audio id=submitSound src=../../audio/submitClick.mp3 preload=auto></audio>
+      <div id=selectionbox></div>
+      <div class=smoke></div>
+      <div class=dialog-overlay>
+        <dialog id=webtv-dialog>
+          <div class=dialog-message-container>
+            <div class=dialog-logo></div>
+            <div class=dialog-message>WebTV ran into a mesotheleoma problem. You may be entitled to financial compensation.</div>
+          </div>
+          <div class=dialog-separator><hr></div>
+          <div class=dialog-button submit><button onClick=closeDialog();snortAsbestos();>Continue</button></div>
         </dialog>
       </div>
     `;
     document.body.appendChild(newContent);
     document.head.innerHTML = headerContent;
-    document.title = "asbestos";
+    document.title = 'asbestos';
     var sound = document.getElementById('1');
     sound.play();
     var intervalId = setInterval(function() {

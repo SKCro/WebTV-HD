@@ -17,9 +17,8 @@
 
 .chat-container {
   display: flex;
-  height: 38vw;
+  height: 78vh;
   flex-direction: column;
-  margin-bottom: 4vw;
   flex-grow: 1;
   margin-left: 1.5vw;
 }
@@ -125,7 +124,7 @@
   }
   
   .chat-container {
-    height: 75vh;
+    height: 92vh;
   }
   
   #send-button {

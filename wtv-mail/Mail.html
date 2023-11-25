@@ -45,7 +45,7 @@
   <h2>Mail list for SKCro</h2>
   <p>You have 2 messages</p>
   <div class=mail-header>
-    <div class=border><hr class=printonly></div>
+    <div class=border><hr class=print-only></div>
     <table class=top-items-mail>
       <thead>
         <tr>
@@ -55,38 +55,24 @@
        	</tr>
       </thead>
     </table>
-    <div class=border><hr class=printonly></div>
+    <div class=border><hr class=print-only></div>
   </div>
 
   <table class=mail-messages>
     <tbody>
       <tr class="mail-message unread clickable" role=button onClick="linkHandler('readMail.html');">
-        <td><button class=message-outline></button></td> <!-- Hacky way to make the selectionbox outline the message -->
+        <td><button class="message-outline clickable"></button></td> <!-- Hacky way to make the selectionbox outline the message -->
     	<td class=from>SKCro</td>
     	<td class=subject>Welcome to WebTV HD!</td>
     	<td class=date>Just Now</td>
       </tr>
       <tr class="mail-message clickable" role=button onClick="linkHandler('readMail.html');">
-        <td><button class=message-outline></button></td>
+        <td><button class="message-outline clickable"></button></td>
     	<td class=from>johnlandlord@aol.com</td>
     	<td class=subject>Notice of Eviction</td>
     	<td class=date>1 minute ago</td>
       </tr>
 	</tbody>
   </table>
-
-  <div class=bottom-padding></div>
 </div>
-
-<div class=status-bar>
-  <div class=status-bar-top></div>
-  <div class=status-bar-content>
-    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
-    <div class=page-name></div>
-    <div class=status-container>
-      <div class=status-indicator></div>
-    </div>
-  </div>
-</div>
-
 </body></html>

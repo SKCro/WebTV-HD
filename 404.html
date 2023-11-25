@@ -1,32 +1,32 @@
 <!DOCTYPE HTML>
 <html><head>
   <title>Page Not Found</title>
-  <link rel=stylesheet type=text/css href=css/style.css>
-  <link rel=stylesheet type=text/css href=css/home.css>
-  <link rel="shortcut icon" href=Icon.png>
-  <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
-  <script src=js/main.js></script>
-  <script src=js/home.js></script>
+  <link rel=stylesheet type=text/css href=../../css/style.css>
+  <link rel=stylesheet type=text/css href=../../css/home.css>
+  <link rel="shortcut icon" href=../../Icon.png>
+  <link rel=apple-touch-icon href=../../images/AppleTouchIcon.png>
+  <script src=../../js/main.js></script>
+  <script src=../../js/home.js></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
 </head>
 <body>
-<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
-<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
-<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
-<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
-<audio id=panelUp src=audio/up.mp3 preload=auto></audio>
-<audio id=panelDown src=audio/down.mp3 preload=auto></audio>
+<audio id=clickSound src=../../audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=../../audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=../../audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=../../audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=../../audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=../../audio/down.mp3 preload=auto></audio>
 <div id=selectionbox></div>
 
 <div class=sidebar style=background-color:#3C3C56;>
   <div class=sidebar-contents>
-    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Home.html');">
+    <img class="sidebar-logo clickable" src=../../images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('../../Home.html');">
     <div class="sidebar-border home"></div>
   </div>
   <div class=bottom-right-image style="max-height: 8vw">
-    <img alt="Warning Triangle" src=images/404.svg>
+    <img alt="Warning Triangle" src=../../images/404.svg>
   </div>
   <div class=sidebar-shadow></div>
 </div>
@@ -36,18 +36,6 @@
   <p>WebTV could not find the requested page. If you followed a link or used a bookmark to get here, the content you're looking for may have been moved or deleted.</p>
   <button class="asbestos submit" tabindex=1 onclick="asbestos();">asbestos</button>
   <div class=border><hr class=print-only></div>
-  <button class="submit ButtonBorder2" onClick="linkHandler('Home.html');">Home</button>
-  <div class=bottom-padding></div>
+  <button class="submit ButtonBorder2" onClick="linkHandler('../../Home.html');">Home</button>
 </div>
-
-<div class=status-bar>
-  <div class=status-bar-content>
-    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
-    <div class=page-name></div>
-    <div class=status-container>
-      <div class=status-indicator></div>
-    </div>
-  </div>
-</div>
-
 </body></html>

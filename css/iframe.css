@@ -2,10 +2,20 @@ body {
   overflow: hidden;
 }
 
+.has-audioscope .status-indicator,
+.has-audioscope::before {
+  display: none;
+}
+
+.status-container:not(.has-audioscope) #statusAudioscope {
+  display: none;
+}
+
 #mainFrame {
   width: 100vw;
   height: calc(100vh - 4vw);
   border: 0;
+  background-color: #191919;
 }
 
 /* Options bar styles and animations */
@@ -25,7 +35,7 @@ body {
 }
 
 #options-bar.show {
-  animation: 0.4s optionsBarUp linear;
+  animation: 0.4s optionsBarUp linear forwards;
 }
 
 #options-bar.showing {
@@ -38,7 +48,7 @@ body {
 }
 
 #options-bar.hide {
-  animation: 0.4s optionsBarDown linear;
+  animation: 0.4s optionsBarDown linear forwards;
 }
 
 #options-bar.hiding { 
@@ -53,7 +63,7 @@ body {
 /* Status bar animations */
 
 .status-bar.show {
-  animation: 0.4s statusUp linear;
+  animation: 0.4s statusUp linear forwards;
 }
 
 .status-bar.showing {
@@ -66,7 +76,7 @@ body {
 }
 
 .status-bar.hide {
-  animation: 0.4s statusDown linear;
+  animation: 0.4s statusDown linear forwards;
 }
 
 .status-bar.hiding {
@@ -163,6 +173,12 @@ body {
   margin: 0;
 }
 
+.options-button:disabled {
+  color: transparent;
+  text-shadow: 0 0;
+  cursor: url('../images/cursorNo.png') 24 23, not-allowed;
+}
+
 /* Button-specific backgrounds */
 
 .options-button.find {
@@ -211,7 +227,7 @@ body {
 
 /* Bottom bar buttons */
 
-.options-button.messenger {
+.options-button.music {
   background-image: radial-gradient(ellipse at 2vw 1.2vw, #777 25%, #3D3D3D 75%);
 }
 
@@ -327,7 +343,7 @@ body {
 }
 
 #panel.showing {
-  animation: 0.4s panelUp linear;
+  animation: 0.4s panelUp linear forwards;
 }
 
 #panel.show {
@@ -341,7 +357,7 @@ body {
 }
 
 #panel.hiding {
-  animation: 0.4s panelDown linear;
+  animation: 0.4s panelDown linear forwards;
   display: grid;
 }
 
@@ -370,6 +386,7 @@ body {
   box-shadow: 0 0.6vw 0 #00000080, inset 0.1vw 0.1vw 0.1vw #4e4e4e, inset 0.2vw 0.2vw 0.2vw 0.2vw #969696, inset -0.1vw -0.1vw 0.1vw #4e4e4e, inset -0.2vw -0.2vw 0.2vw 0.2vw #202020;
   border-radius: 0.5vw;
   height: 18vw;
+  top: 0;
 }
 
 #top-input-pretext {
@@ -407,12 +424,20 @@ body {
   box-shadow: 0.1vw 0.1vw 0.1vw #4e4e4e, -0.1vw 0.08vw 0.1vw 0.1vw #969696, -1px -1px 1px #4e4e4e, -0.1vw -0.1vw 0.2vw 0.2vw #202020;
 }
 
-.submitDialog {
+#panelSubmit {
   position: absolute;
   top: 6.5vw;
   right: 3vw;
   font-size: 1.3vw;
-  height: 2.3vw;
+}
+
+#panelClear {
+  font-size: 1.3vw;
+}
+
+#panelCancel {
+  font-size: 1.3vw;
+  margin-left: 2vw;
 }
 
 #bottom-message {
@@ -422,14 +447,39 @@ body {
 
 .panel-bottom {
   width: 75% !important;
-  height: 0 !important;
-  min-height: unset !important;
   z-index: 0;
-  bottom: 2vw;
+  top: -1vw !important;
 }
 
 @media (max-width: 760px) {
   .options-button {
     font-size: 12vw;
+  }
+  
+  #mainFrame {
+    height: calc(100vh - 10vw);
+  }
+  
+  #options-bar {
+    height: 20vw;
+  }
+  
+  .options-row {
+    height: 10vw;
+  }
+  
+  .bottom {
+  }
+  
+  .goto {
+    display: none;
+  }
+  
+  .save {
+    display: none;
+  }
+  
+  .hangup {
+    display: none;
   }
 }

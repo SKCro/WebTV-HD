@@ -47,32 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// page name updater
-
-document.addEventListener('DOMContentLoaded', function () {
-  var pageTitleElement = document.querySelector('.page-name');
-
-  function updatePageName() {
-    var pageTitle = document.title;
-    pageTitleElement.textContent = pageTitle;
-  }
-
-  updatePageName();
-
-  var observer = new MutationObserver(function () {
-    updatePageName();
-  });
-
-  observer.observe(document.querySelector('title'), { subtree: true, characterData: true, childList: true });
-});
-
 // selection box
 
 document.addEventListener('DOMContentLoaded', function () {
   var selectionBox = document.getElementById('selectionbox');
   var selectedElement = null;
 
-  // Function to update the selection box position and size
+  // Update the selection box position and size
   function updateSelectionBox() {
     if (selectedElement) {
       var elementRect = selectedElement.getBoundingClientRect();
@@ -124,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function updateSelectionBoxScroll() { // same as noGreen for now - going to try to use this to fix the scrolling issue
+  function updateSelectionBoxScroll() { // going to try to use this to fix the scrolling issue
     if (selectedElement) {
       var elementRect = selectedElement.getBoundingClientRect();
       var boxMargin = 4;
@@ -211,7 +192,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Event listener for arrow keys to move the selection box
   document.addEventListener('keydown', function (event) {
     // code for arrow keys goes here eventually
   });

@@ -1,59 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
+<!DOCTYPE HTML>
+<html><head>
   <title>TV Home</title>
+  <link rel=stylesheet type=text/css href=../../css/style.css>
+  <link rel=stylesheet type=text/css href=../../css/home.css>
+  <link rel="shortcut icon" href=Icon.png>
+  <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
+  <script src=../../js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
   <style>
     body {
       background-image: url('images/TVHomeBG.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-color: #191919;
     }
+    p {
+      justify-self: center;
+      text-align: center;
+      text-shadow: 0.1vw 0.1vw 0 #000;
+      margin-top: 48vh;
+      margin-bottom: 48vh;
+	  color: #f0f0f0;
+    }  
   </style>
 </head>
+</head>
 <body>
-  <!-- TV Window thing, Smasnug only -->
-  <script>
-    tizen.tvwindow.show(
-      function(success){
-        console.log('success');
-      },
-      function(fail){
-        console.log('fail');
-      },
-      ['50%', '50%', '50%', '50%'], // w,h,?,?
-      'MAIN'
-    );
-  </script>
-
-  <!-- Set input to HDMI -->
-  <script>
-    tizen.systeminfo.getPropertyValue(
-      'VIDEOSOURCE',
-      function(videoSource) {
-        console.log('success');
-
-        var connectedVideoSources = videoSource.connected;
-        for (var i = 0; i < connectedVideoSources.length; i++) {
-          if (connectedVideoSources[i].type === 'HDMI') {
-            tizen.tvwindow.setSource(
-              connectedVideoSources[i],
-              function(success){
-                console.log('success');
-              },
-              function(fail){
-                console.log('fail');
-              }
-            );
-            break;
-          }
-        }
-      },
-      function(fail){
-        console.log('fail');
-      }
-    );
-  </script>
+  <p>uh I'll make this page work eventually</p>
 </body>
 </html>

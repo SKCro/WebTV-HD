@@ -1,14 +1,40 @@
+.main-content {
+  padding: 0;
+}
+
 .community-box-container {
-  display: inline;
-  /*! padding: 1%; */
+  display: flex;
+  height: 96vh;
   flex-direction: column;
-  vertical-align: middle;
+  justify-content: space-between;
+  padding: 1%;
 }
 
 .community-box {
   display: flex;
   align-items: center;
-  padding: 1% 1% 2.5vh 1%;
+  padding: 1%;
+}
+
+.community-box .title {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: 'Helvetica Now Display Black', Arial Black, Helvetica, sans-serif;
+}
+
+.community-box .description {
+  word-wrap: break-word;
+}
+
+.box-outline {
+  width: 81vw !important;
+  height: 100%;
+  opacity: 0;
+}
+
+.bottom-right-image.community {
+  max-height: 25vw;
+  height: 25vw;
 }
  
 /* Icons */
@@ -36,26 +62,5 @@
 }
 
 .community-box .discuss {
-  background-image: url(../wtv-chat/images/BalloonTalkCity.gif);
-}
-
-.community-box .title {
-  color: #fff;
-  font-size: 2.5rem;
-  font-family: 'Helvetica Now Display Black', Arial Black, Helvetica, sans-serif;
-}
-
-.community-box .description {
-  word-wrap: break-word;
-}
-
-.box-outline {
-  width: 81vw !important;
-  height: 16vh;
-  opacity: 0;
-}
-
-.bottom-right-image.community {
-  max-height: 25vw;
-  height: 25vw;
+  background-image: url(../images/ChatBubble.svg);
 }

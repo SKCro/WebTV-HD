@@ -3,7 +3,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   var parentTitle = document.querySelector('.page-name');
   var iframe = document.getElementById('mainFrame');
-
   function updatePageName() {
     if (iframe.contentDocument) {
       var iframeTitle = iframe.contentDocument.title;
@@ -11,25 +10,40 @@ document.addEventListener('DOMContentLoaded', function () {
       document.title = iframeTitle;
     }
   }
-
   function waitForIframeLoad() {
     if (iframe && iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
-      // If the iframe is loaded, update the page name
       updatePageName();
     } else {
-      // If the iframe is not loaded yet, retry after a short delay
       setTimeout(waitForIframeLoad, 100);
     }
   }
-
-  // Call the function to wait for the iframe load
-  waitForIframeLoad();
-
-  // Attach the updatePageName function to the load event of the iframe
   iframe.addEventListener('load', function () {
-    updatePageName();
+    waitForIframeLoad();
   });
 });
+
+/* Original code, only here for reference
+
+// page name updater
+
+document.addEventListener('DOMContentLoaded', function () {
+  var pageTitleElement = document.querySelector('.page-name');
+
+  function updatePageName() {
+    var pageTitle = document.title;
+    pageTitleElement.textContent = pageTitle;
+  }
+
+  updatePageName();
+
+  var observer = new MutationObserver(function () {
+    updatePageName();
+  });
+
+  observer.observe(document.querySelector('title'), { subtree: true, characterData: true, childList: true });
+});
+
+*/
 
 // Options bar stuff
 
@@ -37,6 +51,8 @@ function showOptionsBar() {
   var optionsBar = document.getElementById('options-bar');
   var statusBar = document.querySelector('.status-bar.iframe');
   var panelUp = document.getElementById('panelUp');
+  var panel = document.getElementById('panel');
+  if (panel.classList.contains('showing')) { closePanel(); }
   resetSelectionBox();
   panelUp.currentTime = 0;
   panelUp.play();
@@ -103,11 +119,17 @@ function resetSelectionBox() {
   document.getElementById('selectionbox').style.top = '9999rem';
 }
 
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 46) {
+    toggleOptionsBar();
+  }
+});
+
 // Top row buttons
 
 function home() {
   hideOptionsBarNoSound();
-  document.getElementById("mainFrame").src = 'iframeTest2.html';
+  document.getElementById("mainFrame").src = 'iframeHome.html';
 }
 
 function find() {
@@ -152,6 +174,7 @@ function goTo() {
     document.getElementById('top-input-pretext').textContent = 'Address';
     document.getElementById('top-input-pretext').style.color = 'var(--webtv-yellow)';
     document.getElementById('bottom-message').textContent = '';
+    textInput.type = 'url';
     textInput.value = 'http://';
     textInput.placeholder = '';
     document.getElementById('panelSubmit').textContent = 'Go to Page';
@@ -166,8 +189,9 @@ function goTo() {
     event.preventDefault();
     var destUrl = document.getElementById('textQuery').value;
     var iframe = document.getElementById('mainFrame');
-    if (destUrl !== 'http://' && destUrl !== 'https://' && destUrl !== 'file://*' && destUrl !== '') {
+    if (destUrl !== 'http://' && destUrl !== 'https://' && destUrl !== 'file:*' && destUrl !== '') {
       iframe.src = destUrl;
+      closePanel();
     } else { 
       document.getElementById('bottom-message').textContent = 'Type the address of a webpage.';
       document.getElementById('errorSound').currentTime = 0;
@@ -197,21 +221,11 @@ function save() {
     textInput.style.display = 'none';
     document.getElementById('panelSubmit').style.top = 'unset';
     document.getElementById('panelSubmit').textContent = 'Continue';
-    document.getElementById('panelSubmit').onclick = closeSavePanel;
+    document.getElementById('panelSubmit').onclick = closePanel;
     panel.classList.remove('hide');
     panel.classList.remove('hiding');
     panel.classList.add('showing');
     setTimeout(function(){panel.classList.add('show');document.getElementById('panelSlide').play();},395);
-  }
-  function closeSavePanel() {
-    closePanel();
-    setTimeout(function() {
-      textInput.style.display = 'unset';
-      document.getElementById('bottom-message').style.bottom = '7vw';
-      document.getElementById('panelClear').style.display = 'unset';
-      document.getElementById('panelCancel').style.display = 'unset';
-    document.getElementById('panelSubmit').style.top = '6.5vw';
-    },200);
   }
   openSavePanel();
 }
@@ -219,9 +233,9 @@ function save() {
 function send() {
   hideOptionsBarNoSound();
   var iframe = document.getElementById('mainFrame');
+  var textInput = document.getElementById('textQuery');
   function openSendPanel() {
     var panel = document.getElementById('panel');
-    var textInput = document.getElementById('textQuery');
     document.getElementById('top-input-pretext').textContent = 'To:';
     document.getElementById('top-input-pretext').style.color = 'var(--webtv-link)';
     document.getElementById('bottom-message').textContent = 'Send "' + document.title + '" by electronic mail.';
@@ -239,8 +253,8 @@ function send() {
     document.getElementById('textQuery').value = '';
   }
   function doSend() {
-    linkHandler('mailto:' + emailAddress.value + '?body=' + encodeURIComponent(iframe.src));
-	closePanel();
+    window.open('mailto:' + textInput.value + '?body=' + encodeURIComponent(iframe.src), '_blank');
+    closePanel();
   }
   openSendPanel();
 }
@@ -251,12 +265,10 @@ function music() {
   var musicIndicator = document.getElementById('music-indicator');
 
   function enableMusic() {
-    musicIndicator.classList.add('active');
     startBGMusic();
   }
 
   function disableMusic() {
-    musicIndicator.classList.remove('active');
     stopBGMusic();
   }
 
@@ -284,7 +296,15 @@ function reload() {
 
 function closePanel() {
   var panel = document.getElementById('panel');
-  document.getElementById('panelSlide').play();
+  setTimeout(function() {
+    document.getElementById('panelSlide').play();
+    document.getElementById('textQuery').style.display = 'unset';
+    document.getElementById('textQuery').style.type = 'text';
+    document.getElementById('bottom-message').style.bottom = '7vw';
+    document.getElementById('panelClear').style.display = 'unset';
+    document.getElementById('panelCancel').style.display = 'unset';
+    document.getElementById('panelSubmit').style.top = '6.5vw';
+  },200);
   panel.classList.remove('show');
   panel.classList.remove('showing');
   panel.classList.add('hiding');
@@ -341,7 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var displayOptions = displayMeta.getAttribute('content').split(' ');
 
       if (displayOptions.includes('noScroll')) {
-        document.body.style.overflow = 'hidden';
+        iframeDocument.body.style.overflow = 'hidden';
       }
 
       if (displayOptions.includes('noStatus')) {
@@ -356,30 +376,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (displayOptions.includes('noMusic')) {
         console.log('Background music disabled - noMusic is set in display tag.');
-        // Code to prevent background music goes here later
+        stopBGMusic();
+        document.querySelector('.music').disabled = true;
       }
     } else {
       statusBar.style.display = 'block';
       optionsBar.style.display = 'grid';
       iframe.style.height = 'calc(100vh - 4vw)';
+      document.querySelector('.music').disabled = false;
     }
   });
 });
-
 
 // Background music, baby!
 
 document.addEventListener('DOMContentLoaded', function() {
   const bgMusic = document.getElementById('bgmusic');
   const musicList = [
-    '/audio/music/prealphaDialing.mp3',
-    '/audio/aoltv.mp3'
+    'audio/music/prealphaDialing.mp3',
+    'audio/aoltv.mp3'
     // uh sorry we ran out of songs
   ];
 
   let currentSongIndex = 0;
 
   window.startBGMusic = function() {
+    document.getElementById('music-indicator').classList.add('active');
     if (!bgMusic.src) {
       bgMusic.src = musicList[currentSongIndex];
     }
@@ -389,7 +411,8 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   window.stopBGMusic = function() {
-    bgMusic.pause();
+    document.getElementById('music-indicator').classList.remove('active');
+    fadeOutMusic();
   };
 
   function playNextSong() {
@@ -402,9 +425,67 @@ document.addEventListener('DOMContentLoaded', function() {
 
     bgMusic.addEventListener('ended', playNextSong);
   }
+
+  function fadeOutMusic() {
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const startTime = audioContext.currentTime;
+    const fadeDuration = 0.5;
+
+    bgMusic.volume = 1;
+    bgMusic.volume = bgMusic.volume - 0.01;
+
+    const fadeOutInterval = setInterval(function () {
+      if (bgMusic.volume > 0) {
+        bgMusic.volume = Math.max(0, bgMusic.volume - 0.01); 
+      } else {
+        clearInterval(fadeOutInterval);
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+        bgMusic.volume = 1;
+      }
+    }, fadeDuration * 10);
+  }
 });
 
-// Backward navigational sound
+// audioscope stuff, unfinished
+
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    var statusContainer = document.querySelector('.status-container');
+    statusContainer.classList.remove('has-audioscope');
+  }, 200);
+});
+
+function toggleAudioscope() {
+  var statusContainer = document.querySelector('.status-container');
+  if (statusContainer.classList.contains('has-audioscope')) {
+    disableAudioscope();
+  } else {
+    enableAudioscope();
+  }
+
+  function enableAudioscope() {
+    statusContainer.classList.add('has-audioscope');
+  }
+
+  function disableAudioscope() {
+    statusContainer.classList.remove('has-audioscope');
+  }
+}
+
+// styling workaround
+
+document.addEventListener('DOMContentLoaded', function() {
+  var statusbarAudioscope = document.querySelector('.status-container webtv-audioscope');
+  if (statusbarAudioscope && statusbarAudioscope.shadowRoot) {
+    var canvas = statusbarAudioscope.shadowRoot.querySelector('canvas');
+    if (canvas) {
+      canvas.style.borderRadius = '0.4vw';
+    }
+  }
+});
+
+// Backward navigational sound, doesn't currently work
 
 window.addEventListener('popstate', function(event) {
   if (event.state && event.state.fromHistoryAPI) {
@@ -415,13 +496,35 @@ window.addEventListener('popstate', function(event) {
   }
 });
 
-// Sidebar toggling stuff, unfinished
+// Sidebar toggling logic
 
 function toggleSidebarIframe() {
-  var sidebar = document.getElementById('mainFrame').document.querySelector('.sidebar');
+  var sidebar = document.getElementById('mainFrame').contentDocument.querySelector('.sidebar');
+  var panelUp = document.getElementById('panelUp');
+  var panelDown = document.getElementById('panelDown');
+  function showSidebarIframe() {
+    panelUp.currentTime = 0;
+    panelUp.play();
+    sidebar.classList.remove('hiding');
+    sidebar.classList.remove('hide');
+    sidebar.classList.add('show');
+    setTimeout(function() {
+      sidebar.classList.add('showing');
+    }, 400);
+  }
+  function hideSidebarIframe() {
+    panelDown.currentTime = 0;
+    panelDown.play();
+    sidebar.classList.remove('showing');
+    sidebar.classList.remove('show');
+    sidebar.classList.add('hide');
+    setTimeout(function() {
+      sidebar.classList.add('hiding');
+    }, 400);
+  }
   if (sidebar.classList.contains('show')) {
-    hideSidebar();
+    hideSidebarIframe();
   } else {
-    showSidebar();
+    showSidebarIframe();
   }
 }

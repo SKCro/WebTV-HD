@@ -90,6 +90,7 @@ progress::-webkit-progress-bar {
 .hideOnClick {
   position: absolute;
   display: grid;
+  text-align: center;
 }
 
 .logoArea {
@@ -202,6 +203,16 @@ progress::-webkit-progress-bar {
 
   .animating {
     width: 80vw;
+  }
+  
+  #city {
+    left: -25%;
+    width: 150%;
+  }
+  
+  #progressbar-container {
+    margin-left: 8vw;
+    margin-right: 8vw;
   }
 
   .hiddenUntilConnected {

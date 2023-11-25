@@ -8,29 +8,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
-</head>
-<body>
+</head><body>
 <audio id=clickSound src=audio/click.mp3 preload=auto></audio>
 <audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
 <audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
 <audio id=errorSound src=audio/error.mp3 preload=auto></audio>
 <audio id=panelUp src=audio/up.mp3 preload=auto></audio>
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
-<div id=selectionbox></div> <!-- Selectionbox -->
+<div id=selectionbox></div>
 
-<div class=dialog-overlay> <!-- Dialog overlay. Prevents clicking things behind dialogs. -->
-  <dialog id=webtv-dialog> <!-- Dialog box. Invisible until triggered. -->
-    <div class=dialog-logo></div> <!-- Dialog logo image. Image can be changed in the CSS. -->
-    <div class=dialog-message>WebTV ran into a technical problem. Please try again.</div> <!-- Dialog text. -->
-    <div class=dialog-separator><hr></div> <!-- Dialog separator. Separates logo/text from action buttons. -->
-    <div class="dialog-button submit"><button onClick=closeDialog()>Continue</button></div> <!-- Close button. -->
+<div class=dialog-overlay>
+  <dialog id=webtv-dialog>
+    <div class=dialog-message-container>
+      <div class=dialog-logo></div>
+      <div class=dialog-message>WebTV ran into a technical problem. Please try again.</div>
+    </div>
+    <div class=dialog-separator><hr></div>
+    <div class="dialog-button submit"><button onClick=closeDialog()>Continue</button></div>
   </dialog>
 </div>
 
 <div class=sidebar>
-  <div class=sidebar-contents> <!-- WebTV logo div -->
-    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick="linkHandler('Home.html');"> <!-- Sidebar WebTV logo -->
-    <div class=sidebar-border></div> <!-- Sidebar border. Separates links and WebTV logo. -->
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick="linkHandler('Home.html');">
+    <div class=sidebar-border></div>
     <div class="sidebar-link clickable">Link 1</div>
     <div class=sidebar-border></div>
     <div class="sidebar-link clickable">Link 2</div>
@@ -40,8 +41,8 @@
     <div class="sidebar-link clickable">Link 4</div>
     <div class=sidebar-border></div>
   </div>
-  <div class=bottom-right-image> <!-- Setup image div -->
-    <img alt="Setup Text" src=images/Setup.svg> <!-- Setup image -->
+  <div class=bottom-right-image>
+    <img alt="Setup Text" src=images/Setup.svg>
   </div>
   <div class=sidebar-shadow></div>
 </div>
@@ -64,7 +65,7 @@
     <label for=myCheckbox>This is the checkbox's flavor text.</label>
       <input type=checkbox id=myCheckbox class=input></input>
   </div>
-    
+
   <div class=input-container>
     <label for=radio-buttons>This is the flavor text for radio buttons.</label>
     <div class=webtv-radio-buttons id=radio-buttons>
@@ -74,22 +75,9 @@
         <input type=radio name=radioButton id=radio2 class=input> Option 2</label>
     </div>
   </div>
-  
-  <div class=border><hr class=print-only></div> <!-- Border div -->
-  <button class="ButtonBorder2 submit">Button</button> <!-- Submit button -->
-  <button class="ButtonBorder2 submit" onClick=openDialog()>Dialog</button> <!-- Dialog-triggering button -->
-  <div class=bottom-padding></div>
 
+  <div class=border><hr class=print-only></div>
+  <button class="ButtonBorder2 submit">Button</button>
+  <button class="ButtonBorder2 submit" onClick=openDialog();>Dialog</button>
 </div>
-
-<div class=status-bar> <!-- Statusbar -->
-  <div class=status-bar-content> <!-- Statusbar content, like page name and indicator -->
-    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div> <!-- Show sidebar button - mobile-only -->
-    <div class=page-name></div> <!-- Page name, changes dynamically based on <title> -->
-    <div class=status-container> <!-- Status indicator container -->
-      <div class=status-indicator></div> <!-- Status indicator -->
-    </div>
-  </div>
-</div>
-
 </body></html>

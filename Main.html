@@ -11,8 +11,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
-</head>
-<body>
+</head><body>
 <audio id=clickSound src=audio/click.mp3 preload=auto></audio>
 <audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
 <audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
@@ -22,21 +21,23 @@
 <audio id=panelSlide src=audio/panelWhir.mp3 preload=auto></audio>
 <audio id=backSound src=audio/goBack.mp3 preload=auto></audio>
 
-<iframe id="mainFrame" src="iframeHome.html" allow="autoplay, midi" loading="eager">You need to have iframes enabled to use WebTV HD.<br>But then again, it's 2023, so how does your browser not have iframe support?</iframe>
+<iframe id=mainFrame src=PowerOn.html title="Main Content" loading=eager>You need to have iframes enabled to use WebTV HD.<br>But then again, it's 2023, so how does your browser not have iframe support?</iframe>
 <div id=selectionbox></div>
 <audio id=bgmusic preload=auto></audio>
 
-<div class="status-bar iframe" onClick=toggleOptionsBar();>
+<div class="status-bar iframe" role=toolbar>
+  <div class=status-bar-overlay onclick=toggleOptionsBar();></div>
   <div class=status-bar-content>
     <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebarIframe();></div>
     <div class=page-name></div>
-    <div class=status-container>
+    <div class="status-container has-audioscope" onclick=toggleAudioscope();>
+      <webtv-audioscope id=statusAudioscope leftoffset=-2.5% rightoffset=2.5% width=100.5% height=100% bgcolor=#16162A gain=2></webtv-audioscope>
       <div class=status-indicator></div>
     </div>
   </div>
 </div>
-<div id=options-bar>
-  <div class="options-row">
+<div id=options-bar role=toolbar>
+  <div class=options-row>
 	<div class="options-logo clickable" onClick=home();></div>
 	<button class="options-button find clickable" onClick=find();>find</button>
 	<button class="options-button info clickable" onClick=info();>info</button>
@@ -45,7 +46,7 @@
 	<button class="options-button send clickable" onClick=send();>send</button>
   </div>
   <div class="options-row bottom">
-	<button class="options-button messenger bottom clickable" onClick=music();>music<div id=music-indicator></div></button>
+	<button class="options-button music bottom clickable" onClick=music();>music<div id=music-indicator></div></button>
 	<button class="options-button print bottom clickable" onClick=print();>print</button>
 	<button class="options-button hangup bottom clickable" onClick=hangUp();>hang up</button>
 	<button class="options-button reload bottom clickable" onClick=reload();>reload</button>
@@ -57,7 +58,7 @@
     <div class=top-row>
       <div id=top-input-pretext></div>
       <div id=top-input><input type=text id=textQuery autofill=false onInput=clearMessage();></input></div>
-      <button id=panelSubmit onClick=goToURL(event); class="submitDialog submit"></button>
+      <button id=panelSubmit onClick=goToURL(event); class=submit></button>
       <div id=bottom-message></div>
     </div>
     <div class=bottom-row>
