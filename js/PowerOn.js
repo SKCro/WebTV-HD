@@ -72,11 +72,11 @@ function initDialing() {
         Progress bar values are defined from 0 to 100, counting by tens.
         The example provided mimmics a box with a Tellyscript. */
     const progressBarMessages = [
-      { message: "Dialing WebTV", interval: 20, value: 11 },
-      { message: "Waiting for answer", interval: 40, value: 43 },
+      { message: "Connecting to WebTV HD Fork", interval: 20, value: 11 },
+      { message: "Waiting for connection to hook to device", interval: 40, value: 43 },
       { message: "WebTV answering", interval: 100, value: 60 },
-      { message: "Connecting", interval: 120, value: 90 },
-      { message: "Connecting to WebTV", interval: 140, value: 100 }
+      { message: "Commiting Phase 2 of Connecting", interval: 120, value: 90 },
+      { message: "Finalizing connection to WebTV", interval: 140, value: 100 }
     ];
     progressBarMessages.forEach((details) => {
       if (value == details.interval) {
