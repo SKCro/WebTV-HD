@@ -21,7 +21,7 @@ function doSplash(withInterval) {
     hiddenUntilConnected.style.display = "flex";
     hiddenUntilConnected.classList.add("fadeIn");
     document.title = "WebTV Service";
-    setTimeout(() => { location.href = "ServiceTemplate.html" }, (splashJingle.duration * 1000));
+    setTimeout(() => { location.href = "MainTemplate.html" }, (splashJingle.duration * 1000));
   }, withInterval);
 }
 
