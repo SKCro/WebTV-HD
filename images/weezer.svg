@@ -27,15 +27,15 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="8.7339472"
-     inkscape:cx="114.09503"
-     inkscape:cy="99.611319"
+     inkscape:zoom="1.5439583"
+     inkscape:cx="138.60478"
+     inkscape:cy="121.76494"
      inkscape:window-width="1287"
      inkscape:window-height="747"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg3" />
+     inkscape:current-layer="g1" />
   <title
      id="title14">weezer</title>
   <defs
@@ -99,7 +99,7 @@
        y2="198.59917"
        gradientUnits="userSpaceOnUse"
        spreadMethod="pad"
-       gradientTransform="matrix(1.2801527,0,0,1.2801541,0.88386774,-49.96863)" />
+       gradientTransform="matrix(1.2801527,0,0,1.2801541,0.88386773,-49.96863)" />
     <linearGradient
        xlink:href="#linearGradient3"
        id="linearGradient14"
@@ -108,7 +108,7 @@
        x2="169.41133"
        y2="170.30881"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.2801527,0,0,1.2801541,0.88386774,-49.96863)" />
+       gradientTransform="matrix(1.2801527,0,0,1.2801541,0.88386773,-49.96863)" />
     <filter
        style="color-interpolation-filters:sRGB"
        id="filter24"
@@ -120,26 +120,18 @@
          stdDeviation="1.0447485"
          id="feGaussianBlur24" />
     </filter>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter24-3"
+       x="-0.010469052"
+       y="-0.0140554"
+       width="1.0209381"
+       height="1.0281108">
+      <feGaussianBlur
+         stdDeviation="1.0447485"
+         id="feGaussianBlur24-1" />
+    </filter>
   </defs>
-  <path
-     d="M 60.651818,29.944859 231.37042,52.810947 c 14.86387,1.990673 35.5268,18.961675 32.31105,41.023847 l -11.76589,80.702236 c -2.72794,18.72222 -18.00919,27.1738 -34.66139,27.91117 l -121.618362,5.39332 c -25.04748,1.10985 -41.52562,-16.90702 -45.7552,-35.64463 L 25.357978,63.562966 c -2.46427,-10.912014 0.71305,-20.506783 6.06664,-25.791247 6.88338,-6.793785 17.38577,-9.411678 29.2272,-7.82686 z"
-     stroke="#000"
-     stroke-width=".216"
-     stroke-miterlimit="2.613"
-     id="path1-4"
-     style="opacity:0.75;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:16.4789;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill;filter:url(#filter24)"
-     inkscape:label="shadow" />
-  <path
-     d="M 40.651818,4.94486 211.37042,27.810947 c 14.86387,1.990673 35.5268,18.961675 32.31105,41.023845 l -11.76589,80.702238 c -2.72794,18.72222 -18.00919,27.1738 -34.66139,27.91117 l -121.618362,5.39332 c -25.04748,1.10985 -41.52562,-16.90702 -45.7552,-35.64463 L 5.3579777,38.562966 c -2.46427,-10.912014 0.71305,-20.506783 6.0666403,-25.791247 6.88338,-6.7937843 17.38577,-9.411677 29.2272,-7.826859 z"
-     stroke="#000"
-     stroke-width=".216"
-     stroke-miterlimit="2.613"
-     id="path1"
-     style="fill:url(#linearGradient14);stroke:url(#linearGradient6);stroke-width:9;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;paint-order:normal"
-     inkscape:export-filename="..\..\..\..\Downloads\ath1.png"
-     inkscape:export-xdpi="148.94"
-     inkscape:export-ydpi="148.94"
-     inkscape:label="jewel" />
   <metadata
      id="metadata14">
     <rdf:RDF>
@@ -161,6 +153,26 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <path
+     d="M 60.651818,29.944859 231.37042,52.810947 c 14.86387,1.990673 35.5268,18.961675 32.31105,41.023847 l -11.76589,80.702236 c -2.72794,18.72222 -18.00919,27.1738 -34.66139,27.91117 l -121.618362,5.39332 c -25.04748,1.10985 -41.52562,-16.90702 -45.7552,-35.64463 L 25.357978,63.562966 c -2.46427,-10.912014 0.71305,-20.506783 6.06664,-25.791247 6.88338,-6.793785 17.38577,-9.411678 29.2272,-7.82686 z"
+     stroke="#000"
+     stroke-width=".216"
+     stroke-miterlimit="2.613"
+     id="path1-4"
+     style="fill:#000000;fill-opacity:0.5;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:0.75;paint-order:normal;filter:url(#filter24-3)"
+     inkscape:label="shadow"
+     transform="matrix(1.0336717,0,0,1.0449198,-0.74087727,-1.212345)" />
+  <path
+     d="M 40.651818,4.94486 211.37042,27.810947 c 14.86387,1.990673 35.5268,18.961675 32.31105,41.023845 l -11.76589,80.702238 c -2.72794,18.72222 -18.00919,27.1738 -34.66139,27.91117 l -121.618362,5.39332 c -25.04748,1.10985 -41.52562,-16.90702 -45.7552,-35.64463 L 5.3579777,38.562966 c -2.46427,-10.912014 0.71305,-20.506783 6.0666403,-25.791247 6.88338,-6.793784 17.38577,-9.411677 29.2272,-7.826859 z"
+     stroke="#000"
+     stroke-width=".216"
+     stroke-miterlimit="2.613"
+     id="path1"
+     style="fill:url(#linearGradient14);stroke:url(#linearGradient6);stroke-width:9;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;paint-order:normal"
+     inkscape:export-filename="..\..\..\..\Downloads\ath1.png"
+     inkscape:export-xdpi="148.94"
+     inkscape:export-ydpi="148.94"
+     inkscape:label="jewel" />
   <g
      id="g1"
      transform="translate(0.61200336,3.605078)">

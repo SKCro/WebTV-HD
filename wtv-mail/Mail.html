@@ -2,6 +2,8 @@
 <html><head>
   <title>Mail for SKCro</title>
   <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel=stylesheet type=text/css href=../css/service.css>
+  <link rel=stylesheet type=text/css href=../css/mail.css>
   <link rel="shortcut icon" href=../Icon.png>
   <link rel=apple-touch-icon href=../images/AppleTouchIcon.png>
   <script src=../js/main.js></script>
@@ -60,13 +62,13 @@
 
   <table class=mail-messages>
     <tbody>
-      <tr class="mail-message unread clickable" role=button onClick="linkHandler('readMail.html');">
+      <tr class="mail-message unread" role=button onClick="linkHandler('readMail.html');">
         <td><button class="message-outline clickable"></button></td> <!-- Hacky way to make the selectionbox outline the message -->
     	<td class=from>SKCro</td>
     	<td class=subject>Welcome to WebTV HD!</td>
     	<td class=date>Just Now</td>
       </tr>
-      <tr class="mail-message clickable" role=button onClick="linkHandler('readMail.html');">
+      <tr class=mail-message role=button onClick="linkHandler('readMail.html');">
         <td><button class="message-outline clickable"></button></td>
     	<td class=from>johnlandlord@aol.com</td>
     	<td class=subject>Notice of Eviction</td>

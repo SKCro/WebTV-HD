@@ -62,17 +62,13 @@ function showOptionsBar() {
   statusBar.classList.remove('hiding');
   statusBar.classList.remove('hide');
   statusBar.classList.add('show');
-  // make sure options bar sticks after animating
-  setTimeout(function() {
-    optionsBar.classList.add('showing');
-    statusBar.classList.add('showing');
-  }, 395);
 }
 
 function hideOptionsBar() {
   var optionsBar = document.getElementById('options-bar');
   var statusBar = document.querySelector('.status-bar.iframe');
   var panelUp = document.getElementById('panelUp');
+  resetSelectionBox();
   panelDown.currentTime = 0;
   panelDown.play();
   optionsBar.classList.remove('showing');
@@ -81,11 +77,6 @@ function hideOptionsBar() {
   statusBar.classList.remove('showing');
   statusBar.classList.remove('show');
   statusBar.classList.add('hide');
-  // ditto
-  setTimeout(function() {
-    optionsBar.classList.add('hiding');
-    statusBar.classList.add('hiding');
-  }, 395);
 }
 
 function hideOptionsBarNoSound() {
@@ -99,10 +90,6 @@ function hideOptionsBarNoSound() {
     statusBar.classList.remove('showing');
     statusBar.classList.remove('show');
     statusBar.classList.add('hide');
-    setTimeout(function() {
-      optionsBar.classList.add('hiding');
-      statusBar.classList.add('hiding');
-    }, 395);
   },20);
 }
 
@@ -119,7 +106,7 @@ function resetSelectionBox() {
   document.getElementById('selectionbox').style.top = '9999rem';
 }
 
-document.addEventListener('keydown', function(event) {
+window.addEventListener('keydown', function(event) {
   if (event.keyCode === 46) {
     toggleOptionsBar();
   }
@@ -129,7 +116,7 @@ document.addEventListener('keydown', function(event) {
 
 function home() {
   hideOptionsBarNoSound();
-  document.getElementById("mainFrame").src = 'iframeHome.html';
+  document.getElementById("mainFrame").src = 'Home.html';
 }
 
 function find() {
@@ -189,7 +176,7 @@ function goTo() {
     event.preventDefault();
     var destUrl = document.getElementById('textQuery').value;
     var iframe = document.getElementById('mainFrame');
-    if (destUrl !== 'http://' && destUrl !== 'https://' && destUrl !== 'file:*' && destUrl !== '') {
+    if (destUrl !== 'http://' && destUrl !== 'https://' && destUrl !== '') {
       iframe.src = destUrl;
       closePanel();
     } else { 
@@ -264,18 +251,10 @@ function send() {
 function music() {
   var musicIndicator = document.getElementById('music-indicator');
 
-  function enableMusic() {
-    startBGMusic();
-  }
-
-  function disableMusic() {
-    stopBGMusic();
-  }
-
   if (musicIndicator.classList.contains('active')) {
-    disableMusic();
+    stopBGMusic();
   } else {
-    enableMusic();
+    startBGMusic();
   }
   hideOptionsBarNoSound();
 }
@@ -289,13 +268,33 @@ function hangUp() {
   hideOptionsBarNoSound();
 }
 
-function reload() {
-  document.getElementById("mainFrame").contentWindow.location.reload();
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector(".reload").addEventListener("click", function(event) {
+    reload(event);
+  });
+});
+
+function reload(event) {
+  var iframe = document.getElementById("mainFrame");
+  if (event) {
+    var isCtrlPressed = event.ctrlKey || event.metaKey;
+    var isShiftPressed = event.shiftKey;
+
+    if (isCtrlPressed || isShiftPressed) {
+      console.log("Force reload requested!");
+      iframe.contentWindow.location.reload(true);  // Cache-clearing reload
+    } else {
+      console.log("Normal reload requested.");
+      iframe.contentWindow.location.reload();  // Standard reload
+    }
+  }
+
   hideOptionsBarNoSound();
 }
 
 function closePanel() {
   var panel = document.getElementById('panel');
+  resetSelectionBox();
   setTimeout(function() {
     document.getElementById('panelSlide').play();
     document.getElementById('textQuery').style.display = 'unset';
@@ -304,11 +303,12 @@ function closePanel() {
     document.getElementById('panelClear').style.display = 'unset';
     document.getElementById('panelCancel').style.display = 'unset';
     document.getElementById('panelSubmit').style.top = '6.5vw';
+    resetSelectionBox();
   },200);
   panel.classList.remove('show');
   panel.classList.remove('showing');
   panel.classList.add('hiding');
-  setTimeout(function(){panel.classList.add('hide');resetSelectionBox();},395);
+  setTimeout(function(){panel.classList.add('hide');},395);
 }
 
 function pip() {
@@ -361,17 +361,19 @@ document.addEventListener('DOMContentLoaded', function () {
       var displayOptions = displayMeta.getAttribute('content').split(' ');
 
       if (displayOptions.includes('noScroll')) {
+        console.log('Scrolling disabled - noScroll is set in the display tag.');
         iframeDocument.body.style.overflow = 'hidden';
       }
 
       if (displayOptions.includes('noStatus')) {
+        console.log('Status bar hidden - noStatus is set in the display tag.');
         statusBar.style.display = 'none';
         optionsBar.style.display = 'none';
-        iframe.style.height = '100vh';
+        iframe.classList.add('noStatus');
       } else {
         statusBar.style.display = 'block';
         optionsBar.style.display = 'grid';
-        iframe.style.height = 'calc(100vh - 4vw)';
+        iframe.classList.remove('noStatus');
       }
 
       if (displayOptions.includes('noMusic')) {
@@ -382,11 +384,12 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       statusBar.style.display = 'block';
       optionsBar.style.display = 'grid';
-      iframe.style.height = 'calc(100vh - 4vw)';
+      iframe.classList.remove('noStatus');
       document.querySelector('.music').disabled = false;
     }
   });
 });
+
 
 // Background music, baby!
 
@@ -447,13 +450,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// audioscope stuff, unfinished
+// Audioscope logic
 
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
     var statusContainer = document.querySelector('.status-container');
     statusContainer.classList.remove('has-audioscope');
-  }, 200);
+  }, 10);
 });
 
 function toggleAudioscope() {
@@ -473,8 +476,8 @@ function toggleAudioscope() {
   }
 }
 
-// styling workaround
-
+// styling workaround, no longer needed for now
+/*
 document.addEventListener('DOMContentLoaded', function() {
   var statusbarAudioscope = document.querySelector('.status-container webtv-audioscope');
   if (statusbarAudioscope && statusbarAudioscope.shadowRoot) {
@@ -484,16 +487,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+*/
 
 // Backward navigational sound, doesn't currently work
 
-window.addEventListener('popstate', function(event) {
-  if (event.state && event.state.fromHistoryAPI) {
-    navigateWithinIframe();
-    var backSound = document.getElementById('backSound');
-    backSound.currentTime = 0;
-    backSound.play();
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('mainFrame').addEventListener('popstate', function(event) {
+    if (event.state && event.state.fromHistoryAPI) {
+      var backSound = document.getElementById('backSound');
+      backSound.currentTime = 0;
+      backSound.play();
+    }
+  });
 });
 
 // Sidebar toggling logic
@@ -508,9 +513,6 @@ function toggleSidebarIframe() {
     sidebar.classList.remove('hiding');
     sidebar.classList.remove('hide');
     sidebar.classList.add('show');
-    setTimeout(function() {
-      sidebar.classList.add('showing');
-    }, 400);
   }
   function hideSidebarIframe() {
     panelDown.currentTime = 0;
@@ -518,9 +520,6 @@ function toggleSidebarIframe() {
     sidebar.classList.remove('showing');
     sidebar.classList.remove('show');
     sidebar.classList.add('hide');
-    setTimeout(function() {
-      sidebar.classList.add('hiding');
-    }, 400);
   }
   if (sidebar.classList.contains('show')) {
     hideSidebarIframe();
@@ -528,3 +527,290 @@ function toggleSidebarIframe() {
     showSidebarIframe();
   }
 }
+
+// Loading panel logic, unfinished
+
+document.addEventListener('DOMContentLoaded', function() {
+  var loadingPanel = document.getElementById('loadingPanel');
+  var loadingMessage = document.getElementById('loadingMessage');
+  var iframe = document.getElementById('mainFrame');
+
+  function startLoading() {
+    console.log('startLoading called!');
+    loadingPanel.style.visibility = 'visible';
+    loadingMessage.textContent = 'Getting page';
+  }
+
+  function stopLoading() {
+    console.log('stopLoading called!');
+    loadingPanel.style.visibility = 'hidden';
+    loadingMessage.textContent = '';
+  }
+
+  function handleStateChange() {
+    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    if (iframeDocument.readyState === 'complete') {
+      console.log('Finished loading.');
+      stopLoading();
+    } else {
+      console.log('Loading new page.');
+      startLoading();
+    }
+  }
+  
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'loading') {
+        const progress = event.data.progress;
+        console.log(progress);
+    }
+  });
+
+  iframe.addEventListener('load', handleStateChange);
+  iframe.contentDocument.addEventListener('unload', handleStateChange);
+});
+
+// duplicates from main.js to prevent errors
+
+// Link handler
+function linkHandler(url) {
+  setTimeout(function() {
+    location.href = url;
+  }, 235);
+}
+
+// Selection box
+document.addEventListener('DOMContentLoaded', function () {
+  var selectionBox = document.getElementById('selectionbox');
+  var selectedElement = null;
+
+  // Update the selection box position and size
+  function updateSelectionBox() {
+    if (selectedElement) {
+      var elementRect = selectedElement.getBoundingClientRect();
+      var boxMargin = 4; // Adjust this value to set the margin between the selected element and the selection box
+
+      // Calculate the new dimensions and position for the selection box
+      var top = elementRect.top - boxMargin;
+      var left = elementRect.left - boxMargin;
+      var width = elementRect.width + 2 * boxMargin;
+      var height = elementRect.height + 2 * boxMargin;
+
+      // Apply the new dimensions and position to the selection box
+      selectionBox.style.top = top + 'px';
+      selectionBox.style.left = left + 'px';
+      selectionBox.style.width = width + 'px';
+      selectionBox.style.height = height + 'px';
+      selectionBox.style.display = 'block';
+
+      // Switch to the green substyle for 100ms upon click
+      if (!selectedElement.classList.contains('input')) {
+        selectionBox.classList.add('green');
+        setTimeout(function () {
+          selectionBox.classList.remove('green');
+        }, 100);
+      }
+    } else {
+      selectionBox.style.display = 'none';
+    }
+  }
+
+  function updateSelectionBoxNoGreen() {
+    if (selectedElement) {
+      var elementRect = selectedElement.getBoundingClientRect();
+      var boxMargin = 4;
+
+      var top = elementRect.top - boxMargin;
+      var left = elementRect.left - boxMargin;
+      var width = elementRect.width + 2 * boxMargin;
+      var height = elementRect.height + 2 * boxMargin;
+
+      selectionBox.style.top = top + 'px';
+      selectionBox.style.left = left + 'px';
+      selectionBox.style.width = width + 'px';
+      selectionBox.style.height = height + 'px';
+      selectionBox.style.display = 'block';
+    } else {
+      selectionBox.style.display = 'none';
+    }
+  }
+
+  function updateSelectionBoxScroll() { // going to try to use this to fix the scrolling issue
+    if (selectedElement) {
+      var elementRect = selectedElement.getBoundingClientRect();
+      var boxMargin = 4;
+
+      var left = elementRect.left - boxMargin;
+      var width = elementRect.width + 2 * boxMargin;
+      var height = elementRect.height + 2 * boxMargin;
+
+      selectionBox.style.left = left + 'px';
+      selectionBox.style.width = width + 'px';
+      selectionBox.style.height = height + 'px';
+      selectionBox.style.display = 'block';
+    } else {
+      selectionBox.style.display = 'none';
+    }
+  }
+
+  // Function to check if an element is interactive (clickable)
+  function checkIfInteractive(element) {
+    return (
+      element.classList.contains('clickable') ||
+      element.classList.contains('submit') ||
+      element.tagName === 'A' ||
+      element.tagName === 'INPUT' ||
+      element.tagName === 'TEXTAREA' ||
+      element.isContentEditable
+    );
+  }
+
+  // Function to get all interactive elements on the page
+  function getInteractiveElements() {
+    var allElements = document.querySelectorAll('*');
+    var interactiveElements = [];
+    for (var i = 0; i < allElements.length; i++) {
+      if (checkIfInteractive(allElements[i])) {
+        interactiveElements.push(allElements[i]);
+      }
+    }
+    return interactiveElements;
+  }
+
+  // Function to find the nearest interactive element to a given position
+  
+/*
+  function findNearestInteractiveElement(x, y) {
+    var interactiveElements = getInteractiveElements();
+    var nearestElement = null;
+    var minDistance = Number.MAX_SAFE_INTEGER;
+
+    for (var i = 0; i < interactiveElements.length; i++) {
+      var element = interactiveElements[i];
+      var rect = element.getBoundingClientRect();
+      var centerX = rect.left + rect.width / 2;
+      var centerY = rect.top + rect.height / 2;
+      var distance = Math.sqrt((x - centerX) ** 2 + (y - centerY) ** 2);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        nearestElement = element;
+      }
+    }
+
+    return nearestElement;
+  } */
+
+  // Event listener to update the selection box for various events
+  window.addEventListener('load', resetSelectionBox);
+  window.addEventListener('resize', updateSelectionBoxNoGreen);
+  window.addEventListener('scroll', updateSelectionBoxScroll);
+
+  // Event listener for mouse click to select an element
+  document.addEventListener('click', function(event) {
+    var clickedElement = event.target;
+    if (checkIfInteractive(clickedElement) && clickedElement !== selectedElement) {
+      selectedElement = clickedElement;
+      updateSelectionBox();
+    } else { updateSelectionBoxNoGreen(); }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault(); // Prevent the default tab behavior
+
+      var interactiveElements = getInteractiveElements();
+      var index = interactiveElements.indexOf(selectedElement);
+
+      // Check if Shift key is pressed for reverse navigation
+      if (event.shiftKey) {
+        selectedElement = interactiveElements[(index - 1 + interactiveElements.length) % interactiveElements.length];
+      } else {
+        selectedElement = interactiveElements[(index + 1) % interactiveElements.length];
+      }
+      updateSelectionBoxNoGreen();
+    } else if (event.key === 'Enter') {
+      if (selectedElement) {
+        if (selectedElement.tagName === 'INPUT' && selectedElement.type === 'text') {
+          updateSelectionBoxNoGreen();
+          selectedElement.focus();
+        } else {
+          updateSelectionBox();
+          selectedElement.click();
+        }
+      }
+    }
+  });
+});
+
+// dialog logic
+function openDialog() {
+  var dialog = document.getElementById('webtv-dialog');
+  var dialogContainer = document.querySelector('.dialog-overlay');
+  var selectionBox = document.getElementById('selectionbox');
+  var errorSound = document.getElementById('errorSound');
+  setTimeout(function() {
+    errorSound.currentTime = 0;
+    errorSound.play();
+    dialog.setAttribute('open', 'true');
+    dialogContainer.style.display = 'unset';
+	selectionBox.style.display = 'none';
+	}, 2);
+}
+
+function closeDialog() {
+  setTimeout(function() {
+    var dialog = document.getElementById('webtv-dialog');
+    var dialogContainer = document.querySelector('.dialog-overlay');
+    var selectionBox = document.getElementById('selectionbox');
+    dialog.removeAttribute('open');
+    dialogContainer.style.display = 'none';
+    resetSelectionBox();
+  }, 1);
+}
+
+// Button sounds
+document.addEventListener('DOMContentLoaded', function () {
+  var inputSound = document.getElementById('inputSound');
+  var inputs = document.querySelectorAll('.input');
+  var clickSound = document.getElementById('clickSound');
+  var clickableButtons = document.querySelectorAll('.clickable');
+  var submitInputs = document.querySelectorAll('.submit');
+  var submitSound = document.getElementById('submitSound');
+  var inputNoSound = document.querySelectorAll('.inputNoSound');
+
+  function playClickSound() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+  }
+
+  function playInputSound() {
+    inputSound.currentTime = 0;
+    inputSound.play();
+  }
+
+  function playSubmitSound() {
+    submitSound.currentTime = 0;
+    submitSound.play();
+  }
+  
+  function preventSound() {
+    inputSound.pause();
+  }
+
+  // Loop through clickableButtons and attach event listeners
+  for (var i = 0; i < clickableButtons.length; i++) {
+    clickableButtons[i].addEventListener('click', playClickSound);
+  }
+
+  for (var j = 0; j < inputs.length; j++) {
+    inputs[j].addEventListener('click', playInputSound);
+  }
+
+  for (var k = 0; k < submitInputs.length; k++) {
+    submitInputs[k].addEventListener('click', playSubmitSound);
+  }
+
+  for (var l = 0; l < inputNoSound.length; l++) {
+    inputNoSound[l].addEventListener('click', preventSound);
+  }
+});

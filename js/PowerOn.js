@@ -1,7 +1,9 @@
 let stopProgressUpdates = false;
 
 function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(function(resolve) {
+    setTimeout(resolve, ms);
+  });
 }
 
 function doSplash(withInterval) {
@@ -10,18 +12,18 @@ function doSplash(withInterval) {
   const dialingMusic = document.getElementById("dialing-music");
   const splashJingle = document.getElementById("splash-jingle");
 
-  setTimeout(() => {
+  setTimeout(function() {
     dialingMusic.pause();
     splashJingle.play();
     hiddenUntilLogo.classList.add('animation', 'cityCrossfade');
-    setTimeout(() => {
+    setTimeout(function() {
       const hiddenUntilLogo = document.querySelector(".hiddenUntilLogo");
       hiddenUntilLogo.remove();
     }, 480);
     hiddenUntilConnected.style.display = "flex";
     hiddenUntilConnected.classList.add("fadeIn");
     document.title = "WebTV Service";
-    setTimeout(() => { location.href = "Home.html" }, (splashJingle.duration * 1000));
+    setTimeout(function() { location.href = "Home.html" }, (splashJingle.duration * 1000));
   }, withInterval);
 }
 

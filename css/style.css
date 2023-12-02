@@ -21,39 +21,41 @@
   --webtv-formtext: #ffc342;
   --webtv-formcursor: #cc9933;
   --webtv-buttoncolor: #e7c34a;
+  --cursor: url(../images/cursor.png), default;
+  --cursor-click: url('../images/cursorClick.png') 24 23, pointer;
+  --cursor-active: url('../images/cursorActive.png') 24 23, pointer;
+  --cursor-no: url('../images/cursorNo.png') 24 23, not-allowed;
+  --standard-font: 'Helvetica', Arial, sans-serif;
+  --monospace-font: 'Monaco', Lucida Console, Consolas, fixed-width;
+  --black-font: 'Helvetica Now Display Black', Helvetica Black, Arial Black, 'Helvetica', sans-serif;
 }
 
 html {
-  cursor: url(../images/cursor.png), default;
+  cursor: var(--cursor);
   color-scheme: dark;
 }
 
 body {
-  background-color: var(--webtv-bgcolor);
-  color: var(--webtv-green);
-  font-family: 'Helvetica', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  background-color: #E0E0E0;
+  color: #000;
+  padding: revert;
+  font-family: var(--standard-font);
   font-size: 1.4rem; /* Adjust the value as needed */
   animation: fadeTransition linear 0.5s;
 }
 
 h1 {
-  color: var(--webtv-yellow);
   font-weight: 900;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
-  text-shadow: 0.18rem 0.18rem #000;
-  font-family: 'Helvetica Now Display Black', Helvetica Black, Arial Black, 'Helvetica', sans-serif;
+  font-family: var(--black-font);
 }
 
 h2, h3, h4, h5, h6 {
-  color: var(--webtv-yellow);
   font-weight: 900;
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
-  text-shadow: 0.15rem 0.15rem #000;
-  font-family: 'Helvetica Now Display Black', Helvetica Black, Arial Black, 'Helvetica', sans-serif;
+  font-family: var(--black-font);
 }
 
 a {
@@ -62,8 +64,8 @@ a {
 }
 
 p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
   word-wrap: break-word;
 }
 
@@ -78,7 +80,7 @@ hr {
 }
 
 code {
-  font-family: 'Monaco', fixed-width;
+  font-family: var(--monospace-font);
   font-size: 1.2rem;
 }
 
@@ -148,6 +150,43 @@ dialog {
   margin-left: auto;
 }
 
+/* Progress bar style based off of pjfrix's code, animation by me */
+
+progress {
+  box-sizing: border-box;
+  border: solid 0.2rem #202020;
+  border-color: #202020 #666 #666 #202020;
+  background: -webkit-linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
+  background: linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
+  padding: 0.1rem 0.2rem;
+  height: 1.3rem;
+}
+
+progress[value]::-moz-progress-bar {
+  background: repeating-linear-gradient(145deg, #00A500 2.5%, #006F00 5%, #00A500 10%);
+  border-top: 0.1rem solid #003c00;
+  border-bottom: 0.1rem solid #003c00;
+  animation: baranim 10000s linear infinite;
+}
+
+progress[value]::-webkit-progress-value {
+  background: repeating-linear-gradient(145deg, #006F00 -0.3%, #006F00 0.1%, #00A500 2.5%, #006F00 5%);
+  border-top: 0.1rem solid #003c00;
+  border-bottom: 0.1rem solid #003c00;
+  animation: baranim 10000s linear infinite;
+}
+
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+
+@keyframes baranim {
+  100% {
+    background-position: 1000000px 0;
+    background-size: 100% 100%;
+  }
+}
+
 /* Fonts */
 
 @font-face {
@@ -181,7 +220,6 @@ dialog {
 /* Sidebar Styles */
 
 .sidebar {
-  background-color: #452A36;
   width: 15%;
   height: 100%;
   position: fixed;
@@ -201,13 +239,13 @@ dialog {
   padding-top: 0;
 }
 
-.sidebar-logo {
+.sidebar-logo { /* Weird margin/padding combo ensures that the selectionbox wraps around it like real WebTV */
+  margin: auto;
+  margin-top: 0.5vw;
   padding-left: 8%;
   padding-right: 8%;
   padding-bottom: 4%;
   padding-top: 4%;
-  margin: auto;
-  margin-top: 0.5vw;
   max-width: 12vw;
   max-height: 12vw;
   user-select: none;
@@ -219,14 +257,14 @@ dialog {
   top: 0;
   height: 0.6vw;
   width: auto;
-  background: linear-gradient(#33202A 40%, #774E5E 85%);
+  background: linear-gradient(#00000050 40%, #FFFFFF25 85%);
 }
 
 .sidebar-border.bwgrad {
   background: linear-gradient(#00000050 40%, #FFFFFF25 85%);
 }
 
-.sidebar-link {
+.sidebar-link { /* Same story here - weird margin/padding setup ensures proper selectionbox positioning */
   width: 90%;
   color: var(--webtv-yellow);
   text-align: left;
@@ -269,16 +307,14 @@ dialog {
 
 .show-sidebar-button {
   display: none;
-  background-image: url('../images/Hamburger.svg') !important;
-  background-size: 80%;
+  background-image: url('../images/Hamburger.svg'), linear-gradient(#2f2f2f, #060606) !important;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-position-y: 0.7vw !important;
-  background-color: #060606 !important;
   position: absolute;
-  padding: 2vw 2vw 2vw 2vw !important;
-  margin-left:  1.8vw !important;
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  padding: 2.8vw 2.8vw 2.8vw 2.8vw !important;
+  margin-left:  1.5vw !important;
+  cursor: var(--cursor-click);
   border-width: 0.8vw !important;
   z-index: 10001;
 }
@@ -320,7 +356,7 @@ dialog {
   margin-bottom: 0.5%;
 }
 
-input[type="text"], input[type="password"] {
+input {
   font-family: 'Monaco', monospace;
   background-color: var(--webtv-formbg);
   color: var(--webtv-formtext);
@@ -333,7 +369,7 @@ input[type="text"], input[type="password"] {
   caret-color: var(--webtv-formcursor);
 }
 
-input[type="text"]::placeholder, input[type="password"]::placeholder {
+input::placeholder {
   color: #cdcdcd;
 }
 
@@ -350,25 +386,27 @@ input[type="checkbox"] {
   border-color: #7F7F7F80;
   border-width: 0.2rem;
   border-radius: 0;
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  cursor: var(--cursor-click);
 }
 
 input[type="checkbox"]:active {
-  cursor: url('../images/cursorActive.png') 24 23, pointer;
+  cursor: var(--cursor-active);
 }
 
 input[type="checkbox"]::after { /* Inner shadow */
   content: '';
-  position: relative;
+  position: absolute;
   z-index: -1;
   display: block;
-  height: 90%;
-  width: 90%;
+  height: 70%;
+  width: 70%;
   filter: blur(1px);
   border: 0.2rem solid;
   border-color: black transparent transparent black;
   pointer-events: none;
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  cursor: var(--cursor-click);
+  top: 0;
+  left: 0;
 }
 
 input[type="checkbox"]::before {
@@ -385,11 +423,12 @@ input[type="checkbox"]::before {
   top: -0.2rem;
   visibility: hidden;
   pointer-events: none;
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  cursor: var(--cursor-click);
+  filter: drop-shadow(0.05rem 0.05rem 0.02rem #0008);
 }
 
 input[type="checkbox"]:active {
-  cursor: url('../images/cursorActive.png') 24 23, pointer;
+  cursor: var(--cursor-active);
 }
 
 input[type="checkbox"]:checked::before {
@@ -408,7 +447,7 @@ input[type="radio"] {
   width: 1.2rem;
   height: 1.2rem;
   background-color: #0C0C0C;
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  cursor: var(--cursor-click);
   position: relative;
   border-radius: 100%;
   background-image: radial-gradient(circle at 6px 6px, #3C3C3C 25%, #0C0C0C 75%);
@@ -435,7 +474,6 @@ input[type="radio"]::after {
   width: 100%;
   height: 100%;
   display: block;
-  background-image: radial-gradient(circle at -6px -6px, #00000080 25%, #0000 75%);
 }
 
 input[type="radio"]:checked {
@@ -448,7 +486,7 @@ input[type="radio"]:checked::after {
 }
 
 input[type="radio"]:active {
-  cursor: url('../images/cursorActive.png') 24 23, pointer;
+  cursor: var(--cursor-active);
 }
 
 button, .ButtonBorder { /* Light/Default button - style by pjfrix, modified by me */
@@ -465,13 +503,13 @@ button, .ButtonBorder { /* Light/Default button - style by pjfrix, modified by m
   padding: 0 12px;
   min-width: 1rem;
   min-height: 1.8rem;
-  font-family: 'Helvetica';
+  font-family: var(--standard-font);
   font-weight: normal;
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  cursor: var(--cursor-click);
 }
 
 button:active, .ButtonBorder:active {
-  cursor: url('../images/cursorActive.png') 24 23, pointer;
+  cursor: var(--cursor-active);
 }
 
 .ButtonBorder2 {
@@ -483,29 +521,47 @@ button:active, .ButtonBorder:active {
   border-width: 0.3rem;
   background-image: linear-gradient(#2f2f2f, #060606);
   background-position-y: -0.1px;
-  color: var(--webtv-yellow);
+  color: var(--webtv-buttoncolor);
   text-shadow: 0.15rem 0.15rem 0 #000;
   background-color: #222;
   padding: 0.4rem 0.8rem;
   float: right;
   font-size: 1.2rem;
   border-radius: 0;
-  font-family: 'Helvetica';
+  font-family: var(--standard-font);
   font-weight: normal;
   margin-left: 0.8rem;
   box-shadow: 0 0;
 }
 
 .ButtonBorder3 {
-  
+  border-image-source: url("../images/ButtonBorder3.svg");
+  border-image-slice: 15 15 15 15;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: stretch stretch;
+  border-style: solid;
+  border-width: 0.3rem;
+  background-image: linear-gradient(#2f2f2f, #060606);
+  background-position-y: -0.1px;
+  color: var(--webtv-buttoncolor);
+  text-shadow: 0.15rem 0.15rem 0 #000;
+  background-color: #222;
+  padding: 0.4rem 0.8rem;
+  float: right;
+  font-size: 1.2rem;
+  border-radius: 0;
+  font-family: var(--standard-font);
+  font-weight: normal;
+  margin-left: 0.8rem;
+  box-shadow: 0 0;
 }
 
 label {
-  cursor: url('../images/cursor.png'), default;
+  cursor: var(--cursor);
 }
 
 label:active {
-  cursor: url('../images/cursorActive.png') 24 23, pointer;
+  cursor: var(--cursor-active);
 }
 
 .border {
@@ -538,10 +594,10 @@ label:active {
   height: 4vw;
   background-image: linear-gradient(to right, #5D5D5D, #2E2E2E);
   z-index: 10000;
-  cursor: url(../images/cursor.png), default;
+  cursor: var(--cursor);
 }
 
-.status-bar::after {
+.status-bar::after { /* Top shine */
   content: '';
   position: absolute;
   top: 0;
@@ -558,14 +614,6 @@ label:active {
   padding: 0.06vw 1vw;
 }
 
-.status-bar-overlay {
-  content: '';
-  z-index: 9999;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 .page-name {
   color: var(--webtv-yellow);
   width: 80%;
@@ -578,25 +626,6 @@ label:active {
   font-size: 2vw;
 }
 
-.status-indicator { /* Black box w/ green line */
-  content: '';
-  width: 93.5%;
-  background-color: #000;
-  border-radius: 0.3vw;
-  margin: auto;
-  margin-right: auto;
-}
-
-.status-indicator::after { /* Green line */
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 93.5%;
-  height: 10%;
-  background-color: #00A500;
-  margin: auto;
-}
-
 .status-container { /* Status indicator container */
   content: '';
   width: 4.2%;
@@ -605,33 +634,40 @@ label:active {
   border-radius: 0.5vw;
   position: relative;
   display: flex;
-  border: 0.25vw solid #2A2A2A;
-  border-top-color: #2A2A2A;
-  border-bottom-color: #5E5E5E;
-  border-left-color: #2A2A2A;
-  border-right-color: #5E5E5E;
+  border: 0.25vw solid;
+  border-color: #242424 #5E5E5E #5E5E5E #242424;
   z-index: 10001;
+  overflow: hidden;
 }
 
 .status-container::before { /* Status indicator blur */
   content: '';
-  width: 100%;
-  height: 100%;
-  background-color: inherit;
-  border-radius: inherit;
+  width: 99%;
+  height: 99%;
+  background-color: #000;
+  border-radius: 0.4vw;
   filter: blur(0.1vw);
   position: absolute;
   top: 0.05vw;
   left: 0;
 }
 
+.status-container::after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 9%;
+  background-color: #00A500;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
 #selectionbox {
   position: absolute;
-  box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.3), /* Main Shadow */
-              -1px -1px 0.5px rgba(255,255,255,0.8), /* White Shine */
-              inset 2px 2px 0.5px rgba(0,0,0,0.3), /* Inset Shadow */
-              inset -1px -1px 0.5px rgba(255, 255, 255, 0.8); /* Inset White Shine */
-  border: 4px solid rgba(255, 228, 71, 0.8);
+  box-shadow: 2px 2px 0.5px #0000004d, -1px -1px 0.5px #fffc, inset 2px 2px 0.5px #0000004d, inset -1px -1px 0.5px #fffc; /* Inset White Shine */
+  border: 4px solid rgba(255, 203, 0, 0.8);
   border-radius: 3px;
   box-sizing: border-box;
   pointer-events: none;
@@ -653,83 +689,15 @@ input, button, select, textarea { /* Removes the default browser focus box */
 }
 
 .clickable {
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  cursor: var(--cursor-click);
 }
 
 .clickable:active {
-  cursor: url('../images/cursorActive.png') 24 23, pointer;
+  cursor: var(--cursor-active);
 }
 
 .print-only { /* WebTV Paper: Now $299.99 per sheet! That's 0% off! */
   display: none;
-}
-
-/* Mail Stuff */
-
-.top-items-mail {
-  background-color: transparent;
-  table-layout: fixed;
-  width: 100%;
-  font-weight: bold;
-}
-
-.top-items-mail .from,
-.mail-messages .from {
-  width: 35%;
-}
-
-.top-items-mail .subject,
-.mail-messages .subject {
-  width: 80%;
-}
-
-.top-items-mail .date,
-.mail-messages .date {
-  width: 20%;
-}
-
-.mail-header .border {
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-}
-
-.mail-messages {
-  background-color: transparent;
-  table-layout: fixed;
-  width: 100%;
-  color: #36d5ff;
-  text-align: left;
-  vertical-align: middle;
-}
-
-.mail-message.unread {
-  font-weight: bold;
-}
-
-.message-outline {
-  width: 83vw;
-  height: 2.4rem !important;
-  position: relative;
-  z-index: 1;
-  opacity: 0;
-}
-
-.mail-infobox table {
-  width: 100%;
-}
-
-.sidebar-border.mail {
-  background-image: linear-gradient(to bottom, #202434 40%, #515B84 85%);
-}
-
-.sidebar-link.unavailable.mail {
-  color: #515b84;
-}
-
-#emailContent {
-  width: 100%;
-  height: fit-content;
-  border: 0;
 }
 
 /* Search page stuff */
@@ -739,11 +707,11 @@ input, button, select, textarea { /* Removes the default browser focus box */
 }
 
 .submit {
-  cursor: url('../images/cursorClick.png') 24 23, pointer;
+  cursor: var(--cursor-click);
 }
 
 .submit:active {
-  cursor: url('../images/cursorActive.png') 24 23, pointer;
+  cursor: var(--cursor-active);
 }
 
 #q {
@@ -774,10 +742,10 @@ input, button, select, textarea { /* Removes the default browser focus box */
   }
 
   input[type="checkbox"]::before {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
     left: -0.2rem;
-    top: -0.3rem;
+    top: -0.4rem;
   }
 
   .status-bar::after {
@@ -811,19 +779,11 @@ input, button, select, textarea { /* Removes the default browser focus box */
   }
 
   .sidebar.show {
-    animation: 0.4s sidebarShow linear;
-  }
-
-  .sidebar.showing {
-    left: 0;
+    animation: 0.4s sidebarShow linear forwards;
   }
 
   .sidebar.hide {
-    animation: 0.4s sidebarHide linear;
-  }
-
-  .sidebar.hiding {
-    left: -50%;
+    animation: 0.4s sidebarHide linear forwards;
   }
 
   .sidebar-shadow {
@@ -859,7 +819,7 @@ input, button, select, textarea { /* Removes the default browser focus box */
   }
 
   .status-bar {
-    height: 10vw;
+    height: 14vw;
   }
 
   .show-sidebar-button {
@@ -867,23 +827,20 @@ input, button, select, textarea { /* Removes the default browser focus box */
   }
 
   .page-name {
-    font-size: 5vw;
+    font-size: 7vw;
     border-radius: 1vw;
-    padding: 0.5% 8% 0.5% 8%;
-    min-height: 6vw;
+    padding: 0.5% 0.5% 0.5% 10%;
+    min-height: 8vw;
     text-shadow: 0.5vw 0.5vw #000;
-    width: 70%;
+    width: 73%;
   }
 
   .status-container {
-    width: 10%;
+    width: 13%;
     border-radius: 1vw;
     border-width: 0.7vw;
   }
   
-  .message-outline {
-    width: 97vw;
-  }
 }
 
 @media print { /* Printer-specific styles - these only show up when printing the page. */
@@ -895,65 +852,63 @@ input, button, select, textarea { /* Removes the default browser focus box */
   h1, h2, h3, h4, h5, h6 {
     color: #000 !important;
     text-shadow: 0 0 transparent !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
   }
 
   a {
-    text-decoration: underline !important;
-    color: #404040 !important;
+    text-decoration: underline;
+    color: #404040;
   }
 
   input[type="radio"] {
-    appearance: radio !important;
+    appearance: radio;
   }
 
   input[type="checkbox"] {
-    appearance: checkbox !important;
+    appearance: checkbox;
   }
 
   button {
-    color: #111 !important;
-    text-shadow: 0 0 transparent !important;	
+    color: #111;
+    text-shadow: 0 0 transparent;	
   }
 
   input[type="text"], input[type="password"] {
-    color: #000 !important;
+    color: #000;
   }
 
   input[type="text"]::placeholder, input[type="password"]::placeholder {
-    color: #111 !important;
+    color: #111;
   }
 
   .main-content {
-    margin-left: 0 !important;
+    margin-left: 0;
   }
 
   #selectionbox {
-    display: none !important;
+    visibility: hidden;
   }
 
   .sidebar {
-    display: none !important;
+    display: none;
   }
 
   .sidebar-contents {
-    display: none !important;
+    display: none;
   }
 
   .bottom-right-image {
-    display: none !important;
+    display: none;
   }
 
   .sidebar-shadow {
-    display: none !important;
+    display: none;
   }
 
   .status-bar {
-    display: none !important;
+    display: none;
   }
   
   .print-only {
-    display: block !important;
+    display: block;
   }
 }

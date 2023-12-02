@@ -3,6 +3,7 @@
   <title>Home for SKCro</title>
   <link rel=stylesheet type=text/css href=css/style.css>
   <link rel=stylesheet type=text/css href=css/home.css>
+  <link rel=stylesheet type=text/css href=css/service.css>
   <link rel="shortcut icon" href=Icon.png>
   <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
   <script src=js/main.js></script>
@@ -27,7 +28,7 @@
         <td class="top-bar-item clickable" id=logo-1999 onClick="linkHandler('Credits.html');"><img src=images/WebTVJewel.svg alt="WebTV Logo"></td>
         <td class="top-bar-item clickable" onClick="linkHandler('/WebTV-HD/wtv-mail/Mail.html');"><img src=images/home/mail.png alt="Mail Icon"></td>
         <td class="top-bar-item clickable"><img src=images/home/favorites.png alt="Favorites Icon"></td>
-        <td class="top-bar-item clickable"><img src=images/home/explore.png alt="Explore Icon"></td>
+        <td class="top-bar-item clickable"><img src=images/home/explore.png alt="Community Icon"></td>
         <td class="top-bar-item clickable" onClick="linkHandler('/WebTV-HD/wtv-center/Search.html');"><img src=images/home/search.png alt="Search Icon"></td>
       </tr>
     </tbody></table>
@@ -36,7 +37,7 @@
         <td class=top-bar-item-text style=width:22%;></td>
         <td class=top-bar-item-text>Mail</td>
         <td class=top-bar-item-text>Favorites</td>
-        <td class=top-bar-item-text>Explore</td>
+        <td class=top-bar-item-text>Community</td>
         <td class=top-bar-item-text>Search</td>
       </tr>
     </tbody></table>
@@ -52,6 +53,7 @@
   </div>
   <div class=main-content-container>
     <div class=webtv-today-container>
+      <div class="clickable-today-overlay clickable" onClick="linkHandler('/WebTV-HD/wtv-mail/readMail.html');"></div>
       <div class=today-content-container>
         <div class=today-header></div>
         <div class=today-main>Welcome to WebTV HD!
@@ -65,7 +67,6 @@
           <tr><td class=bottom-link><a class=clickable>Entertainment</a></td><td class=bottom-link><a class=clickable>Sports</a></td><td class=bottom-link><a class=clickable>Money</a></td></tr>
         </tbody></table>
       </div>
-      <div class="clickable-today-overlay clickable" onClick="linkHandler('/WebTV-HD/wtv-mail/readMail.html');"></div>
     </div>
     <div class=right-image-container>
     </div>

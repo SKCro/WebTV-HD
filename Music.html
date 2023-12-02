@@ -2,6 +2,7 @@
 <html><head>
   <title>WebTV Music</title>
   <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel=stylesheet type=text/css href=css/service.css>
   <link rel=stylesheet type=text/css href=css/music.css>
   <link rel="shortcut icon" href=Icon.png>
   <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
@@ -42,17 +43,17 @@
       <div class=song-container>
         <div class=song-title>Dialing.MID Remaster<br></div>
         <div class=song-artist>Brian Salter/webcd</div>
-        <audio src=audio/dialing.mp3 controls></audio>
+        <audio tabindex=0 src=audio/dialing.mp3 controls></audio>
       </div>
       <div class=song-container>
         <div class=song-title>The Modem Song<br>(Prealpha Dialing)</div>
         <div class=song-artist>Peter Drescher</div>
-        <audio src=audio/music/prealphaDialing.mp3 controls></audio>
+        <audio tabindex=0 src=audio/music/prealphaDialing.mp3 controls></audio>
       </div>
       <div class=song-container>
         <div class=song-title>Splash (Uncompressed)</div>
         <div class=song-artist>Thomas Dolby</div>
-        <audio src=audio/splash.mp3 controls></audio>
+        <audio tabindex=0 src=audio/splash.mp3 controls></audio>
       </div>
     </div>
     <h4>Extras</h4>
@@ -60,17 +61,17 @@
       <div class=song-container>
         <div class=song-title>Buddy Holly</div>
         <div class=song-artist>Weezer</div>
-        <audio src=audio/music/weezer.mp3 id=weezer controls></audio>
+        <audio tabindex=0 src=audio/music/weezer.mp3 id=weezer controls></audio>
       </div>
       <div class=song-container>
-        <div class=song-title>SMS JP BIOS (WebTV Classic soundfont)</div>
+        <div class=song-title>SMS JP BIOS</div>
         <div class=song-artist>Hiroshi Kawaguchi</div>
-        <audio src=audio/music/jbiosClassic.mp3 controls></audio>
+        <audio tabindex=0 src=audio/music/jbiosClassic.mp3 controls></audio>
       </div>
       <div class=song-container>
         <div class=song-title>Let's Go Away</div>
         <div class=song-artist>Daytona USA</div>
-        <audio src=audio/music/letsGoAway.mp3 controls></audio>
+        <audio tabindex=0 src=audio/music/letsGoAway.mp3 controls></audio>
       </div>
     </div>
   </div>
@@ -81,17 +82,6 @@
     <div class=bottom-padding></div>
   </div>
 </div>
-
-<div class=status-bar>
-  <div class=status-bar-content>
-    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
-    <div class=page-name></div>
-    <div class=status-container>
-      <div class=status-indicator><webtv-audioscope leftoffset=-2.5% rightoffset=2.5% width=100% height=2.6vw bgcolor=#16162A gain=2></webtv-audioscope></div>
-    </div>
-  </div>
-</div>
-
 <script>
   document.addEventListener('play', function(e){
     var audios = document.getElementsByTagName('audio');
@@ -124,12 +114,5 @@
 	document.getElementById('bottom-message').textContent = 'uh sorry we ran out of songs';
     document.getElementById('button').textContent = 'Home';
   });
-  var statusContainerAudioscope = document.querySelector('.status-indicator webtv-audioscope');
-  if (statusContainerAudioscope && statusContainerAudioscope.shadowRoot) {
-    var canvas = statusContainerAudioscope.shadowRoot.querySelector('canvas');
-    if (canvas) {
-      canvas.style.borderRadius = '0.4vw';
-    }
-  }
 </script>
 </body></html>

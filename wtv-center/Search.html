@@ -2,6 +2,7 @@
 <html><head>
   <title>Search</title>
   <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel=stylesheet type=text/css href=../css/service.css>
   <link rel="shortcut icon" href=../Icon.png>
   <link rel=apple-touch-icon href=../images/AppleTouchIcon.png>
   <script src=../js/main.js></script>
@@ -32,28 +33,14 @@
   <div class=sidebar-shadow></div>
 </div>
 
-  <div class=main-content>
-    <br>
-    <h2>Search the Web</h2>
-    <br>
-	<p>What are you looking for?</p>
-	<form onsubmit="search(event);">
-      <input type="text" id="q">
-      <input type="submit" value="Search" class="ButtonBorder2 submit">
-    </form>
-	<div class=border><hr class=printonly></div>
-	<div class=bottom-padding></div>
-  </div>
-
-<div class=status-bar>
-  <div class=status-bar-top></div>
-  <div class=status-bar-content>
-    <div class="ButtonBorder2 show-sidebar-button" onclick=toggleSidebar()></div>
-    <div class=page-name></div>
-    <div class=status-container>
-      <div class=status-indicator></div>
-    </div>
-  </div>
+<div class=main-content>
+  <h2>Search the Web</h2>
+  <br>
+  <p style=margin-top:1rem;>What are you looking for?</p>
+  <form onsubmit="search(event);">
+    <input type="text" id="q">
+    <input type="submit" value="Search" class="ButtonBorder2 submit">
+  </form>
+  <div class=border><hr class=print-only></div>
 </div>
-
 </body></html>

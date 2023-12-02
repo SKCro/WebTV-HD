@@ -2,6 +2,7 @@
 <html><head>
   <title>Home for SKCro</title>
   <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel=stylesheet type=text/css href=css/service.css>
   <link rel=stylesheet type=text/css href=css/home.css>
   <link rel="shortcut icon" href=Icon.png>
   <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
@@ -28,8 +29,6 @@
     <div class="sidebar-border home"></div>
     <div class="sidebar-link clickable" onClick="linkHandler('Community.html');">Community</div>
     <div class="sidebar-border home"></div>
-    <div class="sidebar-link clickable">What's on TV</div>
-    <div class="sidebar-border home"></div>
   </div>
   <div class="bottom-right-image home">
     <img alt="Home Text" src=images/home/Home.svg>
@@ -41,10 +40,10 @@
   <div class=top-bar>
     <table class=top-bar-items>
       <tbody><tr>
-        <td class="top-bar-item clickable" onClick="linkHandler('/WebTV-HD/wtv-mail/Mail.html');"><img src=images/home/mail.png alt="Mail Icon"></td>
+        <td class="top-bar-item clickable" onclick="linkHandler('wtv-mail/Mail.html');"><img src=images/home/mail.png alt="Mail Icon"></td>
         <td class="top-bar-item clickable"><img src=images/home/favorites.png alt="Favorites Icon"></td>
         <td class="top-bar-item clickable"><img src=images/home/explore.png alt="Explore Icon"></td>
-        <td class="top-bar-item clickable" onClick="linkHandler('/WebTV-HD/wtv-center/Search.html');"><img src=images/home/search.png alt="Search Icon"></td>
+        <td class="top-bar-item clickable" onclick="linkHandler('wtv-center/Search.html');"><img src=images/home/search.png alt="Search Icon"></td>
       </tr>
     </tbody></table>
     <table class=top-bar-text>
@@ -58,7 +57,7 @@
   <div class=top-bar-shadow></div></div>
   <div class=homepage-content-container>
     <h3>Welcome to WebTV HD!</h3>
-    This project is rather incomplete as of now, with only a couple of things working. Feel free to click around and explore!<br>
+    This is an incomplete browser-based recreation of Microsoft's WebTV service. Feel free to click around and explore!<br>
     To see more of what this theme has to offer, check out the <a class="clickable" onclick="linkHandler('PageStyleGuide.html');">style reference page</a>.
     <br>It has examples of other WebTV stuff I've implemented, like checkboxes, radio buttons, text styles, and alert dialogs.
     <ul><h4 style=margin:0;>Links</h4>
@@ -67,7 +66,7 @@
       <li><a class=clickable onclick="linkHandler('PowerOn.html');">PowerOn page</a> - This is where you started. It simulates the power-on, dialing, and splash screen sequences of a box.</li>
       <li><a class=clickable onclick="linkHandler('Credits.html');">Credits</a> - See who made this project possible!</li>
     </ul>
-    Additionally, Mail, Search, and Community are functional as well.
+    Additionally, Mail, Search, Community, and the options bar are functional as well - try clicking on the status bar!
   </div>
 </div>
 </body></html>

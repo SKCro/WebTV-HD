@@ -58,7 +58,8 @@ function snortAsbestos() {
   var currentAnimation = window.getComputedStyle(smoke).getPropertyValue('animation');
   smoke.style.animation = currentAnimation ? currentAnimation + ', fadeOut 250ms linear' : 'fadeOut 250ms linear';
   setTimeout(function() { smoke.style.opacity = 0; }, 250);
-  linkHandler('https://www.youtube.com/watch?v=THc1X-kEX4E');
+  window.open('https://www.youtube.com/watch?v=THc1X-kEX4E', '_new');
+  linkHandler('https://skcro.github.io/WebTV-HD/Home.html');
 }
 
 function asbestos() {
@@ -69,9 +70,9 @@ function asbestos() {
     document.body.style.opacity = 1;
     var newContent = document.createElement('div')
     newContent.innerHTML = String.raw `
-      <audio id=1 src=../../audio/asbestos.mp3 preload=auto></audio>
-      <audio id=errorSound src=../../audio/error.mp3 preload=auto></audio>
-      <audio id=submitSound src=../../audio/submitClick.mp3 preload=auto></audio>
+      <audio id=1 src=https://skcro.github.io/WebTV-HD/audio/asbestos.mp3 preload=auto></audio>
+      <audio id=errorSound src=https://skcro.github.io/WebTV-HD/audio/error.mp3 preload=auto></audio>
+      <audio id=submitSound src=https://skcro.github.io/WebTV-HD/audio/submitClick.mp3 preload=auto></audio>
       <div id=selectionbox></div>
       <div class=smoke></div>
       <div class=dialog-overlay>
@@ -81,7 +82,7 @@ function asbestos() {
             <div class=dialog-message>WebTV ran into a mesotheleoma problem. You may be entitled to financial compensation.</div>
           </div>
           <div class=dialog-separator><hr></div>
-          <div class=dialog-button submit><button onClick=closeDialog();snortAsbestos();>Continue</button></div>
+          <button class="dialog-button submit" onClick=closeDialog();snortAsbestos();>Continue</button>
         </dialog>
       </div>
     `;

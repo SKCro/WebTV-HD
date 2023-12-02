@@ -2,12 +2,80 @@
 <html><head>
   <title>WebTV HD</title>
   <link rel=stylesheet type=text/css href=css/style.css>
+  <link rel=stylesheet type=text/css href=css/service.css>
+  <link rel=stylesheet type=text/css href=css/iframe.css>
   <link rel="shortcut icon" href=Icon.png>
   <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
+  <script src=js/iframe.js></script>
+  <script src=https://cdn.jsdelivr.net/gh/Sgeo/webtv-audioscope@1.1/webtv-audioscope.js></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebTV HD is a browser-based recreation of Microsoft's WebTV service, launched in 1996. For more information, check out the GitHub repo at https://github.com/SKCro/WebTV-HD">
   <meta name="application-name" content="WebTV HD">
-  <meta http-equiv="refresh" content="0;url=Main.html">
-</head><body style=background-color:#000;overflow:hidden;>
-  <p style='animation:1s fadeTransition 3s infinite forwards;opacity: 0;text-align:center;margin-top:50vh;margin-bottom:50vh;'>If you are not redirected automatically, <a class=clickable href=Main.html>click here</a>.</p>
+</head><body>
+<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=audio/down.mp3 preload=auto></audio>
+<audio id=panelSlide src=audio/panelWhir.mp3 preload=auto></audio>
+<audio id=backSound src=audio/goBack.mp3 preload=auto></audio>
+
+<dialog id=loadingPanel open=false>
+  <div id=loadingGlobe></div>
+  <div id=loadingMessageContainer>
+    <progress id=loadingProgress value=100%></progress>
+    <div id=loadingMessage>Loading WebTV HD</div>
+  </div>
+</dialog>
+
+<iframe id=mainFrame src=PowerOn.html title="Main Content" loading=eager>
+  You need to have iframes enabled in order to use WebTV HD.<br>But then again, it's 2023, so how does your browser not have iframe support?
+</iframe>
+<div id=selectionbox></div>
+<audio id=bgmusic preload=auto></audio>
+
+<div class="status-bar iframe" role=toolbar>
+  <div class=status-bar-overlay onclick=toggleOptionsBar();></div>
+  <div class=status-bar-content>
+    <div class="show-sidebar-button ButtonBorder2" onclick=toggleSidebarIframe();></div>
+    <div class=page-name></div>
+    <div class="status-container has-audioscope" title="Click to toggle audioscope" onclick=toggleAudioscope();>
+      <webtv-audioscope id=statusAudioscope leftoffset=-3% rightoffset=3% width=100.5% height=100.5% bgcolor=#14141E gain=2></webtv-audioscope>
+    </div>
+  </div>
+</div>
+<div id=options-bar role=toolbar>
+  <div class=options-row>
+	<div class="options-logo clickable" onclick=home();></div>
+	<button class="options-button find clickable" onclick=find();>find</button>
+	<button class="options-button info clickable" onclick=info();>info</button>
+	<button class="options-button goto clickable" onclick=goTo();>go to</button>
+	<button class="options-button save clickable" onclick=save();>save</button>
+	<button class="options-button send clickable" onclick=send();>send</button>
+  </div>
+  <div class="options-row bottom">
+	<button class="options-button music bottom clickable" onclick=music();>music<div id=music-indicator></div></button>
+	<button class="options-button print bottom clickable" onclick=print();>print</button>
+	<button class="options-button hangup bottom clickable" onclick=hangUp();>hang up</button>
+	<button class="options-button reload bottom clickable" onclick=reload();>reload</button>
+	<button class="options-button pip bottom clickable" onclick=pip();>pip<div id=pip-indicator></div></button>
+  </div>
+</div>
+<div id=panel>
+  <dialog>
+    <div class=top-row>
+      <div id=top-input-pretext></div>
+      <div id=top-input><input type=text id=textQuery autofill=false onInput=clearMessage();></input></div>
+      <button id=panelSubmit class=submit></button>
+      <div id=bottom-message></div>
+    </div>
+    <div class=bottom-row>
+      <hr>
+      <button id=panelClear class=submit>Clear</button><button id=panelCancel onClick=closePanel(); class=submit>Cancel</button>
+    </div>
+  </dialog>
+  <dialog class=panel-bottom></dialog>
+</div>
 </body></html>

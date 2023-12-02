@@ -2,6 +2,7 @@
 <html><head>
   <title>Main Template Page</title> <!-- Page title. This appears in the browser tab and status bar. -->
   <link rel=stylesheet type=text/css href=css/style.css> <!-- Stylesheet. Don't change this. -->
+  <link rel=stylesheet type=text/css href=css/service.css> <!-- Service page stylesheet. Remove to revert to default WebTV page theme. -->
   <link rel="shortcut icon" href=Icon.png> <!-- Page icon. Used as the tab bar icon. -->
   <link rel=apple-touch-icon href=images/AppleTouchIcon.png> <!-- Apple touch icon. Used when adding the page to the home screen on iOS. -->
   <script src=js/main.js></script> <!-- Main functionality script. Don't change this. -->
@@ -30,6 +31,9 @@
   </div>
   <div class=sidebar-shadow></div>
 </div>
+
+<!-- Note: if you want to add a link, please don't use href - that causes the browser to navigate away before the click sound can be played. -->
+<!-- Instead, use this code snippet: <a class=clickable onClick="linkHandler('https://example.com/page');"> -->
 
 <div class=main-content> <!-- Main content. Put stuff here! -->
   <h1>Template</h1>

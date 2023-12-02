@@ -8,36 +8,6 @@ body {
   height: 100vh;
 }
 
-/* Progress bar style based off of pjfrix's code, animation by me */
-
-progress {
-  box-sizing: border-box;
-  border: solid 0.2rem #202020;
-  border-color: #202020 #666 #666 #202020;
-  background: -webkit-linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
-  background: linear-gradient(90deg, rgb(32, 42, 42), rgb(0, 0, 0));
-  padding: 0.1rem 0.2rem;
-  height: 1.3rem;
-}
-
-progress[value]::-moz-progress-bar {
-  background: repeating-linear-gradient(145deg, #006F00 -0.3%, #006F00 0.1%, #00A500 2.5%, #006F00 5%);
-  border-top: 0.1rem solid #003c00;
-  border-bottom: 0.1rem solid #003c00;
-  animation: baranim 120s linear infinite;
-}
-
-progress[value]::-webkit-progress-value {
-  background: repeating-linear-gradient(145deg, #006F00 -0.3%, #006F00 0.1%, #00A500 2.5%, #006F00 5%);
-  border-top: 0.1rem solid #003c00;
-  border-bottom: 0.1rem solid #003c00;
-  animation: baranim 120s linear infinite;
-}
-
-progress::-webkit-progress-bar {
-  background: transparent;
-}
-
 #city {
   position: fixed;
   width: 100%;
@@ -123,13 +93,6 @@ progress::-webkit-progress-bar {
 
 .cityCrossfade {
   animation: 0.5s cityCrossfade;
-}
-
-@keyframes baranim {
-  100% {
-    background-position: 10000px 0;
-    background-size: 100% 100%;
-  }
 }
 
 @keyframes fadeTransition {

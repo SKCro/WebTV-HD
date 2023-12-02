@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
       selectionBox.style.width = width + 'px';
       selectionBox.style.height = height + 'px';
       selectionBox.style.display = 'block';
-
     } else {
       selectionBox.style.display = 'none';
     }
@@ -114,19 +113,13 @@ document.addEventListener('DOMContentLoaded', function () {
       var width = elementRect.width + 2 * boxMargin;
       var height = elementRect.height + 2 * boxMargin;
 
-      selectionBox.style.top = top + 'px';
       selectionBox.style.left = left + 'px';
       selectionBox.style.width = width + 'px';
       selectionBox.style.height = height + 'px';
       selectionBox.style.display = 'block';
-
     } else {
       selectionBox.style.display = 'none';
     }
-  }
-
-  function clearSelectionBox() {
-	  selectionBox.style.display = 'none';
   }
 
   // Function to check if an element is interactive (clickable)
@@ -136,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
       element.classList.contains('submit') ||
       element.tagName === 'A' ||
       element.tagName === 'INPUT' ||
-      element.tagName === 'SELECT' ||
       element.tagName === 'TEXTAREA' ||
       element.isContentEditable
     );
@@ -179,25 +171,52 @@ document.addEventListener('DOMContentLoaded', function () {
   } */
 
   // Event listener to update the selection box for various events
-  window.addEventListener('load', clearSelectionBox);
+  window.addEventListener('load', resetSelectionBox);
   window.addEventListener('resize', updateSelectionBoxNoGreen);
   window.addEventListener('scroll', updateSelectionBoxScroll);
 
   // Event listener for mouse click to select an element
-  document.addEventListener('click', function (event) {
+  document.addEventListener('click', function(event) {
     var clickedElement = event.target;
     if (checkIfInteractive(clickedElement) && clickedElement !== selectedElement) {
       selectedElement = clickedElement;
       updateSelectionBox();
-    }
+    } else { updateSelectionBoxNoGreen(); }
   });
 
-  document.addEventListener('keydown', function (event) {
-    // code for arrow keys goes here eventually
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault(); // Prevent the default tab behavior
+
+      var interactiveElements = getInteractiveElements();
+      var index = interactiveElements.indexOf(selectedElement);
+
+      // Check if Shift key is pressed for reverse navigation
+      if (event.shiftKey) {
+        selectedElement = interactiveElements[(index - 1 + interactiveElements.length) % interactiveElements.length];
+      } else {
+        selectedElement = interactiveElements[(index + 1) % interactiveElements.length];
+      }
+      updateSelectionBoxNoGreen();
+    } else if (event.key === 'Enter') {
+      if (selectedElement) {
+        if (selectedElement.tagName === 'INPUT' && selectedElement.type === 'text') {
+          updateSelectionBox();
+          selectedElement.focus();
+        } else {
+          updateSelectionBox();
+          selectedElement.click();
+        }
+      }
+    }
   });
 });
 
 // dialog logic
+
+function resetSelectionBox() {
+  document.getElementById('selectionbox').style.display = 'none';
+}
 
 function openDialog() {
   var dialog = document.getElementById('webtv-dialog');
@@ -209,7 +228,7 @@ function openDialog() {
     errorSound.play();
     dialog.setAttribute('open', 'true');
     dialogContainer.style.display = 'unset';
-	selectionBox.style.display = 'none';
+	resetSelectionBox();
 	}, 2);
 }
 
@@ -220,7 +239,7 @@ function closeDialog() {
     var selectionBox = document.getElementById('selectionbox');
     dialog.removeAttribute('open');
     dialogContainer.style.display = 'none';
-    selectionBox.style.display = 'none';
+    resetSelectionBox();
   }, 1);
 }
 
@@ -232,53 +251,19 @@ function linkHandler(url) {
   }, 235);
 }
 
-// sidebar stuff
-
-// show sidebar
-
-function showSidebar() {
-  var sidebar = document.querySelector('.sidebar');
-  var panelUp = document.getElementById('panelUp');
-  panelUp.currentTime = 0;
-  panelUp.play();
-  sidebar.classList.remove('hiding');
-  sidebar.classList.remove('hide');
-  sidebar.classList.add('show');
-  // make sure sidebar sticks after animating
-  setTimeout(function() {
-    sidebar.classList.add('showing');
-  }, 400);
-}
-
-// hide sidebar
-
-function hideSidebar() {
-  var sidebar = document.querySelector('.sidebar');
-  var panelDown = document.getElementById('panelDown');
-  panelDown.currentTime = 0;
-  panelDown.play();
-  sidebar.classList.remove('showing');
-  sidebar.classList.remove('show');
-  sidebar.classList.add('hide');
-  // ditto
-  setTimeout(function() {
-    sidebar.classList.add('hiding');
-  }, 400);
-}
-
-// toggle sidebar
-
-function toggleSidebar() {
-  var sidebar = document.querySelector('.sidebar');
-  if (sidebar.classList.contains('show')) {
-    hideSidebar();
-  } else {
-    showSidebar();
-  }
-}
-
 // Navigation stuff for iframe setup
 
-window.navigateWithinIframe = function() {
-  history.pushState({ fromHistoryAPI: true }, '');
-};
+// Attempt at making loading progress indicators work
+document.addEventListener('progress', function(event) {
+  if (event.lengthComputable) {
+    const percentLoaded = (event.loaded / event.total) * 100;
+    window.parent.postMessage({ type: 'loading', progress: percentLoaded }, '*');
+  }
+});
+
+// redirect if the user isn't using the iframe page
+window.addEventListener('load', function() {
+  if (window.self == window.top) {
+    window.location.href = 'index.html';
+  }
+});

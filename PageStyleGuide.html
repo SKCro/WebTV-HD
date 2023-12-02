@@ -2,6 +2,7 @@
 <html><head>
   <title>Style Reference Page</title>
   <link rel=stylesheet type=text/css href=css/style.css> <!-- Stylesheet. Don't remove or change unless you want to use a different style. -->
+  <link rel=stylesheet type=text/css href=css/service.css>
   <link rel="shortcut icon" href=Icon.png>
   <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
   <script src=js/main.js></script>
@@ -24,7 +25,7 @@
       <div class=dialog-message>WebTV ran into a technical problem. Please try again.</div>
     </div>
     <div class=dialog-separator><hr></div>
-    <div class="dialog-button submit"><button onClick=closeDialog()>Continue</button></div>
+    <button class="dialog-button submit" onClick=closeDialog();>Continue</button>
   </dialog>
 </div>
 
@@ -53,9 +54,6 @@
   <h2>This is a sub-header.</h2>
   <p>This is another paragraph. <b>This is bold text.</b> <i>This is italic text.</i><br><b><i>This is both bold and italic text.</i></b> <a class=clickable>This is a link.</a></p>
 
-  <!-- Note: if you want to add a link, please don't use href - that causes the browser to navigate away before the click sound can be played. -->
-  <!-- Instead, use this code snippet: <a class=clickable onClick="linkHandler('https://example.com/page');"> -->
-
   <div class=input-container>
     <label for=Textbox1>This is the textbox's flavor text.</label>
     <input type=text name=Textbox id=Textbox1 placeholder="Textbox placeholder.">
@@ -63,7 +61,7 @@
 
   <div class=input-container>
     <label for=myCheckbox>This is the checkbox's flavor text.</label>
-      <input type=checkbox id=myCheckbox class=input></input>
+      <input type=checkbox id=myCheckbox class=input>
   </div>
 
   <div class=input-container>

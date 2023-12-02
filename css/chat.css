@@ -111,10 +111,9 @@
 }
 
 .top-bar-shadow.chat {
-  margin-top: 0;
   position: absolute;
   width: 85vw;
-  margin-top: 10vw;
+  top: 10vw;
   z-index: 1;
 }
 
