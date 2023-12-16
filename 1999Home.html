@@ -19,57 +19,54 @@
 <audio id=errorSound src=audio/error.mp3 preload=auto></audio>
 <audio id=panelUp src=audio/up.mp3 preload=auto></audio>
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
-<div id=selectionbox></div>
+<div id=selectionbox aria-hidden=true></div>
 
-<div class=home1999-content>
-  <div class="top-bar home1999">
-    <table class=top-bar-items>
+<main class=home1999-content>
+  <nav class="top-bar home1999" aria-label="Top bar.">
+    <table class=top-bar-items aria-label="Top bar items.">
       <tbody><tr>
-        <td class="top-bar-item clickable" id=logo-1999 onClick="linkHandler('Credits.html');"><img src=images/WebTVJewel.svg alt="WebTV Logo"></td>
-        <td class="top-bar-item clickable" onClick="linkHandler('/WebTV-HD/wtv-mail/Mail.html');"><img src=images/home/mail.png alt="Mail Icon"></td>
-        <td class="top-bar-item clickable"><img src=images/home/favorites.png alt="Favorites Icon"></td>
-        <td class="top-bar-item clickable"><img src=images/home/explore.png alt="Community Icon"></td>
-        <td class="top-bar-item clickable" onClick="linkHandler('/WebTV-HD/wtv-center/Search.html');"><img src=images/home/search.png alt="Search Icon"></td>
-      </tr>
-    </tbody></table>
-  <table class=top-bar-text>
+        <td class="top-bar-item clickable" id=logo-1999 title="Credits" onclick="linkHandler('Credits.html');"><img src=images/WebTVJewel.svg alt="WebTV Logo"></td>
+        <td class="top-bar-item clickable" title="Mail" onclick="linkHandler('wtv-mail/Mail.html');"><img src=images/home/mail.png alt="Mail Icon"></td>
+        <td class="top-bar-item clickable" title="Favorites"><img src=images/home/favorites.png alt="Favorites Icon"></td>
+        <td class="top-bar-item clickable" title="Community" onclick="linkHandler('Community.html');"><img src=images/home/explore.png alt="Community Icon"></td>
+        <td class="top-bar-item clickable" title="Search" onclick="linkHandler('wtv-center/Search.html');"><img src=images/home/search.png alt="Search Icon"></td>
+      </tr></tbody>
+    </table>
+    <table class=top-bar-text aria-hidden=true>
       <tbody><tr>
         <td class=top-bar-item-text style=width:22%;></td>
         <td class=top-bar-item-text>Mail</td>
         <td class=top-bar-item-text>Favorites</td>
         <td class=top-bar-item-text>Community</td>
         <td class=top-bar-item-text>Search</td>
-      </tr>
-    </tbody></table>
-  </div>
-  <div class=top-bar-1999>
-      <div class=top-links>
-        <div class=top-link><a class=clickable>TV Home</a></div>
-        <div class=top-link><a class=clickable>Switch User</a></div>
-        <div class=top-link><a class=clickable>Settings</a></div>
-        <div class=top-link><a class=clickable>Account</a></div>
-        <div class=top-link><a class=clickable>Help</a></div>
-      </div>
-  </div>
-  <div class=main-content-container>
+      </tr></tbody>
+    </table>
+  </nav>
+  <nav class=top-links aria-label="Top links.">
+    <div class=top-link aria-label="TV Home link. Click to go to the TV Home page." aria-role=link><a class=clickable onclick="linkHandler('TV/TVHome.html');">TV Home</a></div>
+    <div class=top-link aria-label="Switch user link. Currently non-functional." aria-role=link><a class=clickable>Switch User</a></div>
+    <div class=top-link aria-label="Setup page link. Click to go to Setup." aria-role=link><a class=clickable onclick="linkHandler('wtv-setup/setup.html');">Setup</a></div>
+    <div class=top-link aria-label="Account link. Currently non-functional." aria-role=link><a class=clickable>Account</a></div>
+    <div class=top-link aria-label="Help link. Currently non-functional." aria-role=link><a class=clickable>Help</a></div>
+  </nav>
+  <main class=main-content-container>
     <div class=webtv-today-container>
-      <div class="clickable-today-overlay clickable" onClick="linkHandler('/WebTV-HD/wtv-mail/readMail.html');"></div>
-      <div class=today-content-container>
-        <div class=today-header></div>
-        <div class=today-main>Welcome to WebTV HD!
-          <div class=today-sub></div>
-          <div class=today-findoutmore>find out more in WebTV Today</div>
+      <div class="clickable-today-overlay clickable" aria-label="WebTV Today container. Click to activate." onclick="linkHandler('wtv-mail/readMail.html');"></div>
+      <div class=today-content-container aria-label="WebTV Today contents.">
+        <div class=today-header aria-hidden=true></div>
+        <div class=today-main aria-label="WebTV Today header.">Welcome to WebTV HD!
+          <div class=today-sub aria-label="WebTV Today description.">Click here to learn more about the project.</div>
+          <div class=today-findoutmore aria-hidden=true>find out more in WebTV Today</div>
         </div>
       </div>
-      <div class=bottom-links>
-        <table><tbody>
+      <nav class=bottom-links>
+        <table aria-role=navigation><tbody>
           <tr><td class=bottom-link><a class=clickable>WebTV Today</a></td><td class=bottom-link><a class=clickable>News</a></td><td class=bottom-link><a class=clickable>Shopping</a></td></tr>
           <tr><td class=bottom-link><a class=clickable>Entertainment</a></td><td class=bottom-link><a class=clickable>Sports</a></td><td class=bottom-link><a class=clickable>Money</a></td></tr>
         </tbody></table>
-      </div>
+      </nav>
     </div>
-    <div class=right-image-container>
-    </div>
-  </div>
-</div>
+    <aside class=right-image-container></aside>
+  </main>
+</main>
 </body></html>

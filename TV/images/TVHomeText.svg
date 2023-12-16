@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="425" height="60" viewBox="0 0 425 60.000002" version="1.1" id="svg1" inkscape:version="1.3 (0e150ed6c4, 2023-07-21)" xml:space="preserve" sodipodi:docname="TVHomeText.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><title id="title174">TV Home text</title>
+  <sodipodi:namedview id="namedview1" pagecolor="#505050" bordercolor="#ffffff" borderopacity="1" inkscape:showpageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="1" inkscape:document-units="px" showgrid="true">
+    <inkscape:grid id="grid1" units="px" originx="0" originy="0" spacingx="1" spacingy="1" empcolor="#0099e5" empopacity="0.30196078" color="#0099e5" opacity="0.05098039" empspacing="1" dotted="false" gridanglex="30" gridanglez="30" visible="true" snapvisiblegridlinesonly="false" />
+  </sodipodi:namedview>
+  <defs id="defs1">
+    <filter inkscape:menu="Bumps" inkscape:menu-tooltip="Convoluted emboss effect" style="color-interpolation-filters:sRGB;" inkscape:label="Convoluted Bump" id="filter173" x="-0.00024411806" y="-0.0019055594" width="1.0004882" height="1.0038111">
+      <feConvolveMatrix in="SourceGraphic" bias="0" divisor="0" targetX="1" targetY="1" result="result10" kernelMatrix="0 100 0 100 -401 100 0 100 0 " order="3 3" id="feConvolveMatrix171" />
+      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.21 -0.72 -0.07 1 0 " in="result10" type="matrix" result="result2" id="feColorMatrix171" />
+      <feGaussianBlur
+         result="result11"
+         stdDeviation="0.01"
+         id="feGaussianBlur171" />
+      <feDiffuseLighting surfaceScale="15" result="result1" diffuseConstant="0.5" in="result11" lighting-color="#ffffff" id="feDiffuseLighting171">
+        <feDistantLight elevation="10" azimuth="225" id="feDistantLight171" />
+      </feDiffuseLighting>
+      <feGaussianBlur result="result12" in="SourceGraphic" stdDeviation="0.01" id="feGaussianBlur172" />
+      <feComposite in2="result12" in="result1" k3="0.8" k2="1" operator="arithmetic" result="result9" id="feComposite172" />
+      <feComposite in2="SourceGraphic" in="result9" operator="in" result="result7" id="feComposite173" />
+    </filter><filter inkscape:collect="always" style="color-interpolation-filters:sRGB" id="filter174" x="-0.0043319361" y="-0.033814629" width="1.0086639" height="1.0676293">
+      <feGaussianBlur inkscape:collect="always" stdDeviation="0.61549591" id="feGaussianBlur174" />
+    </filter>
+  </defs>
+  <g inkscape:groupmode="layer" id="layer2" inkscape:label="Layer 2">
+    <path
+       d="m 61.31315,-3.1611661 h 35.57594 v 5.426323 H 82.04292 V 39.487291 H 75.915445 V 2.2651569 H 61.31315 Z m 83.54775,0.06098 h 6.0665 L 132.94128,39.670205 h -1.37181 L 113.21751,-3.1001971 h 6.12749 l 12.80367,29.9057451 z m 71.31517,0 h 6.09698 V 39.487302 h -6.09698 V 20.952443 h -23.93069 v 18.534855 h -6.097 V -3.1001971 h 6.097 V 15.312719 h 23.93069 z m 51.66047,-0.609705 q 9.87714,0 16.43139,6.249418 6.58476,6.2494145 6.58476,15.6692671 0,9.419851 -6.64572,15.608299 -6.61524,6.157961 -16.70577,6.157961 -9.63323,0 -16.06557,-6.157961 -6.40183,-6.188448 -6.40183,-15.48636 0,-9.5417916 6.46281,-15.7912061 6.46281,-6.249418 16.33993,-6.249418 z m 0.24389,5.792143 q -7.31639,0 -12.04156,4.572743 -4.69468,4.5727431 -4.69468,11.6757381 0,6.889602 4.72517,11.462344 4.72517,4.572745 11.82816,4.572745 7.13347,0 11.88913,-4.664199 4.78613,-4.664198 4.78613,-11.61477 0,-6.767659 -4.78613,-11.3708871 -4.75566,-4.633714 -11.70622,-4.633714 z m 79.40181,-5.182445 h 5.6702 V 39.487291 h -6.12749 V 6.3501419 L 333.91642,22.812019 h -1.12794 L 319.558,6.3501419 V 39.487291 h -6.09698 V -3.1001971 h 5.73118 L 333.36769,14.39817 Z m 30.10762,0 h 24.14408 v 5.426325 H 383.68685 V 15.312719 h 17.4374 v 5.456807 h -17.4374 v 13.230473 h 18.6263 v 5.426322 h -24.72329 z" id="text1-6" style="font-size:36px;line-height:1;font-family:'Gill Sans MT';-inkscape-font-specification:'Gill Sans MT';letter-spacing:8.8px;word-spacing:-10px;opacity:0.1;fill:#ffffff;fill-opacity:1;stroke-width:5.20277;stroke-linecap:square;stroke-miterlimit:0.9;paint-order:markers fill stroke;filter:url(#filter174)" aria-label="TV HOME" transform="matrix(1.1818301,0,0,1.1818301,-52.211586,-7.9895155)" />
+       <path d="m 2,21.316406 h 20.513672 v 3.128906 H 13.953125 V 45.908203 H 10.419922 V 24.445312 H 2 Z m 48.174999,0.03516 h 3.498047 L 43.301952,46.013672 H 42.510937 L 31.928905,21.351562 h 3.533204 l 7.382812,17.244141 z m 41.121487,0 h 3.515625 v 24.556641 h -3.515625 v -10.6875 H 77.497658 v 10.6875 H 73.982033 V 21.351562 h 3.515625 V 31.96875 H 91.296486 Z M 121.08476,21 q 5.69532,0 9.47461,3.603516 3.79688,3.603515 3.79688,9.035156 0,5.43164 -3.83203,9 -3.81446,3.550781 -9.63282,3.550781 -5.55468,0 -9.26367,-3.550781 -3.6914,-3.56836 -3.6914,-8.929688 0,-5.501953 3.72656,-9.105468 Q 115.38945,21 121.08476,21 Z m 0.14063,3.339844 q -4.21875,0 -6.94336,2.636718 -2.70703,2.636719 -2.70703,6.732422 0,3.972657 2.72461,6.609375 2.72461,2.636719 6.82031,2.636719 4.11328,0 6.85547,-2.689453 2.75976,-2.689453 2.75976,-6.697266 0,-3.902343 -2.75976,-6.55664 -2.74219,-2.671875 -6.75,-2.671875 z m 45.78438,-2.988282 h 3.26953 v 24.556641 h -3.53321 V 26.800781 l -7.55859,9.492188 h -0.65039 l -7.62891,-9.492188 v 19.107422 h -3.51562 V 21.351562 h 3.30469 l 8.17382,10.089844 z m 17.36055,0 h 13.92187 v 3.128907 h -10.40625 v 7.488281 h 10.05469 v 3.146484 h -10.05469 v 7.628907 h 10.74023 v 3.128906 h -14.25585 z" id="text1" style="font-size:36px;line-height:1;font-family:'Gill Sans MT';-inkscape-font-specification:'Gill Sans MT';letter-spacing:8.8px;word-spacing:-10px;fill:#000000;stroke-width:3;stroke-linecap:square;stroke-miterlimit:0.9;paint-order:markers fill stroke;filter:url(#filter173);fill-opacity:1" aria-label="TV HOME" />
+  </g>
+  <metadata id="metadata174">
+    <rdf:RDF><cc:Work rdf:about=""><dc:title>TV Home text</dc:title></cc:Work></rdf:RDF>
+  </metadata>
+</svg>

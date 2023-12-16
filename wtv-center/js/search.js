@@ -1,7 +1,7 @@
 function search(event) {
-  event.preventDefault(); // Prevent default form submission behavior
-  setTimeout(() => {
+  event.preventDefault();
+  setTimeout(function() {
     var query = document.getElementById('q').value;
-    location.href = 'https://google.com/search?q=' + query;
+    window.open("https://google.com/search?q=" + query, '_new');
   }, 235);
 }

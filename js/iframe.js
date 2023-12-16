@@ -1,245 +1,227 @@
-// Page name updater
+// Variables - defining them @ window-level to prevent errors
+document.addEventListener('DOMContentLoaded', function(){
+  window.iframe = document.getElementById('mainFrame');
+  window.statusBar = document.querySelector('.status-bar.iframe');
+  window.statusContainer = document.querySelector('.status-container');
+  window.optionsBar = document.getElementById('options-bar');
+  window.panel = document.getElementById('panel');
+  window.panelUp = document.getElementById('panelUp');
+  window.panelDown = document.getElementById('panelDown');
+  window.panelSlide = document.getElementById('panelSlide');
+  window.textInput = document.getElementById('textQuery');
+  window.panelClear = document.getElementById('panelClear');
+  window.panelCancel = document.getElementById('panelCancel');
+  window.panelSubmit = document.getElementById('panelSubmit');
+  window.bottomMessage = document.getElementById('bottomMessage');
+  window.pretext = document.getElementById('top-input-pretext');
+});
 
-document.addEventListener('DOMContentLoaded', function () {
+// Page name updater
+document.addEventListener('DOMContentLoaded', function(){
   var parentTitle = document.querySelector('.page-name');
-  var iframe = document.getElementById('mainFrame');
-  function updatePageName() {
-    if (iframe.contentDocument) {
-      var iframeTitle = iframe.contentDocument.title;
+  function handleMessage(event) {
+    if (event.data && event.data.title) {
+      var iframeTitle = event.data.title;
       parentTitle.textContent = iframeTitle;
       document.title = iframeTitle;
     }
   }
-  function waitForIframeLoad() {
-    if (iframe && iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
-      updatePageName();
-    } else {
-      setTimeout(waitForIframeLoad, 100);
-    }
-  }
-  iframe.addEventListener('load', function () {
-    waitForIframeLoad();
-  });
+  window.addEventListener('message', handleMessage);
 });
-
-/* Original code, only here for reference
-
-// page name updater
-
-document.addEventListener('DOMContentLoaded', function () {
-  var pageTitleElement = document.querySelector('.page-name');
-
-  function updatePageName() {
-    var pageTitle = document.title;
-    pageTitleElement.textContent = pageTitle;
-  }
-
-  updatePageName();
-
-  var observer = new MutationObserver(function () {
-    updatePageName();
-  });
-
-  observer.observe(document.querySelector('title'), { subtree: true, characterData: true, childList: true });
-});
-
-*/
 
 // Options bar stuff
-
-function showOptionsBar() {
-  var optionsBar = document.getElementById('options-bar');
-  var statusBar = document.querySelector('.status-bar.iframe');
-  var panelUp = document.getElementById('panelUp');
-  var panel = document.getElementById('panel');
-  if (panel.classList.contains('showing')) { closePanel(); }
+function showOptionsBar(){
+  if (panel.classList.contains('showing')) {closePanel();}
   resetSelectionBox();
+  try {resetSelectionBoxIframe();} catch(error){}
   panelUp.currentTime = 0;
   panelUp.play();
-  optionsBar.classList.remove('hiding');
-  optionsBar.classList.remove('hide');
+  optionsBar.classList.remove('hiding', 'hide');
   optionsBar.classList.add('show');
-  statusBar.classList.remove('hiding');
-  statusBar.classList.remove('hide');
+  statusBar.classList.remove('hiding', 'hide');
   statusBar.classList.add('show');
+  document.querySelectorAll('.options-button').forEach(function(button){button.classList.remove('noselect');});
+  document.querySelector('.options-logo').classList.remove('noselect');
 }
 
-function hideOptionsBar() {
-  var optionsBar = document.getElementById('options-bar');
-  var statusBar = document.querySelector('.status-bar.iframe');
-  var panelUp = document.getElementById('panelUp');
+function hideOptionsBar(){
   resetSelectionBox();
   panelDown.currentTime = 0;
   panelDown.play();
-  optionsBar.classList.remove('showing');
-  optionsBar.classList.remove('show');
+  optionsBar.classList.remove('showing', 'show');
   optionsBar.classList.add('hide');
-  statusBar.classList.remove('showing');
-  statusBar.classList.remove('show');
+  statusBar.classList.remove('showing', 'show');
   statusBar.classList.add('hide');
+  document.querySelectorAll('.options-button').forEach(function(button){button.classList.add('noselect');});
+  document.querySelector('.options-logo').classList.add('noselect');
 }
 
-function hideOptionsBarNoSound() {
-  setTimeout(function() {
-    var optionsBar = document.getElementById('options-bar');
-    var statusBar = document.querySelector('.status-bar.iframe');
+function hideOptionsBarNoSound(){
+  setTimeout(function(){
     resetSelectionBox();
-    optionsBar.classList.remove('showing');
-    optionsBar.classList.remove('show');
+    optionsBar.classList.remove('showing', 'show');
     optionsBar.classList.add('hide');
-    statusBar.classList.remove('showing');
-    statusBar.classList.remove('show');
+    statusBar.classList.remove('showing', 'show');
     statusBar.classList.add('hide');
+    document.querySelectorAll('.options-button').forEach(function(button){button.classList.add('noselect');});
+    document.querySelector('.options-logo').classList.add('noselect');
   },20);
 }
 
-function toggleOptionsBar() {
-  var optionsBar = document.getElementById('options-bar');
-  if (optionsBar.classList.contains('show')) {
-    hideOptionsBar();
-  } else {
-    showOptionsBar();
-  }
-}
-
-function resetSelectionBox() {
-  document.getElementById('selectionbox').style.top = '9999rem';
+function toggleOptionsBar(){
+  if (optionsBar.classList.contains('show')){hideOptionsBar();} else {showOptionsBar();}
 }
 
 window.addEventListener('keydown', function(event) {
-  if (event.keyCode === 46) {
-    toggleOptionsBar();
-  }
+  if (event.keyCode === 46) {toggleOptionsBar();}
 });
 
-// Top row buttons
-
-function home() {
-  hideOptionsBarNoSound();
-  document.getElementById("mainFrame").src = 'Home.html';
+function removeNoSelects(){
+  textInput.classList.remove('noselect');
+  panelSubmit.classList.remove('noselect');
+  panelClear.classList.remove('noselect');
+  panelCancel.classList.remove('noselect');
 }
 
-function find() {
+// Top row buttons
+function home(){
   hideOptionsBarNoSound();
-  var iframe = document.getElementById("mainFrame");
-  function openFindPanel() {
-    var panel = document.getElementById('panel');
-    var textInput = document.getElementById('textQuery');
-    document.getElementById('top-input-pretext').textContent = 'Find word';
-    document.getElementById('top-input-pretext').style.color = 'var(--webtv-yellow)';
-    document.getElementById('bottom-message').textContent = '';
+  iframe.src = 'Home.html';
+}
+
+function find(){
+  hideOptionsBarNoSound();
+  function openFindPanel(){
+    removeNoSelects();
+    pretext.textContent = 'Find word';
+    pretext.style.color = 'var(--webtv-yellow)';
+    bottomMessage.textContent = '';
     textInput.value = '';
     textInput.placeholder = '';
-    document.getElementById('panelSubmit').textContent = 'Find on Page';
-    document.getElementById('panelSubmit').onclick = findInIframe;
-    document.getElementById('panelClear').onclick = clearFindBox;
+    panelSubmit.textContent = 'Find on Page';
+    panelSubmit.onclick = findInIframe;
+    panelClear.onclick = clearFindBox;
     panel.classList.remove('hide');
     panel.classList.remove('hiding');
     panel.classList.add('showing');
-    setTimeout(function(){panel.classList.add('show');document.getElementById('panelSlide').play();},395);
+    setTimeout(function(){panel.classList.add('show');panelSlide.play();},395);
   }
-  function clearFindBox() {
-    event.preventDefault();
-    document.getElementById('textQuery').value = '';
-  }
-  function findInIframe() {
-    iframe.document.find(textInput.value);
-    hideOptionsBarNoSound();
+  function clearFindBox(){textInput.value = '';}
+  function findInIframe(){
+    if (iframe && iframe.contentWindow) {
+      var searchTerm = textInput.value.toLowerCase();
+      var isFound = iframe.contentWindow.find(searchTerm);
+      if (isFound) {closePanel();} else {errorSound.currentTime = 0;errorSound.play();bottomMessage.textContent = 'Could not find the word on this page.';}
+    } else {console.error('Attempted to find something inside the iframe before it has loaded.');}
   }
   openFindPanel();
 }
 
-function info() {
+function info(){
   hideOptionsBarNoSound();
+  pretext.textContent = '';
+  bottomMessage.textContent = document.title;
+  bottomMessage.style.bottom = '18.5vw';
+  panelCancel.style.display = 'none';
+  panelClear.style.display = 'none';
+  textInput.value = '';
+  textInput.placeholder = '';
+  textInput.style.display = 'none';
+  panelSubmit.style.top = 'unset';
+  panel.classList.remove('hide');
+  panel.classList.remove('hiding');
+  panel.classList.add('showing');
+  panelClear.classList.add('noselect');
+  panelCancel.classList.add('noselect');
+  panelSubmit.classList.add('noselect');
+  setTimeout(function(){panel.classList.add('show');panelSlide.play();highlight(document.getElementById('panelSubmit'));},395);
 }
 
-function goTo() {
+function goTo(){
   hideOptionsBarNoSound();
-  function openGoToPanel() {
-    var panel = document.getElementById('panel');
-    var textInput = document.getElementById('textQuery');
-    document.getElementById('top-input-pretext').textContent = 'Address';
-    document.getElementById('top-input-pretext').style.color = 'var(--webtv-yellow)';
-    document.getElementById('bottom-message').textContent = '';
+  function openGoToPanel(){
+    removeNoSelects();
+    pretext.textContent = 'Address';
+    pretext.style.color = 'var(--webtv-yellow)';
+    bottomMessage.textContent = '';
+    textInput.classList.remove('noselect');
     textInput.type = 'url';
     textInput.value = 'http://';
     textInput.placeholder = '';
-    document.getElementById('panelSubmit').textContent = 'Go to Page';
-    document.getElementById('panelSubmit').onclick = goToURL;
-    document.getElementById('panelClear').onclick = clearURL;
+    panelSubmit.textContent = 'Go to Page';
+    panelSubmit.onclick = goToURL;
+    panelClear.onclick = clearURL;
     panel.classList.remove('hide');
     panel.classList.remove('hiding');
     panel.classList.add('showing');
-    setTimeout(function(){panel.classList.add('show');document.getElementById('panelSlide').play();},395);
+    setTimeout(function(){panel.classList.add('show');panelSlide.play();},395);
   }
   function goToURL(event) {
     event.preventDefault();
     var destUrl = document.getElementById('textQuery').value;
-    var iframe = document.getElementById('mainFrame');
-    if (destUrl !== 'http://' && destUrl !== 'https://' && destUrl !== '') {
+    if (destUrl === 'barrelroll' || destUrl === 'barrel roll' || destUrl === 'do a barrel roll' || destUrl === 'doabarrelroll') {
+      closePanel();
+      doBarrelRoll();
+    } else if (destUrl !== 'http://' && destUrl !== 'https://' && destUrl !== '') {
       iframe.src = destUrl;
       closePanel();
-    } else { 
+    } else {
       document.getElementById('bottom-message').textContent = 'Type the address of a webpage.';
-      document.getElementById('errorSound').currentTime = 0;
-      document.getElementById('errorSound').play(); 
+      var errorSound = document.getElementById('errorSound');
+      errorSound.currentTime = 0;
+      errorSound.play(); 
     }
   }
-  function clearURL() {
+  function clearURL(){
     event.preventDefault();
     document.getElementById('textQuery').value = 'http://';
   }
   openGoToPanel();
 }
 
-function save() {
+function save(){
   hideOptionsBarNoSound();
-  var iframe = document.getElementById("mainFrame");
-  var textInput = document.getElementById('textQuery');
-  function openSavePanel() {
-    var panel = document.getElementById('panel');
-    document.getElementById('top-input-pretext').textContent = '';
-    document.getElementById('bottom-message').textContent = 'To save this page, press Ctrl+D on your keyboard.';
-    document.getElementById('bottom-message').style.bottom = '18.5vw';
-    document.getElementById('panelCancel').style.display = 'none';
-    document.getElementById('panelClear').style.display = 'none';
-    textInput.value = '';
-    textInput.placeholder = '';
-    textInput.style.display = 'none';
-    document.getElementById('panelSubmit').style.top = 'unset';
-    document.getElementById('panelSubmit').textContent = 'Continue';
-    document.getElementById('panelSubmit').onclick = closePanel;
-    panel.classList.remove('hide');
-    panel.classList.remove('hiding');
-    panel.classList.add('showing');
-    setTimeout(function(){panel.classList.add('show');document.getElementById('panelSlide').play();},395);
-  }
-  openSavePanel();
+  pretext.textContent = '';
+  bottomMessage.textContent = 'To save this page, press Ctrl+D on your keyboard.';
+  bottomMessage.style.bottom = '18.5vw';
+  panelCancel.style.display = 'none';
+  panelClear.style.display = 'none';
+  textInput.value = '';
+  textInput.placeholder = '';
+  textInput.style.display = 'none';
+  panelSubmit.style.top = 'unset';
+  panelSubmit.textContent = 'Continue';
+  panelSubmit.onclick = closePanel;
+  panel.classList.remove('hide');
+  panel.classList.remove('hiding');
+  panel.classList.add('showing');
+  panelClear.classList.add('noselect');
+  panelCancel.classList.add('noselect');
+  panelSubmit.classList.remove('noselect');
+  setTimeout(function(){panel.classList.add('show');panelSlide.play();highlight(document.getElementById('panelSubmit'));},395);
 }
 
-function send() {
+function send(){
   hideOptionsBarNoSound();
-  var iframe = document.getElementById('mainFrame');
-  var textInput = document.getElementById('textQuery');
-  function openSendPanel() {
-    var panel = document.getElementById('panel');
-    document.getElementById('top-input-pretext').textContent = 'To:';
-    document.getElementById('top-input-pretext').style.color = 'var(--webtv-link)';
-    document.getElementById('bottom-message').textContent = 'Send "' + document.title + '" by electronic mail.';
+  function openSendPanel(){
+    removeNoSelects();
+    pretext.textContent = 'To:';
+    pretext.style.color = 'var(--webtv-link)';
+    bottomMessage.textContent = 'Send "' + document.title + '" by electronic mail.';
     textInput.value = '';
-    document.getElementById('panelSubmit').textContent = 'Send Page';
-    document.getElementById('panelSubmit').onclick = doSend;
-    document.getElementById('panelClear').onclick = clearEmail;
+    panelSubmit.textContent = 'Send Page';
+    panelSubmit.onclick = doSend;
+    panelClear.onclick = clearEmail;
     panel.classList.remove('hide');
     panel.classList.remove('hiding');
     panel.classList.add('showing');
-    setTimeout(function(){panel.classList.add('show');document.getElementById('panelSlide').play();},395);
+    setTimeout(function(){panel.classList.add('show');panelSlide.play();},395);
   }
-  function clearEmail() {
+  function clearEmail(){
     event.preventDefault();
     document.getElementById('textQuery').value = '';
   }
-  function doSend() {
+  function doSend(){
     window.open('mailto:' + textInput.value + '?body=' + encodeURIComponent(iframe.src), '_blank');
     closePanel();
   }
@@ -247,125 +229,107 @@ function send() {
 }
 
 // Bottom row buttons
-
-function music() {
-  var musicIndicator = document.getElementById('music-indicator');
-
-  if (musicIndicator.classList.contains('active')) {
-    stopBGMusic();
-  } else {
-    startBGMusic();
-  }
+function music(){
+  var musicIndicator = document.getElementById('musicIndicator');
+  if (musicIndicator.classList.contains('active')) {stopBGMusic();} else {startBGMusic();}
   hideOptionsBarNoSound();
 }
 
-function print() {
+function print(){
   hideOptionsBarNoSound();
-  setTimeout(function(){document.getElementById("mainFrame").contentWindow.print();},450);
+  setTimeout(function(){iframe.contentWindow.print();},450);
 }
 
-function hangUp() {
+function hangUp(){
   hideOptionsBarNoSound();
+  resetSelectionBox();
+  stopBGMusic();
+  document.getElementById('reconnectPanel').style.display = 'flex';
+  document.getElementById('reconnectButton').classList.remove('noselect');
+  document.querySelector('.status-container').classList.add('disconnected');
+  setTimeout(function(){highlight(document.getElementById('reconnectButton'));},50);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelector(".reload").addEventListener("click", function(event) {
-    reload(event);
-  });
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelector('.reload').addEventListener('click', function(event){reload(event);});
 });
 
 function reload(event) {
-  var iframe = document.getElementById("mainFrame");
-  if (event) {
+  if(event) {
     var isCtrlPressed = event.ctrlKey || event.metaKey;
     var isShiftPressed = event.shiftKey;
-
-    if (isCtrlPressed || isShiftPressed) {
-      console.log("Force reload requested!");
-      iframe.contentWindow.location.reload(true);  // Cache-clearing reload
-    } else {
-      console.log("Normal reload requested.");
-      iframe.contentWindow.location.reload();  // Standard reload
+    if(isCtrlPressed || isShiftPressed) {
+      console.log('Force reload requested!');
+      iframe.contentWindow.location.reload(true); // Cache-clearing reload
+    }else{
+      console.log('Normal reload requested.');
+      iframe.contentWindow.location.reload(); // Standard reload
     }
   }
-
   hideOptionsBarNoSound();
 }
 
-function closePanel() {
-  var panel = document.getElementById('panel');
-  resetSelectionBox();
-  setTimeout(function() {
-    document.getElementById('panelSlide').play();
-    document.getElementById('textQuery').style.display = 'unset';
-    document.getElementById('textQuery').style.type = 'text';
-    document.getElementById('bottom-message').style.bottom = '7vw';
-    document.getElementById('panelClear').style.display = 'unset';
-    document.getElementById('panelCancel').style.display = 'unset';
-    document.getElementById('panelSubmit').style.top = '6.5vw';
+function pip(){
+  var pipIndicator = document.getElementById('pipIndicator');
+  var pipWindow = document.getElementById('pipWindow');
+  var pipVideo = document.getElementById('pipVideo');
+  function showPipWindow(){
+    pipIndicator.classList.add('active');
+    pipWindow.style.display = 'block';
+    setTimeout(function(){pipWindow.classList.remove('hide');pipWindow.classList.remove('hidden');pipWindow.classList.add('show');},500);
+    stopBGMusic();
+    hideOptionsBarNoSound();
+    pipVideo.src = 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1';
+    setTimeout(function(){pipVideo.style.visibility = 'visible';},1500);
+  }
+  function hidePipWindow(){
+    pipIndicator.classList.remove('active');
+    setTimeout(function(){pipWindow.classList.remove('show');pipWindow.classList.add('hide');pipWindow.classList.add('hide');},500);
+    checkBGMusicStatus();
+    hideOptionsBarNoSound();
+    pipVideo.src = '';
+    pipVideo.style.visibility = 'hidden';
+  }
+  if (pipIndicator.classList.contains('active')){hidePipWindow();}else{showPipWindow();}
+}
+
+function closePanel(){
+  setTimeout(function(){
+    panelSlide.play();
+    textInput.style.display = 'unset';
+    textInput.style.type = 'text';
+    textInput.classList.add('noselect');
+    bottomMessage.style.bottom = '7vw';
+    panelClear.style.display = 'unset';
+    panelClear.classList.add('noselect');
+    panelCancel.style.display = 'unset';
+    panelCancel.classList.add('noselect');
+    panelSubmit.style.top = '6.5vw';
+    panelSubmit.style.display = 'unset';
+    panelSubmit.classList.add('noselect');
     resetSelectionBox();
   },200);
-  panel.classList.remove('show');
-  panel.classList.remove('showing');
+  panel.classList.remove('show', 'showing');
   panel.classList.add('hiding');
-  setTimeout(function(){panel.classList.add('hide');},395);
 }
 
-function pip() {
-  var pipIndicator = document.getElementById('pip-indicator');
-
-  function enablePip() {
-    showPipWindow();
-    pipIndicator.classList.add('active');
-  }
-
-  function disablePip() {
-    hidePipWindow();
-    pipIndicator.classList.remove('active');
-  }
-
-  function showPipWindow() {
-    
-  }
-
-  function hidePipWindow() {
-    
-  }
-
-  if (pipIndicator.classList.contains('active')) {
-    disablePip();
-  } else {
-    enablePip();
-  }
-  hideOptionsBarNoSound();
-}
-
-function clearMessage() {
-  document.getElementById('bottom-message').textContent = '';
+function clearMessage(){
+  bottomMessage.textContent = '';
 }
 
 // <display> tag reimplementation
-
-document.addEventListener('DOMContentLoaded', function () {
-  var iframe = document.getElementById('mainFrame');
-  if (!iframe) return;
-
-  iframe.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function(){
+  iframe.addEventListener('load', function(){
     var iframeDocument = iframe.contentDocument;
     if (!iframeDocument) return;
     var displayMeta = iframeDocument.querySelector('meta[name="display"]');
-    var statusBar = document.querySelector('.status-bar');
-    var optionsBar = document.getElementById('options-bar');
-
     if (displayMeta) {
       var displayOptions = displayMeta.getAttribute('content').split(' ');
-
-      if (displayOptions.includes('noScroll')) {
+      if (displayOptions.includes('noScroll')){
         console.log('Scrolling disabled - noScroll is set in the display tag.');
         iframeDocument.body.style.overflow = 'hidden';
       }
-
-      if (displayOptions.includes('noStatus')) {
+      if (displayOptions.includes('noStatus')){
         console.log('Status bar hidden - noStatus is set in the display tag.');
         statusBar.style.display = 'none';
         optionsBar.style.display = 'none';
@@ -375,8 +339,7 @@ document.addEventListener('DOMContentLoaded', function () {
         optionsBar.style.display = 'grid';
         iframe.classList.remove('noStatus');
       }
-
-      if (displayOptions.includes('noMusic')) {
+      if (displayOptions.includes('noMusic')){
         console.log('Background music disabled - noMusic is set in display tag.');
         stopBGMusic();
         document.querySelector('.music').disabled = true;
@@ -390,95 +353,114 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
 // Background music, baby!
-
-document.addEventListener('DOMContentLoaded', function() {
-  const bgMusic = document.getElementById('bgmusic');
-  const musicList = [
-    'audio/music/prealphaDialing.mp3',
-    'audio/aoltv.mp3'
-    // uh sorry we ran out of songs
+document.addEventListener('DOMContentLoaded', function(){
+  var bgMusic = document.getElementById('bgmusic');
+  var musicList = [
+    'audio/music/ambient/sunlane.mp3',
+    'audio/music/classical/minuet.mp3',
+    'audio/music/keyboards/catacombs.mp3',
+    'audio/music/keyboards/home_wtv.mp3',
+    'audio/music/upbeat/jetset.mp3',
+    'audio/music/ROMCache/prealphaDialing.mp3',
+    'audio/music/other/aoltv.mp3',
+    'audio/music/other/joeb.mp3'
   ];
-
+  let shuffledMusicList = [...musicList];
   let currentSongIndex = 0;
 
-  window.startBGMusic = function() {
-    document.getElementById('music-indicator').classList.add('active');
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  window.startBGMusicWithDelay = function(ms){setTimeout(startBGMusic,ms);}
+
+  window.startBGMusic = function(){
+    document.getElementById('musicIndicator').classList.add('active');
+    shuffle(shuffledMusicList);
     if (!bgMusic.src) {
-      bgMusic.src = musicList[currentSongIndex];
+      bgMusic.src = shuffledMusicList[currentSongIndex];
     }
     bgMusic.currentTime = 0;
     bgMusic.play();
-    bgMusic.addEventListener('ended', playNextSong);
+    bgMusic.addEventListener('ended',playNextSong);
+    showAudioscope();
   };
 
-  window.stopBGMusic = function() {
-    document.getElementById('music-indicator').classList.remove('active');
+  window.stopBGMusic = function(){
+    document.getElementById('musicIndicator').classList.remove('active');
     fadeOutMusic();
+    setTimeout(function(){pickNextSong();hideAudioscope();},500);
   };
 
-  function playNextSong() {
-    bgMusic.removeEventListener('ended', playNextSong);
-    currentSongIndex = (currentSongIndex + 1) % musicList.length;
-
-    bgMusic.src = musicList[currentSongIndex];
+  function playNextSong(){
+    bgMusic.removeEventListener('ended',playNextSong);
+    currentSongIndex = (currentSongIndex + 1) % shuffledMusicList.length;
+    bgMusic.src = shuffledMusicList[currentSongIndex];
     bgMusic.currentTime = 0;
     bgMusic.play();
-
-    bgMusic.addEventListener('ended', playNextSong);
+    bgMusic.addEventListener('ended',playNextSong);
   }
 
-  function fadeOutMusic() {
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const startTime = audioContext.currentTime;
-    const fadeDuration = 0.5;
+  function pickNextSong(){
+    bgMusic.removeEventListener('ended',playNextSong);
+    currentSongIndex = (currentSongIndex + 1) % shuffledMusicList.length;
+    bgMusic.src = shuffledMusicList[currentSongIndex];
+    bgMusic.currentTime = 0;
+    bgMusic.addEventListener('ended',playNextSong);
+  }
 
-    bgMusic.volume = 1;
+  function fadeOutMusic(){
+    var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    var startTime = audioContext.currentTime;
+    var fadeDuration = 0.5;
     bgMusic.volume = bgMusic.volume - 0.01;
-
-    const fadeOutInterval = setInterval(function () {
-      if (bgMusic.volume > 0) {
+    var fadeOutInterval = setInterval(function(){
+      if(bgMusic.volume > 0) {
         bgMusic.volume = Math.max(0, bgMusic.volume - 0.01); 
-      } else {
+      }else{
         clearInterval(fadeOutInterval);
-        bgMusic.pause();
-        bgMusic.currentTime = 0;
+        pickNextSong();
         bgMusic.volume = 1;
       }
-    }, fadeDuration * 10);
+    },fadeDuration * 10);
   }
 });
 
-// Audioscope logic
+function checkBGMusicStatus(){
+  try{
+    var displayTag = iframe.contentDocument.querySelector('meta[name="display"]');
+    if(!displayTag){startBGMusicWithDelay(1500);}
+    var displayOptions = displayTag.getAttribute('content').split(' ');
+    if(displayOptions.includes('noMusic')){return;}else{startBGMusicWithDelay(1500);}
+  }catch(error){console.log('Page doesn\'t have display tag, assuming BG music is allowed. Error: ',error);}
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(function() {
-    var statusContainer = document.querySelector('.status-container');
-    statusContainer.classList.remove('has-audioscope');
+// Audioscope logic
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(function(){
+    document.querySelector('.status-container').classList.remove('has-audioscope');
   }, 10);
 });
 
-function toggleAudioscope() {
-  var statusContainer = document.querySelector('.status-container');
-  if (statusContainer.classList.contains('has-audioscope')) {
-    disableAudioscope();
-  } else {
-    enableAudioscope();
-  }
-
-  function enableAudioscope() {
-    statusContainer.classList.add('has-audioscope');
-  }
-
-  function disableAudioscope() {
-    statusContainer.classList.remove('has-audioscope');
-  }
+function toggleAudioscope(){
+  if (statusContainer.classList.contains('has-audioscope')){hideAudioscope();}else{showAudioscope();}
 }
 
-// styling workaround, no longer needed for now
+function showAudioscope(){
+  statusContainer.classList.add('has-audioscope');
+}
+
+function hideAudioscope(){
+  statusContainer.classList.remove('has-audioscope');
+}
+
+// Styling workaround, no longer needed for now
 /*
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(){
   var statusbarAudioscope = document.querySelector('.status-container webtv-audioscope');
   if (statusbarAudioscope && statusbarAudioscope.shadowRoot) {
     var canvas = statusbarAudioscope.shadowRoot.querySelector('canvas');
@@ -490,10 +472,9 @@ document.addEventListener('DOMContentLoaded', function() {
 */
 
 // Backward navigational sound, doesn't currently work
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('mainFrame').addEventListener('popstate', function(event) {
-    if (event.state && event.state.fromHistoryAPI) {
+document.addEventListener('DOMContentLoaded', function(){
+  iframe.addEventListener('popstate', function(event) {
+    if (event.state) {
       var backSound = document.getElementById('backSound');
       backSound.currentTime = 0;
       backSound.play();
@@ -502,315 +483,306 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Sidebar toggling logic
-
-function toggleSidebarIframe() {
-  var sidebar = document.getElementById('mainFrame').contentDocument.querySelector('.sidebar');
-  var panelUp = document.getElementById('panelUp');
-  var panelDown = document.getElementById('panelDown');
-  function showSidebarIframe() {
+function toggleSidebarIframe(){
+  var sidebar = iframe.contentDocument.querySelector('.sidebar');
+  function showSidebarIframe(){
     panelUp.currentTime = 0;
     panelUp.play();
     sidebar.classList.remove('hiding');
     sidebar.classList.remove('hide');
     sidebar.classList.add('show');
+    resetSelectionBox();
+    resetSelectionBoxIframe();
   }
-  function hideSidebarIframe() {
+  function hideSidebarIframe(){
     panelDown.currentTime = 0;
     panelDown.play();
     sidebar.classList.remove('showing');
     sidebar.classList.remove('show');
     sidebar.classList.add('hide');
+    resetSelectionBox();
+    resetSelectionBoxIframe();
   }
-  if (sidebar.classList.contains('show')) {
-    hideSidebarIframe();
-  } else {
-    showSidebarIframe();
-  }
+  if (sidebar.classList.contains('show')) {hideSidebarIframe();} else {showSidebarIframe();}
 }
 
-// Loading panel logic, unfinished
-
-document.addEventListener('DOMContentLoaded', function() {
+// Loading panel logic
+document.addEventListener('DOMContentLoaded', function(){
   var loadingPanel = document.getElementById('loadingPanel');
   var loadingMessage = document.getElementById('loadingMessage');
-  var iframe = document.getElementById('mainFrame');
-
-  function startLoading() {
-    console.log('startLoading called!');
+  window.startLoading = function startLoading(){
+    console.log('startLoading called, showing loading indicator');
     loadingPanel.style.visibility = 'visible';
-    loadingMessage.textContent = 'Getting page';
+    loadingMessage.textContent = 'Contacting service';
+    function getIframeTitle(){
+      var iframeTitle = iframe.contentDocument.title;
+      if(iframeTitle){
+        loadingMessage.textContent = iframeTitle;
+      } else{setTimeout(getIframeTitle,50);}
+    }
+    getIframeTitle();
   }
-
-  function stopLoading() {
-    console.log('stopLoading called!');
+  window.stopLoading = function(){
+    console.log('stopLoading called, hiding loading indicator');
     loadingPanel.style.visibility = 'hidden';
     loadingMessage.textContent = '';
+    iframe.focus();
   }
-
-  function handleStateChange() {
-    var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-    if (iframeDocument.readyState === 'complete') {
-      console.log('Finished loading.');
-      stopLoading();
-    } else {
-      console.log('Loading new page.');
-      startLoading();
-    }
-  }
-  
-  window.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'loading') {
-        const progress = event.data.progress;
-        console.log(progress);
-    }
+  window.addEventListener('message', function(event){
+    if(event.data && event.data.type === 'loading'){startLoading();}
   });
-
-  iframe.addEventListener('load', handleStateChange);
-  iframe.contentDocument.addEventListener('unload', handleStateChange);
+  iframe.addEventListener('load', stopLoading);
 });
 
-// duplicates from main.js to prevent errors
+// Reconnect panel logic
+function reconnect(){
+  var modem = document.getElementById('modem');
+  modem.currentTime = 0;
+  modem.play();
+  resetSelectionBox();
+  document.getElementById('reconnectPanel').style.display = 'none';
+  document.getElementById('reconnectButton').classList.add('noselect');
+  document.querySelector('.status-container').classList.remove('disconnected');
+  checkBGMusicStatus();
+}
+
+// Ensure that the button style loads during init
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(function(){document.getElementById('reconnectPanel').style.display = 'none';},5);
+});
+
+// Dialog/showAlert logic
+document.addEventListener('DOMContentLoaded', function(){
+  window.dialog = document.getElementById('dialog');
+  window.dialogLogo = document.querySelector('dialog-logo');
+  window.dialogMessage = document.getElementById('dialogMessage');
+  window.dialogButton = document.getElementById('dialogButton');
+  window.errorSound = document.getElementById('errorSound');
+  let intervalId;
+  window.doAlert = function(text){
+    var taunt = ['nice try lmfao', 'inspect element ain\'t gonna work here kid'];
+    dialogMessage.textContent = text;
+    openDialog();
+    function checkDialogState(){
+      if (dialogMessage.textContent !== text && !taunt.includes(dialogMessage.textContent) && dialogMessage.textContent !== '') {
+        dialogMessage.textContent = taunt[Math.floor(Math.random() * taunt.length)];
+        console.error('nice try fucker');
+        setTimeout(function(){dialogMessage.textContent = text;},150);
+      }
+    }
+    intervalId = setInterval(checkDialogState,10);
+    window.resetDialogChecker = function(){
+      clearInterval(intervalId);
+      dialogMessage.textContent = text;
+    };
+  };
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'text') {doAlert(event.data.text);}
+  });
+});
+
+function openDialog(){
+  resetSelectionBoxIframe();
+  setTimeout(function(){
+    errorSound.currentTime = 0;
+    errorSound.play();
+    dialog.classList.remove('hidden');
+    dialog.classList.add('shown');
+    dialogButton.classList.remove('noselect');
+    resetSelectionBox();
+    highlight(dialogButton);
+  },2);
+}
+
+function closeDialog(){
+  resetDialogChecker();
+  setTimeout(function(){
+    dialog.classList.remove('shown');
+    dialog.classList.add('hidden');
+    dialogButton.classList.add('noselect');
+    dialogMessage.textContent = '';
+    resetSelectionBox();
+    iframe.focus();
+  },2);
+}
+
+// TV world stuff, unfinished
+
+/* var tvIframe = document.getElementById('tvFrame'); */
+
+// "barrelroll" easter egg
+function doBarrelRoll(){
+  var viewSound = document.getElementById('viewSound');
+  setTimeout(function(){
+    viewSound.currentTime = 0;
+    viewSound.play();
+    setTimeout(function(){
+      document.body.style.perspective = '100vw';
+      iframe.style.animation = 'flip 0.5s linear forwards';
+      setTimeout(function(){
+        iframe.style.animation = '0.5s flip 5s linear forwards reverse';
+        iframe.offsetHeight;
+        setTimeout(function(){
+          iframe.style.animation = '';
+          iframe.offsetHeight;
+          document.body.style.perspective = 'none';
+        },500);
+      },5000);
+    },1000);
+  },800);
+}
+
+// Modified functions from main.js
 
 // Link handler
 function linkHandler(url) {
-  setTimeout(function() {
-    location.href = url;
-  }, 235);
+  setTimeout(function(){location.href = url;},235);
 }
 
 // Selection box
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function(){
   var selectionBox = document.getElementById('selectionbox');
   var selectedElement = null;
-
-  // Update the selection box position and size
-  function updateSelectionBox() {
-    if (selectedElement) {
+  window.highlight = function(element){
+    selectedElement = element;
+    element.focus({preventScroll: true});
+    updateSelectionBoxNoGreen();
+  }
+  window.resetSelectionBox = function(){
+    selectedElement = null;
+    updateSelectionBoxNoGreen();
+  }
+  function updateSelectionBox(){
+    if (selectedElement){
       var elementRect = selectedElement.getBoundingClientRect();
       var boxMargin = 4; // Adjust this value to set the margin between the selected element and the selection box
-
       // Calculate the new dimensions and position for the selection box
       var top = elementRect.top - boxMargin;
       var left = elementRect.left - boxMargin;
       var width = elementRect.width + 2 * boxMargin;
       var height = elementRect.height + 2 * boxMargin;
-
       // Apply the new dimensions and position to the selection box
       selectionBox.style.top = top + 'px';
       selectionBox.style.left = left + 'px';
       selectionBox.style.width = width + 'px';
       selectionBox.style.height = height + 'px';
       selectionBox.style.display = 'block';
-
       // Switch to the green substyle for 100ms upon click
       if (!selectedElement.classList.contains('input')) {
         selectionBox.classList.add('green');
-        setTimeout(function () {
-          selectionBox.classList.remove('green');
-        }, 100);
+        setTimeout(function(){selectionBox.classList.remove('green');},100);
       }
-    } else {
-      selectionBox.style.display = 'none';
-    }
+    } else {selectionBox.style.display = 'none';}
   }
-
-  function updateSelectionBoxNoGreen() {
+  function updateSelectionBoxNoGreen(){
     if (selectedElement) {
       var elementRect = selectedElement.getBoundingClientRect();
       var boxMargin = 4;
-
       var top = elementRect.top - boxMargin;
       var left = elementRect.left - boxMargin;
       var width = elementRect.width + 2 * boxMargin;
       var height = elementRect.height + 2 * boxMargin;
-
       selectionBox.style.top = top + 'px';
       selectionBox.style.left = left + 'px';
       selectionBox.style.width = width + 'px';
       selectionBox.style.height = height + 'px';
       selectionBox.style.display = 'block';
-    } else {
-      selectionBox.style.display = 'none';
-    }
+    } else {selectionBox.style.display = 'none';}
   }
-
-  function updateSelectionBoxScroll() { // going to try to use this to fix the scrolling issue
-    if (selectedElement) {
+  function updateSelectionBoxScroll(){ // going to try to use this to fix the scrolling issue
+    if (selectedElement){
       var elementRect = selectedElement.getBoundingClientRect();
       var boxMargin = 4;
-
       var left = elementRect.left - boxMargin;
       var width = elementRect.width + 2 * boxMargin;
       var height = elementRect.height + 2 * boxMargin;
-
       selectionBox.style.left = left + 'px';
       selectionBox.style.width = width + 'px';
       selectionBox.style.height = height + 'px';
       selectionBox.style.display = 'block';
-    } else {
-      selectionBox.style.display = 'none';
-    }
+    } else {selectionBox.style.display = 'none';}
   }
-
-  // Function to check if an element is interactive (clickable)
-  function checkIfInteractive(element) {
+  function checkIfInteractive(element){
     return (
-      element.classList.contains('clickable') ||
-      element.classList.contains('submit') ||
-      element.tagName === 'A' ||
-      element.tagName === 'INPUT' ||
-      element.tagName === 'TEXTAREA' ||
-      element.isContentEditable
+      (element.classList.contains('clickable') || element.classList.contains('submit')) && !element.classList.contains('noselect')
+      || (element.tagName === 'INPUT' && !element.classList.contains('noselect'))
     );
   }
-
-  // Function to get all interactive elements on the page
-  function getInteractiveElements() {
+  function getInteractiveElements(){
     var allElements = document.querySelectorAll('*');
     var interactiveElements = [];
     for (var i = 0; i < allElements.length; i++) {
-      if (checkIfInteractive(allElements[i])) {
-        interactiveElements.push(allElements[i]);
-      }
+      if (checkIfInteractive(allElements[i])) {interactiveElements.push(allElements[i]);}
     }
     return interactiveElements;
   }
-
   // Function to find the nearest interactive element to a given position
-  
-/*
   function findNearestInteractiveElement(x, y) {
     var interactiveElements = getInteractiveElements();
     var nearestElement = null;
     var minDistance = Number.MAX_SAFE_INTEGER;
-
-    for (var i = 0; i < interactiveElements.length; i++) {
+    for (var i = 0; i < interactiveElements.length; i++){
       var element = interactiveElements[i];
       var rect = element.getBoundingClientRect();
       var centerX = rect.left + rect.width / 2;
       var centerY = rect.top + rect.height / 2;
       var distance = Math.sqrt((x - centerX) ** 2 + (y - centerY) ** 2);
-
-      if (distance < minDistance) {
+      if (distance < minDistance){
         minDistance = distance;
         nearestElement = element;
       }
     }
-
     return nearestElement;
-  } */
-
+  }
   // Event listener to update the selection box for various events
   window.addEventListener('load', resetSelectionBox);
   window.addEventListener('resize', updateSelectionBoxNoGreen);
   window.addEventListener('scroll', updateSelectionBoxScroll);
-
-  // Event listener for mouse click to select an element
-  document.addEventListener('click', function(event) {
+  document.addEventListener('click', function(event){
     var clickedElement = event.target;
     if (checkIfInteractive(clickedElement) && clickedElement !== selectedElement) {
       selectedElement = clickedElement;
       updateSelectionBox();
-    } else { updateSelectionBoxNoGreen(); }
+    } else {updateSelectionBoxNoGreen();}
   });
-
-  document.addEventListener('keydown', function(event) {
+  document.addEventListener('keydown', function(event){
     if (event.key === 'Tab') {
-      event.preventDefault(); // Prevent the default tab behavior
-
+      event.preventDefault();
       var interactiveElements = getInteractiveElements();
       var index = interactiveElements.indexOf(selectedElement);
-
-      // Check if Shift key is pressed for reverse navigation
       if (event.shiftKey) {
         selectedElement = interactiveElements[(index - 1 + interactiveElements.length) % interactiveElements.length];
-      } else {
-        selectedElement = interactiveElements[(index + 1) % interactiveElements.length];
-      }
+      } else {selectedElement = interactiveElements[(index + 1) % interactiveElements.length];}
       updateSelectionBoxNoGreen();
     } else if (event.key === 'Enter') {
       if (selectedElement) {
-        if (selectedElement.tagName === 'INPUT' && selectedElement.type === 'text') {
-          updateSelectionBoxNoGreen();
-          selectedElement.focus();
-        } else {
-          updateSelectionBox();
-          selectedElement.click();
-        }
+        if (selectedElement.tagName === 'INPUT' && selectedElement.type === 'text' || selectedElement.type === 'url' || selectedElement.type === 'email') {
+          updateSelectionBoxNoGreen();selectedElement.click();selectedElement.focus({preventScroll: true });
+        } else {updateSelectionBox();selectedElement.click();}
       }
     }
   });
 });
 
-// dialog logic
-function openDialog() {
-  var dialog = document.getElementById('webtv-dialog');
-  var dialogContainer = document.querySelector('.dialog-overlay');
-  var selectionBox = document.getElementById('selectionbox');
-  var errorSound = document.getElementById('errorSound');
-  setTimeout(function() {
-    errorSound.currentTime = 0;
-    errorSound.play();
-    dialog.setAttribute('open', 'true');
-    dialogContainer.style.display = 'unset';
-	selectionBox.style.display = 'none';
-	}, 2);
-}
-
-function closeDialog() {
-  setTimeout(function() {
-    var dialog = document.getElementById('webtv-dialog');
-    var dialogContainer = document.querySelector('.dialog-overlay');
-    var selectionBox = document.getElementById('selectionbox');
-    dialog.removeAttribute('open');
-    dialogContainer.style.display = 'none';
-    resetSelectionBox();
-  }, 1);
+function resetSelectionBoxIframe(){
+  iframe.contentWindow.resetSelectionBox();
 }
 
 // Button sounds
-document.addEventListener('DOMContentLoaded', function () {
-  var inputSound = document.getElementById('inputSound');
+document.addEventListener('DOMContentLoaded', function(){
   var inputs = document.querySelectorAll('.input');
-  var clickSound = document.getElementById('clickSound');
-  var clickableButtons = document.querySelectorAll('.clickable');
   var submitInputs = document.querySelectorAll('.submit');
+  var clickableButtons = document.querySelectorAll('.clickable');
+  var inputSound = document.getElementById('inputSound');
+  var clickSound = document.getElementById('clickSound');
   var submitSound = document.getElementById('submitSound');
   var inputNoSound = document.querySelectorAll('.inputNoSound');
-
-  function playClickSound() {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  }
-
-  function playInputSound() {
-    inputSound.currentTime = 0;
-    inputSound.play();
-  }
-
-  function playSubmitSound() {
-    submitSound.currentTime = 0;
-    submitSound.play();
-  }
-  
-  function preventSound() {
-    inputSound.pause();
-  }
-
-  // Loop through clickableButtons and attach event listeners
-  for (var i = 0; i < clickableButtons.length; i++) {
-    clickableButtons[i].addEventListener('click', playClickSound);
-  }
-
-  for (var j = 0; j < inputs.length; j++) {
-    inputs[j].addEventListener('click', playInputSound);
-  }
-
-  for (var k = 0; k < submitInputs.length; k++) {
-    submitInputs[k].addEventListener('click', playSubmitSound);
-  }
-
-  for (var l = 0; l < inputNoSound.length; l++) {
-    inputNoSound[l].addEventListener('click', preventSound);
-  }
+  function playClickSound(){clickSound.currentTime = 0; clickSound.play();}
+  function playInputSound(){inputSound.currentTime = 0; inputSound.play();}
+  function playSubmitSound(){submitSound.currentTime = 0; submitSound.play();}
+  function preventSound(){inputSound.pause();}
+  for (var i = 0; i < clickableButtons.length; i++) {clickableButtons[i].addEventListener('click', playClickSound);}
+  for (var j = 0; j < inputs.length; j++) {inputs[j].addEventListener('click', playInputSound);}
+  for (var k = 0; k < submitInputs.length; k++) {submitInputs[k].addEventListener('click', playSubmitSound);}
+  for (var l = 0; l < inputNoSound.length; l++) {inputNoSound[l].addEventListener('click', preventSound);}
 });

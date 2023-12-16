@@ -19,54 +19,53 @@
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
 <div id=selectionbox></div>
 
-<div class=sidebar style=background-color:#3C3C56;>
-  <div class=sidebar-contents>
-    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('Credits.html');">
+<nav class=sidebar aria-label="Sidebar." style=background-color:#3C3C56;>
+  <div class=sidebar-contents aria-label="Sidebar content." aria-role=navigation>
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg title="WebTV Logo" aria-label="WebTV logo. Click to go to the credits page." role=link onclick="linkHandler('Credits.html');">
     <div class="sidebar-border home"></div>
-    <div class="sidebar-link clickable">Setup</div>
+    <div class="sidebar-link clickable" title="Setup" aria-label="Setup link. Click to go to the setup page." role=link onclick="linkHandler('wtv-setup/setup.html');">Setup</div>
     <div class="sidebar-border home"></div>
-    <div class="sidebar-link clickable">Using WebTV</div>
+    <div class="sidebar-link clickable" title="Using WebTV" aria-label="Using WebTV link. Currently non-functional." role=link>Using WebTV</div>
     <div class="sidebar-border home"></div>
-    <div class="sidebar-link clickable" onClick="linkHandler('Community.html');">Community</div>
+    <div class="sidebar-link clickable" title="Community" aria-label="Community link. Click to go to the Community page." role=link onclick="linkHandler('Community.html');">Community</div>
     <div class="sidebar-border home"></div>
   </div>
-  <div class="bottom-right-image home">
-    <img alt="Home Text" src=images/home/Home.svg>
-  </div>
-  <div class=sidebar-shadow></div>
-</div>
+  <div class="bottom-right-image home"></div>
+  <div class=sidebar-shadow aria-hidden=true></div>
+</nav>
 
-<div class="main-content home">
-  <div class=top-bar>
+<main class="main-content home" aria-label="Home page content.">
+  <nav class=top-bar aria-label="Top navigation bar.">
     <table class=top-bar-items>
       <tbody><tr>
-        <td class="top-bar-item clickable" onclick="linkHandler('wtv-mail/Mail.html');"><img src=images/home/mail.png alt="Mail Icon"></td>
-        <td class="top-bar-item clickable"><img src=images/home/favorites.png alt="Favorites Icon"></td>
-        <td class="top-bar-item clickable"><img src=images/home/explore.png alt="Explore Icon"></td>
-        <td class="top-bar-item clickable" onclick="linkHandler('wtv-center/Search.html');"><img src=images/home/search.png alt="Search Icon"></td>
-      </tr>
-    </tbody></table>
-    <table class=top-bar-text>
+        <td class="top-bar-item clickable" aria-label="Mail." onclick="linkHandler('wtv-mail/Mail.html');"><img src=images/home/mail.png alt="Mail Icon"></td>
+        <td class="top-bar-item clickable" aria-label="Favorites. Currently non-functional."><img src=images/home/favorites.png alt="Favorites Icon"></td>
+        <td class="top-bar-item clickable" aria-label="Explore. Currently non-functional."><img src=images/home/explore.png alt="Explore Icon"></td>
+        <td class="top-bar-item clickable" aria-label="Search. Currently non-functional." onclick="linkHandler('wtv-center/Search.html');"><img src=images/home/search.png alt="Search Icon"></td>
+      </tr></tbody>
+    </table>
+    <table class=top-bar-text aria-hidden=true>
       <tbody><tr>
         <td class=top-bar-item-text>Mail</td>
         <td class=top-bar-item-text>Favorites</td>
         <td class=top-bar-item-text>Explore</td>
         <td class=top-bar-item-text>Search</td>
-      </tr>
-    </tbody></table>
-  <div class=top-bar-shadow></div></div>
-  <div class=homepage-content-container>
+      </tr></tbody>
+    </table>
+  </nav>
+  <main class=homepage-content-container aria-label="Main home page content.">
     <h3>Welcome to WebTV HD!</h3>
     This is an incomplete browser-based recreation of Microsoft's WebTV service. Feel free to click around and explore!<br>
     To see more of what this theme has to offer, check out the <a class="clickable" onclick="linkHandler('PageStyleGuide.html');">style reference page</a>.
     <br>It has examples of other WebTV stuff I've implemented, like checkboxes, radio buttons, text styles, and alert dialogs.
-    <ul><h4 style=margin:0;>Links</h4>
+    <ul><h4 style=margin:0; aria-label="List of links">Links</h4>
       <li><a class=clickable onclick="linkHandler('1999Home.html');">1999 Home page</a> - A later revision of the home page.</li>
       <li><a class=clickable onclick="linkHandler('Music.html');">Music</a> - Listen to some WebTV music and check out the audioscope!</li>
       <li><a class=clickable onclick="linkHandler('PowerOn.html');">PowerOn page</a> - This is where you started. It simulates the power-on, dialing, and splash screen sequences of a box.</li>
+      <li><a class=clickable onclick="linkHandler('TV/TVHome.html');">TV Home</a> - Check out the TV Home page!</li>
       <li><a class=clickable onclick="linkHandler('Credits.html');">Credits</a> - See who made this project possible!</li>
     </ul>
     Additionally, Mail, Search, Community, and the options bar are functional as well - try clicking on the status bar!
-  </div>
-</div>
+  </main>
+</main>
 </body></html>

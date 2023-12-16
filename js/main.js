@@ -1,60 +1,40 @@
 // Button sounds
-
-document.addEventListener('DOMContentLoaded', function () {
-  var inputSound = document.getElementById('inputSound');
+document.addEventListener('DOMContentLoaded', function(){
   var inputs = document.querySelectorAll('.input');
-  var clickSound = document.getElementById('clickSound');
-  var clickableButtons = document.querySelectorAll('.clickable');
   var submitInputs = document.querySelectorAll('.submit');
+  var clickableButtons = document.querySelectorAll('.clickable');
+  var inputSound = document.getElementById('inputSound');
+  var clickSound = document.getElementById('clickSound');
   var submitSound = document.getElementById('submitSound');
   var inputNoSound = document.querySelectorAll('.inputNoSound');
-
-  function playClickSound() {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  }
-
-  function playInputSound() {
-    inputSound.currentTime = 0;
-    inputSound.play();
-  }
-
-  function playSubmitSound() {
-    submitSound.currentTime = 0;
-    submitSound.play();
-  }
-  
-  function preventSound() {
-    inputSound.pause();
-  }
-
-  // Loop through clickableButtons and attach event listeners
-  for (var i = 0; i < clickableButtons.length; i++) {
-    clickableButtons[i].addEventListener('click', playClickSound);
-  }
-
-  for (var j = 0; j < inputs.length; j++) {
-    inputs[j].addEventListener('click', playInputSound);
-  }
-
-  for (var k = 0; k < submitInputs.length; k++) {
-    submitInputs[k].addEventListener('click', playSubmitSound);
-  }
-
-  for (var l = 0; l < inputNoSound.length; l++) {
-    inputNoSound[l].addEventListener('click', preventSound);
-  }
-
+  function playClickSound(){ clickSound.currentTime = 0; clickSound.play(); }
+  function playInputSound(){ inputSound.currentTime = 0; inputSound.play(); }
+  function playSubmitSound(){ submitSound.currentTime = 0; submitSound.play(); }
+  function preventSound(){ inputSound.pause(); }
+  for (var i = 0; i < clickableButtons.length; i++) { clickableButtons[i].addEventListener('click', playClickSound); }
+  for (var j = 0; j < inputs.length; j++) { inputs[j].addEventListener('click', playInputSound); }
+  for (var k = 0; k < submitInputs.length; k++) { submitInputs[k].addEventListener('click', playSubmitSound); }
+  for (var l = 0; l < inputNoSound.length; l++) { inputNoSound[l].addEventListener('click', preventSound); }
 });
 
-// selection box
-
-document.addEventListener('DOMContentLoaded', function () {
+// Selection box
+document.addEventListener('DOMContentLoaded', function(){
   var selectionBox = document.getElementById('selectionbox');
   var selectedElement = null;
+  
+  window.highlight = function(element) {
+    selectedElement = element;
+    element.focus({ preventScroll: true });
+    updateSelectionBoxNoGreen();
+  }
+  
+  window.resetSelectionBox = function(){
+    selectedElement = null;
+    updateSelectionBoxNoGreen();
+  }
 
   // Update the selection box position and size
-  function updateSelectionBox() {
+  function updateSelectionBox(){
     if (selectedElement) {
       var elementRect = selectedElement.getBoundingClientRect();
       var boxMargin = 4; // Adjust this value to set the margin between the selected element and the selection box
@@ -75,16 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // Switch to the green substyle for 100ms upon click
       if (!selectedElement.classList.contains('input')) {
         selectionBox.classList.add('green');
-        setTimeout(function () {
+        setTimeout(function(){
           selectionBox.classList.remove('green');
         }, 100);
       }
-    } else {
-      selectionBox.style.display = 'none';
-    }
+    } else { selectionBox.style.display = 'none'; }
   }
 
-  function updateSelectionBoxNoGreen() {
+  function updateSelectionBoxNoGreen(){
     if (selectedElement) {
       var elementRect = selectedElement.getBoundingClientRect();
       var boxMargin = 4;
@@ -99,12 +77,10 @@ document.addEventListener('DOMContentLoaded', function () {
       selectionBox.style.width = width + 'px';
       selectionBox.style.height = height + 'px';
       selectionBox.style.display = 'block';
-    } else {
-      selectionBox.style.display = 'none';
-    }
+    } else { selectionBox.style.display = 'none'; }
   }
 
-  function updateSelectionBoxScroll() { // going to try to use this to fix the scrolling issue
+  function updateSelectionBoxScroll(){ // going to try to use this to fix the scrolling issue
     if (selectedElement) {
       var elementRect = selectedElement.getBoundingClientRect();
       var boxMargin = 4;
@@ -117,25 +93,19 @@ document.addEventListener('DOMContentLoaded', function () {
       selectionBox.style.width = width + 'px';
       selectionBox.style.height = height + 'px';
       selectionBox.style.display = 'block';
-    } else {
-      selectionBox.style.display = 'none';
-    }
+    } else { selectionBox.style.display = 'none'; }
   }
 
   // Function to check if an element is interactive (clickable)
   function checkIfInteractive(element) {
     return (
-      element.classList.contains('clickable') ||
-      element.classList.contains('submit') ||
-      element.tagName === 'A' ||
-      element.tagName === 'INPUT' ||
-      element.tagName === 'TEXTAREA' ||
-      element.isContentEditable
+      (element.classList.contains('clickable') || element.classList.contains('submit')) && !element.classList.contains('noselect')
+      || (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.isContentEditable) && !element.classList.contains('noselect')
     );
   }
 
   // Function to get all interactive elements on the page
-  function getInteractiveElements() {
+  function getInteractiveElements(){
     var allElements = document.querySelectorAll('*');
     var interactiveElements = [];
     for (var i = 0; i < allElements.length; i++) {
@@ -147,8 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Function to find the nearest interactive element to a given position
-  
-/*
   function findNearestInteractiveElement(x, y) {
     var interactiveElements = getInteractiveElements();
     var nearestElement = null;
@@ -168,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     return nearestElement;
-  } */
+  }
 
   // Event listener to update the selection box for various events
   window.addEventListener('load', resetSelectionBox);
@@ -186,23 +154,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Tab') {
-      event.preventDefault(); // Prevent the default tab behavior
-
+      event.preventDefault();
       var interactiveElements = getInteractiveElements();
       var index = interactiveElements.indexOf(selectedElement);
-
-      // Check if Shift key is pressed for reverse navigation
       if (event.shiftKey) {
         selectedElement = interactiveElements[(index - 1 + interactiveElements.length) % interactiveElements.length];
-      } else {
-        selectedElement = interactiveElements[(index + 1) % interactiveElements.length];
-      }
+      } else { selectedElement = interactiveElements[(index + 1) % interactiveElements.length]; }
       updateSelectionBoxNoGreen();
     } else if (event.key === 'Enter') {
       if (selectedElement) {
         if (selectedElement.tagName === 'INPUT' && selectedElement.type === 'text') {
-          updateSelectionBox();
-          selectedElement.focus();
+          updateSelectionBoxNoGreen();
+          selectedElement.focus({ preventScroll: true });
         } else {
           updateSelectionBox();
           selectedElement.click();
@@ -212,41 +175,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// dialog logic
-
-function resetSelectionBox() {
-  document.getElementById('selectionbox').style.display = 'none';
-}
-
-function openDialog() {
-  var dialog = document.getElementById('webtv-dialog');
-  var dialogContainer = document.querySelector('.dialog-overlay');
-  var selectionBox = document.getElementById('selectionbox');
-  var errorSound = document.getElementById('errorSound');
-  setTimeout(function() {
-    errorSound.currentTime = 0;
-    errorSound.play();
-    dialog.setAttribute('open', 'true');
-    dialogContainer.style.display = 'unset';
-	resetSelectionBox();
-	}, 2);
-}
-
-function closeDialog() {
-  setTimeout(function() {
-    var dialog = document.getElementById('webtv-dialog');
-    var dialogContainer = document.querySelector('.dialog-overlay');
-    var selectionBox = document.getElementById('selectionbox');
-    dialog.removeAttribute('open');
-    dialogContainer.style.display = 'none';
-    resetSelectionBox();
-  }, 1);
-}
-
 // link handler - makes sure that links don't get activated until the selection box sound plays
-
 function linkHandler(url) {
-  setTimeout(function() {
+  setTimeout(function(){
     location.href = url;
   }, 235);
 }
@@ -256,14 +187,40 @@ function linkHandler(url) {
 // Attempt at making loading progress indicators work
 document.addEventListener('progress', function(event) {
   if (event.lengthComputable) {
-    const percentLoaded = (event.loaded / event.total) * 100;
+    var percentLoaded = (event.loaded / event.total) * 100;
     window.parent.postMessage({ type: 'loading', progress: percentLoaded }, '*');
   }
 });
 
-// redirect if the user isn't using the iframe page
-window.addEventListener('load', function() {
-  if (window.self == window.top) {
-    window.location.href = 'index.html';
+// Alert handler
+function showAlert(text) {
+  window.parent.postMessage({ type: 'text', text: text }, '*');
+}
+
+// Page name updater
+document.addEventListener('DOMContentLoaded', function(){
+  var observer = new MutationObserver(updatePageName);
+  function updatePageName(){
+    var title = document.title;
+    window.parent.postMessage({ title: title }, '*');
+  }
+  function trackName(){
+    updatePageName();
+    observer.disconnect();
+    observer.observe(document.querySelector('title'), { subtree: true, characterData: true, childList: true });
+  }
+  window.addEventListener('load', trackName);
+});
+
+// Loading indicator
+window.addEventListener('unload', function(e) {
+  e.preventDefault();
+  window.parent.postMessage({type: 'loading'}, '*');
+});
+
+// redirect if the user isn't using the iframe page - extra page thing is for a future backend... someday
+window.addEventListener('load', function(){
+  if(window.self == window.top) {
+    window.location.href = 'index.html?page=' + location.href;
   }
 });

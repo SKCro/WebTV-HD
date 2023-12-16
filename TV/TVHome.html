@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>TV Home</title>
+  <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel=stylesheet type=text/css href=../css/service.css>
+  <link rel=stylesheet type=text/css href=../css/tv.css>
+  <link rel="shortcut icon" href=Icon.png>
+  <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
+  <script src=../js/main.js></script>
+  <script src=../js/tv.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+  <meta name="display" content="noScroll noStatus">
+</head><body>
+<audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
+<div id=selectionbox></div>
+
+<nav class="sidebar tv">
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo." onclick="linkHandler('../Home.html');">
+    <div class="sidebar-border bwgrad"></div>
+    <div class="sidebar-link clickable" onclick="linkHandler('../Home.html');">Web Home</div>
+    <div class="sidebar-border bwgrad"></div>
+    <div class="sidebar-link clickable">Settings</div>
+    <div class="sidebar-border bwgrad"></div>
+    <div class="sidebar-link clickable">TV Listings</div>
+    <div class="sidebar-border bwgrad"></div>
+    <div class="sidebar-link clickable">Help</div>
+    <div class="sidebar-border bwgrad"></div>
+  </div>
+</nav>
+<div class=mobile-warning>Due to layout and design issues that <s>I'm too lazy to resolve</s> currently cannot be resolved, you'll need to turn your device sideways in order to use this page.</div>
+<main class="main-content tv">
+  <header class=top-row>
+    <div class=tv-home-text title="hi there, curious hoverer!" aria-hidden=true></div>
+    <div class=clock aria-label="Clock.">
+      <div id=date title="Current date">someday</div>
+      <div id=time title="Current time">time o'clock</div>
+    </div>
+  </header>
+  <main class=middle-row>
+    <main class=tv-container>
+      <div class="tv-inset top" aria-hidden=true></div>
+      <div class="tv-inset left" aria-hidden=true></div>
+      <iframe class=clickable src="https://www.youtube-nocookie.com/embed/MhzojvS4B5I?autoplay=1" id=tvVideo allow="autoplay; encrypted-media" aria-role=application allowfullscreen></iframe>
+      <div class="tv-inset right" aria-hidden=true></div>
+      <div class="tv-inset bottom" aria-hidden=true></div>
+    </main>
+    <aside class=source-container>
+      <div id=channel title="Channel">AV</div>
+      <div id=channelName title="Channel name">YouTube</div>
+      <div class=source-bg title="Side gradient :P" aria-hidden=true></div>
+    </aside>
+  </main>
+  <footer class=bottom-row>
+    <div id=programTitle class=clickable title="Program title">Getting Started with WebTV</div>
+    <div id=programTime title="Program airing time"></div>
+  </footer>
+  <nav class=bottom-buttons>
+    <button class="bottom-button clickable" aria-label="TV Favorites button. Currently non-functional.">TV Favorites</button>
+    <button class="bottom-button clickable" aria-label="TV Planner button. Currently non-functional.">TV Planner</button>
+    <button class="bottom-button clickable" aria-label="VCR control button. Currently non-functional.">VCR</button>
+    <button class="bottom-button clickable" aria-label="TV Sites button. Currently non-functional.">TV Sites</button>
+  </nav>
+</main>
+</body></html>

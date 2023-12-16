@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>Dialing options</title>
+  <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel=stylesheet type=text/css href=../css/service.css>
+  <link rel=stylesheet type=text/css href=../css/setup.css>
+  <link rel="shortcut icon" href=../Icon.png>
+  <link rel=apple-touch-icon href=../images/AppleTouchIcon.png>
+  <script src=../js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head><body>
+<audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
+<div id=selectionbox></div>
+
+<div class=sidebar>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=../../images/WebTVJewel.svg alt="WebTV Logo." onclick="linkHandler('../Home.html');">
+    <div class="sidebar-border"></div>
+  </div>
+  <div class="bottom-right-image setup"></div>
+  <div class=sidebar-shadow></div>
+</div>
+
+<div class="main-content setup">
+  <h2>Dialing options</h2>
+  <div class=options-table>
+    <div class=options-listing>
+      <div class=listing-link><a class=clickable onclick="showAlert('These settings aren\'t applicable because WebTV HD is simply a recreation, and does not actually use dial-up.');">Basic</a></div>
+      <div class=listing-description>Use tone/pulse dialing or choose a dialing prefix</div>
+    </div>
+    <div class=options-listing>
+      <div class=listing-link><a class=clickable onclick="showAlert('These settings aren\'t applicable because WebTV HD is simply a recreation, and does not actually use dial-up.');">Call waiting</a></div>
+      <div class=listing-description>Call waiting can be turned off automatically</div>
+    </div>
+    <div class=options-listing>
+      <div class=listing-link><a class=clickable onclick="showAlert('These settings aren\'t applicable because WebTV HD is simply a recreation, and does not actually use dial-up.');">Use an ISP</a></div>
+      <div class=listing-description>Save money if you dial long distance to WebTV HD</div>
+    </div>
+    <div class=options-listing>
+      <div class=listing-link><a class=clickable onclick="showAlert('These settings aren\'t applicable because WebTV HD is simply a recreation, and does not actually use dial-up.');">Advanced</a></div>
+      <div class=listing-description>Set audible dialing, dialing speed, and wait to dial</div>
+    </div>
+    <div class=options-listing>
+      <div class=listing-link><a class=clickable onclick="showAlert('These settings aren\'t applicable because WebTV HD is simply a recreation, and does not actually use dial-up.');">Reset</a></div>
+      <div class=listing-description>Original settings for dialing options</div>
+    </div>
+  </div>
+  <div class=border><hr class=print-only></div>
+  <button class="ButtonBorder2 submit" onclick="setTimeout(function(){history.back();},265);">Done</button>
+</div>
+</body></html>

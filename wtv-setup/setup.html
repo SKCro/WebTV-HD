@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html><head>
+  <title>Setup</title>
+  <link rel=stylesheet type=text/css href=../css/style.css>
+  <link rel=stylesheet type=text/css href=../css/service.css>
+  <link rel=stylesheet type=text/css href=../css/setup.css>
+  <link rel="shortcut icon" href=../Icon.png>
+  <link rel=apple-touch-icon href=../images/AppleTouchIcon.png>
+  <script src=../js/main.js></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="application-name" content="WebTV HD">
+</head><body>
+<audio id=clickSound src=../audio/click.mp3 preload=auto></audio>
+<audio id=inputSound src=../audio/inputClick.mp3 preload=auto></audio>
+<audio id=submitSound src=../audio/submitClick.mp3 preload=auto></audio>
+<audio id=errorSound src=../audio/error.mp3 preload=auto></audio>
+<audio id=panelUp src=../audio/up.mp3 preload=auto></audio>
+<audio id=panelDown src=../audio/down.mp3 preload=auto></audio>
+<div id=selectionbox></div>
+
+<div class=sidebar>
+  <div class=sidebar-contents>
+    <img class="sidebar-logo clickable" src=../../images/WebTVJewel.svg alt="WebTV Logo" onclick="linkHandler('../Home.html');">
+    <div class="sidebar-border"></div>
+  </div>
+  <div class="bottom-right-image setup"></div>
+  <div class=sidebar-shadow></div>
+</div>
+
+<div class="main-content setup">
+<h2 class=setup-for>Setup for SKCro</h2>
+<div class=border><hr class=print-only></div>
+  <div class=settings-list>
+    <ul class="arrowed-list black-font">
+      <li><a class=clickable onclick="showAlert('Mail settings cannot be changed because there is no backend.');">Mail</a></li>
+      <li><a class=clickable onclick="showAlert('Password settings cannot be changed because there is no backend.');">Password</a></li>
+      <li><a class=clickable onclick="showAlert('These settings aren\'t applicable because WebTV HD is a web application.');">Television</a></li>
+      <li><a class=clickable onclick="showAlert('To change the text size, zoom in or out using your browser\'s zoom function.');">Text size</a></li>
+      <li><a class=clickable onclick="showAlert('Background music settings cannot be changed for now. Use the options panel to toggle background music.');">Music</a></li>
+      <li><a class=clickable onclick="showAlert('To change printing settings, use your device\'s Settings app.');">Printing</a></li>
+      <li><a class=clickable onclick="showAlert('The on-screen keyboard is currently unavailable.');">Keyboard</a></li>
+      <li><a class=clickable onclick="showAlert('User settings cannot be changed because there is no backend.');">Extra users</a></li>
+      <li><a class=clickable onclick="linkHandler('phone.html');">Dialing</a></li>
+    </ul>
+    <ul class=descriptions>
+      <li>Signature and more</li>
+      <li>Change your password</li>
+      <li>Options for your TV</li>
+      <li>Make text bigger or smaller</li>
+      <li>Play background songs</li>
+      <li>Change how you print</li>
+      <li>Choose an on-screen keyboard</li>
+      <li>Add, change, or remove users</li>
+      <li>Connecting to WebTV HD</li>
+    </ul>
+  </div>
+<div class=border><hr class=print-only></div>
+<button class="ButtonBorder2 submit" onclick="setTimeout(function(){history.back();},265);">Done</button>
+</div>
+</body></html>

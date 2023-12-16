@@ -1,0 +1,96 @@
+.main-content.setup {
+  padding: 2%;
+}
+
+.setup-for {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.settings-list {
+  display: grid;
+  justify-content: left;
+}
+
+.arrowed-list {
+  color: var(--webtv-link);
+  padding-left: 2.2rem;
+}
+
+.arrowed-list li::before {
+  background-color: var(--webtv-link);
+}
+
+.arrowed-list li, .descriptions li {
+  margin-top: 0.3vh;
+  margin-bottom: 0.3vh;
+}
+
+.descriptions {
+  padding-left: 8rem;
+}
+
+.arrowed-list, .descriptions {
+  grid-row: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: grid;
+}
+
+.descriptions li::marker {
+  content: '';
+}
+
+.options-table {
+  display: grid;
+  grid: repeat(3,7vw) / auto-flow;
+  margin-top: 2rem;
+}
+
+.options-listing {
+  display: grid;
+  width: 20vw;
+  height: 6.5vw;
+}
+
+.listing-link {
+  font-family: var(--black-font);
+  font-size: 1.6rem;
+}
+
+.listing-description {
+  
+}
+
+.submit {
+  width: 7.5rem;
+  font-size: 1.4rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+@media (max-width: 760px) {
+  .settings-list {
+    
+  }
+
+  .arrowed-list {
+    
+  }
+
+  .arrowed-list li, .descriptions li {
+    
+  }
+
+  .descriptions {
+    
+  }
+
+  .descriptions li::marker {
+    
+  }
+
+  .submit {
+    font-size: 1.2rem;
+  }
+}

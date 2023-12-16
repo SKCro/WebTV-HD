@@ -19,32 +19,31 @@
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
 <div id=selectionbox></div>
 
-<div class=sidebar style=background-color:#8C6A2E;>
+<nav class=sidebar style=background-color:#8C6A2E;>
   <div class=sidebar-contents>
-    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo" onClick="linkHandler('Home.html');">
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo" onclick="linkHandler('Home.html');">
     <div class=sidebar-border style="background-image: linear-gradient(#5a4521 40%, #C0954A 85%);"></div>
   </div>
-  <div class="bottom-right-image credits">
-    <img alt="Setup Text" src=images/Credits.svg>
-  </div>
+  <div class="bottom-right-image credits"></div>
   <div class=sidebar-shadow></div>
-</div>
+</nav>
 
-<div class=main-content>
+<main class=main-content>
   <h1>Credits</h1>
   <p>This project would not possible without these awesome people:</p>
   <ul>
     <li>Steve Perlman, Bruce Leak, and Phil Goldman, for creating WebTV</li>
     <li>WebTV employees, for making the service last long</li>
-    <li><a class=clickable onClick="linkHandler('https://github.com/JarHead4');">JarHead</a>, for his <a class=clickable onClick="linkHandler('https://webtv.zone/');">WebTV Redialed</a> project (which was inspiration)</li>
-    <li><a class=clickable onClick="linkHandler('https://github.com/Nitrate92');">nitrate92</a>, for helping and providing useful advice</li>
-    <li><a class=clickable onClick="linkHandler('https://github.com/PajamaFrix');">pjfrix</a>, for letting me use his code for the progress bar and light button</li>
-    <li><a class=clickable onClick="linkHandler('https://www.deviantart.com/blueamnesiac');">BLUEamnesiac</a>, for the sweet HD icons used on the home screen</li>
-    <li>The <a class=clickable onClick="linkHandler('https://discord.gg/qke279EUa8');">WebTV Discord server</a>, for being a great community</li>
-    <li style=font-size:1.2rem;>Pink_Sheep, for his ideas</li>
+    <li><a class=clickable onclick="window.open('https://github.com/JarHead4', '_new');">JarHead</a>, for his <a class=clickable onClick="linkHandler('https://webtv.zone/');">WebTV Redialed</a> project (which was inspiration)</li>
+    <li><a class=clickable onclick="window.open('https://github.com/Nitrate92', '_new');">nitrate92</a>, for helping and providing useful advice</li>
+    <li><a class=clickable onclick="window.open('https://github.com/PajamaFrix', '_new');">pjfrix</a>, for letting me use his code for the progress bar and light button</li>
+    <li>webcd, for the sweet Dialing theme remaster</li>
+    <li><a class=clickable onclick="window.open('https://www.deviantart.com/blueamnesiac', '_new');">BLUEamnesiac</a>, for the sweet HD icons used on the home screen</li>
+    <li>The <a class=clickable onclick="window.open('https://discord.gg/qke279EUa8', '_new');">WebTV Discord server</a>, for being a great community</li>
+    <li class=pink-sheep>Pink_Sheep, for his ideas</li>
   </ul>
-  <p style=margin-bottom:0;>And, of course,</p><h2 style=margin-top:0;>you!</h2><p style=margin-top:0.5rem;><b>Thank you</b> for checking out my code.</p>
+  <p style=margin-bottom:0;>And, of course,</p><h3 style=margin:0;>you!</h2><p><b>Thank you</b> for checking out my project.</p>
   <div class=border><hr class=print-only></div>
-  <button class="submit ButtonBorder2" onClick="linkHandler('Home.html');">Home</button>
-</div>
+  <button class="submit ButtonBorder2" aria-label="Go home" onclick="linkHandler('Home.html');">Home</button>
+</main>
 </body></html>

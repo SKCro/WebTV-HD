@@ -16,13 +16,13 @@
   padding: 1%;
 }
 
-.community-box .title {
+.title {
   color: #fff;
   font-size: 2.5rem;
-  font-family: 'Helvetica Now Display Black', Arial Black, Helvetica, sans-serif;
+  font-family: var(--black-font);
 }
 
-.community-box .description {
+.description {
   word-wrap: break-word;
 }
 
@@ -33,13 +33,13 @@
 }
 
 .bottom-right-image.community {
-  max-height: 25vw;
-  height: 25vw;
+  height: 24vw;
+  background-image: url('../images/Community.svg');
 }
  
 /* Icons */
 
-.community-box .icon {
+.icon {
   width: 8rem;
   margin-right: 5rem;
   height: 8rem;
@@ -48,19 +48,41 @@
   background-size: contain;
 }
 
-.community-box .pagebuilder {
+.pagebuilder {
   background-image: url(../images/Discord.svg);
 }
 
-.community-box .aroundtown {
+.aroundtown {
   background-image: url(../images/SKCro.svg);
+  background-size: 80%;
   filter: drop-shadow(0.2rem 0.2rem 2px black);
 }
 
-.community-box .chat {
+.chat {
   background-image: url(../images/ChatBubble.svg);
 }
 
-.community-box .discuss {
+.discuss {
   background-image: url(../images/ChatBubble.svg);
+}
+
+@media (max-width: 760px) {
+  .bottom-right-image.community {
+    height: 70vw;
+    width: 15vw;
+  }
+
+  .title {
+    color: #fff;
+    font-size: 2rem;
+    font-family: var(--black-font);
+  }
+
+  .icon {
+    margin-right: 2rem;
+  }
+
+  .box-outline {
+    width: 93vw !important;
+  }
 }

@@ -37,9 +37,7 @@
     <div class="sidebar-link clickable">Forward</div>
     <div class="sidebar-border mail"></div>
   </div>
-  <div class="bottom-right-image mail">
-    <img alt="Mail Text" src=images/sidebarText.svg>
-  </div>
+  <div class="bottom-right-image mail"></div>
   <div class=sidebar-shadow></div>
 </div>
 
@@ -54,7 +52,7 @@
         </tr>
         <tr>
           <td class=date>Date:</td>
-          <td id=emailDateRecieved>Just Now</td>
+          <td id=emailDateRecieved>Just Now (okay not really)</td>
         </tr>
         <tr>
           <td class=to>To:</td>
@@ -78,22 +76,20 @@
       <style>body{animation:none;}</style>
       <meta charset='UTF-8'>
       </head><body>
-        <p>Welcome to WebTV HD!</p>
-        <p>This is a project aiming to replicate the look and feel of the WebTV service. I've gotten a lot of the base WebTV stuff down, including (but not limited to):</p>
+        <p><b>Welcome to WebTV HD!</b></p>
+        <p>This is a project aiming to replicate the look, feel, and some functionality of the WebTV service. I've gotten a lot of the base WebTV stuff down, including (but not limited to):</p>
     	<ul><li>Colors and fonts</li><li>Some input styles</li><li>Dialog boxes</li><li>More stuff I can't name off the top of my head</li></ul>
     	<p>There's also a lot of stuff I plan to reimplement, like...</p>
-    	<ul><li>Page Builder styles</li><li>Other service pages like Favorites and Search</li><li>TV Home</li><li>More stuff I, again, can't really think of right now</li></ul>
+    	<ul><li>Some Page Builder styles</li><li>Other service pages like Favorites and Search</li><li>TV Home</li><li>Loading indicators and fade transitions</li><li>More stuff I, again, can't really think of right now</li></ul>
         <p>Thanks for checking out my project!</p>
     	<p>- SKCro</p>
-      </body></html>
-    "></iframe>
+      </body></html>"></iframe>
   </div>
   <script>
     var email = document.getElementById('emailContent');
     function fitEmail() {
-      var email = document.getElementById('emailContent');
       var contentHeight = email.contentWindow.document.body.scrollHeight;
-      email.style.height = contentHeight + 32 + 'px';
+      email.style.height = contentHeight + 24 + 'px';
     }
     email.onload = fitEmail;
   </script>

@@ -3,6 +3,7 @@
   <title>Search</title>
   <link rel=stylesheet type=text/css href=../css/style.css>
   <link rel=stylesheet type=text/css href=../css/service.css>
+  <link rel=stylesheet type=text/css href=../css/search.css>
   <link rel="shortcut icon" href=../Icon.png>
   <link rel=apple-touch-icon href=../images/AppleTouchIcon.png>
   <script src=../js/main.js></script>
@@ -27,16 +28,13 @@
     <div class="sidebar-link clickable">How to</div>
     <div class="sidebar-border search"></div>
   </div>
-  <div class=bottom-right-image>
-    <img alt="Search Text" src=images/sidebarSearch.svg>
-  </div>
+  <div class="bottom-right-image search"></div>
   <div class=sidebar-shadow></div>
 </div>
 
 <div class=main-content>
   <h2>Search the Web</h2>
-  <br>
-  <p style=margin-top:1rem;>What are you looking for?</p>
+  <p>What are you looking for?</p>
   <form onsubmit="search(event);">
     <input type="text" id="q">
     <input type="submit" value="Search" class="ButtonBorder2 submit">

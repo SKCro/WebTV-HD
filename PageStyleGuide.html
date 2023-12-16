@@ -18,18 +18,7 @@
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
 <div id=selectionbox></div>
 
-<div class=dialog-overlay>
-  <dialog id=webtv-dialog>
-    <div class=dialog-message-container>
-      <div class=dialog-logo></div>
-      <div class=dialog-message>WebTV ran into a technical problem. Please try again.</div>
-    </div>
-    <div class=dialog-separator><hr></div>
-    <button class="dialog-button submit" onClick=closeDialog();>Continue</button>
-  </dialog>
-</div>
-
-<div class=sidebar>
+<nav class=sidebar>
   <div class=sidebar-contents>
     <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick="linkHandler('Home.html');">
     <div class=sidebar-border></div>
@@ -42,40 +31,43 @@
     <div class="sidebar-link clickable">Link 4</div>
     <div class=sidebar-border></div>
   </div>
-  <div class=bottom-right-image>
-    <img alt="Setup Text" src=images/Setup.svg>
-  </div>
+  <div class="bottom-right-image setup"></div>
   <div class=sidebar-shadow></div>
-</div>
+</nav>
 
-<div class=main-content>
+<main class=main-content>
   <h1>This is a header.</h1>
   <p>This is a paragraph. Text content will be in the Helvetica font.<br>This is another sentence in the same paragraph. Any words that are not broken up via &lt;br&gt; tags will be wrapped to fit.</p>
   <h2>This is a sub-header.</h2>
   <p>This is another paragraph. <b>This is bold text.</b> <i>This is italic text.</i><br><b><i>This is both bold and italic text.</i></b> <a class=clickable>This is a link.</a></p>
 
-  <div class=input-container>
+  <div class=input-container aria-label="Input container for text box.">
     <label for=Textbox1>This is the textbox's flavor text.</label>
-    <input type=text name=Textbox id=Textbox1 placeholder="Textbox placeholder.">
+    <input type=text name=Textbox id=Textbox1 aria-label="Example text box." placeholder="Textbox placeholder.">
   </div>
 
-  <div class=input-container>
+  <div class=input-container aria-label="Input container for checkbox.">
     <label for=myCheckbox>This is the checkbox's flavor text.</label>
-      <input type=checkbox id=myCheckbox class=input>
+    <input type=checkbox id=myCheckbox class=input aria-label="Example checkbox.">
   </div>
 
-  <div class=input-container>
+  <div class=input-container aria-label="Input container for radio buttons.">
     <label for=radio-buttons>This is the flavor text for radio buttons.</label>
-    <div class=webtv-radio-buttons id=radio-buttons>
-      <label for=radio1>
-        <input type=radio name=radioButton id=radio1 class=input> Option 1</label>
-      <label for=radio2>
-        <input type=radio name=radioButton id=radio2 class=input> Option 2</label>
+    <div class=radio-buttons id=radio-buttons>
+      <input type=radio name=radioButton id=radio1 class=input style=grid-row:1; aria-label="Example radio button 1.">
+      <label for=radio1 style=grid-row:1;>Option 1</label>
+      <input type=radio name=radioButton id=radio2 class=input aria-label="Example radio button 2.">
+      <label for=radio2>Option 2</label>
     </div>
   </div>
 
+  <div class=input-container aria-label="Input container for buttons." style=margin-top:1.5rem;>
+    <button class=clickable name="Default button style" style=height:1.8rem;>Dialog button/ButtonBorder1</button>
+    <button class="ButtonBorder2 clickable" name="Service-page button style" style=float:none;margin-left:0;>Service-page button/ButtonBorder2</button>
+    <button class="ButtonBorder3 clickable" name="Alternate dialog button style">Alternate dialog button/ButtonBorder3</button>
+  </div>
+
   <div class=border><hr class=print-only></div>
-  <button class="ButtonBorder2 submit">Button</button>
-  <button class="ButtonBorder2 submit" onClick=openDialog();>Dialog</button>
-</div>
+  <button class="ButtonBorder2 submit" name="Show an example alert dialog" aria-label="Click to show an example alert dialog." onclick="showAlert('WebTV ran into a technical problem. Please try again.');">Show Alert</button>
+</main>
 </body></html>

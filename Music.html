@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href=Icon.png>
   <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
   <script src=js/main.js></script>
-  <script src=https://cdn.jsdelivr.net/gh/Sgeo/webtv-audioscope@1.1/webtv-audioscope.js></script>
+  <script src=js/audioscope.js></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="application-name" content="WebTV HD">
@@ -22,38 +22,38 @@
 <audio id=panelDown src=audio/down.mp3 preload=auto></audio>
 <div id=selectionbox></div>
 
-<div class=sidebar>
+<nav class=sidebar>
   <div class=sidebar-contents>
-    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." onClick="linkHandler('Home.html');">
-    <div class="sidebar-border bwgrad"></div>
+    <img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page." aria-label="WebTV Logo - click to go to the home page." aria-role=link onClick="linkHandler('Home.html');">
+    <div class="sidebar-border bwgrad"></div></div>
   </div>
-  <div class=sidebar-shadow></div>
-</div>
+  <div class=sidebar-shadow aria-hidden=true></div>
+</nav>
 
-<div class=main-content>
-  <div class=header>
+<main class=main-content>
+  <header class=header>
     <h2 id=top>WebTV Music</h2>
     <p id=toptext>Boogie on down!</p>
     <webtv-audioscope class=audioscope1 width=100% height=15vh bgcolor=#242424 leftoffset=-4% rightoffset=4% gain=1></webtv-audioscope>
     <webtv-audioscope class=audioscope2 width=100% height=5vh bgcolor=#242424 gain=0></webtv-audioscope>
-  </div>
+  </header>
   <div class=song-list>
     <h3 id=songs>Songs</h3><h4>Built In</h4>
     <div class=song-row>
       <div class=song-container>
         <div class=song-title>Dialing.MID Remaster<br></div>
         <div class=song-artist>Brian Salter/webcd</div>
-        <audio tabindex=0 src=audio/dialing.mp3 controls></audio>
+        <audio src=audio/music/ROMCache/dialing.mp3 controls></audio>
       </div>
       <div class=song-container>
         <div class=song-title>The Modem Song<br>(Prealpha Dialing)</div>
         <div class=song-artist>Peter Drescher</div>
-        <audio tabindex=0 src=audio/music/prealphaDialing.mp3 controls></audio>
+        <audio src=audio/music/ROMCache/prealphaDialing.mp3 controls></audio>
       </div>
       <div class=song-container>
-        <div class=song-title>Splash (Uncompressed)</div>
-        <div class=song-artist>Thomas Dolby</div>
-        <audio tabindex=0 src=audio/splash.mp3 controls></audio>
+        <div class=song-title>AOL TV Dialing Remaster</div>
+        <div class=song-artist>Unknown/SKCro</div>
+        <audio src=audio/music/other/aoltv.mp3 controls></audio>
       </div>
     </div>
     <h4>Extras</h4>
@@ -61,27 +61,27 @@
       <div class=song-container>
         <div class=song-title>Buddy Holly</div>
         <div class=song-artist>Weezer</div>
-        <audio tabindex=0 src=audio/music/weezer.mp3 id=weezer controls></audio>
+        <audio src=audio/music/other/weezer.mp3 id=weezer controls></audio>
       </div>
       <div class=song-container>
         <div class=song-title>SMS JP BIOS</div>
         <div class=song-artist>Hiroshi Kawaguchi</div>
-        <audio tabindex=0 src=audio/music/jbiosClassic.mp3 controls></audio>
+        <audio src=audio/music/other/jbios.mp3 controls></audio>
       </div>
       <div class=song-container>
         <div class=song-title>Let's Go Away</div>
         <div class=song-artist>Daytona USA</div>
-        <audio tabindex=0 src=audio/music/letsGoAway.mp3 controls></audio>
+        <audio src=audio/music/other/letsGoAway.mp3 controls></audio>
       </div>
     </div>
   </div>
-  <div class=footer>
-    <p style=margin:0;margin-top:1vw; id=bottom-message>uh sorry we ran out of songs</p>
+  <footer class=footer>
+    <p style=margin:0;margin-top:1vw; id=bottom-message>Sorry, we ran out of songs</p>
     <div class=border><hr class=print-only></div>
-    <button class="ButtonBorder2 submit" onclick="linkHandler('Home.html');" id=button>Home</button>
+    <button class="ButtonBorder2 submit" onclick="linkHandler('Home.html');" id=button aria-label="Click on this button to go home.">Home</button>
     <div class=bottom-padding></div>
-  </div>
-</div>
+  </footer>
+</main>
 <script>
   document.addEventListener('play', function(e){
     var audios = document.getElementsByTagName('audio');
@@ -100,7 +100,7 @@
     document.getElementById('top').textContent = 'weezer';
     document.getElementById('toptext').textContent = 'weezer';
     document.getElementById('songs').textContent = 'weezer';
-	document.getElementById('bottom-message').textContent = 'weezer';
+	  document.getElementById('bottom-message').textContent = 'weezer';
     document.getElementById('button').textContent = 'weezer';
   });
   document.getElementById('weezer').addEventListener('pause', function() {
@@ -111,7 +111,7 @@
     document.getElementById('top').textContent = 'WebTV Music';
     document.getElementById('toptext').textContent = 'Boogie on down!';
     document.getElementById('songs').textContent = 'Songs';
-	document.getElementById('bottom-message').textContent = 'uh sorry we ran out of songs';
+	  document.getElementById('bottom-message').textContent = 'Sorry, we ran out of songs';
     document.getElementById('button').textContent = 'Home';
   });
 </script>

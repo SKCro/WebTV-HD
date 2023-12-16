@@ -3,9 +3,25 @@ body {
   background-color: #000;
 }
 
+@keyframes flip {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(90deg); scale: 0.5; }
+  100% { transform: rotateX(180deg); }
+}
+
+#mainFrame {
+ /*! animation: flip 0.5s linear forwards; */
+}
+
+.perspective-fix {
+  content: '';
+  width: 100vw;
+  height: 3.7vw;
+}
+
 /* Loading panel styles */
 
-#loadingPanel {
+.corner-panel {
   position: absolute;
   flex-direction: row;
   background-color: #424242;
@@ -15,19 +31,54 @@ body {
   height: 4vw;
   min-height: 4vw;
   padding: 1vw;
-  /* pointer-events: none; */
-  box-shadow: 0.5vw 0.5vw 0 #00000080, inset 0.1vw 0.1vw 0.1vw #4e4e4e, inset 0.2vw 0.2vw 0.2vw 0.2vw #969696, inset -0.1vw -0.1vw 0.1vw #4e4e4e, inset -0.2vw -0.2vw 0.2vw 0.2vw #202020;
+  box-shadow: 0.5vw 0.5vw 0 #0008, inset 0.1vw 0.1vw 0.1vw #4e4e4e, inset 0.2vw 0.2vw 0.2vw 0.2vw #969696, inset -0.1vw -0.1vw 0.1vw #4e4e4e, inset -0.2vw -0.2vw 0.2vw 0.2vw #202020;
   border-radius: 0.5vw;
 }
 
-#loadingGlobe {
+#reconnectPanel {
+  z-index: 10001;
+  padding: 1.3vw;
+  width: 18%;
+  height: 4.5vw;
+  left: -70.5vw;
+}
+
+#reconnectPanel::before { /* Prevents clicking things when hung up */
   content: '';
-  background-image: url('../images/globe/1.gif');
-  animation: globeSpin 1.5s infinite;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  position: absolute;
+  top: -3.7vh;
+  left: -4.5vw;
+}
+
+.corner-panel-logo {
+  content: '';
   width: 17%;
   height: 100%;
   margin-right: 0.5vw;
   background-size: contain;
+}
+
+#loadingGlobe {
+  background-image: url('../images/globe/1.gif');
+  animation: globeSpin 1.5s infinite;
+}
+
+#reconnectLogo {
+  background-image: url('../images/WebTVShadowInset.svg');
+  width: 33.5%;
+}
+
+#reconnectButton {
+  margin: auto;
+  z-index: 10002;
+}
+
+#loadingPanel {
+  z-index: 10002;
 }
 
 @keyframes globeSpin {
@@ -72,16 +123,41 @@ body {
   animation: loadingbaranim 10000s linear infinite;
 }
 
-@keyframes loadingbaranim {
-  100% {
-    background-position: 100000vw 0;
-    background-size: 100% 100%;
-  }
+progress[value]::-webkit-progress-value {
+  inline-size: 100%;
 }
+
+@keyframes loadingbaranim {
+  100% { background-position: 100000vw 0; background-size: 100% 100%; }
+}
+
+/* Dialog stuff */
+
+#dialog::before { /* Prevents clicking things behind the dialog */
+  content: '';
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  height: 100vh;
+  width: 100vw;
+  translate: -50% -50%;
+  cursor: var(--cursor-no);
+  z-index: 10002;
+}
+
+#dialog.hidden {
+  visibility: hidden;
+}
+
+#dialog.shown {
+  visibility: visible;
+}
+
+/* Statusbar audioscope stuff */
 
 .has-audioscope::before,
 .has-audioscope::after,
-.status-container:not(.has-audioscope) #statusAudioscope  {
+.status-container:not(.has-audioscope) #statusAudioscope {
   display: none;
 }
 
@@ -104,19 +180,69 @@ body {
   height: 100vh;
 }
 
+/* PIP window styles/animations */
+
+#pipWindow {
+  content: '';
+  position: absolute;
+  bottom: 5vw;
+  right: 2vw;
+  width: 0;
+  height: 0;
+  background-image: linear-gradient(to bottom, #059, #012);
+  background-size: 100% 100.5%;
+  background-color: #059;
+  border-style: solid;
+  border-width: 0.25vw;
+  border-color: #7f7f7f #2a2a2a #2a2a2a #7f7f7f;
+  border-radius: 0.2vw;
+  box-shadow: 0.5vw 0.5vw 0.2vw #0008, -0.1vw -0.1vw #2a2a2a80, inset 0.1vw 0.1vw 0.05vw #0008;
+  cursor: var(--cursor-no);
+}
+
+@keyframes showPip {
+  from { width: 0; height: 0; border-width: 0; }
+  to { width: 24vw; height: 14vw; border-width: 0.25vw; }
+}
+
+#pipWindow.show {
+  animation: showPip 0.3s linear forwards;
+}
+
+@keyframes hidePip {
+  from { width: 24vw; height: 14vw; border-width: 0.25vw; }
+  to { width: 0; height: 0; border-width: 0; }
+}
+
+#pipWindow.hide {
+  animation: hidePip 0.3s linear forwards;
+}
+
+#pipWindow.hidden {
+  display: none;
+}
+
+#pipVideo {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* Options bar styles and animations */
 
 #options-bar {
   display: grid;
-  position: fixed;
-  background-image: linear-gradient(to right, #5D5D5D, #2E2E2E);
-  bottom: -12vw;
+  position: absolute;
+  background-image: linear-gradient(to right, #5d5d5d, #2e2e2e);
+  bottom: -12.5vw;
   width: 100vw;
-  z-index: 9999;
+  z-index: 10000;
 }
 
 @keyframes optionsBarUp {
-  from { bottom: -12vw; }
+  from { bottom: -12.5vw; }
   to { bottom: 0; }
 }
 
@@ -126,7 +252,7 @@ body {
 
 @keyframes optionsBarDown {
   from { bottom: 0; }
-  to { bottom: -12vw; }
+  to { bottom: -12.5vw; }
 }
 
 #options-bar.hide {
@@ -137,11 +263,11 @@ body {
 
 .status-bar-overlay {
   content: '';
-  z-index: 9999;
   position: absolute;
   width: 100%;
   height: 100%;
   cursor: var(--cursor-click);
+  z-index: 9999;
 }
 
 .status-bar-overlay:active {
@@ -208,7 +334,7 @@ body {
   content: '';
   position: absolute;
   background-image: linear-gradient(to right, #828282, #414141);
-  top: 0.25vw;
+  top: 0.2vw;
   left: 0;
   width: 100vw;
   height: 0.2vw;
@@ -253,16 +379,16 @@ body {
   color: var(--webtv-yellow);
   width: 15%;
   font-size: 2.5vw;
-  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #6D6D6D 25%, #393939 75%);
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #6d6d6d 25%, #393939 75%);
   border-radius: 1.4vw;
-  text-shadow: 0.15vw 0.15vw 0.1vw black;
-  border: 0.2vw solid black;
-  box-shadow: inset 3px 3px 1px #b5b5b5, 
-              inset 1px 1px .25px white,
-              inset -1px 1px 1px #444, 
-              0 0 1px black, 0 0 1px 1px #333, 
-              1px 1px 0 1px #C5C5C580, 
-              0 0 0 2px black;
+  text-shadow: 0.15vw 0.15vw 0.1vw #000;
+  border: 0.2vw solid #000;
+  box-shadow: inset 3px 3px 1px #b5b5b5,
+              inset 1px 1px .25px #fff,
+              inset -1px 1px 1px #444,
+              0 0 1px #000, 0 0 1px 1px #333,
+              1px 1px 0 1px #c5c5c580,
+              0 0 0 2px #000;
   margin-top: 1vw;
   margin-bottom: 1vw;
 }
@@ -281,7 +407,7 @@ body {
 /* Button-specific backgrounds */
 
 .options-button.find {
-  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #6D6D6D 25%, #393939 75%);
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #6d6d6d 25%, #393939 75%);
 }
 
 .options-button.info {
@@ -289,19 +415,14 @@ body {
   box-shadow: inset 3px 3px 1px #b5b5b5bf,
               inset 1px 1px .25px #ffffffbf,
               inset -1px 1px 1px #444444bf,
-              0 0 1px black, 0 0 1px 1px #333333bf, 
-              1px 1px 0 1px #C5C5C580,
-              0 0 0 2px black;
+              0 0 1px #000, 0 0 1px 1px #333333bf, 
+              1px 1px 0 1px #c5c5c580,
+              0 0 0 2px #000;
 }
 
 .options-button.goto {
-  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #5A5A5A 25%, #2E2E2E 75%);
-  box-shadow: inset 3px 3px 1px #b5b5b5a3,
-              inset 1px 1px .25px #ffffffa3,
-              inset -1px 1px 1px #444444a3,
-              0 0 1px black, 0 0 1px 1px #333333a3,
-              1px 1px 0 1px #C5C5C580,
-              0 0 0 2px black;
+  background-image: radial-gradient(ellipse at 2.5vw 1.4vw, #5a5a5a 25%, #2e2e2e 75%);
+  box-shadow: inset 3px 3px 1px #b5b5b5a3, inset 1px 1px .25px #ffffffa3, inset -1px 1px 1px #444444a3, 0 0 1px #000, 0 0 1px 1px #333333a3, 1px 1px 0 1px #c5c5c580, 0 0 0 2px #000;
 }
 
 .options-button.save {
@@ -309,9 +430,9 @@ body {
   box-shadow: inset 3px 3px 1px #b5b5b580,
               inset 1px 1px .25px #ffffff80,
               inset -1px 1px 1px #44444480,
-              0 0 1px black, 0 0 1px 1px #33333380,
-              1px 1px 0 1px #C5C5C580,
-              0 0 0 2px black;
+              0 0 1px #000, 0 0 1px 1px #33333380,
+              1px 1px 0 1px #c5c5c580,
+              0 0 0 2px #000;
 }
 
 .options-button.send {
@@ -319,45 +440,45 @@ body {
   box-shadow: inset 3px 3px 1px #b5b5b564,
               inset 1px 1px .25px #ffffff64,
               inset -1px 1px 1px #44444464,
-              0 0 1px black, 0 0 1px 1px #33333364,
-              1px 1px 0 1px #C5C5C580,
-              0 0 0 2px black;
+              0 0 1px #000, 0 0 1px 1px #33333364,
+              1px 1px 0 1px #c5c5c580,
+              0 0 0 2px #000;
 }
 
 /* Bottom bar buttons */
 
 .options-button.music {
-  background-image: radial-gradient(ellipse at 2vw 1vw, #777 25%, #3D3D3D 75%);
+  background-image: radial-gradient(ellipse at 2vw 1vw, #777 25%, #3d3d3d 75%);
 }
 
 .options-button.print {
-  background-image: radial-gradient(ellipse at 2vw 1vw, #6A6A6A 25%, #363636 75%);
+  background-image: radial-gradient(ellipse at 2vw 1vw, #6a6a6a 25%, #363636 75%);
   box-shadow: inset 3px 3px 1px #b5b5b5bf,
               inset 1px 1px .25px #ffffffbf,
               inset -1px 1px 1px #444444bf,
-              0 0 1px black, 0 0 1px 1px #333333bf,
-              1px 1px 0 1px #C5C5C580,
-              0 0 0 2px black;
+              0 0 1px #000, 0 0 1px 1px #333333bf,
+              1px 1px 0 1px #c5c5c580,
+              0 0 0 2px #000;
 }
 
 .options-button.hangup {
-  background-image: radial-gradient(ellipse at 2vw 1vw, #5D5D5D 25%, #303030 75%);
+  background-image: radial-gradient(ellipse at 2vw 1vw, #5d5d5d 25%, #303030 75%);
   box-shadow: inset 3px 3px 1px #b5b5b5a3,
               inset 1px 1px .25px #ffffffa3,
               inset -1px 1px 1px #444444a3,
-              0 0 1px black, 0 0 1px 1px #333333a3,
-              1px 1px 0 1px #C5C5C580,
-              0 0 0 2px black;
+              0 0 1px #000, 0 0 1px 1px #333333a3,
+              1px 1px 0 1px #c5c5c580,
+              0 0 0 2px #000;
 }
 
 .options-button.reload {
-  background-image: radial-gradient(ellipse at 2vw 1vw, #535353 25%, #2A2A2A 75%);
+  background-image: radial-gradient(ellipse at 2vw 1vw, #535353 25%, #2a2a2a 75%);
   box-shadow: inset 3px 3px 1px #b5b5b580,
               inset 1px 1px .25px #ffffff80,
               inset -1px 1px 1px #44444480,
-              0 0 1px black, 0 0 1px 1px #33333380,
-              1px 1px 0 1px #C5C5C580,
-              0 0 0 2px black;
+              0 0 1px #000, 0 0 1px 1px #33333380,
+              1px 1px 0 1px #c5c5c580,
+              0 0 0 2px #000;
 }
 
 .options-button.pip {
@@ -365,58 +486,58 @@ body {
   box-shadow: inset 3px 3px 1px #b5b5b564,
               inset 1px 1px .25px #ffffff64,
               inset -1px 1px 1px #44444464,
-              0 0 1px black, 0 0 1px 1px #33333364,
-              1px 1px 0 1px #C5C5C580,
-              0 0 0 2px black;
+              0 0 1px #000, 0 0 1px 1px #33333364,
+              1px 1px 0 1px #c5c5c580,
+              0 0 0 2px #000;
 }
 
 /* Indicators */
 
-#music-indicator {
+#musicIndicator {
   content: '';
   position: absolute;
   width: 1.8vw;
   height: 1.8vw;
-  background-image: linear-gradient(to bottom right, #000 25%, #AEAEAE);
+  background-image: linear-gradient(to bottom right, #000 25%, #aeaeae);
   top: 9.5vw;
   left: 13vw;
   clip-path: circle();
 }
 
-#music-indicator::after {
+#musicIndicator::after {
   content: '';
   position: relative;
   top: 50%;
   width: 1.4vw;
   height: 1.4vw;
-  background-image: radial-gradient(circle at 0.5vw 0.5vw, #8F8F8F 0%, #3C563C 15%, #001600);
+  background-image: radial-gradient(circle at 0.5vw 0.5vw, #8f8f8f 0%, #3c563c 15%, #001600);
   display: block;
   clip-path: circle();
   left: 50%;
   translate: -50% -50%;
 }
 
-#music-indicator.active::after {
-  background-image: radial-gradient(circle at 0.5vw 0.5vw, #BCFFC4 0%, #2AFF44 15%, #008616);
+#musicIndicator.active::after {
+  background-image: radial-gradient(circle at 0.5vw 0.5vw, #bcffc4 0%, #2aff44 15%, #008616);
 }
 
-#pip-indicator {
+#pipIndicator {
   content: '';
   position: absolute;
   width: 1.8vw;
   height: 1.8vw;
-  background-image: linear-gradient(to bottom right, #000 25%, #AEAEAE);
+  background-image: linear-gradient(to bottom right, #000 25%, #aeaeae);
   top: 9.5vw;
   right: 3vw;
   clip-path: circle();
 }
 
-#pip-indicator::after {
+#pipIndicator::after {
   content: '';
   position: relative;
   width: 1.4vw;
   height: 1.4vw;
-  background-image: radial-gradient(circle at 0.5vw 0.5vw, #8F8F8F 0%, #3C563C 15%, #001600);
+  background-image: radial-gradient(circle at 0.5vw 0.5vw, #8f8f8f 0%, #3c563c 15%, #001600);
   display: block;
   clip-path: circle();
   top: 50%;
@@ -424,15 +545,15 @@ body {
   translate: -50% -50%;
 }
 
-#pip-indicator.active::after {
-  background-image: radial-gradient(circle at 0.5vw 0.5vw, #BCFFC4 0%, #2AFF44 15%, #008616);
+#pipIndicator.active::after {
+  background-image: radial-gradient(circle at 0.5vw 0.5vw, #bcffc4 0%, #2aff44 15%, #008616);
 }
 
 /* Panel styles */
 
 @keyframes panelUp {
-  from { bottom: -23vw; display: grid; }
-  to { bottom: 3vw; display: grid; }
+  from { bottom: -28vw; }
+  to { bottom: 3vw; }
 }
 
 #panel.showing {
@@ -445,8 +566,8 @@ body {
 }
 
 @keyframes panelDown {
-  from { bottom: 3vw; display: grid; }
-  to { bottom: -23vw; display: grid; }
+  from { bottom: 3vw; }
+  to { bottom: -29vw; }
 }
 
 #panel.hiding {
@@ -476,7 +597,7 @@ body {
   max-height: 20vw;
   width: 80%;
   padding: 2.5vw;
-  box-shadow: 0 0.6vw 0 #00000080, inset 0.1vw 0.1vw 0.1vw #4e4e4e, inset 0.2vw 0.2vw 0.2vw 0.2vw #969696, inset -0.1vw -0.1vw 0.1vw #4e4e4e, inset -0.2vw -0.2vw 0.2vw 0.2vw #202020;
+  box-shadow: 0 0.6vw 0 #0008, inset 0.1vw 0.1vw 0.1vw #4e4e4e, inset 0.2vw 0.2vw 0.2vw 0.2vw #969696, inset -0.1vw -0.1vw 0.1vw #4e4e4e, inset -0.2vw -0.2vw 0.2vw 0.2vw #202020;
   border-radius: 0.5vw;
   height: 18vw;
   top: 0;
@@ -508,7 +629,7 @@ body {
   display: flex;
   height: 14vw;
   font-size: 1.7vw;
-  text-shadow: 0.15vw 0.15vw black;
+  text-shadow: 0.15vw 0.15vw #000;
   max-height: 14vw;
 }
 
@@ -537,7 +658,7 @@ body {
   margin-left: 2vw;
 }
 
-#bottom-message {
+#bottomMessage {
   position: absolute;
   bottom: 7vw;
 }
@@ -548,16 +669,12 @@ body {
   top: -1vw !important;
 }
 
-@media (max-width: 760px) {
-  body {
-    uh: uh;
-  }
-
+@media (max-width: 760px) { /* Invalid CSS rules are placeholders in case I need to change something within inspect element - this is to work around a bug in the inspect window */
   #loadingPanel {
     left: -20vw;
     width: 70vw;
     height: 12vw;
-    box-shadow: 1vw 1vw 0 #00000080, inset 0.1vw 0.1vw 0.1vw #4e4e4e, inset 0.2vw 0.2vw 0.2vw 0.2vw #969696, inset -0.1vw -0.1vw 0.1vw #4e4e4e, inset -0.2vw -0.2vw 0.2vw 0.2vw #202020;
+    box-shadow: 1vw 1vw 0 #0008, inset 0.1vw 0.1vw 0.1vw #4e4e4e, inset 0.2vw 0.2vw 0.2vw 0.2vw #969696, inset -0.1vw -0.1vw 0.1vw #4e4e4e, inset -0.2vw -0.2vw 0.2vw 0.2vw #202020;
     padding: 2vw;
   }
 
@@ -566,6 +683,7 @@ body {
   }
 
   #loadingMessageContainer {
+    uh: uh;
   }
 
   #loadingMessage {
@@ -580,16 +698,6 @@ body {
     border-width: 1vw;
   }
 
-  #loadingProgress[value]::-moz-progress-bar {
-    uh: uh;
-  }
-
-  .has-audioscope::before,
-  .has-audioscope::after,
-  .status-container:not(.has-audioscope) #statusAudioscope  {
-    uh: uh;
-  }
-
   .status-container .has-audioscope {
     uh: uh;
   }
@@ -599,7 +707,7 @@ body {
   }
 
   #mainFrame {
-    height: calc(100vh - 14vw);
+    height: calc(100vh - 13vw);
   }
 
   #options-bar {
@@ -615,6 +723,7 @@ body {
 }
 
   .status-bar.show {
+    uh: uh;
   }
 
   .status-bar.hide {
@@ -674,7 +783,7 @@ body {
   }
 
   .options-button.info {
-    uh: uh;
+    box-shadow: inset 3px 3px 1px #b5b5b5a3, inset 1px 1px .25px #ffffffa3, inset -1px 1px 1px #444444a3, 0 0 1px #000, 0 0 1px 1px #333333a3, 1px 1px 0 1px #c5c5c580, 0 0 0 2px #000;
   }
 
   .options-button.goto {
@@ -718,38 +827,43 @@ body {
     uh: uh;
   }
 
-  #music-indicator {
+  #musicIndicator {
     width: 3.5vw;
     height: 3.5vw;
     top: 18.35vw;
     left: 18vw;
   }
 
-  #music-indicator::after {
+  #musicIndicator::after {
     width: 2.7vw;
     height: 2.7vw;
-    background-image: radial-gradient(circle at 1vw 1vw, #8F8F8F 0%, #3C563C 15%, #001600);
+    background-image: radial-gradient(circle at 1vw 1vw, #8f8f8f 0%, #3c563c 15%, #001600);
   }
 
-  #music-indicator.active::after {
+  #musicIndicator.active::after {
     uh: uh;
   }
 
-  #pip-indicator {
+  #pipIndicator {
     width: 3.5vw;
     height: 3.5vw;
     top: 18.35vw;
     right: 3.5vw;
   }
 
-  #pip-indicator::after {
+  #pipIndicator::after {
     width: 2.7vw;
     height: 2.7vw;
-    background-image: radial-gradient(circle at 1vw 1vw, #8F8F8F 0%, #3C563C 15%, #001600);
+    background-image: radial-gradient(circle at 1vw 1vw, #8f8f8f 0%, #3c563c 15%, #001600);
   }
 
-  #pip-indicator.active::after {
+  #pipIndicator.active::after {
     uh: uh;
+  }
+
+  @keyframes panelUp {
+    from { bottom: -12vw; }
+    to { bottom: 8vw; }
   }
 
   #panel.showing {
@@ -758,6 +872,11 @@ body {
 
   #panel.show {
     uh: uh;
+  }
+
+  @keyframes panelDown {
+    from { bottom: 8vw; }
+    to { bottom: -12vw; }
   }
 
   #panel.hiding {
@@ -835,12 +954,58 @@ body {
   }
   
   @keyframes optionsBarUp {
-  from { bottom: -15vw; }
+  from { bottom: -24vw; }
   to { bottom: 0; }
   }
 
   @keyframes optionsBarDown {
     from { bottom: 0; }
-    to { bottom: -15vw; }
+    to { bottom: -24vw; }
+  }
+  
+  #pipWindow {
+    bottom: 16vw;
+    box-shadow: 1.5vw 1.5vw 0.2vw #0008, -0.2vw -0.2vw #2a2a2a80, inset 0.2vw 0.2vw 0.1vw #0008;
+    border-radius: 0.5vw;
+  }
+
+  @keyframes showPip {
+    from { width: 0; height: 0; border-width: 0; }
+    to { width: 64vw; height: 36vw; border-width: 1.3vw; }
+  }
+
+  #pipWindow.show {
+    animation: 0.3s showPip 0.3s linear forwards;
+  }
+
+  @keyframes hidePip {
+    from { width: 64vw; height: 36vw; border-width: 1.3vw; }
+    to { width: 0; height: 0; border-width: 0; }
+  }
+
+  #pipWindow.hide {
+    animation: 0.3s hidePip 0.3s linear forwards;
+  }
+
+  #pipWindow.hidden {
+    uh: uh;
+  }
+
+  #pipVideo {
+    uh: uh;
+  }
+}
+
+@media print {
+  .options-bar {
+    display: none;
+  }
+  
+  .options-row {
+    display: none;
+  }
+  
+  #pipWindow {
+    display: none;
   }
 }

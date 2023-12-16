@@ -2,11 +2,25 @@
   padding: 0;
 }
 
+.bottom-right-image.home {
+  background-image: url('../images/home/Home.svg');
+}
+
 .top-bar {
-  background: linear-gradient(to bottom, #31365D, #9EAACD);
+  background: linear-gradient(to bottom, #31365d, #9EAAcd);
   width: 100%;
   height: 11.65vw;
   display: grid;
+}
+
+.top-bar::after {
+  content: '';
+  background-image: linear-gradient(to bottom, #0008, #0000);
+  width: 100%;
+  height: 1vw;
+  z-index: -1;
+  position: relative;
+  top: 0.3vw;
 }
 
 .top-bar-items {
@@ -19,17 +33,18 @@
 }
 
 .top-bar-text {
-  margin-top: -4vw;
+  margin-top: -3vw;
   pointer-events: none;
   user-select: none;
   background-color: transparent;
   table-layout: fixed;
   text-align: center;
   width: 99.4%;
+  border-collapse: collapse;
 }
 
 .top-bar-item {
-  padding-bottom: 1.7vw;
+  padding-bottom: 1.9vw;
   padding-top: 0;
   padding-left: 0;
   padding-right: 0;
@@ -57,21 +72,12 @@
   user-select: none;
 }
 
-.top-bar-shadow {
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
-  width: inherit;
-  height: 1vw;
-  z-index: -1;
-  position: relative;
-  top: 0.5vw;
-}
-
 .homepage-content-container {
   margin: 1%;
 }
 
 .sidebar-border.home {
-  background: linear-gradient(#2A2A3D 40%, #565E7F 85%);
+  background: linear-gradient(#2a2a3d 40%, #565e7f 85%);
 }
 
 /* 1999 Homepage Stuff */
@@ -90,7 +96,7 @@
 }
 
 .top-bar.home1999 {
-  background: linear-gradient(to bottom, #424A6B, #73849C);
+  background: linear-gradient(to bottom, #424a6b, #73849c);
 }
 
 .top-links {
@@ -112,45 +118,49 @@
   position: relative;
   clip-path: circle();
   background-color: #060A19;
-  background-image: linear-gradient(to bottom right, #060A19 25%, #7C7F91 70%);
-  left: -1vh;
+  background-image: linear-gradient(to bottom right, #060a19 25%, #7c7f91 70%);
+  left: -0.5vw;
   color: transparent;
-  font-size: 1.5vh;
-  vertical-align: middle;
+  font-size: 1.5vw;
+  vertical-align: top;
+  font-size: 1vw;
+  top: 0.5vw;
 }
 
 .webtv-today-container {
   content: '';
-  margin-left: 2vw;
   display: grid;
-  border: 0.6vw solid #212131;
-  background-color: #949484;
-  border-right: 0;
-  border-top-left-radius: 2vw;
+  position: relative;
   width: 100%;
-  border-bottom: 0;
+  height: auto;
+  background-color: #949484;
   background-image: url('../images/home/TodayBG.svg');
   background-size: cover;
   background-position: center center;
-  color: black;
-  position: relative;
+  border-style: solid;
+  border-width: 0.6vw;
+  border-color: #213131;
+  border-right: 0;
+  border-top-left-radius: 2vw;
+  border-bottom: 0;
+  color: #000;
+  margin-left: 2vw;
   overflow: hidden;
-  height: auto;
 }
 
 .webtv-today-container::before {
   content: '';
   display: table-cell;
+  position: absolute;
+  top: -5vh;
+  left: -8vh;
+  width: 58vh;
+  height: 58vh;
   background-image: url('../images/home/TodayArrow.svg');
   background-size: contain;
   background-position: center center;
-  width: 58vh;
-  height: 58vh;
-  position: absolute;
   background-repeat: no-repeat;
   z-index: 0;
-  left: -8vh;
-  top: -5vh;
 }
 
 .today-content-container {
@@ -158,59 +168,59 @@
 }
 
 .today-header {
-  background-image: url('../images/home/TodayHead.svg');
   content: '';
-  height: 13.5%;
-  background-size: cover;
-  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   width: 100%;
+  height: 13.5%;
+  background-image: url('../images/home/TodayHead.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .today-header::before {
-  background-image: url('../images/home/WebTVTodayText.svg');
   content: '';
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
   display: block;
   position: relative;
-  left: 1vh;
   top: 1.5vh;
+  left: 1vh;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/home/WebTVTodayText.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
   z-index: 1;
 }
 
 .today-header::after {
-  background-image: url('../images/home/TodayFoot.svg');
   content: '';
-  height: 20%;
-  background-size: cover;
-  background-repeat: no-repeat;
   display: block;
   position: relative;
+  height: 20%;
+  background-image: url('../images/home/TodayFoot.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .right-image-container {
   content: '';
-  margin-left: 1%;
   display: block;
-  height: auto;
-  border-top: 0.6vw solid #181818;
-  background-color: #949484;
   width: 30%;
-  background-image: linear-gradient(to bottom, #2E393F 50%, #101B21, #2E393F);
+  height: auto;
+  background-color: #949484;
+  border-top: 0.6vw solid #181818;
+  background-image: linear-gradient(to bottom, #2e393f 50%, #101b21, #2e393f);
   background-size: 1vh 1vh;
+  margin-left: 1%;
   z-index: -2;
 }
 
 .right-image-container::after {
   content: '';
   display: block;
-  background-image: linear-gradient(to right, #0000008f, #0000);
   position: relative;
   height: 100%;
+  background-image: linear-gradient(to right, #0008, #0000);
   z-index: -1;
 }
 
@@ -220,50 +230,50 @@
 }
 
 .today-main {
-  font-family: 'Helvetica Now Display Black', Helvetica Black, Arial Black, 'Helvetica', sans-serif;
-  font-weight: 900;
-  font-size: 5.5vh;
+  position: absolute;
   left: 38vh;
   top: 20.1vh;
-  position: absolute;
+  font-family: var(--standard-font);
+  font-weight: 900;
+  font-size: 5.5vh;
 }
 
 .today-findoutmore {
-  font-weight: 500;
-  font-size: 2vw;
-  color: #764842;
+  position: absolute;
   width: 100%;
   bottom: -18vh;
   right: -24vw;
-  position: absolute;
+  font-weight: bolder;
+  font-size: 2vw;
+  color: #764842;
 }
 
 .today-sub {
-  font-size: 2vw;
-  z-index: 1;
   position: relative;
+  font-size: 2vw;
   font-weight: 100;
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: var(--standard-font);
+  z-index: 1;
 }
 
 .bottom-links {
-  background-image: linear-gradient(to right, #313942, #5A5A5A);
-  z-index: 0;
+  background-image: linear-gradient(to right, #313942, #5a5a5a);
   grid-area: 14;
+  z-index: 0;
 }
 
 .bottom-links table {
-  width: 100%;
   position: relative;
-  table-layout: fixed;
+  width: 100%;
   height: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
 .bottom-links a {
   color: #e6daa0;
-  text-shadow: 0.15vw 0.15vw black;
   font-size: 2.5vw;
+  text-shadow: 0.15vw 0.15vw #000;
 }
 
 .bottom-link {
@@ -271,15 +281,9 @@
 }
 
 .bottom-link::before {
-  content: '';
+  content: '🞂  ';
   position: relative;
   color: #e6daa0;
-  background-image: linear-gradient(#e6daa0, #e6daa0);
-  background-size: cover;
-  display: inline list-item;
-  clip-path: polygon(50% 50%, 0% 0%, 0% 100%);
-  font-size: 3vh;
-  top: -0.5vh;
 }
 
 #logo-1999 {
@@ -322,15 +326,9 @@
 }
 
 @keyframes scroll {
-  0% {
-    background-position: 100vw 100vh;
-  }
-  50% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: -100vw -100vh;
-  }
+  0% { background-position: 100vw 100vh; }
+  50% { background-position: 0 0; }
+  100% { background-position: -100vw -100vh; }
 }
 
 .smoke::after {
@@ -381,20 +379,11 @@
 }
 
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 @media (max-width: 760px) {
-  .home1999 .page-name {
-    padding: 0.5% 0 0.5% 1.5%;
-    width: 85%;
-  }
-
   .top-bar {
     margin: 0;
     height: 25vw;
@@ -412,18 +401,16 @@
     font-size: 4vw;
   }
 
-  .top-bar-shadow {
-    top: 25vw;
+  .top-bar::after {
     height: 4vw;
-    position: absolute;
   }
   
   .top-bar-text {
-    margin-top: -7vw;
+    margin-top: -6vw;
   }
   
   .top-links {
-    font-size: 3vh;
+    font-size: 2vh;
     padding-top: 1vh;
     padding-bottom: 1.5vh;
   }
@@ -434,11 +421,13 @@
   
   .main-content-container {
     overflow: hidden;
+    height: 80vh;
   }
   
   .webtv-today-container {
     border-width: 1vw;
     margin-left: 1vw;
+    border-top-left-radius: 5vw;
   }
   
   .webtv-today-container::before {
@@ -460,7 +449,7 @@
   }
   
   #logo-1999 img {
-    max-width: 20vw;
+    width: 20vw;
     padding-left: 1vw;
   }
   

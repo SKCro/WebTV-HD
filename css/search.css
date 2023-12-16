@@ -1,0 +1,16 @@
+.sidebar-border.search {
+  background-image: linear-gradient(to bottom, #341111 40%, #862f2f 85%);
+}
+
+#q {
+  width: 80%;
+}
+
+p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bottom-right-image.search {
+  background-image: url('../wtv-center/images/sidebarSearch.svg');
+}
