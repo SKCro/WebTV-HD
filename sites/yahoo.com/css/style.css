@@ -1,0 +1,14 @@
+body{background:#fff;}
+
+.main-content{
+  width:75%;
+  margin:auto;
+  text-align:center;
+}
+
+.top-nav{}
+
+.top-area{
+  display:flex;
+  justify-content:space-between;
+}

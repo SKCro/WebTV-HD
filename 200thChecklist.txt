@@ -1,0 +1,132 @@
+___________.__             __________.___  ________  _______________  _______   __  .__       ____ ___            .___       __
+\__    ___/|  |__   ____   \______   \   |/  _____/  \_____  \   _  \ \   _  \_/  |_|  |__   |    |   \______   __| _/____ _/  |_  ____
+  |    |   |  |  \_/ __ \   |    |  _/   /   \  ___   /  ____/  /_\  \/  /_\  \   __\  |  \  |    |   /\____ \ / __ |\__  \\   __\/ __ \
+  |    |   |   |  \  ___/   |    |   \   \    \_\  \ /       \  \_/   \  \_/   \  | |   |  \ |    |  / |  |_> > /_/ | / __ \|  | \  ___/
+  |____|   |___|  /\___  >  |______  /___|\______  / \_______ \_____  /\_____  /__| |___|  / |______/  |   __/\____ |(____  /__|  \___  >
+                \/     \/          \/            \/          \/     \/       \/          \/            |__|        \/     \/          \/
+- Work not started
+/ Work started, in progress
+✓ Done
+x Probably impossible for now
+[Text inside brackets are details on the objective at hand]
+
+/ MORE PAGES MORE PAGES MORE PAGES [Abandoned; Added a few new home pages, we just need more service pages]
+✓ Add view button/proper TV Home entrance animation [Done]
+x Have webcd host music so we can take it down if need be [Abandoned; Previously waiting on webcd - I'm not sure when he'll be able to get around to it]
+✓ Get IRC chat working [Done, just not with a WebTV-like theme - the WebTV HD Chat theme (which is nonfunctional) can still be accessed by clicking on Around Town]
+✓ Make it use a random logo every startup [Done, with the addition of adding a user-selectable logo!]
+✓ Possibly remake MSN and 2.9 homepages [Done]
+✓ Make a whole new home page - SKCro home [Ended up making this into a sitewide theme]
+✓ Restructure directories since the root dir is flooded with stuff [Done]
+✓ Make a joke "phishing email" [Done, and with a revamped mail system to boot!]
+✓ Remake Favorites --and Explore-- (about time too!) [Done with favorites, Explore just plays the Petscop track of the same name as an easter egg since it can't be remade]
+✓ Make showAlert more flexible (allow HTML, changable icon, custom button labels/actions, etc) [Done via a custom function, showCustomAlert()]
+✓ Fix settings page grid layout [Done]
+/ Add a proper road animation [Abandoned for now; Screwing around with rotate3d(), may have to resort to an iframe]
+✓ Redesign the mobile app icon again to include the "HD" text [Done]
+✓ Add an FAQ page [Pretty much done]
+✓ Fix panel styles for mobile [Done]
+✓ Create a "WebTV HD compatibility script" of sorts that lets you make your site WTV-HD-friendly just by adding a script to each page on your site [Done, just add this to the bottom of each page: <script src=https://skcro.github.io/WebTV-HD/js/wtv-hd.js></script>]
+✓ Remove as many direct iframe accesses as possible - use postMessage API instead. [Done, with a couple exceptions]
+✓ Add Plus screensaver [Pretty much done]
+✓ Recreate webtv.net homepage [Done]
+x Finish Yahoo and Beenz recreations [I've basically abandoned these lol]
+✓ Implement customizable username [Done]
+✓ Add status indicator animation for page loads [Done]
+✓ Remove Herobrine [Done]
+
+-----------------------------
+COMMIT MESSAGE WITH CHANGELOG
+-----------------------------
+
+The wait is finally over! This is the long-awaited part 4 of the Iframe Overhaul™, a 4-part overhaul that makes WebTV HD act more like real WebTV.
+I'm sorry this took over a year, and it's probably very underwhelming, but I couldn't bear to wait any longer and I haven't actually done much work on it recently.
+Merry Christmas, I guess.
+
+Major additions/changes:
+Organized directory structure! The root directory is no longer flooded with various pages, making the code a bit easier to work with.
+Cleaned up a lot of code and made the coding style more consistent. Yeah, I know, the spacing is weird.
+Added more links to the Home page to show off the new stuff.
+Added more home page variations, including 1999, MSN, and 2.9.
+Added the SKCro Blue theme.
+Added Favorites. No, you can't save pages to it, sorry.
+Added a more customizable showAlert variation called showCustomAlert. It's a bit janky, but I guess it works for now.
+Added an FAQ page to answer common questions about the project.
+Added a randomized startup logo so that I can finally make use of the other logos that I added 100 commits ago. You can also manually select a logo in Setup.
+Added web-app-related stuff to the index page.
+Added favicons for more types of devices (including Safari's tab bar).
+Added 401 page (which was only used for the beta-testing server, but I'm keeping it in because it's funny).
+Added a proper TV Home page. It's no longer just a background image with no functionality.
+Added .nojekyll so updates (hopefully) push faster in the future.
+Added a recreation of webtv.net.
+Added a "WebTV HD compatibility script" that you can add to your site to make it work better with WebTV HD. See the script's comments for details.
+Added a help(); command. This can be run from the console and will list out every user-friendly command.
+Re-introduced selectionBox.js since I'm tired of syncing 2 versions across main.js and iframe.js.
+Fixed Setup layout and added a couple new pages to it.
+FINALLY fixed the selection box scroll bug.
+Removed CSS-based selection box design in favor of an inline SVG.
+Removed requirement for selection box to be built into the page - it's now added dynamically.
+Remade the cursors in SVG so they're more scalable and look nicer on high-res displays.
+Redesigned the mobile app icon (again) to include the "HD" text.
+Redid a bunch of pages so they use more semantic HTML.
+Increased performance all-around by removing delays and optimizing code.
+
+With this new update, I'll also be adopting a new release strategy - the GitHub will be treated more like a production service, meaning updates are only released once I'm sure they're stable.
+
+Full changelog:
+Changed bug report, feature request, and feedback templates so they're a bit easier to use.
+Added .htaccess and .htpasswd to the .gitignore (those were only used on my local beta-testing server).
+Kept checklist in there. It was initially used to keep track of changes I needed to make, but I left it in there so y'all could see it.
+Attempted to fix 404 page yet again.
+Moved apple-touch-icon to the root directory so that the extra meta tag isn't needed.
+Added a few more sound effects (and modified a couple).
+Added "knockoff" sounds from the infamous Italian WebTV trial box. Y'know, the one that runs Windows CE. (If you don't get the reference: https://www.youtube.com/watch?v=6ZZsOSi2F4s)
+Added easter egg pertaining to said box: if you manage to get a "knockoff" logo (1/1000 chance), you'll get the knockoff sounds too, as well as a couple string changes.
+Added "Explore" track from Petscop as a placeholder for the Explore feature :P
+Restructured audio folder slightly.
+Redid splash sound because the old one sounded a bit weird.
+Added webmanifest thing for web app funnies.
+Added BrowserConfig.xml for all you people who pin websites to your start menus via IE for some reason.
+Changed code of conduct slightly.
+Condensed most of the CSS by removing spacing for one-liners and removing the extra space behind all "{" characters.
+Attempted to make CSS rule orders more consistent.
+Added favorites CSS to go along with the page.
+Merged community.css into home.css.
+Modified setup, both page-wise and CSS-wise.
+Attempted to prevent scrolling on index page by adding overflow:hidden; to the HTML element itself.
+Fixed progressbar style by using a background image for the fill rather than a gradient. (Thanks to Upwader for this suggestion)
+Removed unnecessary placeholder styles from iframe.css.
+Added a proper favicon with multiple sizes.
+Optimized most SVGs by getting rid of the unnecessary Inkscape stuff.
+Sorted all images into the root images folder.
+Added stupid ads for MSN/2.9 home pages.
+Added JS alert function and icon, overriding the default alert() behavior.
+Fixed show/hide animations for statusbar, options bar, and panels (hopefully).
+Modified local audioscope code fork to match my coding style.
+Simplified sound playback code so I don't need to define "playXSound" for every sound.
+Moved audio playback handling to parent page.
+Simplified PowerOn logic and made it more consistent.
+Added basic mail js handler that loads a different message based on the ID in the URL.
+Added settings js handler for username and startup logo changes.
+Removed the tl;dr from the license since it was confusing GitHub.
+Added preload/prerender stuff to the PowerOn page so the home page should (hopefully) load faster.
+Updated readme to reorganize info slightly.
+Added robots.txt and sitemap.xml for SEO stuff.
+Removed TODO file since I never used it :P
+Removed sidebar-shadow divs since the effect now uses ::after.
+Redid chat pages to scale better.
+Added bottom fade to the chat content page.
+Removed "Contact me" page since it was unnecessary (as my contact info is in the readme).
+Removed ProgressBarDebug page since it's no longer necessary.
+Fixed WebTV logo on setup page.
+Added warning to settings page noting that some things don't work properly.
+Converted audioscope code fork to my coding style.
+Finally stopped using var in most places.
+Redid sidebar and options/statusbar animations to use `translate` rather than `bottom`/`left` for better performance.
+Finally swapped out home page top bar table for a flexbox.
+Changed linkHandler() function to go() because it's shorter, easier to remember, and has a more obvious function.
+A lot more that I can't remember because I've done so much.
+
+oh, and IMPORTANT ANNOUNCEMENT:
+ie 11 stupid
+Thank you for your time.

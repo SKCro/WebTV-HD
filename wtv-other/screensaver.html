@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head>
+	<title>Screensaver</title>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<meta name=display content=noStatus>
+	<link rel=stylesheet href=../css/style.css>
+	<script src=../js/main.js></script>
+	<script src=../js/cookies.js></script>
+	<style>
+	html{overflow:hidden;}
+	body{
+		background-color:#000;
+		overflow:hidden;
+		margin:0;
+	}
+	#addLogo{
+		position:fixed;
+		top:1%;
+		left:0.5%;
+		z-index:1;
+	}
+	.logo{
+		position:fixed;
+		width:16vw;
+		height:auto;
+		mix-blend-mode:screen;
+		animation:spin 3s linear infinite;
+		pointer-events:none;
+	}
+	@keyframes spin{from{rotate:0deg;}to{rotate:360deg;}}
+	</style>
+</head><body>
+<button onclick=morePlease() id=addLogo>Add one more</button>
+</body><script src=../js/screensaver.js></script></html>

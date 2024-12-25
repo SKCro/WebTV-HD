@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>Home for SKCro</title>
+	<link rel=stylesheet type=text/css href=../css/style.css>
+	<link rel=stylesheet type=text/css href=../css/service.css>
+	<link rel=stylesheet type=text/css href=../css/home.css>
+	<script src=../js/main.js></script>
+	<script src=../js/cookies.js></script>
+	<script src=../js/home.js></script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+</head><body>
+<main class=main-msn>
+	<nav class=top-nav-msn aria-label="Main navigation bar">
+		<nav class=top-bar-msn aria-label="Top row of navigation bar: Contains Credits link and search bar">
+			<img class="top-logo-msn clickable" role=button src=../images/MSNLogo.svg alt="MSN logo" aria-label="MSN logo - Click to go to the credits page" onclick=go('credits.html')>
+			<div class=search-bar-container aria-label="Search bar container">
+				<p aria-hidden=true><b>TYPE SEARCH WORDS OR A WEB ADDRESS:</b></p>
+				<form onsubmit=search(event) style=display:grid>
+					<input type=text id=q class=search-bar autofill=false aria-label="Search bar: Type search words or a web address here">
+					<input type=submit class="submit go-button" title=Go aria-label=Go>
+				</form>
+			</div>
+		</nav>
+		<nav class=top-links-msn aria-label="Bottom row of navigation bar: Contains links to various areas">
+			<a class="top-link msn clickable" href=../wtv-mail/mail.html>E-mail</a>|
+			<a class="top-link msn clickable" href=../wtv-center/search.html>Search</a>|
+			<a class="top-link msn clickable" href=../wtv-favorite/favorite.html>Favorites</a>|
+			<a class="top-link msn clickable" href=../wtv-chat/chatPage.html>Chat</a>|
+			<a class="top-link msn clickable">Messenger</a>|
+			<a class="top-link msn clickable" href=javascript:parent.view()>TV Home</a>
+		</nav>
+	</nav>
+	<section class=main-area-msn>
+		<aside class="side-links side-nav">
+			<h4>Popular Links</h4>
+			<nav class=popular-links aria-label="Popular links list">
+				<a class=clickable>Your letters</a>
+				<a class=clickable>Printer deals</a>
+				<a class=clickable>MSN TV Tips</a>
+				<a class=clickable>Page Builder</a>
+				<a class=clickable>Discuss</a>
+				<a class=clickable>More links...</a>
+			</nav>
+			<h4>Centers</h4>
+			<nav class=centers aria-label="Centers list">
+				<a class=clickable>News</a>
+				<a class=clickable>Shopping</a>
+				<a class=clickable>Entertainment</a>
+			</nav>
+			<select class="ButtonBorder input centers-picker" aria-label="Additional centers list">
+				<option selected>More Centers</option>
+				<option>Romance</option>
+				<option>idk what else to put here</option>
+			</select>
+		</aside>
+		<section class=main-content-msn>
+			<nav class=main-content-links aria-label="Popular links list">
+				<a class="clickable firstlink">Switch User</a>
+				<a class=clickable href=../wtv-setup/setup.html>Settings</a>
+				<a class=clickable>Account</a>
+				<a class=clickable>Help</a>
+			</nav>
+			<div class=news-container>
+				<header class=news-header>SKCro Today</header>
+				<div class=news-content>
+					<ul class=arrowed-list>
+						<li><a class=clickable>SKCro dies in go-kart accident (not fake)</a></li>
+						<li><a class=clickable>Another link</a></li>
+						<li><a class=clickable>uh</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class=weather-container><iframe id=weatherFrame title="Weather info, from MattMan's HackTV" src=http://turdinc.kicks-ass.net/Msntv/HackTV/weatherfull/Dev/index4.php?v=5day></iframe></div>
+			<footer class=content-footer>
+				<p>beans</p>
+				<img id=contentFooterImage class=clickable onclick="showAlert('you won i fon x giveaway plz giv credit card info');">
+			</footer>
+			<footer class=main-footer><a class=clickable onclick="showAlert('What do you mean? There is no service.')">Terms of Service</a> | <a class=clickable onclick="showAlert('We\'ll steal your data and sell it to every company on the planet, guaranteed or your money back. Nah, just kidding.')">Privacy Statement</a></footer>
+		</section>
+	</section>
+</main></body></html>

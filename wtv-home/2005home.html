@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>Home for SKCro</title>
+	<link rel=stylesheet type=text/css href=../css/style.css>
+	<link rel=stylesheet type=text/css href=../css/service.css>
+	<link rel=stylesheet type=text/css href=../css/home.css>
+	<script src=../js/main.js></script>
+	<script src=../js/cookies.js></script>
+	<script src=../js/home.js></script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+</head><body>
+<main class="main-msn msn29">
+	<nav class="top-nav-msn msn29" aria-label="Main navigation bar">
+		<nav class="top-bar-msn msn29" aria-label="Top row of navigation bar: Contains Credits link and search bar">
+			<img class="top-logo-msn clickable" role=button src=../images/MSNLogo.svg alt="MSN logo" aria-label="MSN logo: Click to go to the credits page" onclick=go('credits.html')>
+			<div class="search-bar-container msn29" aria-label="Search bar container">
+				<p aria-hidden=true><b>Type a keyword, phrase, or web address:</b></p>
+				<form onsubmit=search(event) style=display:grid>
+					<input type=text id=q class=search-bar autofill=false aria-label="Search bar: Type a search query or a web address here">
+					<input type=submit class="submit go-button ButtonBorder2 msn29" value=Go title=Go aria-label=Go>
+				</form>
+			</div>
+		</nav>
+		<nav class="top-links-msn msn29" aria-label="Bottom row of navigation bar: Contains links to various areas">
+			<a class="top-link msn clickable" href=../wtv-mail/mail.html>Mail</a>|
+			<a class="top-link msn clickable" href=../wtv-center/search.html>Search</a>|
+			<a class="top-link msn clickable" href=../wtv-favorite/favorite.html>Favorites</a>|
+			<a class="top-link msn clickable" href=../wtv-chat/chatPage.html>Chat</a>|
+			<a class="top-link msn clickable">Messenger</a>|
+			<a class="top-link msn clickable" href=javascript:parent.view()>TV Home</a>
+		</nav>
+	</nav>
+	<section class="main-area-msn msn29">
+		<aside class="side-links msn29 side-nav">
+			<nav class=popular-links aria-label="Popular links list">
+				<a class=clickable>Member Center</a>
+				<a class=clickable>MSN TV Tips</a>
+				<a class=clickable>Things to Try</a>
+				<a class=clickable>Discuss</a>
+				<a class=clickable>News</a>
+				<a class=clickable>Entertainment</a>
+				<a class=clickable>Money</a>
+				<a class=clickable>Games</a>
+				<a class=clickable>Around Town</a>
+			</nav>
+			<select class="ButtonBorder input centers-picker msn29">
+				<option>Shopping</option>
+				<option>Sports</option>
+				<option>Romance</option>
+				<option>Travel</option>
+				<option>Autos</option>
+				<option>Page Builder</option>
+				<option selected>More...</option>
+			</select>
+		</aside>
+		<section class=main-content-msn>
+			<nav class="main-content-links msn29" aria-label="Popular links list">
+				<a class=clickable>Switch User</a>
+				<a class=clickable href=../wtv-setup/setup.html>Settings</a>
+				<a class=clickable>Account</a>
+				<a class=clickable>Help</a>
+			</nav>
+			<section class=main-content-grid>
+				<section class=featured-grid>
+					<img id=contentFooterImage class=clickable onclick="showAlert('you won i fon x giveaway plz giv credit card info');">
+				</section>
+				<section class=news-grid>
+					<ul class="arrowed-list news">
+						<li><a class=clickable>Things happen</a></li>
+						<li><a class=clickable>More things happen</a></li>
+						<li><a class=clickable>uh</a></li>
+					</ul>
+				</section>
+				<section class=weather-grid>
+					<p>Weather is currently unavailable.</p>
+				</section>
+				<section class=other-grid>
+					<ul class="arrowed-list other">
+						<li><a class=clickable></a></li>
+						<li><a class=clickable></a></li>
+						<li><a class=clickable></a></li>
+					</ul>
+				</section>
+			</section>
+		</section>
+	</section>
+</main></body></html>

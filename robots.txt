@@ -1,0 +1,16 @@
+User-agent: *
+Disallow: /wtv-home/
+Disallow: /wtv-center/
+Disallow: /wtv-chat/
+Disallow: /wtv-mail/
+Disallow: /wtv-setup/
+Disallow: /wtv-other/
+Disallow: /TV/
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/
+Disallow: /audio/
+Disallow: /sites/
+Disallow: /ad/
+Disallow: /.git/
+Disallow: /.github/

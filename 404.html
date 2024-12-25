@@ -1,78 +1,60 @@
 <!DOCTYPE HTML>
-<html><head>
-  <title>Page Not Found</title>
-  <link rel=stylesheet type=text/css href=https://skcro.github.io/WebTV-HD/css/style.css>
-  <link rel=stylesheet type=text/css href=https://skcro.github.io/WebTV-HD/css/home.css>
-  <link rel=stylesheet type=text/css href=https://skcro.github.io/WebTV-HD/css/service.css>
-  <link rel="shortcut icon" href=https://skcro.github.io/WebTV-HD/Icon.png>
-  <link rel=apple-touch-icon href=https://skcro.github.io/WebTV-HD/images/AppleTouchIcon.png>
-  <script src=https://skcro.github.io/WebTV-HD/js/main.js></script>
-  <script>
-  // just for you, halen
-  function snortAsbestos(){
-    document.getElementById('submitSound').play();
-    var smoke = document.querySelector('.smoke');
-    var currentAnimation = window.getComputedStyle(smoke).getPropertyValue('animation');
-    smoke.style.animation = currentAnimation ? currentAnimation + ', fadeOut 250ms linear forwards' : 'fadeOut 250ms linear forwards';
-    setTimeout(function(){linkHandler('https://skcro.github.io/WebTV-HD/Home.html');},150);
-    /* window.open('https://www.youtube.com/watch?v=THc1X-kEX4E', '_new'); Commented out because the video was privated due to copyright */
-  }
-  function asbestos(){
-    document.body.style.opacity = 0;
-    document.title = 'asbestos';
-    setTimeout(function(){
-      var headerContent = document.head.innerHTML;
-      while (document.body.firstChild) { document.body.removeChild(document.body.firstChild); }
-      document.body.style.opacity = 1;
-      var newContent = document.createElement('div');
-      newContent.innerHTML = String.raw `
-        <audio id=1 src=https://skcro.github.io/WebTV-HD/audio/asbestos.mp3 preload=auto></audio>
-        <audio id=errorSound src=https://skcro.github.io/WebTV-HD/audio/error.mp3 preload=auto></audio>
-        <audio id=submitSound src=https://skcro.github.io/WebTV-HD/audio/submitClick.mp3 preload=auto></audio>
-        <div id=selectionbox></div>
-        <div class=smoke></div>`;
-      document.body.appendChild(newContent);
-      document.head.innerHTML = headerContent;
-      var sound = document.getElementById('1');
-      sound.play();
-      var intervalId = setInterval(function(){
-        if (sound.currentTime >= sound.duration - 2){
-          clearInterval(intervalId);
-          showAlert('WebTV ran into a mesotheleoma problem. You may be entitled to financial compensation.');
-        }
-      },100);
-    },500);
-  }
-  </script>
-  <style>
-  .bottom-right-image {background-image: url('https://skcro.github.io/WebTV-HD/images/404.svg');}
-  </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="application-name" content="WebTV HD">
+<html lang=en><head>
+	<title>Page Not Found</title>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<link rel=stylesheet type=text/css href=https://SKCro.github.io/WebTV-HD/css/style.css>
+	<link rel=stylesheet type=text/css href=https://SKCro.github.io/WebTV-HD/css/service.css>
+	<link rel=stylesheet type=text/css href=https://SKCro.github.io/WebTV-HD/css/home.css>
+	<script src=https://SKCro.github.io/WebTV-HD/js/main.js></script>
+	<script>
+	function snortAsbestos(){
+		const smoke=document.querySelector('.smoke');
+		const currentAnimation=window.getComputedStyle(smoke).getPropertyValue('animation');
+		smoke.style.animation=currentAnimation?currentAnimation+',fadeOut 250ms linear forwards':'fadeOut 250ms linear forwards';
+		setTimeout(function(){
+			go('https://skcro.github.io/WebTV-HD/wtv-home/home.html');
+			window.open('https://www.youtube.com/watch?v=THc1X-kEX4E','_blank');
+		},200);
+	}
+	function asbestos(){
+		document.body.style.visibility='hidden';
+		document.title='asbestos';
+		setTimeout(function(){
+			const headerContent=document.head.innerHTML;
+			while(document.body.firstChild){document.body.removeChild(document.body.firstChild);}
+			document.body.style.visibility='visible';
+			const asbesto=document.createElement('div');
+			asbesto.innerHTML=String.raw`
+				<audio id=1 src=https://SKCro.github.io/WebTV-HD/audio/asbestos.mp3 preload=auto></audio>
+				<audio id=errorSound src=https://SKCro.github.io/WebTV-HD/audio/error.mp3 preload=auto></audio>
+				<audio id=submitSound src=https://SKCro.github.io/WebTV-HD/audio/submitClick.mp3 preload=auto></audio>
+				<div class=smoke></div>`;
+			document.body.appendChild(asbesto);
+			document.head.innerHTML=headerContent;
+			const a=document.getElementById('1');
+			a.play();
+			const b=setInterval(function(){
+				if(a.currentTime>=a.duration-2){
+					clearInterval(b);
+					showCustomAlert('WebTV ran into a mesotheleoma problem. You may be entitled to financial compensation.','none','none',`snortAsbestos();`);
+				}
+			},100);
+		},500);
+	}
+	</script>
 </head><body>
-<audio id=clickSound src=https://skcro.github.io/WebTV-HD/audio/click.mp3 preload=auto></audio>
-<audio id=inputSound src=https://skcro.github.io/WebTV-HD/audio/inputClick.mp3 preload=auto></audio>
-<audio id=submitSound src=https://skcro.github.io/WebTV-HD/audio/submitClick.mp3 preload=auto></audio>
-<audio id=errorSound src=https://skcro.github.io/WebTV-HD/audio/error.mp3 preload=auto></audio>
-<audio id=panelUp src=https://skcro.github.io/WebTV-HD/audio/up.mp3 preload=auto></audio>
-<audio id=panelDown src=https://skcro.github.io/WebTV-HD/audio/down.mp3 preload=auto></audio>
-<div id=selectionbox></div>
-
-<nav class=sidebar style=background-color:#3C3C56;>
-  <div class=sidebar-contents>
-    <img class="sidebar-logo clickable" src=https://skcro.github.io/WebTV-HD/images/WebTVJewel.svg alt="WebTV Logo." onClick="linkHandler('https://skcro.github.io/WebTV-HD/Home.html');">
-    <div class="sidebar-border home"></div>
-  </div>
-  <div class="bottom-right-image error" style="max-height: 8vw"></div>
-  <div class=sidebar-shadow></div>
+<nav class=sidebar style=background-color:#3c3c56>
+	<div class=sidebar-contents aria-role=navigation>
+		<img class="sidebar-logo clickable" src=https://SKCro.github.io/WebTV-HD/images/WebTVJewel.svg alt="WebTV Logo" onclick=go('https://SKCro.github.io/WebTV-HD/wtv-home/home.html')>
+		<div class="sidebar-border home"></div>
+	</div><div class="bottom-right-image error"></div>
 </nav>
-
 <main class=main-content>
-  <h1>Page Not Found</h1>
-  <p>WebTV could not find the requested page. If you followed a link or used a bookmark to get here, the content you're looking for may have been moved or deleted.</p>
-  <button class="asbestos submit" onclick="asbestos();">asbestos</button>
-  <div class=border><hr class=print-only></div>
-  <button class="submit ButtonBorder2" onClick="linkHandler('https://skcro.github.io/WebTV-HD/Home.html');">Home</button>
-</main>
-</body></html>
+	<h1>Page Not Found</h1>
+	<p>WebTV could not find the page requested. If you followed a link or used a bookmark to get here, the content you're looking for may have been moved or deleted.</p>
+	<p>If you got here by manually specifying a page via <code>?page=</code>, make sure you spelled the path correctly.</p>
+	<button class="asbestos submit" onclick=asbestos()>asbestos</button>
+	<div class=border><hr class=print-only></div>
+	<button class="submit ButtonBorder2" onclick=go('https://SKCro.github.io/WebTV-HD/wtv-home/home.html');>Home</button>
+</main></body></html>

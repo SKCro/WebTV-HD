@@ -1,0 +1,139 @@
+body{
+  background-color:#fff;
+  margin:5px;
+}
+
+a{color:#669900;text-decoration:none;}
+a:hover{color:#99cc00;}
+a:visited{color:#669966;text-decoration:none;}
+
+.top-bar{
+  display:flex;
+  width:100%;
+  margin-bottom:3rem;
+  justify-content:space-around;
+}
+
+.top-link{
+  position:relative;
+  width:25%;
+  height:2.5rem;
+  box-shadow:0 0;
+  border-radius:0;
+  font-size:1.5rem;
+  font-family:var(--monospace-font);
+  font-weight:bold;
+  letter-spacing:0.3rem;
+  text-align:center;
+  color:#fff;
+}
+.top-link.home{background:#98cb00;}
+.top-link.home::after{
+  content:'';
+  display:block;
+  position:absolute;
+  top:80%;
+  left:98%;
+  transform:translate(-98%);
+  width:2.25rem;
+  height:2.25rem;
+  border-radius:100%;
+  border:0.5rem solid #98cb00;
+}
+.top-link.products{background:#ff6532;}
+.top-link.company{background:#cb3232;}
+.top-link.search{background:#6565ff;}
+
+main{display:flex;margin-top:12px;}
+
+.logo{
+  width:10rem;
+  height:7.5rem;
+  padding:0;
+  box-shadow:0 0;
+  border-radius:0;
+  background:url(../../../images/WebTVShadow.svg);
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:right;
+}
+
+.side-nav{
+  width:35%;
+  text-align:right;
+}
+.side-nav ul{list-style:none;}
+
+.main-area{width:65%;}
+
+.main-image{
+  width:481.2px;
+  height:381px;
+  margin-left:10%;
+  margin-bottom:2.5%;
+}
+#step1,#step2,#step3{cursor:var(--cursor-active);}
+
+
+.bottom-areas-container{display:flex;}
+.bottom-area{
+  display:flex;
+  width:25%;
+  margin-right:5%;
+  flex-direction:column;
+}
+.bottom-area::before{
+  content:'';
+  width:106px;
+  height:26px;
+  background:url(../images/others.svg);
+  background-repeat:no-repeat;
+}
+.bottom-area:nth-of-type(2)::before{
+  width:93px;
+  height:27px;
+  background-position-y:-26px;
+}
+
+.bottom-footer{margin-top:2.5%;text-align:center;}
+
+@media(max-width:760px){
+  .top-link{
+    font-size:1.1rem;
+    letter-spacing:0.15rem;
+  }
+  .top-link.home::after{
+    top:85%;
+    width:1.2rem;
+    height:1.2rem;
+    border-width:0.3rem;
+  }
+  .side-nav{
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+    padding:2%;
+    font-size:1.3rem;
+    text-align:center;
+    background:#fffe;
+    backdrop-filter:blur(2px);
+    box-shadow:2px 0 2px 2px #0008;
+  }
+  .side-nav ul{text-align:right;}
+  .side-nav li{margin-bottom:10%;}
+  .main-area{
+    width:100%;
+    text-align:center;
+  }
+  .main-image{padding-left:0;}
+  .bottom-areas-container{
+    display:flex;
+    justify-content:space-evenly;
+  }
+  .bottom-area{
+    width:40%;
+    margin:5% 0 0 0;
+    text-align:left;
+  }
+}

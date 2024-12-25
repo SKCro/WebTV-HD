@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>Frequently Asked Questions</title>
+	<link rel=stylesheet type=text/css href=../css/style.css>
+	<link rel=stylesheet type=text/css href=../css/service.css>
+	<style>
+		.header{margin-top:0;}
+		.border{margin-bottom:0.3rem;}
+		.question::before{content:'Q: ';}
+		.question::before,.question{
+			margin-bottom:0.5rem;
+			font-family:var(--black-font);
+			color:var(--webtv-yellow);
+			text-shadow:0.15rem 0.15rem #000;
+		}
+		.answer::before{content:'A: ';font-family:var(--black-font);}
+		.answer::before,.answer{margin-bottom:0.5rem;}
+		img:not(.sidebar-logo){
+			border-style:solid;
+			border-width:0.3rem;
+			border-color:#141414 #323232 #323232 #141414;
+		}
+		.list{margin-top:0.5rem;margin-bottom:0.5rem;}
+		.small{display:inline;font-size:0.65rem;}
+		.highlighting{animation:highlight 2.5s linear forwards;}
+		.bodoni{font-family:Bodoni,var(--standard-font);}
+		.bank-gothic{font-family:Bank Gothic,var(--standard-font);}
+		.font-example{background-color:#121212;}
+		.font-example.pad{padding-bottom:14px;}
+		@keyframes highlight{from{background-color:#333;}to{background-color:#0000;}}
+		#what{display:none;}
+	</style>
+	<script src=../js/main.js></script>
+	<script src=../js/cookies.js></script>
+	<script>
+	function scrollToElement(element){
+		const e=document.getElementById(element);
+		window.scrollTo({top:e.offsetTop,left:0,behavior:'smooth'});
+		setTimeout(function(){e.classList.add('highlighting');setTimeout(function(){e.classList.remove('highlighting')},2500);},250);//nested setTimeout gaming
+	}
+	</script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+</head><body>
+<nav class=sidebar aria-label=Sidebar>
+	<div class=sidebar-contents aria-role=navigation>
+		<img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo" onclick=go('../wtv-home/home.html')>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" role=link onclick=scrollToElement('general')>General</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" role=link onclick=scrollToElement('functionality')>Functionality</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" role=link onclick=scrollToElement('design')>Design</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" role=link onclick=scrollToElement('advanced')>Advanced</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" role=link onclick=scrollToElement('jargon')>Jargon</div>
+		<div class=sidebar-border></div>
+	</div><div class="bottom-right-image setup"></div>
+</nav>
+<main class=main-content>
+	<h1 class=top-header id=top>Frequently Asked Questions</h1>
+	<p>Don't see your question answered here? Contact me on Discord - my username is <code>SKCro</code>.</p>
+
+	<h2 class=header id=general>General</h2>
+	<article class=question-box id=whomadethis aria-label="Who made this project?">
+		<h3 class=question>Who made this project?</h3>
+		<section class=answer>
+			<a class=clickable href=https://github.com/SKCro target=_blank>SKCro</a>, <a class=clickable href=https://github.com/nitrate92 target=_blank>nitrate92</a>, and <a class=clickable href=https://github.com/SKCro/WebTV-HD/graphs/contributors target=_blank>a few other people</a>.
+		</section>
+	</article>
+	<article class=question-box id=whatisit aria-label="What exactly is this project? What are its goals?">
+		<h3 class=question>What exactly is this project? What are its goals?</h3>
+		<section class=answer>WebTV HD is a web-based recreation of Microsoft's <a class=clickable href=https://en.wikipedia.org/wiki/MSN_TV>WebTV (later MSN TV) service</a>, which initially launched in 1996. The goal of this project is to provide an accurate but scalable recreation of the box and service. Right now, there's no backend to power functionality like mail or chat, but that might change in the future. <b class=small><a class=clickable onclick=scrollToElement('whynobackend')>Don't get your hopes up though :P</a></b></section>
+	</article>
+	<article class=question-box id=why aria-label="What encouraged you to create this?">
+		<h3 class=question>What encouraged you to create this?</h3>
+		<section class=answer>WebTV HD started as a simple port of a few WebTV pages to modern browsers (namely the settings page).<br>Back when I started this project, it was known as "WebTV-CSS-Remake" (rolls right off the tongue, I know) and was only targetting Samsung Smart TVs (particularly the one in my living room).<br>When others in the <a class=clickable href=https://discord.gg/qke279EUa8 target=_blank>WebTV Discord</a> noticed my work, they encouraged me to open up a GitHub repo. From there, the project became a full-on website theme, and now, what is basically a front-end concept.</section>
+	</article>
+	<article class=question-box id=caniusethis aria-label="This looks awesome! Can I use this code for my own project?">
+		<h3 class=question>This looks awesome! Can I use this code for my own project?</h3>
+		<section class=answer>Of course, as long as you credit me! The code is freely available on the <a class=clickable href=https://github.com/SKCro/WebTV-HD target=_blank>GitHub repo</a> if you want to take a look at it. Be warned: my code kinda sucks and my coding style is... unique, to say the least. <b class=small aria-role=text>WHERE IS THE SPACING WHERE IS THE SPACING WHERE IS THE SPACING</b></section>
+	</article>
+	<article class=question-box id=canitranslate aria-label="Can I translate this project into another language?">
+		<h3 class=question>Can I translate this project into another language?</h3>
+		<section class=answer>Yes, translations would be gladly appreciated! If you're fluent in both English and your favorite language, you can help translate WebTV HD into other languages. Right now, I don't have a language system in place, so it might be best to keep a fork maintained. The translation does <em>not</em> have to be perfect by any means. Mistakes are perfectly okay (as long as they aren't atrocious) - they can always be fixed later. If you have created a translation and you'd like me to list it in the readme, let me know!</section>
+	</article>
+	<article class=question-box id=jslibrary aria-label="Did you use a JS library of some kind to make this?">
+		<h3 class=question>Did you use a JS library of some kind to make this?</h3>
+		<section class=answer>Nope! No jQuery, no Angular.js, none of that. Just pure, vanilla JavaScript... although my coding style in JS is pretty terrible - there's a mishmash of old and new JS functions everywhere :P</section>
+	</article>
+	<div class=border><hr class=print-only></div>
+
+	<h2 class=header id=functionality>Functionality and code</h2>
+	<article class=question-box id=whatbox aria-label="What kind of box does WebTV HD try to replicate?">
+		<h3 class=question>What kind of box does WebTV HD try to replicate?</h3>
+		<section class=answer>In terms of functionality, WebTV HD simulates a WebTV Plus unit (as evidenced by the <a class=clickable onclick=parent.view()>TV Home page</a> and <a class=clickable onclick=parent.pip()>pip window</a> functionality).</section>
+	</article>
+	<article class=question-box id=tvhome aria-label="How do I go to TV Home?">
+		<h3 class=question>How do I go to TV Home?</h3>
+		<section class=answer>Click the status bar to open the options menu. Click "view" to change to TV Mode. Other than the sick flip transition, it isn't very interesting - it's just an embedded YouTube video with a mostly-nonfunctional UI.</section>
+	</article>
+	<article class=question-box id=knownissues aria-label="Are there any known issues with this project?">
+		<h3 class=question>Are there any known issues with this project?</h3>
+		<section class=answer>Not really, but do <strong>expect general bugginess</strong> in some places since this project isn't really too polished. If you do hit a snag, and you can easily replicate it (and describe how to do so), please <a class=clickable href=https://github.com/SKCro/WebTV-HD/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=%5BBug%5D+ target=_blank>let me know with a bug report</a>.</section>
+	</article>
+	<article class=question-box id=whathappenedtosave aria-label="What happened to the save button?">
+		<h3 class=question>What happened to the save button?</h3>
+		<section class=answer>The save button can't be reimplemented due to browser restrictions. If you'd like to save a page for later, press Ctrl+D or click the star on the address bar to create a bookmark.</section>
+	</article>
+	<article class=question-box id=whataboutfavorites aria-label="What about the Favorites page? Can't you save pages there?">
+		<h3 class=question>What about the Favorites page? Can't you save pages there?</h3>
+		<section class=answer>No, for two reasons:
+		<ol class=list>
+			<li>There's no backend to handle storage of favorites. Cookies/Local Storage can't be used either since those are too volatile.</li>
+			<li>I can't read the URL, favicon, or content of <a class=clickable onclick=scrollToElement('crossorigin')>cross-origin</a> pages - <strong>any page that isn't a part of WebTV HD is cross-origin</strong>, so this defeats the entire purpose of the feature.</li>
+		</ol>
+		</section>
+	</article>
+	<article class=question-box id=whatcanichange aria-label="What settings can I change?">
+		<h3 class=question>What settings can I change?</h3>
+		<section class=answer>You can change the startup logo and the internet name used for the home pages <a class=clickable href=../wtv-setup/other.html aria-label="Link to WebTV HD settings page">on this page</a>. That's... about it, sorry. Do note that these settings are stored with cookies, so if you clear 'em, your settings will reset to their defaults.</section>
+	</article>
+	<article class=question-box id=whydoesntxwork aria-label="Why doesn't (x feature) work right?">
+		<h3 class=question>Why doesn't (x feature) work right?</h3>
+		<section class=answer>There are a few reasons why a feature might not work as you'd expect:
+		<ol class=list>
+			<li>It's impossible due to the way modern browsers work (eg. save button).</li>
+			<li>Its functionality is possible to implement, but not in a WebTV-accurate way (eg. <a class=clickable onclick=parent.send()>send</a>/<a class=clickable onclick=parent.view()>view</a> buttons).</li>
+			<li>It's impossible to reimplement with my current skillset.</li>
+		</ol>
+		When a feature can't be implemented accurately, I usually provide a reasonable <b class=small aria-role=text>(read: "close enough")</b> alternative or explain why the feature can't be implemented.
+		</section>
+	</article>
+	<article class=question-box id=whynobackend aria-label="Why can't I send mail, edit favorites, or change settings?">
+		<h3 class=question>Why can't I send mail, edit favorites, or change settings?</h3>
+		<section class=answer>Most of these require multiple types of <b>backend servers</b>.<br>
+		Examples of features that require a backend:
+		<ul class=list>
+			<li>Accounts - this would require both an authentication server and a database server.</li>
+			<li>Mail - this would obviously require an email server.</li>
+			<li>Page Builder - this would require a backend HTTP server.</li>
+			<li>Settings - this would require a database server to store the settings. (Note that everything on the <a class=clickable href=../wtv-setup/other.html>Other settings</a> page are exceptions - I used cookies since it was simple enough)</li>
+		</ul>
+		</section>
+	</article>
+	<article class=question-box id=justmakeabackend aria-label="Can't you just make a backend?">
+		<h3 class=question>Can't you just make a backend?</h3>
+		<section class=answer><strong class=black-font><u>It's not that simple.</u></strong> Handling all that would not only require me to rent out a VPS (or run my computer 24/7), which I don't have the money for, but also require me to learn to become a backend developer, which just isn't something I can do right now.<br>GitHub Pages also doesn't support server-side languages like PHP, meaning I can't sidestep the requirement for a dedicated server.<br>As a reminder, <strong>I am only a teenager</strong> and I simply don't have the time or skill to do all that. I work on this for fun - I'm not planning to make it a fully-featured WebTV replacement.</section>
+	</article>
+	<div class=border><hr class=print-only></div>
+
+	<h2 class=header id=design>Design and Styling</h2>
+	<article class=question-box id=whatfonts aria-label="What fonts does WebTV HD use?">
+		<h3 class=question>What fonts does WebTV HD use?</h3>
+		<section class=answer>WebTV HD uses the same fonts that original WebTV used whenever possible.
+		<ul class=list>
+			General fonts:
+			<li><b>Helvetica</b>* - General font. Used for pretty much <b>everything</b>, from UI to pages.</li>
+			<li><code><b>Monaco</b> - Monospace font. Used for input fields.</code></li><br>
+			Other fonts:
+			<li><b class=bodoni>Bodoni</b> - Logo font. Used for the "<b class=bodoni>webtv</b>" text on the logo. Example:
+			<br><img src=../images/WebTVJewel.svg class=font-example></li>
+			<li><b class=bank-gothic>Bank Gothic</b>** - Logo font. Used for the "<b class=bank-gothic>PLUS</b>"/"<b class=bank-gothic>NETWORKS</b>" text on some variations of the WebTV logo. Example:
+			<br><img src=../images/logos/Splash.svg width=275 class="font-example pad">
+			<br><sub>The "HD" text uses Bank Gothic. This isn't an official example, but I guess it counts for now.</sub></li>
+		</ul>
+		<b class=small aria-role=text>*Technically speaking, original WebTV used a slightly modified version of Helvetica that improved display on low-resolution TVs of the time, but I don't have the skill to recreate it, so regular Helvetica should be fine.</b><br>
+		<b class=small aria-role=text>**This may not be accurate, but Bank Gothic was the closest match we could find.</b>
+		</section>
+	</article>
+	<article class=question-box id=whatcolors aria-label="What colors does WebTV HD use?">
+		<h3 class=question>What colors does WebTV HD use?</h3>
+		<section class=answer>WebTV HD uses the same colors that original WebTV did, whenever possible. If you want to know the background color of a specific element, Inspect Element is your friend. Common colors are also defined at the top of <code><a class=clickable href=../css/style.css target=_blank>style.css</a></code>.</section>
+	</article>
+	<article class=question-box id=inaccuracies aria-label="Why is (x element) inaccurate?">
+		<h3 class=question>Why is (x element) inaccurate?</h3>
+		<section class=answer>I try my best to make things look as accurate as possible, whenever possible, however, some things might slip through the cracks due to my rather basic skillset. If you are able to recreate something more accurately than I could, then please <a class=clickable href=https://github.com/SKCro/WebTV-HD/issues/new?assignees=SKCro&labels=enhancement&projects=&template=feedback.md&title=%5BFeedback%5D+ target=_blank>share the code with me.</a> You'll get your name in the credits and on the repo's contributors list.</section>
+	</article>
+	<div class=border><hr class=print-only></div>
+
+	<h2 class=header id=advanced>Advanced/Other</h2>
+	<article class=question-box id=howtousealert aria-label="How do I show alert dialogs?">
+		<h3 class=question>How do I show alert dialogs?</h3>
+		<section class=answer>Simple! Type <code><a class=clickable onclick="parent.goTo(`javascript:alert('Your text here')`)">javascript:alert('Your text here')</a></code> into the <b>go to</b> panel. Make sure you don't forget the parentheses between the text.<br><br><img src=https://i.imgur.com/6zbrpG7.png alt="An example of an alert dialog, with the message 'Your text here' being shown."><br>
+		To create a <code>showAlert</code> dialog (one that uses the WebTV logo rather than the warning triangle), use <code><a class=clickable onclick="parent.goTo(`javascript:showAlert('Your text here')`)">javascript:showAlert('Your text here')</a></code> instead. You can use HTML and CSS (via <code>&lt;style&gt;</code>) in your alert text.<br><br><img src=https://i.imgur.com/w7tskw1.png alt="An example of a WebTV-styled alert dialog, with the message 'Your text here' being shown with the WebTV logo off to the side."><br>
+		If you're into advanced customization, you can use <code>showCustomAlert()</code> instead.<br>It takes 4 arguments: text content (which can include HTML), a custom alert image, a custom button label, and a snippet of JavaScript to execute after the button is clicked.<br>Use the string <code>none</code> if you don't want to specify a certain attribute (in which case the default will be used). Example usage:<br><a class=clickable onclick="parent.goTo(`javascript:showCustomAlert('<h1>beans</h1>','https://www.recipetineats.com/wp-content/uploads/2014/05/Homemade-Heinz-Baked-Beans_0-SQ.jpg','beans','none')`)">javascript:showCustomAlert('&lt;h1&gt;beans&lt;/h1&gt;','https://www.recipetineats.com/wp-content/uploads/2014/05/Homemade-Heinz-Baked-Beans_0-SQ.jpg','beans','none')</a>
+		</section>
+	</article>
+	<article class=question-box id=whyaserver aria-label="I noticed that I can't use WebTV HD by opening index.html directly from disk. Why?">
+		<h3 class=question>I noticed that I can't use WebTV HD by opening index.html directly from disk. Why?</h3>
+		<section class=answer>WebTV HD works best when you use server software (eg. Apache) to host it, since the code expects a server to be in place. A lot of weird cross-origin problems occur when running it directly from disk, which can't be fixed unless you use a server. More info on this is available on the <a class=clickable href=https://github.com/SKCro/WebTV-HD/wiki/Why-can't-I-run-WebTV-HD-by-opening-index.html%3F target=_blank>wiki article.</a></section>
+	</article>
+	<article class=question-box id=what aria-label="Why do you suck at coding?">
+		<h3 class=question>Why do you suck at coding?</h3>
+		<section class=answer>I just do okay</section>
+	</article>
+	<div class=border><hr class=print-only></div>
+
+	<h2 class=header id=jargon>Terms and Jargon</h2>
+	<article class=question-box id=htmlcssjs aria-label="What are HTML, CSS, and JS?">
+		<h3 class=question>What are HTML, CSS, and JS?</h3>
+		<section class=answer>All 3 of these terms are common web development terms.
+		<ul>
+			<li><code><b>HTML</b></code>, short for <b>Hyper-Text Markup Language</b>, is the base structure of a website. Think of it like the foundation and walls of a house.</li>
+			<li><code><b>CSS</b></code>, short for <b>Cascading Style Sheets</b>, is used for styling a website. Think of it like the coat of paint and furniture arrangement of a house.</li>
+			<li><code><b>JS</b></code>, short for <b>JavaScript</b>, is the main programming language of the internet. Think of it like the actions that happen inside of a house.</section></li>
+		</ul>
+	</article>
+	<article class=question-box id=iframe aria-label="What's an 'iframe'?">
+		<h3 class=question>What's an "iframe"?</h3>
+		<section class=answer>An <code><b>iframe</b></code>, pronounced <b>eye-frame</b> and short for <b>inline frame</b>, is an HTML element that allows embedding of another page or website. WebTV HD uses an iframe to embed other pages, like the one you're reading right now! Most popular websites prevent themselves from being embedded for security reasons, which is why some sites doesn't work in WebTV HD. See below for details.</section>
+	</article>
+	<article class=question-box id=crossorigin aria-label="What does 'cross-origin' mean and why does it prevent so many features from working?">
+		<h3 class=question>What does "cross-origin" mean and why does it prevent so many features from working as expected?</h3>
+		<section class=answer>The term <code><b>cross-origin</b></code> is usually used to refer to pages that aren't a part of WebTV HD (ie. external websites). It's called that because the page isn't from the same <b>origin</b> (the origin, in this case, being WebTV HD).<br>Cross-origin restrictions are a security measure put in place by your web browser to prevent a malicious site from, say, embedding your bank website in an iframe, tricking you into logging in, and stealing your login data through the iframe. The page with the iframe on it (the <b>parent page</b>) cannot access what's in the iframe if its contents aren't from the same place. These restrictions prevent WebTV HD from easily reading details like the page name or modifying things on the page, such as the selection box or sidebar.</section>
+	</article>
+	<article class=question-box id=classesandids aria-label="What are classes and IDs?">
+		<h3 class=question>What are classes and IDs?</h3>
+		<section class=answer>In web development, <code><b>class</b></code>es are sort of like common nicknames that can be attached to multiple elements. <code><b>ID</b></code>s are meant to identify one element in particular. Classes are often used for CSS styling, while IDs are often used for scripting purposes.</section>
+	</article>
+	<button class="ButtonBorder2 submit" onclick=scrollToElement('top')>Back to Top</button>
+</main></body></html>

@@ -1,0 +1,85 @@
+{
+  "short_name": "WebTV HD",
+  "dir": "auto",
+  "name": "WebTV HD",
+  "background_color": "#191919",
+  "theme_color": "#191919",
+  "display": "browser",
+  "display_override": ["window-controls-overlay"],
+  "orientation": "any",
+  "description": "A basic, browser-based recreation of Microsoft's WebTV service. For more information on this project, check out the GitHub repo at github.com/SKCro/WebTV-HD.",
+  "start_url": "https://SKCro.github.io/WebTV-HD/",
+  "scope": "https://SKCro.github.io/WebTV-HD/",
+  "id": "https://SKCro.github.io/ojS5FTO2vjDXBbGgZPXt",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "icons": [
+    {
+      "src": "https://pwa.xyz/v0/b/pwaa-8d87e.appspot.com/o/Dxu3IZu5GrZLplI95V9o%2FREeBEIcUKvYNgYV.png?alt=media&token=34424a92-9185-429f-bda4-b8727725aa4e",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://pwa.xyz/v0/b/pwaa-8d87e.appspot.com/o/Dxu3IZu5GrZLplI95V9o%2FZRBJxnKqKetiYbv.png?alt=media&token=fd63fded-d47f-437b-a76c-4ce0e9ce0f3d",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mail",
+      "url": "https://SKCro.github.io/WebTV-HD/?page=wtv-mail/mail.html",
+      "icons": [
+        {
+          "src": "https://progressier.com/assets/img/icons/at-sign.png?v=192",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Favorites",
+      "url": "https://SKCro.github.io/WebTV-HD/?page=wtv-favorite/favorite.html",
+      "icons": [
+        {
+          "src": "https://progressier.com/assets/img/icons/heart.png?v=192",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Explore",
+      "url": "https://SKCro.github.io/WebTV-HD/?page=wtv-home/home.html",
+      "icons": [
+        {
+          "src": "https://progressier.com/assets/img/icons/compass.png?v=192",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "url": "https://SKCro.github.io/WebTV-HD/?page=wtv-center/search.html",
+      "icons": [
+        {
+          "src": "https://progressier.com/assets/img/icons/search.png?v=192",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    "utilities",
+    "simulation"
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+wtvhd",
+      "url": "https://SKCro.github.io/WebTV-HD/?page=%s"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}

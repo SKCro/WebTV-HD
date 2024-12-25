@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>Favorites</title>
+	<link rel=stylesheet type=text/css href=../css/style.css>
+	<link rel=stylesheet type=text/css href=../css/service.css>
+	<link rel=stylesheet type=text/css href=../css/favorites.css>
+	<style>.thumbnail{filter:drop-shadow(0.2rem 0.2rem 0.2rem #000);}</style>
+	<script src=../js/main.js></script>
+	<script src=../js/cookies.js></script>
+	<script src=../js/cookies.js></script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+</head><body>
+<nav class=sidebar aria-label=Sidebar>
+	<div class=sidebar-contents aria-role=navigation>
+		<img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo" onclick=go('../wtv-home/home.html')>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" onclick=go('favorite.html')>Folders</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable">Organize</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable">Help</div>
+		<div class=sidebar-border></div>
+	</div><div class="bottom-right-image favorites"></div>
+</nav>
+<main class="main-content no-padding">
+	<h3 class="top-header favorite-folders-for">Favorites for <span class=dynamic-username>SKCro</span></h3>
+	<p>the last two recreations were abandoned lmfao</p>
+	<div class=favorites-folder-container aria-label="Favorites container">
+		<section class=favorites-row>Recreations</section>
+		<div class=favorites-list aria-label="List of favorites">
+			<section class=favorite onclick=go('../sites/webtv.net/index.html')>
+				<button class="outline clickable">webtv.net</button>
+				<img class=thumbnail src=../images/WebTVShadow.svg>
+				<a class=favorite-name>webtv.net</a>
+			</section>
+			<section class=favorite onclick=go('../sites/yahoo.com/index.html')>
+				<button class="outline clickable">Yahoo!</button>
+				<img class=thumbnail src=../images/favorites/yahoo.svg>
+				<a class=favorite-name>Yahoo!</a>
+			</section>
+			<section class=favorite onclick=go('../sites/beenz.com/index.html')>
+				<button class="outline clickable">Beenz</button>
+				<img class=thumbnail src=../images/favorites/beenz.svg>
+				<a class=favorite-name>Beenz</a>
+			</section>
+		</div>
+	</div>
+</main></body></html>

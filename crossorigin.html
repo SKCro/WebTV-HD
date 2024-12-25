@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>Whoops</title>
+	<link rel=stylesheet type=text/css href=css/style.css>
+	<link rel=stylesheet type=text/css href=css/service.css>
+	<link rel=stylesheet type=text/css href=css/home.css>
+	<script src=js/main.js></script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+</head><body>
+<nav class=sidebar aria-label=Sidebar style=background-color:#3c3c56>
+	<div class=sidebar-contents aria-role=navigation>
+		<img class="sidebar-logo clickable" src=images/WebTVJewel.svg alt="WebTV Logo" onclick=go('wtv-home/home.html')>
+		<div class="sidebar-border home"></div>
+	</div><div class="bottom-right-image error"></div>
+</nav>
+<main class=main-content>
+	<h1 class=top-header>Why am I here?</h1>
+	<p>You're here because you tried to reload WebTV HD while it was navigated to a cross-origin page.</p>
+	<p>Because WebTV HD can't access the URL of a cross-origin page, <b>it has no idea how to get you back to where you were.</b></p><br>
+	<p>To avoid this next time, <b>use the <a class=clickable onclick=parent.focus();parent.toggleOptionsBar()>options bar</a> reload button to reload pages</b>, rather than the button on your browser's navigation bar - this avoids reloading the entirety of WebTV HD along with it.</p><br>
+	<p>Note that you might also be here because you visited a WebTV HD URL that ended up going to this page.</p>
+	<p><a class=clickable href=wtv-other/FAQ.html#classesandids>See this page</a> for more info on cross-origin pages.</p>
+	<div class=border><hr class=print-only></div>
+	<button class="ButtonBorder2 submit" onclick=location.replace('PowerOn.html')>Power Off</button>
+</main></body></html>

@@ -1,102 +1,100 @@
 <!DOCTYPE HTML>
+<!--Hello, curious code explorer! This is the main frontend page for WebTV HD. It handles lots of things, from the pages you see to the sounds you hear, as well as alert dialogs and other functionality.-->
 <html lang=en><head>
-  <title>WebTV HD</title>
-  <link rel=stylesheet type=text/css href=css/style.css>
-  <link rel=stylesheet type=text/css href=css/service.css>
-  <link rel=stylesheet type=text/css href=css/iframe.css>
-  <link rel="shortcut icon" href=Icon.png>
-  <link rel=apple-touch-icon href=images/AppleTouchIcon.png>
-  <script src=js/iframe.js></script>
-  <script src=js/audioscope.js></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="WebTV HD">
-  <meta property="og:description" content="WebTV HD is a browser-based recreation of Microsoft's WebTV service, which originally launched in 1996. For more information, check out the GitHub repo at https://github.com/SKCro/WebTV-HD.">
-  <meta property="og:image" content="https://SKCro.github.io/WebTV-HD/images/AppleTouchIcon.png">
-  <meta property="og:url" content="https://SKCro.github.io/WebTV-HD/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="WebTV HD">
-  <meta name="twitter:description" content="WebTV HD is a browser-based recreation of Microsoft's WebTV service, which originally launched in 1996. For more information, check out the GitHub repo at https://github.com/SKCro/WebTV-HD.">
-  <meta name="twitter:image" content="https://SKCro.github.io/WebTV-HD/images/AppleTouchIcon.png">
-  <meta name="description" content="WebTV HD is a browser-based recreation of Microsoft's WebTV service, which originally launched in 1996. For more information, check out the GitHub repo at https://github.com/SKCro/WebTV-HD.">
-  <meta name="application-name" content="WebTV HD">
+	<title>WebTV HD</title>
+	<script>if(navigator.userAgent.indexOf('WebTV')!=-1){location.replace('wtv.html')}</script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,height=device-height,initial-scale=1">
+	<meta name=author content=SKCro>
+	<meta property=og:title content="WebTV HD">
+	<meta property=og:description content="WebTV HD is a basic, browser-based recreation of Microsoft's WebTV service, which originally launched in 1996. For more information on this project, check out the GitHub repo at https://github.com/SKCro/WebTV-HD.">
+	<meta property=og:image content=https://SKCro.github.io/WebTV-HD/images/mobileIcon.png>
+	<meta property=og:url content=https://SKCro.github.io/WebTV-HD/>
+	<meta name=twitter:title content="WebTV HD">
+	<meta name=twitter:card content=summary>
+	<meta name=twitter:description content="WebTV HD is a basic, browser-based recreation of Microsoft's WebTV service, which originally launched in 1996. For more information on this project, check out the GitHub repo at https://github.com/SKCro/WebTV-HD.">
+	<meta name=twitter:image content=https://SKCro.github.io/WebTV-HD/images/mobileIcon.png>
+	<meta name=twitter:site content=https://SKCro.github.io/WebTV-HD/>
+	<meta name=twitter:creator content=@SKCro_>
+	<meta name=application-name content="WebTV HD">
+	<meta name=apple-mobile-web-app-capable content=yes>
+	<meta name=apple-mobile-web-app-title content="WebTV HD">
+	<meta name=apple-mobile-web-app-status-bar content=#191919>
+	<meta name=msapplication-TileColor content=#191919>
+	<meta name=theme-color content=#191919>
+	<meta name=description content="WebTV HD is a basic, browser-based recreation of Microsoft's WebTV service, which originally launched in 1996. For more information on this project, check out the GitHub repo at https://github.com/SKCro/WebTV-HD.">
+	<meta name=keywords content="WebTV, Web TV, wtv, Microsoft WebTV, Microsoft Web TV, MSN TV, MSNTV, MsnTV, retro, 90s, 2000s">
+	<link rel=stylesheet type=text/css href=css/style.css>
+	<link rel=stylesheet type=text/css href=css/service.css>
+	<link rel=stylesheet type=text/css href=css/iframe.css>
+	<link rel=icon href=favicon.ico>
+	<link rel=icon href=icon.png>
+	<link rel=mask-icon href=images/safariPinnedTab.svg color=#191919>
+	<link rel=manifest href=beb.webmanifest>
 </head><body>
-<audio id=clickSound src=audio/click.mp3 preload=auto></audio>
-<audio id=inputSound src=audio/inputClick.mp3 preload=auto></audio>
-<audio id=submitSound src=audio/submitClick.mp3 preload=auto></audio>
-<audio id=backSound src=audio/goBack.mp3 preload=auto></audio>
-<audio id=errorSound src=audio/error.mp3 preload=auto></audio>
-<audio id=viewSound src=audio/view.mp3 preload=auto></audio>
-<audio id=panelUp src=audio/up.mp3 preload=auto></audio>
-<audio id=panelDown src=audio/down.mp3 preload=auto></audio>
-<audio id=panelSlide src=audio/panelWhir.mp3 preload=auto></audio>
-<audio id=modem src=audio/modem.mp3 preload=auto></audio>
-<audio id=bgmusic preload=auto></audio> <!-- Background music placeholder - JS adds a source automatically -->
-<div id=selectionbox aria-hidden=true></div>
-<dialog class=corner-panel id=loadingPanel role=alert title="Loading panel" aria-hidden=true>
-  <div class=corner-panel-logo id=loadingGlobe></div>
-  <div id=loadingMessageContainer>
-    <progress id=loadingProgress value=100%></progress>
-    <div id=loadingMessage>Loading WebTV HD</div>
-  </div>
+<audio id=bgmusic preload=auto><!--Background music placeholder - JS adds a source automatically--></audio>
+<audio id=bgsound preload=auto><!--Background music placeholder for webpages - JS adds a source automatically--></audio>
+<dialog class=corner-panel id=loadingPanel role=alert title="Loading panel">
+	<div class=corner-panel-logo id=loadingGlobe title="Spinning around and around and around and around..." aria-hidden=true></div>
+	<div id=loadingMessageContainer aria-label="Loading message container">
+		<progress id=loadingProgress value=100 max=100></progress>
+		<label for=loadingProgress id=loadingMessage aria-label="Loading page:">Loading WebTV HD...</label>
+	</div>
 </dialog>
-<dialog class=corner-panel id=reconnectPanel aria-role=alertdialog aria-hidden=true>
-  <div class=corner-panel-logo id=reconnectLogo aria-hidden=true></div>
-  <button id=reconnectButton class="ButtonBorder3 submit noselect" title="Reconnect to WebTV" aria-label="Click here to simulate reconnecting to WebTV. This will cause the background music to start." onclick=reconnect();>Reconnect</button>
+<dialog class=corner-panel id=reconnectPanel role=alertdialog aria-hidden=true>
+	<div class=corner-panel-logo id=reconnectLogo aria-hidden=true></div>
+	<button id=reconnectButton class="ButtonBorder3 submit noselect" title="Reconnect to WebTV" aria-label="Click here to simulate reconnecting to WebTV" onclick=reconnect()>Reconnect</button>
 </dialog>
-<dialog id=dialog class=hidden aria-role=alertdialog aria-hidden=true>
-  <div class=dialog-message-container>
-    <div id=dialogLogo title="WebTV logo" aria-hidden=true></div>
-    <div id=dialogMessage></div>
-  </div>
-  <div class=dialog-separator aria-hidden=true><hr></div>
-  <button class="dialog-button submit noselect" id=dialogButton title="Close this panel" aria-label="Close this panel." onclick=closeDialog();>Continue</button>
+<dialog id=dialog class=hidden role=alertdialog aria-hidden=true>
+	<div class=dialog-message-container>
+		<div id=dialogLogo title="Alert icon" aria-hidden=true></div>
+		<div id=dialogMessage></div>
+	</div>
+	<div class=dialog-separator aria-hidden=true><hr></div>
+	<div class=dialog-buttons><button class="dialog-button submit noselect" id=dialogButton title="Close this dialog" aria-label="Close this dialog" onclick=closeDialog()>Continue</button></div>
 </dialog>
-<iframe id=mainFrame src=PowerOn.html aria-role=application title="Current page content. Focus to browse the page." loading=eager>
-  You need to have iframes enabled in order to use WebTV HD.<br>But then again, it's 2023, so how does your browser not have iframe support?
-</iframe>
-<div class=perspective-fix></div>
-<div id=pipWindow class=hidden title="Picture-in-picture window" aria-hidden=true><iframe id=pipVideo allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-<div class="status-bar iframe" role=toolbar aria-label="Status bar. Contains the page's name and loading status. Click on it to open the options bar.">
-  <div class=status-bar-overlay title="Click to show or hide the options bar" aria-role="button" onclick=toggleOptionsBar();></div>
-  <div class=status-bar-content>
-    <div class="show-sidebar-button ButtonBorder2" title="Click to toggle sidebar" aria-label="Toggle sidebar button. Click to toggle the sidebar on the page." onclick=toggleSidebarIframe();></div>
-    <div class=page-name aria-label="Page name">Loading...</div>
-    <div class="status-container has-audioscope" title="Click to toggle audioscope" aria-hidden=true onclick=toggleAudioscope();>
-      <webtv-audioscope id=statusAudioscope leftoffset=-3% rightoffset=3% width=200% height=100.5% bgcolor=#14141e gain=2></webtv-audioscope>
-    </div>
-  </div>
+<iframe class=shown id=mainFrame src=PowerOn.html title="Current page content: focus to browse the page" aria-hidden=false><p>Your browser needs to support iframes in order to use WebTV HD.<br>But then again, it's 2024, so how does your browser <i>not</i> have iframe support?</p></iframe>
+<iframe id=tvFrame aria-hidden=true title="TV Home content" src=about:blank class=hidden></iframe>
+<div class=perspective-fix onclick=playSound(bonkSound) aria-hidden=true></div>
+<div id=pipWindow class=hidden title="Picture-in-picture window" onclick=playSound(bonkSound) aria-hidden=true><iframe id=pipVideo src=about:blank allow=autoplay;encrypted-media;fullscreen></iframe></div>
+<div id=statusBar role=menubar aria-label="Status bar: Contains the page's name and loading status - Click on it to show or hide the options bar">
+	<div class=status-bar-overlay title="Click to show or hide the options bar" role=button aria-haspopup=menu aria-label="Click here to show or hide the options bar" onclick=toggleOptionsBar()></div>
+	<div class=status-bar-content role=note aria-label="Status bar content: contains page name and loading status">
+		<button class="show-sidebar-button ButtonBorder2" title="Click to toggle sidebar" aria-label="Toggle sidebar button: Click to toggle the sidebar on the page" onclick=toggleSidebar()></button>
+		<div class=page-name aria-label="Page name" role=note>Loading WebTV HD...</div>
+		<div class=scroll-arrows style=display:none></div>
+		<div class="status-container has-audioscope" title="Click to toggle audioscope" aria-hidden=true onclick=toggleAudioscope()>
+			<div class="status-indicator loading"></div>
+			<webtv-audioscope id=statusAudioscope width=200% height=100.5% leftoffset=-3% rightoffset=3% leftcolor=#8ece10 rightcolor=#ce8e10 bgcolor=#111122 gain=2></webtv-audioscope>
+		</div>
+	</div>
 </div>
-<nav id=options-bar role=toolbar aria-label="Options bar. Contains various browsing options.">
-  <div class=options-row>
-    <div class="options-logo clickable noselect" title="Go home" aria-label="Home button. Click to go home." aria-role=button onclick=home();></div>
-    <button class="options-button find clickable noselect" title="Find a word on this page" aria-label="Find button. Click here to find a word on this page." onclick=find();>find</button>
-    <button class="options-button info clickable noselect" title="Get info about this page" aria-label="Info button. Click to get information about this page." onclick=info();>info</button>
-    <button class="options-button goto clickable noselect" title="Go to another page" aria-label="Go to button. Click to navigate to another page or URL." onclick=goTo();>go to</button>
-    <button class="options-button save clickable noselect" title="Save this page to your favorites" aria-label="Save button. Click to save this page to your favorites." onclick=save();>save</button>
-    <button class="options-button send clickable noselect" title="Send this page via electronic mail" aria-label="Send button. Click to send this page via email." onclick=send();>send</button>
-  </div>
-  <div class="options-row bottom">
-    <button class="options-button music bottom clickable noselect" title="Toggle background music" aria-label="Music button. Click to toggle background music." onclick=music();>music<div id=musicIndicator></div></button>
-    <button class="options-button print bottom clickable noselect" title="Print this page" aria-label="Print button. Click to print this page." onclick=print();>print</button>
-    <button class="options-button hangup bottom clickable noselect" title="Hang up the phone - only for visual purposes" aria-label="Hang up button. Click to simulate hanging up." onclick=hangUp();>hang up</button>
-    <button class="options-button reload bottom clickable noselect" title="Reload this page" aria-label="Reload button. Click to reload this page." onclick=reload();>reload</button>
-    <button class="options-button pip bottom clickable noselect" title="Toggle picture-in-picture window" aria-label="Picture-in-picture button. Click to toggle the picture-in-picture window." onclick=pip();>pip<div id=pipIndicator></div></button>
-  </div>
+<nav id=optionsBar role=menubar aria-label="Options bar: Contains various browsing options" aria-hidden=true>
+	<nav class=options-row role=toolbar aria-label="Options row 1: Contains the home button, find, info, go to, view, and home">
+		<div class="clickable noselect" id=home title="Go home" aria-label="Home button: Click to go home" role=button onclick=home()></div>
+		<button class="options-button find clickable noselect" id=find title="Find a word on this page" aria-label="Find button: Click to find a word on this page" onclick=find()>find</button>
+		<button class="options-button info clickable noselect" id=info title="Get info about this page" aria-label="Info button: Click to get information about this page" onclick=info()>info</button>
+		<button class="options-button goto clickable noselect" id=goto title="Go to another page" aria-label="Go to button: Click to navigate to another page or URL" onclick=goTo()>go to</button>
+		<button class="options-button save clickable noselect" id=save title="Flip over to TV Home" aria-label="View button: Click to switch to TV Home" onclick=view()>view</button>
+		<button class="options-button send clickable noselect" id=send title="Send this page via electronic mail" aria-label="Send button: Click to send this page via email" onclick=send()>send</button>
+	</nav>
+	<nav class="options-row bottom" role=toolbar aria-label="Options row 2: Contains the background music toggle, print, hang up, reload, and the picture-in-picture toggle">
+		<button class="options-button music bottom clickable noselect" id=music title="Toggle background music" aria-label="Music button: Click to toggle background music" onclick=music() aria-pressed=false>music<div id=musicIndicator aria-hidden=true></div></button>
+		<button class="options-button print bottom clickable noselect" id=print title="Print this page" aria-label="Print button: Click to print this page" onclick=print()>print</button>
+		<button class="options-button hangup bottom clickable noselect" id=hangup title="Hang up the phone - only for visual purposes, does not actually disconnect" aria-label="Hang up button: Click to simulate hanging up" onclick=hangUp()>hang up</button>
+		<button class="options-button reload bottom clickable noselect" id=reload title="Reload this page" aria-label="Reload button: Click to reload this page" onclick=reload()>reload</button>
+		<button class="options-button pip bottom clickable noselect" id=pip title="Toggle picture-in-picture window" aria-label="Picture-in-picture button: Click to toggle the picture-in-picture window" onclick=pip() aria-pressed=false>pip<div id=pipIndicator aria-hidden=true></div></button>
+	</nav>
 </nav>
-<div id=panel aria-role=alertdialog>
-  <dialog>
-    <div class=top-row>
-      <div id=top-input-pretext></div>
-      <div id=top-input><input type=text class=noselect id=textQuery autofill=false onInput=clearMessage();></div>
-      <button id=panelSubmit class="submit noselect"></button>
-      <div id=bottomMessage></div>
-    </div>
-    <div class=bottom-row>
-      <hr>
-      <button id=panelClear class="submit noselect">Clear</button><button id=panelCancel onClick=closePanel(); class="submit noselect">Cancel</button>
-    </div>
-  </dialog>
-  <dialog class=panel-bottom aria-hidden=true></dialog>
-</div>
-</body></html>
+<dialog id=panel class=hiding aria-role=alertdialog>
+	<section class=top-row>
+		<span id=topInputPretext></span>
+		<div id=topInput><input type=text class="inputNoSound noselect" id=textQuery autocomplete=off oninput=clearMessage()></div>
+		<button class="submit noselect" id=panelSubmit></button>
+		<div id=bottomMessage></div>
+	</section><section class=bottom-row><hr>
+		<button class="submit noselect" id=panelClear>Clear</button>
+		<button class="submit noselect" id=panelCancel onclick=closePanel()>Cancel</button>
+		<button class="submit noselect" id=panelAction></button>
+	</section>
+</dialog><script src=js/iframe.js></script><script src=js/audioscope.js defer></script></body></html>

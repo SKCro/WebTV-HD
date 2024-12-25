@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>Unauthorized</title>
+	<link rel=stylesheet type=text/css href=css/style.css>
+	<link rel=stylesheet type=text/css href=css/service.css>
+	<link rel=icon href=icon.png>
+	<style>@keyframes fadeTransition{from{opacity:0;background-color:#000;}to{opacity:1;background-color:#191919;}}</style>
+	<script>
+	// Minimalized versions of functions from main.js
+	document.addEventListener('DOMContentLoaded',function(){
+		// Vars/sounds
+		var clickableButtons=document.querySelectorAll('.clickable');
+		var submitInputs=document.querySelectorAll('.submit');
+		function playSound(sound){sound.currentTime=0;sound.play();}
+		var click=document.getElementById('click');
+		var submit=document.getElementById('submit');
+		for(var k=0;k<submitInputs.length;k++){submitInputs[k].addEventListener('click',function(){playSound(submit)});}
+		for(var i=0;i<clickableButtons.length;i++){clickableButtons[i].addEventListener('click',function(){playSound(click)});}
+		// Selection box
+		window.selectionBox=document.getElementById('selectionBox');
+		window.selectedElement=null;
+		window.highlight=function(element){
+			selectedElement=element;
+			try{element.focus({preventScroll:true});}catch(error){}
+			updateSelectionBoxNoGreen();
+		}
+		function updateSelectionBox(){
+			if(selectedElement){
+				var elementRect=selectedElement.getBoundingClientRect();
+				var top=elementRect.top;
+				var left=elementRect.left;
+				var width=elementRect.width+2;
+				var height=elementRect.height+2;
+				selectionBox.style.top=top+'px';
+				selectionBox.style.left=left+'px';
+				selectionBox.style.width=width+'px';
+				selectionBox.style.height=height+'px';
+				selectionBox.style.display='block';
+				selectionBox.classList.add('green');
+				setTimeout(function(){selectionBox.classList.remove('green');},100);
+			}else{selectionBox.style.display='none';}
+		}
+		function updateSelectionBoxNoGreen(){
+			if(selectedElement){
+				var elementRect=selectedElement.getBoundingClientRect();
+				var top=elementRect.top;
+				var left=elementRect.left;
+				var width=elementRect.width+2;
+				var height=elementRect.height+2;
+				selectionBox.style.top=top+'px';
+				selectionBox.style.left=left+'px';
+				selectionBox.style.width=width+'px';
+				selectionBox.style.height=height+'px';
+				selectionBox.style.display='block';
+			}else{selectionBox.style.display='none';}
+		}
+		function checkIfInteractive(element){
+			return(
+				(element.classList.contains('clickable')||element.classList.contains('submit'))&&!element.classList.contains('noselect')
+			 ||(element.tagName==='INPUT'&&!element.classList.contains('noselect'))
+			);
+		}
+		function getInteractiveElements(){
+			var allElements=document.querySelectorAll('*');
+			var interactiveElements=[];
+			for(var i=0;i<allElements.length;i++){if(checkIfInteractive(allElements[i])){interactiveElements.push(allElements[i]);}}
+			return interactiveElements;
+		}
+		window.addEventListener('resize',updateSelectionBoxNoGreen);
+		window.addEventListener('scroll',updateSelectionBoxNoGreen);
+		document.addEventListener('click',function(e){
+			var clickedElement=e.target;
+			if(checkIfInteractive(clickedElement)&&clickedElement!==selectedElement){
+				selectedElement=clickedElement;
+				updateSelectionBox();
+			}else{updateSelectionBoxNoGreen();}
+		});
+		document.addEventListener('keydown',function(e){
+			if(e.key==='Tab'){
+				e.preventDefault();
+				var interactiveElements=getInteractiveElements();
+				var index=interactiveElements.indexOf(selectedElement);
+				if(e.shiftKey){
+					selectedElement=interactiveElements[(index-1+interactiveElements.length)%interactiveElements.length];
+				}else{selectedElement=interactiveElements[(index+1)%interactiveElements.length];}
+				updateSelectionBoxNoGreen();
+			}else if(e.key==='Enter'){if(selectedElement){updateSelectionBox();selectedElement.click();}}
+		});
+		setTimeout(function(){highlight(document.getElementById('poweroff'));},250);
+	});
+	function powerOff(){setTimeout(function(){
+		document.querySelector('body').style.background='#000';
+		document.getElementById('selectionBox').remove();
+		document.querySelector('main').remove();
+		setTimeout(function(){location.replace('https://google.com/search?q=how+to+get+a+life');},245);
+	},15)}
+	</script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+</head><body>
+<audio id=click src=audio/click.mp3 preload=auto></audio>
+<audio id=submit src=audio/submitClick.mp3 preload=auto></audio>
+<main class="main-content no-sidebar no-padding">
+	<header class=service-top-bar><img src=images/WebTVJewel.svg><h2>Not authorized</h2></header>
+	<section class=service-message>
+		<p>This web browser isn't authorized to access this service.</p>
+		<p>If you think this was a mistake, it wasn't.</p><br>
+		<p>To try logging in again, reload the page.</p><br>
+		<p class=smaller-text><b>Psst!</b> Looking for the standard Production service? <a class=clickable onclick="setTimeout(function(){location.replace('https://SKCro.github.io/WebTV-HD')},235)">Click here.</a></p>
+	</section>
+	<footer class=service-footer>
+		<div class=border><hr class=print-only></div>
+		<button class="ButtonBorder2 submit" id=poweroff name="Power Off" onclick=powerOff()>Power Off</button>
+	</footer>
+</main></body></html>

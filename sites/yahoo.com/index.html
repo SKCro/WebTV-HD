@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>Yahoo!</title>
+	<link rel=stylesheet type=text/css href=../../css/style.css>
+	<link rel=stylesheet type=text/css href=css/style.css>
+	<script src=../../js/main.js></script>
+	<script>
+	function unavailable(){alert('Unfortunately, this site is incomplete. These pages haven\'t been recreated yet.')}
+	function search(event){
+		event.preventDefault();
+		const q=document.getElementById('q').value;
+		window.open('https://search.yahoo.com/search?q='+q,'_blank');
+	}
+	</script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+</head><body>
+<main class=main-content>
+	<nav class=top-nav>
+		<img src=images/banner.svg>
+	</nav>
+	<section class=top-area>
+		<section class=left>
+			<b><a class=clickable onclick=unavailable()>1998 Winter Games</a></b><br>
+			<a class=clickable onclick=unavailable()>NBA</a> -
+			<a class=clickable onclick=unavailable()>NASCAR</a> -
+			<a class=clickable onclick=unavailable()>PGA</a>
+		</section>
+		<section class=middle>
+			
+		</section>
+		<section class=right>
+			<b><a class=clickable onclick=unavailable()>Valentine's Day</a></b><br>
+			<a class=clickable onclick=unavailable()>Yahoo! Personals</a>
+		</section>
+	</section>
+	<nav class=search-area>
+		<form onsubmit=search(event)>
+			<input id=q autocomplete=off>
+			<input type=submit class="submit ButtonBorder" value=Search>
+			<a class=clickable onclick=unavailable()>options</a>
+		</form>
+	</nav>
+</main></body></html>

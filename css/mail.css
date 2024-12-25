@@ -1,71 +1,43 @@
-.top-items-mail {
-  background-color: transparent;
-  table-layout: fixed;
-  width: 100%;
-  font-weight: bold;
+.top-items-mail{
+	width:100%;
+	table-layout:fixed;
+	font-weight:bold;
+	background-color:#0000;
+}
+.top-items-mail .from,.mail-messages .from,.top-items-mail .subject,.mail-messages .subject,.top-items-mail .date,.mail-messages .date{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.top-items-mail .from,.mail-messages .from{width:35%;}
+.top-items-mail .subject,.mail-messages .subject{width:80%;}
+.top-items-mail .date,.mail-messages .date{width:20%;}
+
+.mail-header .border{
+	margin-top:0.1rem;
+	margin-bottom:0.1rem;
 }
 
-.top-items-mail .from,
-.mail-messages .from {
-  width: 35%;
+.mail-messages{
+	width:100%;
+	border-collapse:collapse;
+	table-layout:fixed;
+	text-align:left;
+	color:#36d5ff;
+	background-color:#0000;
 }
+.mail-message{
+	height:36px;
+	vertical-align:middle;
+}.mail-message.unread{font-weight:bold;}
 
-.top-items-mail .subject,
-.mail-messages .subject {
-  width: 80%;
-}
+.mail-infobox table{width:100%;}
 
-.top-items-mail .date,
-.mail-messages .date {
-  width: 20%;
-}
+.sidebar-link.mail.unavailable{color:#515b84;}
+.sidebar-border.mail{background-image:linear-gradient(90deg,#202434 40%,#515b84 85%);}
+.sidebar-border.unavailable{opacity:0.5;}
+.bottom-right-image.mail{height:10vw;background-image:url(../images/mail/sidebarText.svg);}
 
-.mail-header .border {
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
-}
+#emailContent{width:100%;border:0;}
 
-.mail-messages {
-  background-color: transparent;
-  table-layout: fixed;
-  width: 100%;
-  color: #36d5ff;
-  text-align: left;
-  vertical-align: middle;
-}
-
-.mail-message.unread {
-  font-weight: bold;
-}
-
-.message-outline {
-  width: 83vw;
-  height: 2.4rem !important;
-  position: relative;
-  z-index: 1;
-  opacity: 0;
-}
-
-.mail-infobox table {
-  width: 100%;
-}
-
-.sidebar-border.mail {
-  background-image: linear-gradient(to bottom, #202434 40%, #515B84 85%);
-}
-
-.sidebar-link.unavailable.mail {
-  color: #515b84;
-}
-
-#emailContent {
-  width: 100%;
-  height: fit-content;
-  border: 0;
-}
-
-@media (max-width: 760px) {
-  .message-outline {
-    width: 97vw;
-  }
-}
+@media(max-width:760px){}

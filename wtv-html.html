@@ -1,0 +1,128 @@
+<!--Hello, curious code explorer!-->
+<html><head>
+	<title>Proprietary WebTV HTML Guide</title>
+</head><body vspace=0 hspace=0 bgcolor=001222 text=f0f0f0 link=0080ff vlink=0080ff transition=wipeup>
+<!--Header-->
+<table width=100% cellpadding=0 bgcolor=004488 gradcolor=001222 background=ad/bgpattern.gif>
+	<tr><td><br>
+		<center><shadow><font size=+3><blackface>Proprietary WebTV HTML Guide</blackface></font></shadow></center><br>
+		<shadow><marquee><font size=+1>Now with 83.572% more content!</font></marquee></shadow>
+	</td></tr>
+</table>
+<!--Content-->
+<table width=100% cellpadding=4 bgcolor=001222><tr><td><hr><br><center><shadow>
+	<p>The WebTV browser has support for many proprietary HTML tags, attributes, and features. Some of them even made their way into modern browsers by way of CSS, like gradient backgrounds, multiple font weights, and even scrolling background images.</p>
+	<font size=-1 color=c6c6c6>Note that this document assumes prior basic HTML skills, particularly with legacy web development.</font>
+	<h2><blackface><shadow>Table of contents</shadow></blackface></h2>
+	<table width=80% cellspacing=0 cellpadding=0><tr><td>
+		&#128; <a href=#visuals>Backgrounds and Visuals</a><br>
+		&#128; <a href=#layout>Layout</a><br>
+		&#128; <a href=#functionality>Functionality</a><br>
+		&#128; <a href=#misc>Miscellaneous</a><br>
+	</td></tr></table>
+	<hr><table id=visuals><tr><td></table><h2><shadow><blackface>Backgrounds and Visuals</blackface></shadow></h2>
+	WebTV has many options for creating cool backgrounds and visual effects. Let's start with gradient backgrounds:<br><br>
+	<table width=90% cellspacing=2 cellpadding=2 border=2 bgcolor=004488 gradcolor=002244><tr><td align=center>
+		<shadow><b>Hello!</b> This table has a gradient background.</shadow>
+	</td></tr><tr><td align=center>
+		<shadow>Neat, right? These can be done with the following code:</shadow>
+		<table width=95% cellpadding=2 border bgcolor=001222><tr><td><code><shadow>
+			&lt;table bgcolor=firstcolor gradcolor=secondcolor&gt;
+			&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;Content here<br>
+			&nbsp;&nbsp;&lt;/td&gt;&lt;/tr&gt;<br>
+			&lt;/table&gt;
+		</shadow></code></td></tr></table><shadow>
+		<font size=1>Replace "<code>firstcolor</code>" and "<code>secondcolor</code>" with the first and second colors respectively.<br><br></font>
+		Need to change the gradient's angle?<br>Use the "<code>gradangle</code>" attribute:</shadow>
+		<table cellpadding=2 border bgcolor=001222><tr><td><code><shadow>gradangle=45</shadow></code></td></tr></table><br><br>
+		<shadow>Let's put them all together now to make a cool-looking table:</shadow><br><br>
+		<table width=100% height=128 cellpadding=8 border bgcolor=ff0000 gradcolor=0 gradangle=45>
+			<tr>
+				<td align=center><shadow><font size=+3><b>Hello!</b></font></shadow></td>
+				<td align=center><shadow>This table has a sick red-to-black gradient.</shadow></td>
+			</tr>
+			<tr><td align=center colspan=2><shadow>There's even a border to keep it visually separated from the rest of the content. Isn't that neat?</shadow></td></tr>
+		</table><shadow><br><br>Looks pretty sweet, doesn't it?</shadow>
+	</td></tr></table><hr><br>
+	WebTV also has support for scrolling background images, but only on the body tag. Use this with caution:
+	it's been known to cause a <b><u>lot</u></b> of lag on real hardware, so maybe restrict its usage to Viewer-only pages.
+	<table cellpadding=2 border bgcolor=001222><tr><td><code><shadow>&lt;body background=image.gif xspeed=10 yspeed=10&gt;</shadow></code></td></tr></table><br><br>
+	<hr><h3><shadow><blackface>Text Effects</blackface></shadow></h3><shadow>
+	Now that we've messed around with table backgrounds, let's have some fun with the text! WebTV provides several ways to style your text.<br>
+	Aside from the usual <b>bold</b>, <i>italics</i>, and <u>underline</u>, you can also have <blackface>really thick text</blackface> and shadowed text.<br><br>
+	The <blackface>really thick text</blackface> is known as a black font face, and is usually the thickest one available in a font family.<br>
+	You can create this text with the... unfortunately named <code>&lt;blackface&gt;</code> tag:
+	<table cellpadding=2 border bgcolor=001222><tr><td><code><shadow>&lt;blackface&gt;Text in a black font face.&lt;/blackface&gt;</shadow></code></td></tr></table>
+	This can be used to create eye-catching headings:<br><br>
+	<center><table width=95% cellpadding=6 border bgcolor=c6c6c6>
+		<tr>
+			<td abswidth=72 absheight=64 align=center href=# bgcolor=0>
+				<font size=2 color=white effect=emboss><blackface>
+					<font color=red>Generic</font><br>
+					News<br>
+					<font color=blue>Site</font>
+				</blackface></font>
+			</td><td width=75%></td><td width=72 align=center><font size=3 color=0 effect=relief><clock day month>,<clock year> at <clock time ampm></font></td>
+		</tr>
+		<tr><td colspan=3>
+			<center><font size=+3 color=0><blackface>BREAKING: Joe Britt returns to WebTV</blackface></font></center><hr>
+			<font color=0>Joe Britt, former lead developer of Microsoft subsidiary WebTV Networks, reportedly revisits WebTV in a move "nobody saw coming":
+			he allegedly joined the WebTV community on chat platform Discord, to the surprise of the 3 people there.</font>
+		</td></tr>
+	</table></center><br><br>
+	For some reason, this tag is broken on client version 2.6+ (these clients usually have MSN branding), meaning it will render as standard text.
+	Use <code>&lt;b&gt;</code> as a fallback for those clients.<hr>
+	The <code>&lt;font&gt;</code> tag has the <code>effect</code> attribute, exclusive to WebTV. Values include:<br><br>
+	&#128; <code>shadow</code>: Creates a solid black shadow under the text. Does the same thing as the <code>&lt;shadow&gt;</code> tag.
+	<table cellpadding=2 border bgcolor=green><tr><td><font size=9 color=white effect=shadow>Shadowed text</font></td></tr></table><br><br>
+	&#128; <code>emboss</code>: Embosses the text by creating two shadows.
+	<table cellpadding=2 border bgcolor=green><tr><td><font size=9 color=white effect=emboss>Embossed text</font></td></tr></table><br><br>
+	&#128; <code>relief</code>: The opposite of embossed text.
+	<table cellpadding=2 border bgcolor=green><tr><td><font size=9 color=white effect=relief>Relief text</font></td></tr></table><br><br>
+	<hr><table id=layout><tr><td></table><h2><shadow><blackface>Layout</blackface></shadow></h2>
+	TODO
+	<hr><table id=functionality><tr><td></table><h2><shadow><blackface>Functionality</blackface></shadow></h2>
+	WebTV has a lot of hidden tags normally used on internal pages.
+	<h3><shadow><blackface>&lt;tv&gt;</blackface></shadow></h3>
+	On WebTV Plus units, the <code>&lt;tv&gt;</code> tag is used in TV World to display the TV signal.<br>
+	It can also be used outside of TV World; Here it is tuned to channel 3:
+	<table width=320 height=240 cellspacing=0 cellpadding=0 border=8 href=tv:3 insetselection invertborder><tr><td><tv width=320 height=240 border=2 channel=3></td></tr></table>
+	<font size=2 color=c6c6c6>Note: If you can't see the TV window above, you most likely have a WebTV Classic, or you're in minibrowser mode.</font><br><br>
+	This can be used to create alternate TV viewing pages or something along those lines.<hr>
+	<h3><shadow><blackface>&lt;clock&gt;</blackface></shadow></h3>
+	This one's a bit more useful - it displays the current date and time:
+	<table cellspacing=4 cellpadding=2 border=3 bgcolor=191919 gradcolor=0>
+		<tr>
+			<td><font size=5 color=red effect=shadow><b><clock dayofweek allcaps abbreviated>, <clock month day allcaps></b></font></td>
+			<td align=right><font size=5 color=red effect=shadow><b><clock year></b></font></td>
+		</tr>
+		<tr><td align=center colspan=2><font size=9 color=red effect=shadow><blackface><clock time seconds ampm></blackface></font></td></tr>
+	</table>
+	This can be used in several different ways, but it mainly helps to keep track of time, since WebTV doesn't have a clock anywhere else other than TV Home.<br><br>
+	The tag has several attributes, but if used without them, it simply lists the full date:<br>
+	<clock><br>
+	The attributes for this tag are as follows:
+	<table cellspacing=0 cellpadding=16><tr><td align=left>
+	<b>Data:</b><br>
+	&#128; <code>day</code>: Displays the current day of the month: <clock day><br>
+	&#128; <code>dayofweek</code>: Displays the current day of the week: <clock dayofweek><br>
+	&#128; <code>month</code>: Displays the current month name: <clock month><br>
+	&#128; <code>time</code>: Displays the current time: <clock time><br><br>
+	<b>Modifiers:</b><br>
+	&#128; <code>abbreviated</code>: Abbreviates the day of the week and month: <clock dayofweek abbreviated>; <clock month abbreviated><br>
+	&#128; <code>allcaps</code>: Forces all caps for the clock: <clock month dayofweek day allcaps><br>
+	&#128; <code>ampm</code>: Displays AM/PM depending on the hour: <clock time ampm><br>
+	&#128; <code>seconds</code>: Displays seconds next to the time: <clock time seconds>
+	</td></tr></table>
+	These attributes can be combined together - you don't need separate clock elements for each different bit of data.
+	Some attributes can only be used with others - for example, the <code>ampm</code> attribute needs to be used with <code>time</code>.
+	It can't be used alone.
+	<br><br>
+	<hr><table id=misc><tr><td></table><h2><shadow><blackface>Miscellaneous</blackface></shadow></h2>
+	TODO
+</shadow></center><hr></td></tr></table>
+<!--Footer-->
+<table width=100% height=48 cellpadding=2 bgcolor=001222 gradcolor=004488 background=ad/bgpattern.gif>
+	<tr><td><center><shadow><font size=+1>Page written by <b><a onclick="alert('https://github.com/SKCro')">SKCro</a></b>.</font></shadow></center></td></tr>
+</table></body></html>

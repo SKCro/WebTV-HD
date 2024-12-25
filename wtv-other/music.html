@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>WebTV Music</title>
+	<link rel=stylesheet type=text/css href=../css/style.css>
+	<link rel=stylesheet type=text/css href=../css/service.css>
+	<link rel=stylesheet type=text/css href=../css/music.css>
+	<script src=../js/main.js></script>
+	<script src=../js/cookies.js></script>
+	<script src=../js/audioscope.js></script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<meta name=display content=noMusic>
+</head><body>
+<nav class=sidebar>
+	<div class=sidebar-contents aria-role=navigation>
+		<img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo" aria-label="WebTV Logo - click to go to the home page." aria-role=link onclick=go('../wtv-home/home.html')>
+		<div class="sidebar-border bwgrad"></div>
+	</div>
+</nav>
+<main class=main-content>
+	<header class=header>
+		<h1 class=top-header>WebTV Music</h1>
+		<p id=topText>Boogie on down!</p>
+		<webtv-audioscope class=audioscope1 width=100% height=15vh bgcolor=#242424 leftoffset=-4% rightoffset=4% gain=1></webtv-audioscope>
+		<webtv-audioscope class=audioscope2 width=100% height=5vh bgcolor=#242424 gain=0></webtv-audioscope>
+	</header>
+	<section class=song-list>
+		<h2 id=songs>Songs</h2>
+		<section class=song-row>
+			<h4 class=section-heading>Built In</h4>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">Dialing.MID Remaster</p>
+				<p class=song-artist title=Artist aria-label="Song artist">Brian Salter/webcd</p>
+				<audio src=../audio/music/ROMCache/dialing.mp3 controls></audio>
+			</section>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">The Modem Song<br>(Prealpha Dialing)</p>
+				<p class=song-artist title=Artist aria-label="Song artist">Peter Drescher</p>
+				<audio src=../audio/music/ROMCache/prealphaDialing.mp3 controls></audio>
+			</section>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">KarTV.mid (WebTV 1.1 Demo theme)</p>
+				<p class=song-artist title=Artist aria-label="Song artist">Thomas Dolby/SKCro</p>
+				<audio src=../audio/music/ROMCache/kartv.mp3 controls></audio>
+			</section>
+		</section>
+		<section class=song-row>
+			<h4 class=section-heading>Extras</h4>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">Buddy Holly</p>
+				<p class=song-artist title=Artist aria-label="Song artist">Weezer</p>
+				<audio src=../audio/music/other/weezer.mp3 id=weezer controls></audio>
+			</section>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">SMS JP BIOS</p>
+				<p class=song-artist title=Artist aria-label="Song artist">Hiroshi Kawaguchi</p>
+				<audio src=../audio/music/other/jbios.mp3 controls></audio>
+			</section>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">AOL TV Dialing Remaster</p>
+				<p class=song-artist title=Artist aria-label="Song artist">Thomas Dolby/SKCro</p>
+				<audio src=../audio/music/other/aoltv.mp3 controls></audio>
+			</section>
+		</section>
+		<section class=song-row>
+			<h4 class=section-heading>Ambient</h4>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">Sun Lane</p>
+				<p class=song-artist title=Artist aria-label="Song artist">placeholder</p>
+				<audio src=../audio/music/ambient/sunlane.mp3 id=weezer controls></audio>
+			</section>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">placeholder</p>
+				<p class=song-artist title=Artist aria-label="Song artist">placeholder</p>
+				<audio src=../audio/music/other/a.mp3 controls></audio>
+			</section>
+			<section class=song-container>
+				<p class=song-title title=Title aria-label="Song title">placeholder</p>
+				<p class=song-artist title=Artist aria-label="Song artist">placeholder</p>
+				<audio src=../audio/music/ROMCache/a.mp3 controls></audio>
+			</section>
+		</section>
+	</section>
+	<footer class=footer>
+		<p id=bottomMessage>Sorry, we ran out of songs</p>
+		<div class=border><hr class=print-only></div>
+		<button class="ButtonBorder2 submit" id=home onclick=go('../wtv-home/home.html')>Home</button>
+	</footer>
+</main>
+<script>
+const sidebar=document.querySelector('.sidebar');
+const sidebarLogo=document.querySelector('.sidebar-logo');
+const topHeader=document.querySelector('.top-header');
+const topText=document.getElementById('topText');
+const songs=document.getElementById('songs');
+const bottomMessage=document.getElementById('bottomMessage');
+const home=document.getElementById('home');
+document.addEventListener('play',function(e){
+	const audios=document.getElementsByTagName('audio');
+	for(let i=0,len=audios.length;i<len;i++){if(audios[i]!=e.target){audios[i].pause();}}
+},true);
+document.getElementById('weezer').addEventListener('play',function(){
+	console.info('get weezer\'d');
+	document.title='weezer';
+	sidebar.style.backgroundImage='linear-gradient(180deg,#00aae7,#007ca5)';
+	sidebarLogo.src='../images/weezer.svg';
+	top.textContent='weezer';
+	topText.textContent='weezer';
+	songs.textContent='weezer';
+	bottomMessage.textContent='weezer';
+	home.textContent='weezer';
+});
+document.getElementById('weezer').addEventListener('pause',function(){
+	document.title='WebTV Music';
+	sidebar.style.backgroundImage='linear-gradient(180deg,#e7ce4a,#8c6a2e)';
+	sidebarLogo.src='../images/WebTVJewel.svg';
+	top.textContent='WebTV Music';
+	topText.textContent='Boogie on down!';
+	songs.textContent='Songs';
+	bottomMessage.textContent='Sorry, we ran out of songs';
+	home.textContent='Home';
+});</script></body></html>

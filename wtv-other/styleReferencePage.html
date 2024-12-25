@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang=en><head>
+	<title>Style Reference Page</title>
+	<link rel=stylesheet type=text/css href=../css/style.css>
+	<link rel=stylesheet type=text/css href=../css/service.css>
+	<script src=../js/main.js></script>
+	<script src=../js/cookies.js></script>
+	<meta charset=UTF-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+</head><body>
+<nav class=sidebar aria-label="Sidebar - Contains example links">
+	<div class=sidebar-contents aria-role=navigation>
+		<img class="sidebar-logo clickable" src=../images/WebTVJewel.svg alt="WebTV Logo - click to go to the home page" onclick=go('../wtv-home/home.html')>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" aria-label="Example link 1: It doesn't do anything since it's only for demonstration purposes">Link 1</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" aria-label="Example link 2: It doesn't do anything since it's only for demonstration purposes">Link 2</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" aria-label="Example link 3: It doesn't do anything since it's only for demonstration purposes">Link 3</div>
+		<div class=sidebar-border></div>
+		<div class="sidebar-link clickable" aria-label="Example link 4: It doesn't do anything since it's only for demonstration purposes">Link 4</div>
+		<div class=sidebar-border></div>
+	</div><div class="bottom-right-image setup" aria-hidden=true></div>
+</nav>
+<main class=main-content aria-label="Main content">
+	<h1>This is a header.</h1>
+	<p>This is a paragraph. Text content is in the Helvetica font.<br>This is another sentence in the same paragraph. Any words that are not broken up via &lt;br&gt; tags will be wrapped to fit.</p>
+	<h2>This is a sub-header.</h2>
+	<p>This is another paragraph. <b>This is bold text.</b> <i>This is italic text.</i><br><b><i>This is both bold and italic text.</i></b> <a class=clickable>This is a link.</a></p>
+	<div class=input-container aria-label="Input container for text box">
+		<label for=Textbox1>This is the textbox's flavor text.</label>
+		<input type=text name=Textbox id=Textbox1 aria-label="Example text box" placeholder="Textbox placeholder">
+	</div>
+	<div class=input-container aria-label="Input container for checkbox">
+		<label for=myCheckbox>This is the checkbox's flavor text.</label>
+		<input type=checkbox id=myCheckbox class=input aria-label="Example checkbox">
+	</div>
+	<div class=input-container aria-label="Input container for radio buttons">
+		<label>This is the flavor text for radio buttons.</label>
+		<div class=radio-buttons>
+			<input type=radio name=radioButton id=radio1 class=input style=grid-row:1 aria-label="Example radio button 1">
+			<label for=radio1 style=grid-row:1>Option 1</label>
+			<input type=radio name=radioButton id=radio2 class=input aria-label="Example radio button 2">
+			<label for=radio2>Option 2</label>
+		</div>
+	</div>
+	<div class=input-container aria-label="Input container for buttons" style=margin-top:1.5rem>
+		<button class=clickable name="Default button style">Dialog button/ButtonBorder1</button>
+		<button class="ButtonBorder2 clickable" name="Service-page button style" style=float:none;margin-left:0>Service-page button/ButtonBorder2</button>
+		<button class="ButtonBorder3 clickable" name="Alternate dialog button style">Alternate dialog button/ButtonBorder3</button>
+	</div>
+	<div class=border><hr class=print-only></div>
+	<button class="ButtonBorder2 submit" name="Show an example alert dialog" aria-label="Click to show an example alert dialog." onclick="showAlert('WebTV ran into a technical problem. Please try again.')">Show Alert</button>
+</main></body></html>
