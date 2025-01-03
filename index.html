@@ -2,7 +2,7 @@
 <!--Hello, curious code explorer! This is the main frontend page for WebTV HD. It handles lots of things, from the pages you see to the sounds you hear, as well as alert dialogs and other functionality.-->
 <html lang=en><head>
 	<title>WebTV HD</title>
-	<script>if(navigator.userAgent.indexOf('WebTV')!=-1){location.replace('wtv.html')}</script>
+	<script>if(navigator.userAgent.indexOf('WebTV')!=-1){location.replace('https://SKCro.github.io/WebTV-HD/wtv.html')}</script>
 	<meta charset=UTF-8>
 	<meta name=viewport content="width=device-width,height=device-height,initial-scale=1">
 	<meta name=author content=SKCro>
@@ -72,18 +72,18 @@
 <nav id=optionsBar role=menubar aria-label="Options bar: Contains various browsing options" aria-hidden=true>
 	<nav class=options-row role=toolbar aria-label="Options row 1: Contains the home button, find, info, go to, view, and home">
 		<div class="clickable noselect" id=home title="Go home" aria-label="Home button: Click to go home" role=button onclick=home()></div>
-		<button class="options-button find clickable noselect" id=find title="Find a word on this page" aria-label="Find button: Click to find a word on this page" onclick=find()>find</button>
-		<button class="options-button info clickable noselect" id=info title="Get info about this page" aria-label="Info button: Click to get information about this page" onclick=info()>info</button>
-		<button class="options-button goto clickable noselect" id=goto title="Go to another page" aria-label="Go to button: Click to navigate to another page or URL" onclick=goTo()>go to</button>
-		<button class="options-button save clickable noselect" id=save title="Flip over to TV Home" aria-label="View button: Click to switch to TV Home" onclick=view()>view</button>
-		<button class="options-button send clickable noselect" id=send title="Send this page via electronic mail" aria-label="Send button: Click to send this page via email" onclick=send()>send</button>
+		<button class="options-button clickable noselect" id=find title="Find a word on this page" aria-label="Find button: Click to find a word on this page" onclick=find()>find</button>
+		<button class="options-button clickable noselect" id=info title="Get info about this page" aria-label="Info button: Click to get information about this page" onclick=info()>info</button>
+		<button class="options-button clickable noselect" id=goto title="Go to another page" aria-label="Go to button: Click to navigate to another page or URL" onclick=goTo()>go to</button>
+		<button class="options-button clickable noselect" id=save title="Flip over to TV Home" aria-label="View button: Click to switch to TV Home" onclick=view()>view</button>
+		<button class="options-button clickable noselect" id=send title="Send this page via electronic mail" aria-label="Send button: Click to send this page via email" onclick=send()>send</button>
 	</nav>
 	<nav class="options-row bottom" role=toolbar aria-label="Options row 2: Contains the background music toggle, print, hang up, reload, and the picture-in-picture toggle">
-		<button class="options-button music bottom clickable noselect" id=music title="Toggle background music" aria-label="Music button: Click to toggle background music" onclick=music() aria-pressed=false>music<div id=musicIndicator aria-hidden=true></div></button>
-		<button class="options-button print bottom clickable noselect" id=print title="Print this page" aria-label="Print button: Click to print this page" onclick=print()>print</button>
-		<button class="options-button hangup bottom clickable noselect" id=hangup title="Hang up the phone - only for visual purposes, does not actually disconnect" aria-label="Hang up button: Click to simulate hanging up" onclick=hangUp()>hang up</button>
-		<button class="options-button reload bottom clickable noselect" id=reload title="Reload this page" aria-label="Reload button: Click to reload this page" onclick=reload()>reload</button>
-		<button class="options-button pip bottom clickable noselect" id=pip title="Toggle picture-in-picture window" aria-label="Picture-in-picture button: Click to toggle the picture-in-picture window" onclick=pip() aria-pressed=false>pip<div id=pipIndicator aria-hidden=true></div></button>
+		<button class="options-button bottom clickable noselect" id=music title="Toggle background music" aria-label="Music button: Click to toggle background music" onclick=music() aria-pressed=false>music<div id=musicIndicator aria-hidden=true></div></button>
+		<button class="options-button bottom clickable noselect" id=print title="Print this page" aria-label="Print button: Click to print this page" onclick=print()>print</button>
+		<button class="options-button bottom clickable noselect" id=hangup title="Hang up the phone - only for visual purposes, does not actually disconnect" aria-label="Hang up button: Click to simulate hanging up" onclick=hangUp()>hang up</button>
+		<button class="options-button bottom clickable noselect" id=reload title="Reload this page" aria-label="Reload button: Click to reload this page" onclick=reload()>reload</button>
+		<button class="options-button bottom clickable noselect" id=pip title="Toggle picture-in-picture window" aria-label="Picture-in-picture button: Click to toggle the picture-in-picture window" onclick=pip() aria-pressed=false>pip<div id=pipIndicator aria-hidden=true></div></button>
 	</nav>
 </nav>
 <dialog id=panel class=hiding aria-role=alertdialog>

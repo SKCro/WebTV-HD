@@ -2,26 +2,14 @@
 .bottom-right-image.home{background-image:url(../images/home/Home.svg);}
 
 .top-bar{
-	background-image:linear-gradient(180deg,#31365d,#9eaacd);
+	display:flex;
 	width:100%;
 	height:11.5vw;
-}
-.top-bar::after{
-	content:'';
-	display:block;
-	position:relative;
-	width:100%;
-	height:1vw;
-	background-image:linear-gradient(180deg,#0008,#0000);
-	z-index:-1;
-}
-
-.top-bar-items{
-	display:flex;
-	height:calc(100% - 8px);
-	padding:4px;
+	padding:6px;
+	box-sizing:border-box;
 	justify-content:space-between;
-	text-align:center;
+	background-image:linear-gradient(180deg,#31365d,#9eaacd);
+	box-shadow:0 2px 16px #0008;
 	z-index:1;
 }
 
@@ -56,7 +44,7 @@
 /* 1999 home styles */
 .home1999{background-color:#303a45;overflow:hidden;}
 .home1999-content{margin:0;}
-.home1999 .top-bar{background-image:linear-gradient(180deg,#424a6b,#73849c);}
+.home1999 .top-bar{background-image:linear-gradient(180deg,#424a6b,#73849c);box-shadow:0 0;}
 .home1999 .top-bar::before{
 	content:'WEB HOME';
 	display:block;
@@ -72,7 +60,6 @@
 	pointer-events:none;
 	z-index:0;
 }
-.home1999 .top-bar::after{background:none;}
 .home1999 .top-bar-item{width:20%;}
 .logo-1999 img{width:13vw;}
 

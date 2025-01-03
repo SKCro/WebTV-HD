@@ -32,22 +32,22 @@
 	<h3>Message</h3>
 	<header class=mail-infobox aria-label="Message info">
 		<table aria-label="Message info table"><tbody>
-				<tr aria-label="Email sender, container">
-					<td class=from aria-hidden=true>From:</td>
-					<td aria-label="Email sender:"><span id=emailSender></span> (<a class=clickable id=emailSenderAddress onclick="showAlert('You cannot add this person to your address book because there is no address book.')"></a>)</td>
-				</tr><tr aria-label="Email recieved date, container">
-					<td class=date aria-hidden=true>Date:</td>
-					<td id=emailDateRecieved aria-label="Email was recieved:"></td>
-				</tr><tr aria-label="Email recipient, container">
-					<td class=to aria-hidden=true>To:</td>
-					<td id=emailRecipient aria-label="Email recipient:"><span class=dynamic-username>SKCro</span></td>
-				</tr><tr aria-label="Email subject, container">
-					<td class=subject aria-hidden=true>Subject:</td>
-					<td id=emailSubject aria-label="Email subject:"></td>
-				</tr>
+			<tr aria-label="Email sender, container">
+				<td class=from aria-hidden=true>From:</td>
+				<td aria-label="Email sender:"><span id=emailSender></span> (<a class=clickable id=emailSenderAddress onclick="showAlert('You cannot add this person to your address book because there is no address book.')"></a>)</td>
+			</tr><tr aria-label="Email recieved date, container">
+				<td class=date aria-hidden=true>Date:</td>
+				<td id=emailDateRecieved aria-label="Email was recieved:"></td>
+			</tr><tr aria-label="Email recipient, container">
+				<td class=to aria-hidden=true>To:</td>
+				<td id=emailRecipient aria-label="Email recipient:"><span class=dynamic-username>SKCro</span></td>
+			</tr><tr aria-label="Email subject, container">
+				<td class=subject aria-hidden=true>Subject:</td>
+				<td id=emailSubject aria-label="Email subject:"></td>
+			</tr>
 		</tbody></table>
 	</header>
-	<div class=border style=margin-bottom:0><hr class=print-only></div>
+	<hr class=border style=margin-bottom:0>
 	<section id=emailBody aria-label="Email content container">
 		<h1 style=display:none>Email content</h1>
 		<iframe id=emailContent title="Email content" aria-label="Email content"></iframe>

@@ -320,7 +320,7 @@ body.safari .page-name{ /* safari stupid */
 	border-radius:0.5vw;
 	border-color:#202020 #515151 #515151 #202020;
 	overflow:hidden;
-	transition:background 1s linear,border-color 1s linear;
+	transition:background 1s linear;
 	background:#000;
 	cursor:var(--cursor-click);
 	z-index:10001;
@@ -442,8 +442,7 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	left:0;
 	width:100vw;
 	height:0.2vw;
-}
-.options-row.bottom{height:3.5vw;padding:0;}
+}.options-row.bottom{height:3.5vw;padding:0;}
 
 #home{
 	content:'';
@@ -480,7 +479,7 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	cursor:var(--cursor-no);
 }
 /* Button-specific backgrounds */
-.options-button.info{
+.options-button#info{
 	background:radial-gradient(ellipse at 2.5vw 1.4vw,#666 25%,#353535 75%) #666;
 	box-shadow:
 	inset 3px 3px 1px #b5b5b5bf,
@@ -489,7 +488,7 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	0 0 1px #000,0 0 1px 1px #333333bf,
 	1px 1px 0 1px #2b2b2b;
 }
-.options-button.goto{
+.options-button#goto{
 	background:radial-gradient(ellipse at 2.5vw 1.4vw,#5b5b5b 25%,#2f2f2f 75%) #5b5b5b;
 	box-shadow:
 	inset 3px 3px 1px #b5b5b5a3,
@@ -499,7 +498,7 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	0 0 1px 1px #333333a3,
 	1px 1px 0 1px #2b2b2b;
 }
-.options-button.save{
+.options-button#save{
 	background:radial-gradient(ellipse at 2.5vw 1.4vw,#505050 25%,#292929 75%) #505050;
 	box-shadow:
 	inset 3px 3px 1px #b5b5b580,
@@ -508,7 +507,7 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	0 0 1px #000,0 0 1px 1px #33333380,
 	1px 1px 0 1px #2b2b2b;
 }
-.options-button.send{
+.options-button#send{
 	background:radial-gradient(ellipse at 2.5vw 1.4vw,#464646 25%,#232323 75%) #464646;
 	box-shadow:
 	inset 3px 3px 1px #b5b5b564,
@@ -518,8 +517,8 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	1px 1px 0 1px #2b2b2b;
 }
 /* Bottom bar buttons */
-.options-button.music{background:radial-gradient(ellipse at 2vw 1vw,#777 25%,#3b3b3b 75%) #777;}
-.options-button.print{
+.options-button#music{background:radial-gradient(ellipse at 2vw 1vw,#777 25%,#3b3b3b 75%) #777;}
+.options-button#print{
 	background:radial-gradient(ellipse at 2vw 1vw,#6a6a6a 25%,#363636 75%) #6a6a6a;
 	box-shadow:
 	inset 3px 3px 1px #b5b5b5bf,
@@ -528,7 +527,7 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	0 0 1px #000,0 0 1px 1px #333333bf,
 	1px 1px 0 1px #2b2b2b;
 }
-.options-button.hangup{
+.options-button#hangup{
 	background:radial-gradient(ellipse at 2vw 1vw,#5d5d5d 25%,#303030 75%) #5d5d5d;
 	box-shadow:
 	inset 3px 3px 1px #b5b5b5a3,
@@ -537,7 +536,7 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	0 0 1px #000,0 0 1px 1px #333333a3,
 	1px 1px 0 1px #2b2b2b;
 }
-.options-button.reload{
+.options-button#reload{
 	background:radial-gradient(ellipse at 2vw 1vw,#575757 25%,#292929 75%) #575757;
 	box-shadow:
 	inset 3px 3px 1px #b5b5b580,
@@ -546,7 +545,7 @@ body.SKCro .options-row::after{background:linear-gradient(90deg,#0064c8cc,#036c)
 	0 0 1px #000,0 0 1px 1px #33333380,
 	1px 1px 0 1px #2b2b2b;
 }
-.options-button.pip{
+.options-button#pip{
 	background:radial-gradient(ellipse at 2vw 1vw,#494949 25%,#242424 75%) #494949;
 	box-shadow:
 	inset 3px 3px 1px #b5b5b564,
@@ -684,12 +683,12 @@ body.SKCro #dialogMessage,body.SKCro .top-row,body.SKCro .bottom-row,body.SKCro 
 	border-radius:0.5vw;
 }#panel::after{
 	content:'';
-	display:block;
 	position:fixed;
-	bottom:-1vw;
-	width:75%;
+	bottom:-3.8vw;
+	width:90%;
+	height:4vw;
+	margin:0 5%;
 	border-radius:inherit;
-	min-height:0;
 	background:inherit;
 	box-shadow:inherit;
 	z-index:-1;
@@ -832,8 +831,8 @@ body.SKCro #dialogMessage,body.SKCro .top-row,body.SKCro .bottom-row,body.SKCro 
 		text-shadow:0.3vw 0.3vw 0.2vw #000;
 	}
 	.options-button.bottom{font-size:4.5vw!important;}
-	.options-button.info,.options-button.save,.options-button.hangup{display:none;}
-	.options-button.music{text-align:left;padding-left:3vw;}
+	.options-button#info,.options-button#save,.options-button#hangup{display:none;}
+	.options-button#music{text-align:left;padding-left:3vw;}
 
 	#musicIndicator,#pipIndicator{
 		top:18.5vw;
@@ -894,7 +893,7 @@ body.SKCro #dialogMessage,body.SKCro .top-row,body.SKCro .bottom-row,body.SKCro 
 		height:9.5vw;
 		border-top-left-radius:1vw;
 		border-bottom-left-radius:1vw;
-		background:linear-gradient(90deg,#000c 85%,#0000) #000c;
+		background:linear-gradient(90deg,#000c 85%,#0000);
 		z-index:1;
 	}
 	.scroll-arrows{display:none;}
@@ -968,9 +967,8 @@ body.SKCro #dialogMessage,body.SKCro .top-row,body.SKCro .bottom-row,body.SKCro 
 	}
 
 	#panelSubmit{right:4vw;font-size:3.5vw;}
-	#panelClear{font-size:3.5vw;}
+	#panelClear,#panelAction{font-size:3.5vw;}
 	#panelCancel{font-size:3.5vw;margin-left:2vw;}
-	#panelAction{font-size:3.5vw;}
 	#bottomMessage{position:absolute;bottom:7vw;}
 
 	.panel-bottom{
@@ -987,9 +985,7 @@ body.SKCro #dialogMessage,body.SKCro .top-row,body.SKCro .bottom-row,body.SKCro 
 		margin-bottom:0.8rem;
 		z-index:10000;
 	}
-
 	.dialog-button{font-size:3.5vw;}
 
 	@keyframes loadingbaranim{100%{background-position-x:100000vw;}}
-}
-@media print{#statusBar,#optionsBar,.options-row,#pipWindow{display:none!important;}}
+}@media print{#statusBar,#optionsBar,.options-row,#pipWindow{display:none!important;}}

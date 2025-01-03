@@ -1,14 +1,14 @@
 'use strict';
 //Redirect if the user isn't using the iframe page
-if(self===top){location.replace('/?page='+location.pathname);}
+if(self===top){location.replace('https://SKCro.github.io/WebTV-HD/?page='+location.pathname);}
 
 //Sound handling, tabindex, and hover effect
 function playSound(snd){parent.postMessage({type:'sound',soundType:snd},'*');}
 addEventListener('DOMContentLoaded',function(){
 	//Import selection box code
 	const selBoxScript=document.createElement('script');
-	selBoxScript.src='../../js/selectionBox.js';//CHANGE ME BEFORE RELEASE TO /WebTV-HD/js/selectionBox.js
-	document.body.appendChild(selBoxScript);
+	selBoxScript.src='https://SKCro.github.io/WebTV-HD/js/selectionBox.js';
+	document.head.appendChild(selBoxScript);
 
 	const inputs=document.querySelectorAll('.input');
 	const submitInputs=document.querySelectorAll('.submit');

@@ -5,10 +5,10 @@
 	<link rel=stylesheet type=text/css href=../css/service.css>
 	<script src=../js/main.js></script>
 	<script src=../js/cookies.js></script>
-	<script>function search(){window.open('https://bing.com/search?q='+document.getElementById('q').value,'_blank')}</script>
+	<script>function search(){go('https://theoldnet.com/get?url='+document.getElementById('q').value+'&year=1999&scripts=false&decode=false')}</script>
 	<style>
-	.sidebar-border.search{background-image:linear-gradient(180deg,#341111 40%,#862f2f 85%);}
-	#q{width:80%;}
+	.sidebar-border.search{background-image:linear-gradient(180deg,#341111 40%,#862f2f 75%);}
+	#q{width:85%;}
 	p{margin-top:0.6rem;margin-bottom:1.5rem;}
 	.bottom-right-image.search{background-image:url(../images/centers/search/sidebarSearch.svg);}
 	</style>
@@ -28,5 +28,5 @@
 	<p>What are you looking for?</p>
 	<input type=text id=q>
 	<input type=submit value=Search class="ButtonBorder2 submit" onclick=search()>
-	<div class=border><hr class=print-only></div>
+	<hr class=border>
 </main></body></html>

@@ -1,8 +1,8 @@
 'use strict';
 //Import selection box code
 const selBoxScript=document.createElement('script');
-selBoxScript.src='js/selectionBox.js';
-document.body.appendChild(selBoxScript);
+selBoxScript.src='https://SKCro.github.io/WebTV-HD/js/selectionBox.js';
+document.head.appendChild(selBoxScript);
 //Common variables
 const iframe=document.getElementById('mainFrame');
 const tvFrame=document.getElementById('tvFrame');
@@ -189,22 +189,20 @@ function handleMessage(e){
 		break;
 		default:console.info(`Parent received unknown message type: ${e.data.type}\n${e.data}`);
 	}
-}
-addEventListener('message',handleMessage);
+}addEventListener('message',handleMessage);
 
 //Apply fixes if the user is using macOS Safari
 function safariStupid(){
 	var ua=navigator.userAgent.toLowerCase();
-	if(ua.indexOf('safari')!==-1&&ua.indexOf('chrome')===-1&&ua.indexOf('mozilla')===-1&&ua.indexOf('iphone')===-1){return true;}
+	if(ua.indexOf('safari')!==-1&&ua.indexOf('chrome')===-1&&ua.indexOf('iphone')===-1){return true;}
 	else{return false;}
-}
-if(safariStupid()){document.body.classList.add('safari');console.log('safari stupid');}
+}if(safariStupid()){document.body.classList.add('safari');console.log('safari stupid');}
 
 //Location-related stuff
 location.go=function(url){if(url){iframe.contentWindow.location.href=url;return `Going to ${url}`;}else{console.info(`Usage: location.go('url')`)}}
 
 //Redirect if the user directly specifies a URL via ?page=
-const pageValue=new URLSearchParams(window.location.search).get('page');
+const pageValue=new URLSearchParams(location.search).get('page');
 if(pageValue){location.go(pageValue);}
 
 //Options bar stuff
@@ -319,7 +317,7 @@ window.info=function(){
 	pretext.style.width='80%';
 	pretext.textContent=document.title;
 	if(iframe.contentDocument!==null){bottomMessage.textContent=`Address: ${iframe.contentDocument.location.href}`;}
-	else{bottomMessage.innerHTML=`Address: Unknown - page is <a class=clickable onclick="playSound(submitSound);location.go('/wtv-other/FAQ.html#classesandids');closePanel();">cross-origin</a>`;}
+	else{bottomMessage.innerHTML=`Address: Unknown - page is <a class=clickable onclick="playSound(submitSound);location.go('https://SKCro.github.io/WebTV-HD/wtv-other/FAQ.html#classesandids');closePanel();">cross-origin</a>`;}
 	bottomMessage.style.bottom='16vw';
 	textInput.value='';
 	textInput.placeholder='';
@@ -379,8 +377,7 @@ window.goTo=function(url){
 	function showCurrentURL(){
 		if(iframe.contentDocument!==null){textInput.value=iframe.contentDocument.location.href;}
 		else{playSound(errorSound);bottomMessage.textContent='Could not get page URL.'}
-	}
-	function clearURL(){textInput.value='http://';}
+	}function clearURL(){textInput.value='http://';}
 }
 
 window.view=function(){
@@ -508,8 +505,7 @@ window.reload=function(e){
 			console.debug('Force reload requested!');
 			if(iframe.contentDocument!==null){iframe.contentWindow.location.reload(true);}
 			else{console.debug(crossOriginReload);iframe.contentWindow.postMessage({type:'forceReload'},'*');}
-		}
-		else{standardReload();}
+		}else{standardReload();}
 	}else{standardReload();}//Fall back to standard reload if function not called from event
 }
 

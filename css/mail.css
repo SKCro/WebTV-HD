@@ -34,10 +34,8 @@
 .mail-infobox table{width:100%;}
 
 .sidebar-link.mail.unavailable{color:#515b84;}
-.sidebar-border.mail{background-image:linear-gradient(90deg,#202434 40%,#515b84 85%);}
+.sidebar-border.mail{background-image:linear-gradient(#202434 40%,#515b84 70%);}
 .sidebar-border.unavailable{opacity:0.5;}
 .bottom-right-image.mail{height:10vw;background-image:url(../images/mail/sidebarText.svg);}
 
 #emailContent{width:100%;border:0;}
-
-@media(max-width:760px){}
